@@ -1,0 +1,26 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.5.10'
+    id 'maven-publish'
+}
+
+group 'com.fintecsystems.xs2a.java'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.5.21'
+    implementation "com.squareup.okhttp3:okhttp:4.9.1"
+    implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
+    implementation('com.squareup.moshi:moshi-adapters:1.12.0')
+    implementation 'org.junit.jupiter:junit-jupiter:5.7.2'
+    testImplementation 'org.jetbrains.kotlin:kotlin-test:1.5.21'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
+}
+
+test {
+    useJUnitPlatform()
+}
