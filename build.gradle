@@ -27,18 +27,9 @@ group = "com.fintecsystems"
 archivesBaseName = "xs2a-java"
 version = "1.0.0"
 
-task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-
-artifacts {
-    archives javadocJar, sourcesJar
+java {
+    withJavadocJar()
+    withSourcesJar()
 }
 
 publishing {
@@ -47,6 +38,8 @@ publishing {
             groupId = group
             artifactId = 'xs2a-java'
             version = version
+
+            from components.java
 
             pom {
                 name = 'XS2A Java'
@@ -93,4 +86,10 @@ publishing {
 
 signing {
     sign publishing.publications
+}
+
+javadoc {
+    if(JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
+    }
 }
