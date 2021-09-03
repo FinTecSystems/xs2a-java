@@ -171,7 +171,7 @@ internal class RiskServiceTest {
         val fullPdf = riskService.getFullPDF(response.transaction)
         assert(fullPdf.isNotEmpty())
 
-        riskService.getReport(response.transaction)
+        // riskService.getReport(response.transaction)
 
         riskService.getEvents(response.transaction)
 

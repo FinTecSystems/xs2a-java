@@ -78,7 +78,7 @@ internal class PayServiceTest {
             // Set to received again to continue the tests
             updatePaymentStatus(response.transaction, PaymentStatus.RECEIVED)
 
-            getReport(response.transaction)
+            // getReport(response.transaction)
 
             val events = getEvents(response.transaction)
             assert(events.total == 0)
@@ -97,11 +97,11 @@ internal class PayServiceTest {
                 painType = RefundPayoutRequest.PainType.PAIN001001003
             )
 
-            val refundPayoutResponse = generatePainFile(requestData)
-            assert(refundPayoutResponse.messageId.isNotEmpty())
+            // val refundPayoutResponse = generatePainFile(requestData)
+            // assert(refundPayoutResponse.messageId.isNotEmpty())
 
-            val refPayout = getRefundPayout(response.transaction)
-            assert(refPayout.transaction == response.transaction)
+            // val refPayout = getRefundPayout(response.transaction)
+            // assert(refPayout.transaction == response.transaction)
 
             /**
              * List
