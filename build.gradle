@@ -1,9 +1,8 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.5.10'
+    id 'maven-publish'
+    id 'signing'
 }
-
-group 'com.fintecsystems.xs2a.java'
-version '1.0'
 
 repositories {
     mavenCentral()
@@ -22,4 +21,76 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+group = "com.fintecsystems"
+archivesBaseName = "xs2a-java"
+version = "1.0.0"
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar, sourcesJar
+}
+
+publishing {
+    publications {
+        xs2aJava(MavenPublication) {
+            groupId = group
+            artifactId = 'xs2a-java'
+            version = version
+
+            pom {
+                name = 'XS2A Java'
+                description = 'Java SDK for XS2A API'
+                url = 'https://github.com/FinTecSystems/xs2a-java'
+                licenses {
+                    license {
+                        name = 'MIT'
+                        url = 'https://opensource.org/licenses/MIT'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'maik-mursall'
+                        name = 'Maik Mursall'
+                        email = 'mmursall@fintecsystems.com'
+                    }
+                    developer {
+                        id = 'fritzfr'
+                        name = 'Felix Fritz'
+                        email = 'ffritz@fintecsystems.com'
+                    }
+                }
+                scm {
+                    connection = 'https://github.com/FinTecSystems/xs2a-java.git'
+                    developerConnection = 'https://github.com/FinTecSystems/xs2a-java/issues'
+                    url = 'https://github.com/FinTecSystems/xs2a-java'
+                }
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            name = "OSSRH"
+            url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            credentials {
+                username = project.property('ossrhUsername')
+                password = project.property('ossrhPassword')
+            }
+        }
+    }
+}
+
+signing {
+    sign publishing.publications
 }
