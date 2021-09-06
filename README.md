@@ -11,6 +11,10 @@ This SDK allows you to talk to and consume XS2A API in Java environments.
 
 ## Installation
 
+### Requirements
+
+- Java 1.8 or later
+
 ### Gradle
 Add this dependency to your project's build file:
 ```groovy
