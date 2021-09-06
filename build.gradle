@@ -94,3 +94,10 @@ javadoc {
         options.addBooleanOption('html5', true)
     }
 }
+
+task generateDocs(dependsOn: dokkaHtml) {
+    doLast {
+        ant.move file: "${buildDir}/dokka/html",
+                todir: "${rootDir}/kdocs"
+    }
+}
