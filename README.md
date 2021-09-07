@@ -60,4 +60,19 @@ val risk = Xs2aRisk(
 val response = riskService.create(risk)
 ```
 
+## Testing & Development
 
+### Running tests
+For the tests to be able to run you have to provide an API-Key to the environment.
+
+```shell
+./gradlew test
+```
+
+### Generating Documentation
+
+```shell
+./gradlew generateDocs
+```
+
+The documentation will be generated into `docs`.
