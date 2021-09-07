@@ -36,7 +36,7 @@ Add this dependency to your project's POM:
 implementation("com.fintecsystems:xs2a-java:1.2.0")
 ```
 
-## Usage Example
+## Usage Example (Kotlin)
 An example of creating a xs2a.risk call in Kotlin:
 
 ```kotlin
@@ -58,6 +58,28 @@ val risk = Xs2aRisk(
 
 // Fire the request and get a response
 val response = riskService.create(risk)
+```
+
+```java
+// Create a RiskService Instance
+RiskService riskService = new RiskService(apiKey);
+
+// Build a Risk Request
+Xs2aRisk risk = new Xs2aRisk();
+
+Xs2aAccountSnapshot accountSnapShot = new Xs2aAccountSnapshot(
+    10,
+    LocalDate.parse("2021-01-01"),
+    LocalDate.parse("2021-01-10"),
+    List.of("income"),
+    true,
+    true
+);
+risk.setXs2aAccountSnapshot(accountSnapShot);
+// add more risk checks as necessary ...
+
+// Fire the request and get a response
+WizardSessionResponse response = riskService.create(risk);
 ```
 
 ## Testing & Development
