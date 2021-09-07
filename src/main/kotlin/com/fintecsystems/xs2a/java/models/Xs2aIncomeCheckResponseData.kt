@@ -11,8 +11,8 @@ import com.squareup.moshi.Json
 
 data class Xs2aIncomeCheckResponseData (
     @Json(name = "full_months_count")
-    val fullMonthsCount: Int,
+    var fullMonthsCount: Int,
     @Json(name = "category_short_name")
-    val categoryShortName: Xs2aIncomeCheckResponseDataCategoryShortName? = null,
+    var categoryShortName: Xs2aIncomeCheckResponseDataCategoryShortName? = null,
 )
 

@@ -19,27 +19,27 @@ import java.time.LocalDateTime
 data class BankAccountBalance(
     /* Bank Account ID */
     @Json(name = "id")
-    val id: String,
+    var id: String,
     /* The available amount. This can be null, if the available amount is not known. */
     @Json(name = "available")
-    val available: Float,
+    var available: Float,
     /* The limit of the account. This can be null, if the limit is not known. */
     @Json(name = "limit")
-    val limit: Float,
+    var limit: Float,
     /* The current account balance. */
     @Json(name = "balance")
-    val balance: Float,
+    var balance: Float,
     /* The bank accounts currency code (three-digit, e.g. EUR) */
     @Json(name = "currency_id")
-    val currencyId: CurrencyId? = null,
+    var currencyId: CurrencyId? = null,
     /* The date the balance was seen on. */
     @Json(name = "date")
-    val date: LocalDateTime,
+    var date: LocalDateTime,
     /* Date of creation */
     @Json(name = "created_at")
-    val createdAt: LocalDateTime,
+    var createdAt: LocalDateTime,
     /* The value bank_account */
     @Json(name = "object")
-    val `object`: String
+    var `object`: String
 )
 

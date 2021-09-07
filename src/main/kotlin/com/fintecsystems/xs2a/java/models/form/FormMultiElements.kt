@@ -12,11 +12,11 @@ import com.squareup.moshi.Json
 data class FormMultiElements(
     /* The label of the element */
     @Json(name = "label")
-    val label: String,
+    var label: String,
     /* The value of the form element */
     @Json(name = "value")
-    val value: String,
+    var value: String,
     /* Array containing the nested elements */
     @Json(name = "elements")
-    val elements: Array<Any>
+    var elements: Array<Any>
 )

@@ -18,20 +18,20 @@ import java.time.LocalDateTime
 
 data class Employer(
     @Json(name = "name")
-    val name: String,
+    var name: String,
     @Json(name = "months_with_salaries_count")
-    val monthsWithSalariesCount: Int,
+    var monthsWithSalariesCount: Int,
     @Json(name = "booking_date_first_salary")
-    val bookingDateFirstSalary: LocalDateTime,
+    var bookingDateFirstSalary: LocalDateTime,
     @Json(name = "booking_date_last_salary")
-    val bookingDateLastSalary: LocalDateTime,
+    var bookingDateLastSalary: LocalDateTime,
     @Json(name = "months_sums_median")
-    val monthsSumsMedian: Float,
+    var monthsSumsMedian: Float,
     @Json(name = "months_sums_minimum")
-    val monthsSumsMinimum: Float,
+    var monthsSumsMinimum: Float,
     @Json(name = "public_employer")
-    val publicEmployer: Boolean,
+    var publicEmployer: Boolean,
     @Json(name = "current_employer")
-    val currentEmployer: Boolean
+    var currentEmployer: Boolean
 )
 

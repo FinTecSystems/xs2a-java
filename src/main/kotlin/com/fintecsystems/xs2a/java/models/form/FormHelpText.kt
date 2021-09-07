@@ -13,9 +13,9 @@ import com.squareup.moshi.Json
 data class FormHelpText (
     /* The title of the form element */
     @Json(name = "title")
-    val title: String,
+    var title: String,
     /* The text of the form element */
     @Json(name = "text")
-    val text: String
+    var text: String
 ) : FormBase()
 

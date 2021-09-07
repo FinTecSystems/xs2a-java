@@ -17,21 +17,21 @@ import java.time.LocalDateTime
 data class Xs2aBalanceOverviewResponse(
     /* Object type, in this case a xs2a_balance_overview */
     @Json(name = "object")
-    val `object`: String,
+    var `object`: String,
     /* Current balance */
     @Json(name = "balance")
-    val balance: Float,
+    var balance: Float,
     /* Current available */
     @Json(name = "available")
-    val available: Float,
+    var available: Float,
     /* Current limit (overdraft) */
     @Json(name = "limit")
-    val limit: Float,
+    var limit: Float,
     /* Currency id of above values, e.g. EUR */
     @Json(name = "currency_id")
-    val currencyId: CurrencyId? = null,
+    var currencyId: CurrencyId? = null,
     /* Creation date of the object */
     @Json(name = "created_at")
-    val createdAt: LocalDateTime
+    var createdAt: LocalDateTime
 )
 

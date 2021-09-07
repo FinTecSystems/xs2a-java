@@ -11,6 +11,6 @@ import com.squareup.moshi.Json
 
 data class Xs2aCreditCheck (
     @Json(name = "checks")
-    val checks: List<String>
+    var checks: List<String>
 )
 

@@ -18,31 +18,31 @@ import java.time.LocalDateTime
 data class EventObject(
     /* Transaction id */
     @Json(name = "id")
-    val id: String,
+    var id: String,
     /* The transaction ID this object belongs to. May be null for some events. */
     @Json(name = "transaction")
-    val transaction: String,
+    var transaction: String,
     /* The type of event. transaction.created or transaction.updated */
     @Json(name = "type")
-    val type: String,
+    var type: String,
     /* The object, that this event relates to. This is usually a transaction object. */
     @Json(name = "data")
-    val data: Any,
+    var data: Any,
     /* Indicates whether or not this event belongs to a test transaction */
     @Json(name = "testmode")
-    val testmode: Boolean,
+    var testmode: Boolean,
     /* A human readable message that describes this event. */
     @Json(name = "message")
-    val message: String,
+    var message: String,
     /* The date the event was fired. */
     @Json(name = "created_at")
-    val createdAt: LocalDateTime,
+    var createdAt: LocalDateTime,
     /* xs2a_event for event objects. */
     @Json(name = "object")
-    val `object`: String
+    var `object`: String
 )
 
-enum class ReportFormat(val value: String) {
+enum class ReportFormat(var value: String) {
     @Json(name = "html")
     HTML("html"),
 
@@ -53,7 +53,7 @@ enum class ReportFormat(val value: String) {
     JSON("json");
 }
 
-enum class ReportLocale(val value: String) {
+enum class ReportLocale(var value: String) {
     @Json(name = "en")
     EN("en"),
 

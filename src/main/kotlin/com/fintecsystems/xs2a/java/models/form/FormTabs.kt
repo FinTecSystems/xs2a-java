@@ -14,14 +14,14 @@ import com.squareup.moshi.Json
 data class FormTabs(
     /* The name of the form element */
     @Json(name = "name")
-    override val name: String,
+    override var name: String,
     /* An array of possible transports */
     @Json(name = "tabs")
-    val tabs: List<String>,
+    var tabs: List<String>,
     /* The label of the form element */
     @Json(name = "label")
-    val label: String,
+    var label: String,
     /* The selected transport */
     @Json(name = "selected")
-    val selected: String
+    var selected: String
 ) : FormNameBase()

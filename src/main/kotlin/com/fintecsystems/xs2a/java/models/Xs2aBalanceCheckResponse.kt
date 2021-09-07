@@ -16,18 +16,18 @@ import java.time.LocalDateTime
 data class Xs2aBalanceCheckResponse(
     /* Object type, in this case a xs2a_balance_check */
     @Json(name = "object")
-    val `object`: String,
+    var `object`: String,
     /* Account balance amount to be checked against */
     @Json(name = "check_amount")
-    val checkAmount: Float,
+    var checkAmount: Float,
     /* Currency id of check_amount, e.g. EUR */
     @Json(name = "check_currency_id")
-    val checkCurrencyId: CurrencyId? = null,
+    var checkCurrencyId: CurrencyId? = null,
     /* Indicates whether or not the check was successful */
     @Json(name = "check_passed")
-    val checkPassed: String,
+    var checkPassed: String,
     /* Creation date of the object */
     @Json(name = "created_at")
-    val createdAt: LocalDateTime
+    var createdAt: LocalDateTime
 )
 

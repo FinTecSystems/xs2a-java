@@ -10,7 +10,7 @@ import com.squareup.moshi.Json
 */
 
 
-enum class Language(val value: String) {
+enum class Language(var value: String) {
 
 
     @Json(name = "de")

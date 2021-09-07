@@ -19,27 +19,27 @@ import com.squareup.moshi.Json
 data class FormFlicker (
     /* The name of the form element */
     @Json(name = "name")
-    override val name: String,
+    override var name: String,
     /* The set value of the form element */
     @Json(name = "value")
-    val value: String,
+    var value: String,
     /* The actual flicker image as an array representation (0 = black bar, 1 = white bar) */
     @Json(name = "code")
-    val code: List<List<String>>,
+    var code: List<List<String>>,
     /* The label of the form element */
     @Json(name = "label")
-    val label: String,
+    var label: String,
     /* List of validation rules, concatenated with a pipe character */
     @Json(name = "validation")
-    val validation: String,
+    var validation: String,
     /* Indicates whether the validation of the element failed */
     @Json(name = "invalid")
-    val invalid: Boolean,
+    var invalid: Boolean,
     /* A list of failed validation rules. String if empty and List of Strings if populated */
     @Json(name = "failed_validation_rules")
-    val failedValidationRules: Any,
+    var failedValidationRules: Any,
     /* The validation error (human readable) */
     @Json(name = "validation_error")
-    val validationError: String
+    var validationError: String
 ) : FormNameBase()
 

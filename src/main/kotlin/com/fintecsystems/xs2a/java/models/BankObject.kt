@@ -21,33 +21,33 @@ import com.squareup.moshi.Json
 data class BankObject (
     /* bank code of the bank */
     @Json(name = "bank_code")
-    val bankCode: String,
+    var bankCode: String,
     /* BIC of the bank */
     @Json(name = "bic")
-    val bic: String? = null,
+    var bic: String? = null,
     /* Name of the bank */
     @Json(name = "name")
-    val name: String,
+    var name: String,
     /* Abbreviated bank name */
     @Json(name = "short_name")
-    val shortName: String,
+    var shortName: String,
     /* National ZIP code of the bank */
     @Json(name = "zipcode")
-    val zipcode: String? = null,
+    var zipcode: String? = null,
     /* City */
     @Json(name = "city")
-    val city: String,
+    var city: String,
     /* Two letter country code id, e.g. AT, CH, DE */
     @Json(name = "country_id")
-    val countryId: CountryId? = null,
+    var countryId: CountryId? = null,
     /* '1', if this bank is a testbank */
     @Json(name = "testmode")
-    val testmode: Boolean,
+    var testmode: Boolean,
     /* array of xs2a products supported */
     @Json(name = "xs2a_products")
-    val xs2aProducts: List<String>,
+    var xs2aProducts: List<String>,
     /* true, if this bank is supported by XS2A */
     @Json(name = "xs2a_supported")
-    val xs2aSupported: Boolean
+    var xs2aSupported: Boolean
 )
 

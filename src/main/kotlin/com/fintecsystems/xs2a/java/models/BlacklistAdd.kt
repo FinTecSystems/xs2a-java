@@ -12,6 +12,6 @@ import com.squareup.moshi.Json
 data class BlacklistAdd (
     /* A valid IBAN to blacklist. */
     @Json(name = "data")
-    val data: String
+    var data: String
 )
 

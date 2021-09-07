@@ -14,13 +14,13 @@ import com.squareup.moshi.Json
 data class AccountHoldersObject (
     /* Giro */
     @Json(name = "type")
-    val type: String,
+    var type: String,
     /* holder */
     @Json(name = "holder")
-    val holder: String,
+    var holder: String,
     @Json(name = "iban")
-    val iban: String,
+    var iban: String,
     @Json(name = "matches")
-    val matches: List<MatchesObject>
+    var matches: List<MatchesObject>
 )
 

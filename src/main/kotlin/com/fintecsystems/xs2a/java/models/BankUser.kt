@@ -17,21 +17,21 @@ import java.time.LocalDateTime
 data class BankUser(
     /* transaction ID */
     @Json(name = "id")
-    val id: String,
+    var id: String,
     /* Name of the user */
     @Json(name = "name")
-    val name: String,
+    var name: String,
     /* E-Mail of the test user */
     @Json(name = "email")
-    val email: String,
+    var email: String,
     /* True, if this user has been created with a testing API key, false otherwise. */
     @Json(name = "testmode")
-    val testmode: Boolean,
+    var testmode: Boolean,
     /* Date of creation */
     @Json(name = "created_at")
-    val createdAt: LocalDateTime,
+    var createdAt: LocalDateTime,
     /* The value bank_user */
     @Json(name = "object")
-    val `object`: String
+    var `object`: String
 )
 

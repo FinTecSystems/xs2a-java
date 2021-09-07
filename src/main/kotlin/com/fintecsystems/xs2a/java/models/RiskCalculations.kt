@@ -20,31 +20,31 @@ import java.time.LocalDate
 
 data class RiskCalculations(
     @Json(name = "tags")
-    val tags: List<String>,
+    var tags: List<String>,
     @Json(name = "categories")
-    val categories: List<String>,
+    var categories: List<String>,
     @Json(name = "functions")
-    val functions: List<String>,
+    var functions: List<String>,
     /* A name for this calculation */
     @Json(name = "name")
-    val name: String,
+    var name: String,
     /* Days */
     @Json(name = "days")
-    val days: Int? = null,
+    var days: Int? = null,
     /* Starting date */
     @Json(name = "from")
-    val from: LocalDate? = null,
+    var from: LocalDate? = null,
     /* Ending date */
     @Json(name = "to")
-    val to: LocalDate? = null,
+    var to: LocalDate? = null,
     /* Full months */
     @Json(name = "full_months")
-    val fullMonths: String? = null,
+    var fullMonths: String? = null,
     /* Children categories */
     @Json(name = "children_categories")
-    val childrenCategories: Boolean? = null,
+    var childrenCategories: Boolean? = null,
     /* Match tags with categories */
     @Json(name = "match_tags_with_categories")
-    val matchTagsWithCategories: Boolean? = null,
+    var matchTagsWithCategories: Boolean? = null,
 )
 

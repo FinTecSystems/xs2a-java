@@ -34,71 +34,71 @@ import com.squareup.moshi.Json
 data class UserAccountsObject (
     /* Can be IBAN or other Identifier of the account */
     @Json(name = "identifier")
-    val identifier: String,
+    var identifier: String,
     /* Holder name */
     @Json(name = "holder")
-    val holder: String,
+    var holder: String,
     @Json(name = "description")
-    val description: String,
+    var description: String,
     /* IBAN */
     @Json(name = "iban")
-    val iban: String,
+    var iban: String,
     /* BIC */
     @Json(name = "bic")
-    val bic: String? = null,
+    var bic: String? = null,
     /* Account number */
     @Json(name = "account_number")
-    val accountNumber: String? = null,
+    var accountNumber: String? = null,
     /* Bank code */
     @Json(name = "bank_code")
-    val bankCode: String,
+    var bankCode: String,
     /* Bank name */
     @Json(name = "bank_name")
-    val bankName: String,
+    var bankName: String,
     /* Country Id */
     @Json(name = "country_id")
-    val countryId: CountryId? = null,
+    var countryId: CountryId? = null,
     /* Joint Account */
     @Json(name = "joint_account")
-    val jointAccount: String,
+    var jointAccount: String,
     @Json(name = "transaction_possible")
-    val transactionPossible: String,
+    var transactionPossible: String,
     /* Account type */
     @Json(name = "account_type")
-    val accountType: String,
+    var accountType: String,
     /* Balance */
     @Json(name = "balance")
-    val balance: Float,
+    var balance: Float,
     /* Available */
     @Json(name = "available")
-    val available: Float,
+    var available: Float,
     /* Limit */
     @Json(name = "limit")
-    val limit: Float,
+    var limit: Float,
     /* Currency */
     @Json(name = "currency_id")
-    val currencyId: CurrencyId? = null,
+    var currencyId: CurrencyId? = null,
     /* Turnover days */
     @Json(name = "turnover_days")
-    val turnoverDays: Int,
+    var turnoverDays: Int,
     /* Turnover available days */
     @Json(name = "turnover_available_days")
-    val turnoverAvailableDays: Int,
+    var turnoverAvailableDays: Int,
     /* Turnover count */
     @Json(name = "turnover_count")
-    val turnoverCount: Int,
+    var turnoverCount: Int,
     /* Average account usage */
     @Json(name = "average_account_usage")
-    val averageAccountUsage: String,
+    var averageAccountUsage: String,
     /* Overdraft days */
     @Json(name = "overdraft_days")
-    val overdraftDays: Int,
+    var overdraftDays: Int,
     /* Overdraft limit days */
     @Json(name = "overdraft_limit_days")
-    val overdraftLimitDays: Int,
+    var overdraftLimitDays: Int,
     @Json(name = "completeness")
-    val completeness: UserAccountsObjectCompleteness,
+    var completeness: UserAccountsObjectCompleteness,
     @Json(name = "account_data_available")
-    val accountDataAvailable: String
+    var accountDataAvailable: String
 )
 

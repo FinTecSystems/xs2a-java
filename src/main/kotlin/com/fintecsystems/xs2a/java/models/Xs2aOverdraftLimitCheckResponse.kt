@@ -19,27 +19,27 @@ import java.time.LocalDateTime
 data class Xs2aOverdraftLimitCheckResponse(
     /* Count of booking days in the date range found */
     @Json(name = "booking_days")
-    val bookingDays: Int,
+    var bookingDays: Int,
     /* Count of days the account used the overdraft limit */
     @Json(name = "overdraft_limit_days")
-    val overdraftLimitDays: Int,
+    var overdraftLimitDays: Int,
     /* Maximum amount the overdraft was used in that date range */
     @Json(name = "maximum_overdraft_used")
-    val maximumOverdraftUsed: Float,
+    var maximumOverdraftUsed: Float,
     /* Average amount the overdraft was used in that date range */
     @Json(name = "average_overdraft_used")
-    val averageOverdraftUsed: Float,
+    var averageOverdraftUsed: Float,
     /* Median amount the overdraft was used in that date range */
     @Json(name = "median_overdraft_used")
-    val medianOverdraftUsed: Float,
+    var medianOverdraftUsed: Float,
     /* Currency id of above values, e.g. EUR */
     @Json(name = "currency_id")
-    val currencyId: CurrencyId? = null,
+    var currencyId: CurrencyId? = null,
     /* Object type, in this case a  xs2a_overdraft_limit_check */
     @Json(name = "object")
-    val `object`: String,
+    var `object`: String,
     /* Creation date of the object */
     @Json(name = "created_at")
-    val createdAt: LocalDateTime
+    var createdAt: LocalDateTime
 )
 

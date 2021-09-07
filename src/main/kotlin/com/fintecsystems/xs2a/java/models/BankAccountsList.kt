@@ -19,29 +19,29 @@ import com.squareup.moshi.Json
 data class BankAccountsList (
     /* Total number of results. */
     @Json(name = "total")
-    val total: Int,
+    var total: Int,
     /* Number of objects per page */
     @Json(name = "per_page")
-    val perPage: Int,
+    var perPage: Int,
     /* Current page. */
     @Json(name = "current_page")
-    val currentPage: Int,
+    var currentPage: Int,
     /* Last page, usually the total of available pages. */
     @Json(name = "last_page")
-    val lastPage: Int,
+    var lastPage: Int,
     /* URI to next page. */
     @Json(name = "next_page_url")
-    val nextPageUrl: String? = null,
+    var nextPageUrl: String? = null,
     /* URI to previous page. */
     @Json(name = "prev_page_url")
-    val prevPageUrl: String? = null,
+    var prevPageUrl: String? = null,
     /* Showing results from index element. */
     @Json(name = "from")
-    val from: Int? = null,
+    var from: Int? = null,
     /* Showing results to index element. */
     @Json(name = "to")
-    val to: Int? = null,
+    var to: Int? = null,
     @Json(name = "data")
-    val data: List<BankAccount>
+    var data: List<BankAccount>
 )
 

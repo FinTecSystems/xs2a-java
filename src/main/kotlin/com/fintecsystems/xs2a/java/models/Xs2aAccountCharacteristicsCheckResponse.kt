@@ -16,20 +16,20 @@ import java.time.LocalDateTime
 
 data class Xs2aAccountCharacteristicsCheckResponse(
     @Json(name = "chargebacks")
-    val chargebacks: ChargebacksObject,
+    var chargebacks: ChargebacksObject,
     @Json(name = "encashment")
-    val encashment: EncashmentObject,
+    var encashment: EncashmentObject,
     @Json(name = "account_profile")
-    val accountProfile: AccountProfileObject,
+    var accountProfile: AccountProfileObject,
     @Json(name = "loans")
-    val loans: LoansObject,
+    var loans: LoansObject,
     @Json(name = "flags")
-    val flags: Map<String, String>,
+    var flags: Map<String, String>,
     /* Object type, in this case a  xs2a_account_characteristics_check */
     @Json(name = "object")
-    val `object`: String,
+    var `object`: String,
     /* Creation date of the object */
     @Json(name = "created_at")
-    val createdAt: LocalDateTime
+    var createdAt: LocalDateTime
 )
 

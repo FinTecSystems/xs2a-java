@@ -12,12 +12,12 @@ import java.time.LocalDateTime
 
 data class Xs2aRiskCalculationsCheckResponse(
     @Json(name = "calculations")
-    val calculations: List<RiskCalculationsResponse>,
+    var calculations: List<RiskCalculationsResponse>,
     /* Creation date of the object */
     @Json(name = "created_at")
-    val createdAt: LocalDateTime,
+    var createdAt: LocalDateTime,
     /* Object type, in this case a  xs2a_risk_calculations_check */
     @Json(name = "object")
-    val `object`: String
+    var `object`: String
 )
 

@@ -13,9 +13,9 @@ import com.squareup.moshi.Json
 data class FormImage (
     /* The base64 encoded image */
     @Json(name = "data")
-    val data: String,
+    var data: String,
     /* The label of the form element */
     @Json(name = "label")
-    val label: String
+    var label: String
 ) : FormBase()
 

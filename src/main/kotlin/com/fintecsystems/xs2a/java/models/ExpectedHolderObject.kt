@@ -13,9 +13,9 @@ import com.squareup.moshi.Json
 data class ExpectedHolderObject (
     /* The first name */
     @Json(name = "firstname")
-    val firstname: String,
+    var firstname: String,
     /* The last name */
     @Json(name = "name")
-    val name: String
+    var name: String
 )
 

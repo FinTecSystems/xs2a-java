@@ -10,6 +10,6 @@ import com.squareup.moshi.Json
 
 data class Xs2aAccountLinkedOffersCheckResponse (
     @Json(name = "links")
-    val links: List<Xs2aAccountLinkedOffersCheckResponseLinks>
+    var links: List<Xs2aAccountLinkedOffersCheckResponseLinks>
 )
 

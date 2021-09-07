@@ -22,44 +22,44 @@ import java.time.LocalDateTime
 data class WizardSessionObject(
     /* Internal identifier. */
     @Json(name = "id")
-    val id: String,
+    var id: String,
     /* Public transaction identifier. */
     @Json(name = "transaction")
-    val transaction: String,
+    var transaction: String,
     /* Key to start the wizard */
     @Json(name = "wizard_session_key")
-    val wizardSessionKey: String,
+    var wizardSessionKey: String,
     /* Name of the used product. */
     @Json(name = "product")
-    val product: Product? = null,
+    var product: Product? = null,
     /* An array which contains the current wizard configuration. */
     @Json(name = "parameters")
-    val parameters: Any,
+    var parameters: Any,
     /* The last occurred error. This is overwritten, if another error occurs. */
     @Json(name = "last_error")
-    val lastError: String,
+    var lastError: String,
     /* true if this session runs in testmode. false otherwise. */
     @Json(name = "testmode")
-    val testmode: Boolean,
+    var testmode: Boolean,
     /* true if this session was finished successfully. false if not or still running. */
     @Json(name = "finished")
-    val finished: Boolean,
+    var finished: Boolean,
     /* The current wizard step of this session. */
     @Json(name = "current_step")
-    val currentStep: String,
+    var currentStep: String,
     /* Type of creation */
     @Json(name = "created_at")
-    val createdAt: LocalDateTime,
+    var createdAt: LocalDateTime,
     /* String with content 'wizard_session' */
     @Json(name = "object")
-    val `object`: String
+    var `object`: String
 ) {
 
     /**
      * Name of the used product.
      * Values: risk,pay
      */
-    enum class Product(val value: String) {
+    enum class Product(var value: String) {
         @Json(name = "xs2a_risk")
         RISK("xs2a_risk"),
         @Json(name = "xs2a_pay")

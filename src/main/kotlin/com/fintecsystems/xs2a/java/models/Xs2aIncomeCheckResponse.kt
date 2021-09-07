@@ -11,9 +11,9 @@ import java.time.LocalDateTime
 
 data class Xs2aIncomeCheckResponse(
     @Json(name = "data")
-    val data: Xs2aIncomeCheckResponseData,
+    var data: Xs2aIncomeCheckResponseData,
     /* Creation date of the object */
     @Json(name = "created_at")
-    val createdAt: LocalDateTime
+    var createdAt: LocalDateTime
 )
 

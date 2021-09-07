@@ -11,6 +11,6 @@ import com.squareup.moshi.Json
 data class Xs2aHolderIdentificationCheck (
     /* Array of objects containing firstnames and lastnames. */
     @Json(name = "expect_holders")
-    val expectHolders: List<ExpectedHolderObject>
+    var expectHolders: List<ExpectedHolderObject>
 )
 

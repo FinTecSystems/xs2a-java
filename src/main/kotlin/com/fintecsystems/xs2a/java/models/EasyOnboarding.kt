@@ -12,8 +12,8 @@ import com.squareup.moshi.Json
 
 data class EasyOnboarding (
     @Json(name = "success_link")
-    val successLink: String,
+    var successLink: String,
     @Json(name = "abort_link")
-    val abortLink: String
+    var abortLink: String
 )
 

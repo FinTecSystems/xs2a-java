@@ -11,8 +11,8 @@ import com.squareup.moshi.Json
 
 data class Xs2aProfitLossCheckResponseResult (
     @Json(name = "tax_ids")
-    val taxIds: List<String>,
+    var taxIds: List<String>,
     @Json(name = "profit_loss")
-    val profitLoss: Xs2aProfitLossCheckResponseResultProfitLoss
+    var profitLoss: Xs2aProfitLossCheckResponseResultProfitLoss
 )
 

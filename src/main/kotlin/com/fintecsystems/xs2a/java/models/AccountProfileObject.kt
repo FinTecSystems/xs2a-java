@@ -18,19 +18,19 @@ import com.squareup.moshi.Json
 data class AccountProfileObject (
     /* Number of cash withdrawals */
     @Json(name = "cash_withdrawals")
-    val cashWithdrawals: Int,
+    var cashWithdrawals: Int,
     /* Number of cash deposits */
     @Json(name = "cash_deposits")
-    val cashDeposits: Int,
+    var cashDeposits: Int,
     @Json(name = "payment_gez")
-    val paymentGez: String,
+    var paymentGez: String,
     @Json(name = "payment_schufa")
-    val paymentSchufa: String,
+    var paymentSchufa: String,
     @Json(name = "payment_donation")
-    val paymentDonation: String,
+    var paymentDonation: String,
     @Json(name = "payment_party")
-    val paymentParty: String,
+    var paymentParty: String,
     @Json(name = "payment_club")
-    val paymentClub: String
+    var paymentClub: String
 )
 

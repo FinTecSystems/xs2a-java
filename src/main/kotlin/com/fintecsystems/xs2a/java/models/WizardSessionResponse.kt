@@ -5,8 +5,8 @@ import com.squareup.moshi.Json
 data class WizardSessionResponse (
     /* Public transaction identifier. */
     @Json(name = "transaction")
-    val transaction: String,
+    var transaction: String,
     /* Key to start the wizard */
     @Json(name = "wizard_session_key")
-    val wizardSessionKey: String,
+    var wizardSessionKey: String,
 )

@@ -13,18 +13,18 @@ import com.squareup.moshi.Json
 data class RefundPayoutRequest (
     /* The format of pain file. */
     @Json(name = "pain_type")
-    val painType: RefundPayoutRequest.PainType,
+    var painType: RefundPayoutRequest.PainType,
     @Json(name = "transactions")
-    val transactions: List<RefundPayoutTransactions>,
+    var transactions: List<RefundPayoutTransactions>,
     @Json(name = "batch_booking")
-    val batchBooking: Boolean? = null,
+    var batchBooking: Boolean? = null,
 ) {
 
     /**
      * The format of pain file.
      * Values: painPeriod001Period001Period03
      */
-    enum class PainType(val value: String) {
+    enum class PainType(var value: String) {
         @Json(name = "pain.001.001.03") PAIN001001003("pain.001.001.03");
     }
 }

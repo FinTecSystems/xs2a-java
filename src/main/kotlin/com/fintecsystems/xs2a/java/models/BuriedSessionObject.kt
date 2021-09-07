@@ -13,9 +13,9 @@ import com.squareup.moshi.Json
 data class BuriedSessionObject (
     /* Response code */
     @Json(name = "code")
-    val code: Int,
+    var code: Int,
     /* The requested session was buried and is not accessible anymore. */
     @Json(name = "message")
-    val message: String
+    var message: String
 )
 

@@ -12,6 +12,6 @@ import com.squareup.moshi.Json
 data class Xs2aChildrenCheckResponse (
     /* Calculated count of children */
     @Json(name = "children_at_account_holder")
-    val childrenAtAccountHolder: Int
+    var childrenAtAccountHolder: Int
 )
 

@@ -12,6 +12,6 @@ import com.squareup.moshi.Json
 data class Polling (
     /* The interval in milliseconds */
     @Json(name = "interval")
-    val interval: Int? = null,
+    var interval: Int? = null,
 )
 

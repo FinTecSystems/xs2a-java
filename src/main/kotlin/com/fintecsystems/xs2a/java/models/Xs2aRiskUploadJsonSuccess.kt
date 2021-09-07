@@ -22,28 +22,28 @@ import java.time.LocalDateTime
 
 data class Xs2aRiskUploadJsonSuccess(
     @Json(name = "id")
-    val id: String,
+    var id: String,
     @Json(name = "transaction")
-    val transaction: String,
+    var transaction: String,
     @Json(name = "account_holder")
-    val accountHolder: String,
+    var accountHolder: String,
     @Json(name = "iban")
-    val iban: String? = null,
+    var iban: String? = null,
     @Json(name = "bic")
-    val bic: String? = null,
+    var bic: String? = null,
     @Json(name = "bank_name")
-    val bankName: String,
+    var bankName: String,
     @Json(name = "country_id")
-    val countryId: CountryId? = null,
+    var countryId: CountryId? = null,
     @Json(name = "testmode")
-    val testmode: Boolean,
+    var testmode: Boolean,
     @Json(name = "created_at")
-    val createdAt: LocalDateTime,
+    var createdAt: LocalDateTime,
     @Json(name = "metadata")
-    val metadata: String? = null,
+    var metadata: String? = null,
     @Json(name = "merchant_id")
-    val merchantId: String? = null,
+    var merchantId: String? = null,
     @Json(name = "object")
-    val `object`: String
+    var `object`: String
 )
 

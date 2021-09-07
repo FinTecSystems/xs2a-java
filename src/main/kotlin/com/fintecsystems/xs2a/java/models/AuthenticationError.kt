@@ -13,9 +13,9 @@ import com.squareup.moshi.Json
 data class AuthenticationError (
     /* status code to indicate whether the request was successful */
     @Json(name = "code")
-    val code: Int,
+    var code: Int,
     /* Descriptive message for the status code */
     @Json(name = "message")
-    val message: String
+    var message: String
 )
 

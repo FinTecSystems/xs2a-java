@@ -17,23 +17,23 @@ import com.squareup.moshi.Json
 data class PayTransactionList (
     /* Total number of results. */
     @Json(name = "total")
-    val total: Int,
+    var total: Int,
     /* Number of objects per page */
     @Json(name = "per_page")
-    val perPage: Int,
+    var perPage: Int,
     /* Current page. */
     @Json(name = "current_page")
-    val currentPage: Int,
+    var currentPage: Int,
     /* Last page, usually the total of available pages. */
     @Json(name = "last_page")
-    val lastPage: Int,
+    var lastPage: Int,
     /* Showing results from index element. */
     @Json(name = "from")
-    val from: Int,
+    var from: Int,
     /* Showing results to index element. */
     @Json(name = "to")
-    val to: Int,
+    var to: Int,
     @Json(name = "data")
-    val data: List<PayObject>
+    var data: List<PayObject>
 )
 

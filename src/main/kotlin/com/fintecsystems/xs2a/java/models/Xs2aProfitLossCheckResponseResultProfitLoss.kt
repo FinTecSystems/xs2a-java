@@ -23,30 +23,30 @@ import com.squareup.moshi.Json
 
 data class Xs2aProfitLossCheckResponseResultProfitLoss (
     @Json(name = "period_start")
-    val periodStart: String,
+    var periodStart: String,
     @Json(name = "period_end")
-    val periodEnd: String,
+    var periodEnd: String,
     @Json(name = "period_days")
-    val periodDays: Int,
+    var periodDays: Int,
     @Json(name = "turnover_income")
-    val turnoverIncome: Float,
+    var turnoverIncome: Float,
     @Json(name = "cash_deposit")
-    val cashDeposit: Float,
+    var cashDeposit: Float,
     @Json(name = "other_income")
-    val otherIncome: Float,
+    var otherIncome: Float,
     @Json(name = "rent_expense")
-    val rentExpense: Float,
+    var rentExpense: Float,
     @Json(name = "supplies_expense")
-    val suppliesExpense: Float,
+    var suppliesExpense: Float,
     @Json(name = "personnel_expense")
-    val personnelExpense: Float,
+    var personnelExpense: Float,
     @Json(name = "tax_expense")
-    val taxExpense: Float,
+    var taxExpense: Float,
     @Json(name = "other_expense")
-    val otherExpense: Float,
+    var otherExpense: Float,
     @Json(name = "cashflow")
-    val cashflow: Float,
+    var cashflow: Float,
     @Json(name = "cashflow_revenue_ratio")
-    val cashflowRevenueRatio: Float
+    var cashflowRevenueRatio: Float
 )
 

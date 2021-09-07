@@ -13,12 +13,12 @@ import com.squareup.moshi.Json
 data class FormMulti (
     /* The name of the form element */
     @Json(name = "name")
-    override val name: String,
+    override var name: String,
     /* Name of the selected element (value of one of the nested elements) */
     @Json(name = "selected")
-    val selected: String,
+    var selected: String,
     /* Array containing the nested elements */
     @Json(name = "elements")
-    val elements: List<FormMultiElements>
+    var elements: List<FormMultiElements>
 ) : FormNameBase()
 

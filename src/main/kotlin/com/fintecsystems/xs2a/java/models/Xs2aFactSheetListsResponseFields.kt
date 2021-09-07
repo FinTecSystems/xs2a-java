@@ -15,14 +15,14 @@ import com.squareup.moshi.Json
 
 data class Xs2aFactSheetListsResponseFields (
     @Json(name = "name")
-    val name: String,
+    var name: String,
     @Json(name = "tags")
-    val tags: List<String>,
+    var tags: List<String>,
     @Json(name = "categories")
-    val categories: List<String>,
+    var categories: List<String>,
     @Json(name = "min_amount")
-    val minAmount: Float? = null,
+    var minAmount: Float? = null,
     @Json(name = "max_amount")
-    val maxAmount: Float? = null,
+    var maxAmount: Float? = null,
 )
 

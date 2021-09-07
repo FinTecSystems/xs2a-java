@@ -16,21 +16,21 @@ import java.time.LocalDateTime
 data class BankAccountTurnovers(
     /* Bank Account ID */
     @Json(name = "id")
-    val id: String,
+    var id: String,
     /* The list of turnovers. */
     @Json(name = "turnovers")
-    val turnovers: List<Turnover>,
+    var turnovers: List<Turnover>,
     /* The number of days requested */
     @Json(name = "days")
-    val days: Int? = null,
+    var days: Int? = null,
     /* The date the turnovers were seen on. */
     @Json(name = "date")
-    val date: LocalDateTime,
+    var date: LocalDateTime,
     /* Date of creation of the turnovers object. */
     @Json(name = "created_at")
-    val createdAt: LocalDateTime,
+    var createdAt: LocalDateTime,
     /* The value bank_account_turnovers */
     @Json(name = "object")
-    val `object`: String
+    var `object`: String
 )
 

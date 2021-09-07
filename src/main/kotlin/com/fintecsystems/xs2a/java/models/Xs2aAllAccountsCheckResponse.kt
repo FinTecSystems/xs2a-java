@@ -12,12 +12,12 @@ import java.time.LocalDateTime
 
 data class Xs2aAllAccountsCheckResponse(
     @Json(name = "accounts")
-    val accounts: List<BankAccountObject>,
+    var accounts: List<BankAccountObject>,
     /* Object type, in this case a  xs2a_all_accounts_check */
     @Json(name = "object")
-    val `object`: String,
+    var `object`: String,
     /* Creation date of the object */
     @Json(name = "created_at")
-    val createdAt: LocalDateTime
+    var createdAt: LocalDateTime
 )
 

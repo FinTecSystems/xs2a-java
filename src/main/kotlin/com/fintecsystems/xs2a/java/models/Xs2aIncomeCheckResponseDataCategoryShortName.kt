@@ -19,24 +19,24 @@ import java.time.LocalDateTime
 
 data class Xs2aIncomeCheckResponseDataCategoryShortName(
     @Json(name = "monthly_sums")
-    val monthlySums: Map<String, Float>,
+    var monthlySums: Map<String, Float>,
     @Json(name = "months_sums_median")
-    val monthsSumsMedian: Float,
+    var monthsSumsMedian: Float,
     @Json(name = "months_sums_minimum")
-    val monthsSumsMinimum: Float,
+    var monthsSumsMinimum: Float,
     @Json(name = "min_date")
-    val minDate: LocalDateTime,
+    var minDate: LocalDateTime,
     @Json(name = "max_date")
-    val maxDate: LocalDateTime,
+    var maxDate: LocalDateTime,
     @Json(name = "current_payment")
-    val currentPayment: Float,
+    var currentPayment: Float,
     @Json(name = "forecast")
-    val forecast: Float,
+    var forecast: Float,
     @Json(name = "forecast_month_count")
-    val forecastMonthCount: Int,
+    var forecastMonthCount: Int,
     @Json(name = "current_employers")
-    val currentEmployers: Int,
+    var currentEmployers: Int,
     @Json(name = "employer")
-    val employer: Employer
+    var employer: Employer
 )
 

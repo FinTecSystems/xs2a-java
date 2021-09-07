@@ -31,67 +31,67 @@ import com.squareup.moshi.Json
 data class PayObject (
     /* Transaction id */
     @Json(name = "id")
-    val id: String,
+    var id: String,
     /* Internal XS2A transaction id. This id will be the same for the whole transaction */
     @Json(name = "transaction")
-    val transaction: String,
+    var transaction: String,
     /* Account holder of the sender account */
     @Json(name = "sender_holder")
-    val senderHolder: String? = null,
+    var senderHolder: String? = null,
     /* IBAN of the sender account */
     @Json(name = "sender_iban")
-    val senderIban: String? = null,
+    var senderIban: String? = null,
     /* BIC of the sender account */
     @Json(name = "sender_bic")
-    val senderBic: String? = null,
+    var senderBic: String? = null,
     /* Name of the sender bank */
     @Json(name = "sender_bank_name")
-    val senderBankName: String? = null,
+    var senderBankName: String? = null,
     /* Two letter country code id, e.g. AT, CH, DE or the sender account */
     @Json(name = "sender_country_id")
-    val senderCountryId: CountryId? = null,
+    var senderCountryId: CountryId? = null,
     /* Account holder of the recipient account */
     @Json(name = "recipient_holder")
-    val recipientHolder: String? = null,
+    var recipientHolder: String? = null,
     /* IBAN of the recipient account */
     @Json(name = "recipient_iban")
-    val recipientIban: String? = null,
+    var recipientIban: String? = null,
     /* BIC of the recipient account */
     @Json(name = "recipient_bic")
-    val recipientBic: String? = null,
+    var recipientBic: String? = null,
     /* Name of the recipient bank */
     @Json(name = "recipient_bank_name")
-    val recipientBankName: String? = null,
+    var recipientBankName: String? = null,
     /* Two letter country code id, e.g. AT, CH, DE or the recipient account */
     @Json(name = "recipient_country_id")
-    val recipientCountryId: CountryId? = null,
+    var recipientCountryId: CountryId? = null,
     /* Purpose of transfer */
     @Json(name = "purpose")
-    val purpose: String,
+    var purpose: String,
     /* Amount to transfer */
     @Json(name = "amount")
-    val amount: Float,
+    var amount: Float,
     /* Currency id of amount, e.g. 'EUR' */
     @Json(name = "currency_id")
-    val currencyId: CurrencyId? = null,
+    var currencyId: CurrencyId? = null,
     /* Indicates whether or not it is a test transaction */
     @Json(name = "testmode")
-    val testmode: Boolean,
+    var testmode: Boolean,
     /* Payment status of the transaction, values NONE, RECEIVED, LOSS */
     @Json(name = "payment_status")
-    val paymentStatus: PaymentStatus,
+    var paymentStatus: PaymentStatus,
     /* Custom data will be returned unchanged. If no data was submitted, this field will be null */
     @Json(name = "metadata")
-    val metadata: Map<String, Any>? = null,
+    var metadata: Map<String, Any>? = null,
     /* Data will be returned unchanged */
     @Json(name = "merchant_id")
-    val merchantId: String? = null,
+    var merchantId: String? = null,
     /* Object type, in this case a xs2a_payment */
     @Json(name = "object")
-    val `object`: String
+    var `object`: String
 )
 
-enum class PaymentStatus(val value: String) {
+enum class PaymentStatus(var value: String) {
     @Json(name = "RECEIVED")
     RECEIVED("RECEIVED"),
 

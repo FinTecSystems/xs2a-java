@@ -26,53 +26,53 @@ import java.time.LocalDateTime
 data class BankConnection(
     /* Bank Connection ID */
     @Json(name = "id")
-    val id: String,
+    var id: String,
     /* Internally used XS2A transaction id. */
     @Json(name = "transaction")
-    val transaction: String,
+    var transaction: String,
     /* BIC of the bank of the bank connection */
     @Json(name = "bic")
-    val bic: String? = null,
+    var bic: String? = null,
     /* The name of the bank of the bank connection */
     @Json(name = "bank_name")
-    val bankName: String,
+    var bankName: String,
     /* 2 letter country ID */
     @Json(name = "country_id")
-    val countryId: CountryId? = null,
+    var countryId: CountryId? = null,
     /* The mode how the bank connection is synced. full, shared or none. */
     @Json(name = "sync_mode")
-    val syncMode: SyncMode? = null,
+    var syncMode: SyncMode? = null,
     /* Indicates whether the sync is active */
     @Json(name = "sync_active")
-    val syncActive: Boolean,
+    var syncActive: Boolean,
     /* ??? */
     @Json(name = "sync_message")
-    val syncMessage: String,
+    var syncMessage: String,
     /* A counter of failed syncs for this connection */
     @Json(name = "sync_fail_counter")
-    val syncFailCounter: Int,
+    var syncFailCounter: Int,
     /* The date when the connection was last synced */
     @Json(name = "last_synced")
-    val lastSynced: LocalDateTime,
+    var lastSynced: LocalDateTime,
     /* The consent is valid until the given date (Format: YYYY-MM-DD). */
     @Json(name = "consent_valid_until")
-    val consentValidUntil: LocalDate? = null,
+    var consentValidUntil: LocalDate? = null,
     /* Indicates whether this bank connection is in test mode */
     @Json(name = "testmode")
-    val testmode: Boolean,
+    var testmode: Boolean,
     /* Date of creation */
     @Json(name = "created_at")
-    val createdAt: LocalDateTime,
+    var createdAt: LocalDateTime,
     /* The value bank_connection */
     @Json(name = "object")
-    val `object`: String
+    var `object`: String
 ) {
 
     /**
      * The mode, how to sync the bank connection. full, shared or none.
      * Values: full,shared,none
      */
-    enum class SyncMode(val value: String) {
+    enum class SyncMode(var value: String) {
         @Json(name = "full")
         FULL("full"),
 
@@ -87,7 +87,7 @@ data class BankConnection(
      * Mode of account selection. If \"all\" is given, all available accounts from this bankconnection will be used. If \"single\"/\"multi\" is given, the customer can pick single/multiple accounts from this connection which will be used.
      * Values: all,multi,single
      */
-    enum class AccountSelection(val value: String) {
+    enum class AccountSelection(var value: String) {
         @Json(name = "all")
         ALL("all"),
 
@@ -102,7 +102,7 @@ data class BankConnection(
      * Desired language in which the customer interface will be rendered with.
      * Values: de,en,fr,es,it
      */
-    enum class Language(val value: String) {
+    enum class Language(var value: String) {
         @Json(name = "de")
         DE("de"),
 

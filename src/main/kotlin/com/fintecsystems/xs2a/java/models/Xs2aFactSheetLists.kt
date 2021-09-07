@@ -12,8 +12,8 @@ import com.squareup.moshi.Json
 data class Xs2aFactSheetLists (
     /* If needed limit the fetched turnovers to create a fact_sheet_lists. Default 365. Valid Range: 10 - 365 */
     @Json(name = "limit_turnover_days")
-    val limitTurnoverDays: Int? = null,
+    var limitTurnoverDays: Int? = null,
     @Json(name = "fields")
-    val fields: List<Xs2aFactSheetListsFields>
+    var fields: List<Xs2aFactSheetListsFields>
 )
 

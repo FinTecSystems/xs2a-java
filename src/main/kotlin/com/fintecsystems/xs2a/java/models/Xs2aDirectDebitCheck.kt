@@ -15,15 +15,15 @@ import java.time.LocalDate
 data class Xs2aDirectDebitCheck(
     /* Account balance amount to be checked against */
     @Json(name = "check_amount")
-    val checkAmount: Float,
+    var checkAmount: Float,
     /* Currency id of check_amount, e.g. EUR */
     @Json(name = "check_currency_id")
-    val checkCurrencyId: CurrencyId? = null,
+    var checkCurrencyId: CurrencyId? = null,
     /* Date format is \"YYYY-mm-dd\". An optional field. If a start_date is given, the field \"end_date\" has to be set as well. The start date can be no earlier than the day after the transaction. In case the start date is invalid or not set, the earliest bank work day will be used. */
     @Json(name = "start_date")
-    val startDate: LocalDate? = null,
+    var startDate: LocalDate? = null,
     /* Date format is \"YYYY-mm-dd\". An optional field. The end date has to be at lest 3 days after the start date and can be a maximum of 30 days into the future. If there is no end date given, the maximum of 30 days will be used. */
     @Json(name = "end_date")
-    val endDate: LocalDate? = null,
+    var endDate: LocalDate? = null,
 )
 

@@ -16,18 +16,18 @@ import java.time.LocalDateTime
 data class AccountStatementBalance(
     /* The available amount. This can be null, if the available amount is not known. */
     @Json(name = "available")
-    val available: Float,
+    var available: Float,
     /* The limit of the account. This can be null, if the limit is not known. */
     @Json(name = "limit")
-    val limit: Float,
+    var limit: Float,
     /* The current account balance. */
     @Json(name = "balance")
-    val balance: Float,
+    var balance: Float,
     /* The bank accounts currency code (three-digit, e.g. EUR) */
     @Json(name = "currency")
-    val currency: CurrencyId? = null,
+    var currency: CurrencyId? = null,
     /* The date the balance was seen on. */
     @Json(name = "date")
-    val date: LocalDateTime
+    var date: LocalDateTime
 )
 

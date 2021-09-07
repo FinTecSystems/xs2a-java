@@ -13,10 +13,10 @@ import com.squareup.moshi.Json
 
 data class UserAccountsObjectCompleteness (
     @Json(name = "counter_holder")
-    val counterHolder: String,
+    var counterHolder: String,
     @Json(name = "counter_iban")
-    val counterIban: String,
+    var counterIban: String,
     @Json(name = "purpose")
-    val purpose: String
+    var purpose: String
 )
 

@@ -5,5 +5,5 @@ import com.squareup.moshi.Json
 abstract class FormNameBase: FormBase() {
     /* The name of the form element */
     @Json(name = "name")
-    abstract val name: String
+    abstract var name: String
 }

@@ -10,7 +10,7 @@ import com.squareup.moshi.Json
 */
 
 
-enum class CurrencyId(val value: String) {
+enum class CurrencyId(var value: String) {
 
 
     @Json(name = "EUR")

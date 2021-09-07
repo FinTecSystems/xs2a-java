@@ -11,6 +11,6 @@ import com.squareup.moshi.Json
 
 data class RiskCalculationsResponseResults (
     @Json(name = "count")
-    val count: Int? = null,
+    var count: Int? = null,
 )
 

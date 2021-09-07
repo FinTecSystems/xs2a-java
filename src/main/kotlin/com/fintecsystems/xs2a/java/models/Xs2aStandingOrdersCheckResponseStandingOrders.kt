@@ -19,32 +19,32 @@ import java.time.LocalDate
 
 data class Xs2aStandingOrdersCheckResponseStandingOrders(
     @Json(name = "sender_account")
-    val senderAccount: BankAccountObject,
+    var senderAccount: BankAccountObject,
     @Json(name = "recipient_account")
-    val recipientAccount: BankAccountObject,
+    var recipientAccount: BankAccountObject,
     /* Amount to transfer */
     @Json(name = "amount")
-    val amount: Float,
+    var amount: Float,
     /* Currency id of amount, e.g. EUR */
     @Json(name = "currency")
-    val currency: CurrencyId? = null,
+    var currency: CurrencyId? = null,
     /* Purpose of the transfer */
     @Json(name = "purpose")
-    val purpose: String,
+    var purpose: String,
     /* Frequency of standing order, d = daily, w = weekly, m = monthly, y = yearly */
     @Json(name = "frequency")
-    val frequency: String,
+    var frequency: String,
     /* Frequency interval, in case of frequency daily or weekly  the range is 1-7 (1 = Monday, 7 = Sunday). In case of monthly  or yearly it is 1-31. 0 in case for a non standardized format. */
     @Json(name = "frequency_interval")
-    val frequencyInterval: Int,
+    var frequencyInterval: Int,
     /* Day of the execution, 1-31. 31 is used in case of execute on the last day of the month. */
     @Json(name = "day")
-    val day: Int,
+    var day: Int,
     /* Date of the first or next execution of the standing order, format YYYY-mm-dd. */
     @Json(name = "start_execution")
-    val startExecution: LocalDate? = null,
+    var startExecution: LocalDate? = null,
     /* Date of the last execution of the standing order, format YYYY-mm-dd. */
     @Json(name = "end_execution")
-    val endExecution: LocalDate? = null,
+    var endExecution: LocalDate? = null,
 )
 

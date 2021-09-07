@@ -14,12 +14,12 @@ import com.squareup.moshi.Json
 
 data class Xs2aRiskUploadJsonBalance (
     @Json(name = "balance")
-    val balance: Float,
+    var balance: Float,
     @Json(name = "limit")
-    val limit: Float,
+    var limit: Float,
     @Json(name = "available")
-    val available: Float,
+    var available: Float,
     @Json(name = "currency")
-    val currency: CurrencyId? = null
+    var currency: CurrencyId? = null
 )
 

@@ -19,24 +19,24 @@ import java.time.LocalDateTime
 data class Xs2aAccountSnapshotResponse(
     /* Object type, in this case a xs2a_account_snapshot */
     @Json(name = "object")
-    val `object`: String,
+    var `object`: String,
     /* Range in days that were used */
     @Json(name = "days")
-    val days: Int? = null,
+    var days: Int? = null,
     /* The start date in the format yyyy-mm-dd */
     @Json(name = "from")
-    val from: LocalDate? = null,
+    var from: LocalDate? = null,
     /* The end date in the format yyyy-mm-dd */
     @Json(name = "to")
-    val to: LocalDate? = null,
+    var to: LocalDate? = null,
     /* Filter account statements */
     @Json(name = "filters")
-    val filters: List<String>? = null,
+    var filters: List<String>? = null,
     /* 1, if the turnovers were fully categorized, 0 otherwise */
     @Json(name = "all_tags")
-    val allTags: String,
+    var allTags: String,
     /* Creation date of the object */
     @Json(name = "created_at")
-    val createdAt: LocalDateTime
+    var createdAt: LocalDateTime
 )
 

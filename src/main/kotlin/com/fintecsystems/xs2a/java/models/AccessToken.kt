@@ -16,18 +16,18 @@ import java.time.LocalDateTime
 data class AccessToken(
     /* access Token ID */
     @Json(name = "id")
-    val id: String,
+    var id: String,
     /* The Access Token */
     @Json(name = "token")
-    val token: String,
+    var token: String,
     /* The date-time this token expires. Note that the access token is valid for one hour. After one hour you have to refresh the token, to be valid another hour. */
     @Json(name = "valid_until")
-    val validUntil: LocalDateTime? = null,
+    var validUntil: LocalDateTime? = null,
     /* Date of creation */
     @Json(name = "created_at")
-    val createdAt: LocalDateTime,
+    var createdAt: LocalDateTime,
     /* The value bank_user_access_token */
     @Json(name = "object")
-    val `object`: String
+    var `object`: String
 )
 

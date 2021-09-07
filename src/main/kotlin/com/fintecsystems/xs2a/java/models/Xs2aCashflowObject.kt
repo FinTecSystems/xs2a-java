@@ -18,24 +18,24 @@ import com.squareup.moshi.Json
 data class Xs2aCashflowObject (
     /* Relative month, e.g. current is 0, previous month is -1 and so on */
     @Json(name = "month")
-    val month: Int,
+    var month: Int,
     /* Amount of this month incoming transactions */
     @Json(name = "incoming")
-    val incoming: Float,
+    var incoming: Float,
     /* Amount of this month outgoing transactions */
     @Json(name = "outgoing")
-    val outgoing: Float,
+    var outgoing: Float,
     /* The minimum (lowest) balance of the account in that month */
     @Json(name = "minimum_balance")
-    val minimumBalance: Float,
+    var minimumBalance: Float,
     /* A count of this month incoming transactions */
     @Json(name = "incoming_transactions")
-    val incomingTransactions: Int,
+    var incomingTransactions: Int,
     /* A count of this month outgoing transactions */
     @Json(name = "outgoing_transactions")
-    val outgoingTransactions: Int,
+    var outgoingTransactions: Int,
     /* Currency id of above values, e.g. EUR */
     @Json(name = "currency_id")
-    val currencyId: CurrencyId? = null
+    var currencyId: CurrencyId? = null
 )
 

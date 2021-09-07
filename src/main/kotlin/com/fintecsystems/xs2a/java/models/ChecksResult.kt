@@ -12,8 +12,8 @@ import com.squareup.moshi.Json
 
 data class ChecksResult (
     @Json(name = "amount")
-    val amount: Float,
+    var amount: Float,
     @Json(name = "currency")
-    val currency: CurrencyId? = null
+    var currency: CurrencyId? = null
 )
 

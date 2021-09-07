@@ -18,27 +18,27 @@ import java.time.LocalDateTime
 
 data class RiskCalculationsResponse(
     @Json(name = "tags")
-    val tags: List<String>,
+    var tags: List<String>,
     @Json(name = "categories")
-    val categories: List<String>,
+    var categories: List<String>,
     @Json(name = "functions")
-    val functions: List<String>,
+    var functions: List<String>,
     /* A name for this calculation. */
     @Json(name = "name")
-    val name: String,
+    var name: String,
     /* Days */
     @Json(name = "days")
-    val days: Int? = null,
+    var days: Int? = null,
     /* Starting date */
     @Json(name = "from")
-    val from: LocalDateTime? = null,
+    var from: LocalDateTime? = null,
     /* Ending date */
     @Json(name = "to")
-    val to: LocalDateTime? = null,
+    var to: LocalDateTime? = null,
     /* Full months */
     @Json(name = "full_months")
-    val fullMonths: String? = null,
+    var fullMonths: String? = null,
     @Json(name = "results")
-    val results: RiskCalculationsResponseResults
+    var results: RiskCalculationsResponseResults
 )
 

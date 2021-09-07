@@ -13,11 +13,11 @@ import java.time.LocalDateTime
 data class Xs2aCashflowOverviewResponse(
     /* Creation date of the object */
     @Json(name = "created_at")
-    val createdAt: LocalDateTime,
+    var createdAt: LocalDateTime,
     /* Object type, in this case a  xs2a_cashflow_overview */
     @Json(name = "object")
-    val `object`: String,
+    var `object`: String,
     @Json(name = "cashflow")
-    val cashflow: List<Xs2aCashflowObject>
+    var cashflow: List<Xs2aCashflowObject>
 )
 

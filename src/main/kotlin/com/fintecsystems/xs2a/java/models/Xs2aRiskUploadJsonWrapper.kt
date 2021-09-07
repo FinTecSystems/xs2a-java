@@ -12,10 +12,10 @@ import com.squareup.moshi.Json
 
 data class Xs2aRiskUploadJsonWrapper (
     @Json(name = "account")
-    val account: Xs2aRiskUploadJsonAccount,
+    var account: Xs2aRiskUploadJsonAccount,
     @Json(name = "balance")
-    val balance: Xs2aRiskUploadJsonBalance,
+    var balance: Xs2aRiskUploadJsonBalance,
     @Json(name = "turnovers")
-    val turnovers: List<Xs2aRiskUploadJsonTurnoversTurnover>
+    var turnovers: List<Xs2aRiskUploadJsonTurnoversTurnover>
 )
 

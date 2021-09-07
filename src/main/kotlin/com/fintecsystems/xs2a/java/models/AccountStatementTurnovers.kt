@@ -13,15 +13,15 @@ import java.time.LocalDateTime
 
 data class AccountStatementTurnovers(
     @Json(name = "turnovers")
-    val turnovers: List<Turnover>,
+    var turnovers: List<Turnover>,
     /* Date of the account snapshot */
     @Json(name = "date")
-    val date: LocalDateTime,
+    var date: LocalDateTime,
     /* Indicates how many days the account snapshot includes */
     @Json(name = "days")
-    val days: Int? = null,
+    var days: Int? = null,
     /* Array of filters applied */
     @Json(name = "filters")
-    val filters: List<String>
+    var filters: List<String>
 )
 

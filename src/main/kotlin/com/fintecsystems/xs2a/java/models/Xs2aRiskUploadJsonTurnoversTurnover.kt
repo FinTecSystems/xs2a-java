@@ -17,18 +17,18 @@ import java.time.LocalDateTime
 
 data class Xs2aRiskUploadJsonTurnoversTurnover(
     @Json(name = "booking_date")
-    val bookingDate: LocalDateTime,
+    var bookingDate: LocalDateTime,
     @Json(name = "amount")
-    val amount: Float,
+    var amount: Float,
     @Json(name = "currency")
-    val currency: CurrencyId? = null,
+    var currency: CurrencyId? = null,
     @Json(name = "purpose")
-    val purpose: List<String>,
+    var purpose: List<String>,
     @Json(name = "counter_iban")
-    val counterIban: String? = null,
+    var counterIban: String? = null,
     @Json(name = "counter_bic")
-    val counterBic: String? = null,
+    var counterBic: String? = null,
     @Json(name = "counter_holder")
-    val counterHolder: String? = null,
+    var counterHolder: String? = null,
 )
 

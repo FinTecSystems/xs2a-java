@@ -18,24 +18,24 @@ import java.time.LocalDateTime
 data class Xs2aChargebackCheckResponse(
     /* Total count of detected chargeback transactions */
     @Json(name = "chargebacks_count")
-    val chargebacksCount: Int,
+    var chargebacksCount: Int,
     /* Count of chargebacks which was triggered due insufficient funds */
     @Json(name = "chargebacks_coverage")
-    val chargebacksCoverage: Int,
+    var chargebacksCoverage: Int,
     /* Count of chargebacks which was triggered manually */
     @Json(name = "chargebacks_revoked")
-    val chargebacksRevoked: Int,
+    var chargebacksRevoked: Int,
     /* Sum over the amount of all chargebacks */
     @Json(name = "chargebacks_sum_amount")
-    val chargebacksSumAmount: Float,
+    var chargebacksSumAmount: Float,
     /* Currency id of above values, e.g. EUR */
     @Json(name = "currency_id")
-    val currencyId: CurrencyId? = null,
+    var currencyId: CurrencyId? = null,
     /* Object type, in this case a  xs2a_chargeback_check */
     @Json(name = "object")
-    val `object`: String,
+    var `object`: String,
     /* Creation date of the object */
     @Json(name = "created_at")
-    val createdAt: LocalDateTime
+    var createdAt: LocalDateTime
 )
 

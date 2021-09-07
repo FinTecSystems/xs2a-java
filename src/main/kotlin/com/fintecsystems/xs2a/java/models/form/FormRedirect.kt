@@ -14,14 +14,14 @@ import com.squareup.moshi.Json
 data class FormRedirect(
     /* The name of the form element */
     @Json(name = "name")
-    val name: String,
+    var name: String,
     /* The label of the form element */
     @Json(name = "label")
-    val label: String,
+    var label: String,
     /* The label of the back button */
     @Json(name = "back")
-    val back: String,
+    var back: String,
     /* Redirection url */
     @Json(name = "url")
-    val url: String,
+    var url: String,
 ) : FormBase()

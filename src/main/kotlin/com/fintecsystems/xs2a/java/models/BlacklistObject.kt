@@ -14,12 +14,12 @@ import com.squareup.moshi.Json
 data class BlacklistObject (
     /* Blacklist item id */
     @Json(name = "id")
-    val id: String,
+    var id: String,
     /* Type of the entry, e.g. iban */
     @Json(name = "type")
-    val type: String,
+    var type: String,
     /* IBAN */
     @Json(name = "data")
-    val data: String
+    var data: String
 )
 

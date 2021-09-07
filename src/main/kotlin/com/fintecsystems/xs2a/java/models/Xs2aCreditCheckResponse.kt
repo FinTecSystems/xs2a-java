@@ -15,17 +15,17 @@ import java.time.LocalDateTime
 data class Xs2aCreditCheckResponse(
     /* Indicates which checks were performed */
     @Json(name = "checks")
-    val checks: List<String>,
+    var checks: List<String>,
     /* Range in days that were used to calculated and gather the desired information */
     @Json(name = "check_days")
-    val checkDays: Int,
+    var checkDays: Int,
     @Json(name = "results")
-    val results: Xs2aCreditCheckResponseResults,
+    var results: Xs2aCreditCheckResponseResults,
     /* Object type, in this case a  xs2a_credit_check */
     @Json(name = "object")
-    val `object`: String,
+    var `object`: String,
     /* Creation date of the object */
     @Json(name = "created_at")
-    val createdAt: LocalDateTime
+    var createdAt: LocalDateTime
 )
 

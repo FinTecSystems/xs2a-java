@@ -11,6 +11,6 @@ import com.squareup.moshi.Json
 data class Xs2aRiskCalculationsCheck (
     /* Array of objects containing many manditory fields. */
     @Json(name = "calculations")
-    val calculations: List<RiskCalculations>
+    var calculations: List<RiskCalculations>
 )
 

@@ -17,18 +17,18 @@ import com.squareup.moshi.Json
 
 data class Xs2aRiskUploadJsonAccount (
     @Json(name = "holder")
-    val holder: String,
+    var holder: String,
     @Json(name = "description")
-    val description: String,
+    var description: String,
     @Json(name = "iban")
-    val iban: String? = null,
+    var iban: String? = null,
     @Json(name = "country_id")
-    val countryId: CountryId? = null,
+    var countryId: CountryId? = null,
     @Json(name = "bic")
-    val bic: String? = null,
+    var bic: String? = null,
     @Json(name = "bank_name")
-    val bankName: String,
+    var bankName: String,
     @Json(name = "joint_account")
-    val jointAccount: Boolean
+    var jointAccount: Boolean
 )
 
