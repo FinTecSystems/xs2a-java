@@ -18,7 +18,7 @@ This SDK allows you to talk to and consume XS2A API in Java environments.
 ### Gradle
 Add this dependency to your project's build file:
 ```groovy
-implementation 'com.fintecsystems:xs2a-java:1.0.0'
+implementation 'com.fintecsystems:xs2a-java:1.1.0'
 ```
 
 ### Maven
@@ -27,13 +27,13 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.fintecsystems</groupId>
   <artifactId>xs2a-java</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
 </dependency>
 ```
 
 ### Gradle Kotlin DSL
 ```groovy
-implementation("com.fintecsystems:xs2a-java:1.0.0")
+implementation("com.fintecsystems:xs2a-java:1.1.0")
 ```
 
 ## Usage Example
