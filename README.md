@@ -60,6 +60,9 @@ val risk = Xs2aRisk(
 val response = riskService.create(risk)
 ```
 
+## Usage Example (Java)
+An example of creating a xs2a.risk call in Java:
+
 ```java
 // Create a RiskService Instance
 RiskService riskService = new RiskService(apiKey);
