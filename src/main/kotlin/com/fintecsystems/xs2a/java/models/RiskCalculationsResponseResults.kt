@@ -11,7 +11,6 @@ import com.squareup.moshi.Json
 
 data class RiskCalculationsResponseResults (
     @Json(name = "count")
-    @JvmField
     val count: Int? = null,
 )
 

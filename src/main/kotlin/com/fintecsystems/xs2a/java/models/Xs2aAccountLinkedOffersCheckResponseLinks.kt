@@ -13,13 +13,10 @@ import com.squareup.moshi.Json
 
 data class Xs2aAccountLinkedOffersCheckResponseLinks (
     @Json(name = "link")
-    @JvmField
     val link: String,
     @Json(name = "description")
-    @JvmField
     val description: String,
     @Json(name = "image")
-    @JvmField
     val image: String
 )
 

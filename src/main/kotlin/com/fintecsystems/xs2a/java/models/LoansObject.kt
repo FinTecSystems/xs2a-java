@@ -14,15 +14,12 @@ import com.squareup.moshi.Json
 data class LoansObject (
     /* Number of different recognized loan agreements. */
     @Json(name = "loans_count")
-    @JvmField
     val loansCount: Int,
     /* Sum of monthly loan commitments, i. Sum of all rates of current loan commitments. */
     @Json(name = "loans_amount")
-    @JvmField
     val loansAmount: Float,
     /* The number of different subprime lenders is counted in this feature. */
     @Json(name = "subprime_lender_count")
-    @JvmField
     val subprimeLenderCount: Int
 )
 

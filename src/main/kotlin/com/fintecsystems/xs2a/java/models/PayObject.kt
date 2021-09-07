@@ -31,88 +31,67 @@ import com.squareup.moshi.Json
 data class PayObject (
     /* Transaction id */
     @Json(name = "id")
-    @JvmField
     val id: String,
     /* Internal XS2A transaction id. This id will be the same for the whole transaction */
     @Json(name = "transaction")
-    @JvmField
     val transaction: String,
     /* Account holder of the sender account */
     @Json(name = "sender_holder")
-    @JvmField
     val senderHolder: String? = null,
     /* IBAN of the sender account */
     @Json(name = "sender_iban")
-    @JvmField
     val senderIban: String? = null,
     /* BIC of the sender account */
     @Json(name = "sender_bic")
-    @JvmField
     val senderBic: String? = null,
     /* Name of the sender bank */
     @Json(name = "sender_bank_name")
-    @JvmField
     val senderBankName: String? = null,
     /* Two letter country code id, e.g. AT, CH, DE or the sender account */
     @Json(name = "sender_country_id")
-    @JvmField
     val senderCountryId: CountryId? = null,
     /* Account holder of the recipient account */
     @Json(name = "recipient_holder")
-    @JvmField
     val recipientHolder: String? = null,
     /* IBAN of the recipient account */
     @Json(name = "recipient_iban")
-    @JvmField
     val recipientIban: String? = null,
     /* BIC of the recipient account */
     @Json(name = "recipient_bic")
-    @JvmField
     val recipientBic: String? = null,
     /* Name of the recipient bank */
     @Json(name = "recipient_bank_name")
-    @JvmField
     val recipientBankName: String? = null,
     /* Two letter country code id, e.g. AT, CH, DE or the recipient account */
     @Json(name = "recipient_country_id")
-    @JvmField
     val recipientCountryId: CountryId? = null,
     /* Purpose of transfer */
     @Json(name = "purpose")
-    @JvmField
     val purpose: String,
     /* Amount to transfer */
     @Json(name = "amount")
-    @JvmField
     val amount: Float,
     /* Currency id of amount, e.g. 'EUR' */
     @Json(name = "currency_id")
-    @JvmField
     val currencyId: CurrencyId? = null,
     /* Indicates whether or not it is a test transaction */
     @Json(name = "testmode")
-    @JvmField
     val testmode: Boolean,
     /* Payment status of the transaction, values NONE, RECEIVED, LOSS */
     @Json(name = "payment_status")
-    @JvmField
     val paymentStatus: PaymentStatus,
     /* Custom data will be returned unchanged. If no data was submitted, this field will be null */
     @Json(name = "metadata")
-    @JvmField
     val metadata: Map<String, Any>? = null,
     /* Data will be returned unchanged */
     @Json(name = "merchant_id")
-    @JvmField
     val merchantId: String? = null,
     /* Object type, in this case a xs2a_payment */
     @Json(name = "object")
-    @JvmField
     val `object`: String
 )
 
-enum class PaymentStatus(@JvmField
-    val value: String) {
+enum class PaymentStatus(val value: String) {
     @Json(name = "RECEIVED")
     RECEIVED("RECEIVED"),
 

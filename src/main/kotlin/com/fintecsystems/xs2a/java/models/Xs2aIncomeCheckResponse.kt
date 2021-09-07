@@ -11,11 +11,9 @@ import java.time.LocalDateTime
 
 data class Xs2aIncomeCheckResponse(
     @Json(name = "data")
-    @JvmField
     val data: Xs2aIncomeCheckResponseData,
     /* Creation date of the object */
     @Json(name = "created_at")
-    @JvmField
     val createdAt: LocalDateTime
 )
 

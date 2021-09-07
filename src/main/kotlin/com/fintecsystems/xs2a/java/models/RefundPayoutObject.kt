@@ -13,10 +13,8 @@ import java.time.LocalDateTime
 data class RefundPayoutObject(
     /* The message id to get the pain file. */
     @Json(name = "message_id")
-    @JvmField
     val messageId: String,
     @Json(name = "created_at")
-    @JvmField
     val createdAt: LocalDateTime
 )
 

@@ -44,120 +44,85 @@ import java.time.LocalDateTime
 data class RiskObject(
     /* Transaction id */
     @Json(name = "id")
-    @JvmField
     val id: String,
     /* Internal XS2A transaction id. This id will be the same for the whole transaction */
     @Json(name = "transaction")
-    @JvmField
     val transaction: String,
     /* Account holder name */
     @Json(name = "account_holder")
-    @JvmField
     val accountHolder: String,
     /* IBAN */
     @Json(name = "iban")
-    @JvmField
     val iban: String,
     /* BIC */
     @Json(name = "bic")
-    @JvmField
     val bic: String? = null,
     /* Bank name */
     @Json(name = "bank_name")
-    @JvmField
     val bankName: String,
     /* Two letter country code id, e.g. AT, CH, DE */
     @Json(name = "country_id")
-    @JvmField
     val countryId: CountryId? = null,
     /* Indicates whether or not it is a test transaction */
     @Json(name = "testmode")
-    @JvmField
     val testmode: Boolean,
     /* Date of creation */
     @Json(name = "created_at")
-    @JvmField
     val createdAt: LocalDateTime,
     /* Custom data will be returned unchanged. If no data was submitted, this field will be null */
     @Json(name = "metadata")
-    @JvmField
     val metadata: Map<String, Any>? = null,
     /* Data will be returned unchanged */
     @Json(name = "merchant_id")
-    @JvmField
     val merchantId: String? = null,
     /* Object type, in this case a xs2a_risk */
     @Json(name = "object")
-    @JvmField
     val `object`: String,
     @Json(name = "xs2a_account_snapshot")
-    @JvmField
     val xs2aAccountSnapshot: Xs2aAccountSnapshotResponse? = null,
     @Json(name = "xs2a_balance_check")
-    @JvmField
     val xs2aBalanceCheck: Xs2aBalanceCheckResponse? = null,
     @Json(name = "xs2a_balance_overview")
-    @JvmField
     val xs2aBalanceOverview: Xs2aBalanceOverviewResponse? = null,
     @Json(name = "xs2a_cashflow_overview")
-    @JvmField
     val xs2aCashflowOverview: Xs2aCashflowOverviewResponse? = null,
     @Json(name = "xs2a_chargeback_check")
-    @JvmField
     val xs2aChargebackCheck: Xs2aChargebackCheckResponse? = null,
     @Json(name = "xs2a_children_check")
-    @JvmField
     val xs2aChildrenCheck: Xs2aChildrenCheckResponse? = null,
     @Json(name = "xs2a_rating_b2b_check")
-    @JvmField
     val xs2aRatingB2bCheck: Xs2aRatingB2bCheckResponse? = null,
     @Json(name = "xs2a_rating_b2c_check")
-    @JvmField
     val xs2aRatingB2cCheck: Xs2aRatingB2cCheckResponse? = null,
     @Json(name = "xs2a_profit_loss_check")
-    @JvmField
     val xs2aProfitLossCheck: Xs2aProfitLossCheckResponse? = null,
     @Json(name = "xs2a_income_check")
-    @JvmField
     val xs2aIncomeCheck: Xs2aIncomeCheckResponse? = null,
     @Json(name = "xs2a_account_linked_offers_check")
-    @JvmField
     val xs2aAccountLinkedOffersCheck: Xs2aAccountLinkedOffersCheckResponse? = null,
     @Json(name = "xs2a_credit_check")
-    @JvmField
     val xs2aCreditCheck: Xs2aCreditCheckResponse? = null,
     @Json(name = "xs2a_direct_debit_check")
-    @JvmField
     val xs2aDirectDebitCheck: Xs2aDirectDebitCheckResponse? = null,
     @Json(name = "xs2a_fact_sheet_lists")
-    @JvmField
     val xs2aFactSheetLists: Xs2aFactSheetListsResponse? = null,
     @Json(name = "xs2a_overdraft_limit_check")
-    @JvmField
     val xs2aOverdraftLimitCheck: Xs2aOverdraftLimitCheckResponse? = null,
     @Json(name = "xs2a_seizure_check")
-    @JvmField
     val xs2aSeizureCheck: Xs2aSeizureCheckResponse? = null,
     @Json(name = "xs2a_name_check")
-    @JvmField
     val xs2aNameCheck: Xs2aNameCheckResponse? = null,
     @Json(name = "xs2a_standing_orders_check")
-    @JvmField
     val xs2aStandingOrdersCheck: Xs2aStandingOrdersCheckResponse? = null,
     @Json(name = "xs2a_all_accounts_check")
-    @JvmField
     val xs2aAllAccountsCheck: Xs2aAllAccountsCheckResponse? = null,
     @Json(name = "xs2a_account_status_check")
-    @JvmField
     val xs2aAccountStatusCheck: Xs2aAccountStatusCheckResponse? = null,
     @Json(name = "xs2a_holder_identification_check")
-    @JvmField
     val xs2aHolderIdentificationCheck: Xs2aHolderIdentificationCheckResponse? = null,
     @Json(name = "xs2a_risk_calculations_check")
-    @JvmField
     val xs2aRiskCalculationsCheck: Xs2aRiskCalculationsCheckResponse? = null,
     @Json(name = "xs2a_account_characteristics_check")
-    @JvmField
     val xs2aAccountCharacteristicsCheck: Xs2aAccountCharacteristicsCheckResponse? = null,
 )
 

@@ -13,11 +13,9 @@ import com.squareup.moshi.Json
 data class BankConnectionSyncRequest (
     /* **Only required** if the sync mode is *shared*: Your part of the shared credentials. */
     @Json(name = "credentials")
-    @JvmField
     val credentials: String,
     /* If an error occurred during syncing, you may force a retry. If the sync_fail_counter goes up to 3 no more syncs are allowed. */
     @Json(name = "force")
-    @JvmField
     val force: Boolean
 )
 

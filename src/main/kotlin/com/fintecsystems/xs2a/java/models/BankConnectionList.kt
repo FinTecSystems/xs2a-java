@@ -19,38 +19,29 @@ import com.squareup.moshi.Json
 data class BankConnectionList (
     /* Total number of results. */
     @Json(name = "total")
-    @JvmField
     val total: Int,
     /* Number of objects per page */
     @Json(name = "per_page")
-    @JvmField
     val perPage: Int,
     /* Current page. */
     @Json(name = "current_page")
-    @JvmField
     val currentPage: Int,
     /* Last page, usually the total of available pages. */
     @Json(name = "last_page")
-    @JvmField
     val lastPage: Int,
     /* URI to next page. */
     @Json(name = "next_page_url")
-    @JvmField
     val nextPageUrl: String? = null,
     /* URI to previous page. */
     @Json(name = "prev_page_url")
-    @JvmField
     val prevPageUrl: String? = null,
     /* Showing results from index element. */
     @Json(name = "from")
-    @JvmField
     val from: Int? = null,
     /* Showing results to index element. */
     @Json(name = "to")
-    @JvmField
     val to: Int? = null,
     @Json(name = "data")
-    @JvmField
     val data: List<BankConnection>
 )
 

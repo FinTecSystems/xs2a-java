@@ -15,19 +15,15 @@ import com.squareup.moshi.Json
 data class ChargebacksObject (
     /* Total number of chargebacks for lack of cover on all authorized accounts. */
     @Json(name = "chargebacks_coverage_count")
-    @JvmField
     val chargebacksCoverageCount: Int,
     /* Total amount of money, the return debit due to lack of coverage on all authorized accounts. */
     @Json(name = "chargebacks_coverage_amount")
-    @JvmField
     val chargebacksCoverageAmount: Float,
     /* Total number of chargebacks initiated by the Account Holder on all authorized accounts. */
     @Json(name = "chargebacks_revoke_count")
-    @JvmField
     val chargebacksRevokeCount: Int,
     /* Grand total of the chargebacks initiated by the Account Holder on all authorized accounts. */
     @Json(name = "chargebacks_revoke_amount")
-    @JvmField
     val chargebacksRevokeAmount: Float
 )
 

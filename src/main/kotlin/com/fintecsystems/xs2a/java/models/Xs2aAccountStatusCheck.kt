@@ -13,11 +13,9 @@ import com.squareup.moshi.Json
 data class Xs2aAccountStatusCheck (
     /* If needed limit the fetched turnovers to create it. Default 365. Valid Range: 10 - 365 */
     @Json(name = "limit_turnover_days")
-    @JvmField
     val limitTurnoverDays: Int? = null,
     /* True, if you want to receive all accounts including their turnovers */
     @Json(name = "all_accounts")
-    @JvmField
     val allAccounts: Boolean
 )
 

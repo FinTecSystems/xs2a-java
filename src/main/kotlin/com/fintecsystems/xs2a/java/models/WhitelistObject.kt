@@ -13,11 +13,9 @@ import com.squareup.moshi.Json
 data class WhitelistObject (
     /* Whitelist item id */
     @Json(name = "id")
-    @JvmField
     val id: String,
     /* Hashed representation of iban */
     @Json(name = "hash")
-    @JvmField
     val hash: String
 )
 

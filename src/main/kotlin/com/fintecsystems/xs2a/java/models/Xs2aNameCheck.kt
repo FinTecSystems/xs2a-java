@@ -13,11 +13,9 @@ import com.squareup.moshi.Json
 data class Xs2aNameCheck (
     /* Name to compare against. Usually the surname. */
     @Json(name = "name")
-    @JvmField
     val name: String,
     /* Firstname to compare against. */
     @Json(name = "firstname")
-    @JvmField
     val firstname: String
 )
 

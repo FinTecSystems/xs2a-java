@@ -11,10 +11,8 @@ import com.squareup.moshi.Json
 
 data class Xs2aCreditCheckResponseResults (
     @Json(name = "income")
-    @JvmField
     val income: ChecksResult? = null,
     @Json(name = "rent")
-    @JvmField
     val rent: ChecksResult? = null,
 )
 

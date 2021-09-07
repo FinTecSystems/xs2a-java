@@ -12,13 +12,10 @@ import com.squareup.moshi.Json
 
 data class AccountStatement (
     @Json(name = "account")
-    @JvmField
     val account: AccountStatementAccount,
     @Json(name = "balance")
-    @JvmField
     val balance: AccountStatementBalance,
     @Json(name = "turnovers")
-    @JvmField
     val turnovers: AccountStatementTurnovers
 )
 

@@ -13,10 +13,8 @@ import com.squareup.moshi.Json
 data class Xs2aRatingB2cCheckResponse (
     /* Rating from A - F */
     @Json(name = "rating")
-    @JvmField
     val rating: String,
     @Json(name = "version")
-    @JvmField
     val version: String
 )
 

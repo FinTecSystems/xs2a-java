@@ -12,11 +12,9 @@ import com.squareup.moshi.Json
 data class FormObject(
     /* ??? */
     @Json(name = "name")
-    @JvmField
     val name: String,
     /* Contains the elements of the form. Can contain any of 'Form.Element' */
     @Json(name = "elements")
-    @JvmField
     val elements: Array<FormBase>
 ) {
     override fun equals(other: Any?): Boolean {

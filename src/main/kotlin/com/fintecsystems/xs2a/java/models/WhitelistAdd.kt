@@ -12,7 +12,6 @@ import com.squareup.moshi.Json
 data class WhitelistAdd (
     /* A valid IBAN to whitelist. */
     @Json(name = "iban")
-    @JvmField
     val iban: String
 )
 

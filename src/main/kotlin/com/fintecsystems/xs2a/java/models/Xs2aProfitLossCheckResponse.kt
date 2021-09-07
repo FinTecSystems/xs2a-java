@@ -10,7 +10,6 @@ import com.squareup.moshi.Json
 
 data class Xs2aProfitLossCheckResponse (
     @Json(name = "result")
-    @JvmField
     val result: Xs2aProfitLossCheckResponseResult
 )
 

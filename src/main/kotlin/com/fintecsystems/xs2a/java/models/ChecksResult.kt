@@ -12,10 +12,8 @@ import com.squareup.moshi.Json
 
 data class ChecksResult (
     @Json(name = "amount")
-    @JvmField
     val amount: Float,
     @Json(name = "currency")
-    @JvmField
     val currency: CurrencyId? = null
 )
 
