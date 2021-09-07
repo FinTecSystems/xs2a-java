@@ -103,6 +103,8 @@ javadoc {
 
 task generateDocs(dependsOn: dokkaHtml) {
     doLast {
+        delete "${rootDir}/docs"
+
         file("${buildDir}/dokka/html")
             .renameTo(file("${rootDir}/docs"))
     }
