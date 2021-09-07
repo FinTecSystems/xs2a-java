@@ -89,7 +89,7 @@ WizardSessionResponse response = riskService.create(risk);
 ## Testing & Development
 
 ### Running tests
-For the tests to be able to run you have to provide an API-Key to the environment.
+For the tests to be able to run you have to provide the variable `API_KEY` to the environment.
 
 ```shell
 ./gradlew test
