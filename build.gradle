@@ -97,7 +97,7 @@ javadoc {
 
 task generateDocs(dependsOn: dokkaHtml) {
     doLast {
-        ant.move file: "${buildDir}/dokka/html",
-                todir: "${rootDir}/kdocs"
+        file("${buildDir}/dokka/html")
+            .renameTo(file("${rootDir}/docs"))
     }
 }
