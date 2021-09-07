@@ -24,10 +24,6 @@ test {
     useJUnitPlatform()
 }
 
-group = 'com.fintecsystems'
-archivesBaseName = 'xs2a-java'
-version = '1.0.0'
-
 java {
     withJavadocJar()
     withSourcesJar()
@@ -36,22 +32,26 @@ java {
 publishing {
     publications {
         xs2aJava(MavenPublication) {
-            groupId = group
-            artifactId = 'xs2a-java'
-            version = version
+            groupId = GROUP
+            artifactId = POM_ARTIFACT_ID
+            version = VERSION_NAME
 
             from components.java
 
             pom {
-                name = 'XS2A Java'
-                description = 'Java SDK for XS2A API'
-                url = 'https://github.com/FinTecSystems/xs2a-java'
+                name = POM_NAME
+                description = POM_DESCRIPTION
+                url = POM_URL
+                packaging = POM_PACKAGING
+
                 licenses {
                     license {
-                        name = 'MIT'
-                        url = 'https://opensource.org/licenses/mit-license.php'
+                        name = POM_LICENCE_NAME
+                        url = POM_LICENCE_URL
+                        distribution = POM_LICENCE_DIST
                     }
                 }
+
                 developers {
                     developer {
                         id = 'maik-mursall'
@@ -64,10 +64,16 @@ publishing {
                         email = 'ffritz@fintecsystems.com'
                     }
                 }
+
+                organization {
+                    name = POM_ORGANIZATION_NAME
+                    url = POM_ORGANIZATION_URL
+                }
+
                 scm {
-                    connection = 'https://github.com/FinTecSystems/xs2a-java.git'
-                    developerConnection = 'https://github.com/FinTecSystems/xs2a-java/issues'
-                    url = 'https://github.com/FinTecSystems/xs2a-java'
+                    connection = POM_SCM_CONNECTION
+                    developerConnection = POM_SCM_DEV_CONNECTION
+                    url = POM_SCM_URL
                 }
             }
         }
