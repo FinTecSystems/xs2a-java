@@ -6,6 +6,7 @@ offers Access-to-Account services under the XS2A API.
 
 This SDK allows you to talk to and consume XS2A API in Java environments.
 
+- [SDK Documentation (Dokka)](https://docs.fintecsystems.com/xs2a-java/)
 - [API Reference](https://docs.fintecsystems.com)
 - [FinTecSystems Homepage](https://fintecsystems.com)
 
