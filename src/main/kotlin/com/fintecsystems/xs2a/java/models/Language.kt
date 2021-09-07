@@ -10,7 +10,8 @@ import com.squareup.moshi.Json
 */
 
 
-enum class Language(val value: String) {
+enum class Language(@JvmField
+    val value: String) {
 
 
     @Json(name = "de")

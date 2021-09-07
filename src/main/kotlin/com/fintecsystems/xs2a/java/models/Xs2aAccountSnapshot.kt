@@ -16,24 +16,31 @@ import java.time.LocalDate
 data class Xs2aAccountSnapshot(
     /* Range in days which should be used (min value: 10, max value: 365) */
     @Json(name = "days")
+    @JvmField
     val days: Int? = null,
     /* A date in the format yyyy-mm-dd */
     @Json(name = "from")
+    @JvmField
     val from: LocalDate? = null,
     /* A date in the format yyyy-mm-dd */
     @Json(name = "to")
+    @JvmField
     val to: LocalDate? = null,
     @Json(name = "filters")
+    @JvmField
     val filters: List<String>? = null,
     /* True, if you want to receive all accounts including their turnovers */
     @Json(name = "all_accounts")
+    @JvmField
     val allAccounts: Boolean,
     /* True, if you want full categorization of the turnovers */
     @Json(name = "all_tags")
+    @JvmField
     val allTags: Boolean
 )
 
-enum class AccountSnapshotFormat(val value: String) {
+enum class AccountSnapshotFormat(@JvmField
+    val value: String) {
     @Json(name = "pdf")
     PDF("pdf"),
 

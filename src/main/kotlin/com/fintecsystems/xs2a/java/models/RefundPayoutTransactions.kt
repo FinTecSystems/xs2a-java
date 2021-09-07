@@ -14,12 +14,15 @@ import com.squareup.moshi.Json
 data class RefundPayoutTransactions (
     /* Internal XS2A transaction id. This id will be the same for the whole transaction. */
     @Json(name = "transaction")
+    @JvmField
     val transaction: String,
     /* The amount of a given payout or refund. */
     @Json(name = "amount")
+    @JvmField
     val amount: Float,
     /* The type is payout or refund. */
     @Json(name = "type")
+    @JvmField
     val type: Type
 ) {
 
@@ -27,7 +30,8 @@ data class RefundPayoutTransactions (
      * The type is payout or refund.
      * Values: refund,payout
      */
-    enum class Type(val value: String) {
+    enum class Type(@JvmField
+    val value: String) {
         @Json(name = "refund") REFUND("refund"),
         @Json(name = "payout") PAYOUT("payout");
     }

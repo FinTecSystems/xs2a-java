@@ -14,15 +14,20 @@ import java.time.LocalDateTime
 
 data class Xs2aFactSheetListsResponse(
     @Json(name = "fields")
+    @JvmField
     val fields: List<Xs2aFactSheetListsResponseFields>,
     @Json(name = "days")
+    @JvmField
     val days: Int? = null,
     @Json(name = "result")
+    @JvmField
     val result: List<Any>,
     /* Creation date of the object */
     @Json(name = "created_at")
+    @JvmField
     val createdAt: LocalDateTime,
     @Json(name = "object")
+    @JvmField
     val `object`: String
 )
 

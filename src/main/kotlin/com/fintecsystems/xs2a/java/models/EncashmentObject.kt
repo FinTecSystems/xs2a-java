@@ -14,12 +14,15 @@ import com.squareup.moshi.Json
 data class EncashmentObject (
     /* Number of all bookings to debt collection agencies / departments / lawyers. */
     @Json(name = "collection_count")
+    @JvmField
     val collectionCount: Int,
     /* Total of all bookings to debt collection agencies / departments. */
     @Json(name = "collection_amount")
+    @JvmField
     val collectionAmount: Float,
     /* Number of different counterholders */
     @Json(name = "collection_office_count")
+    @JvmField
     val collectionOfficeCount: Int
 )
 

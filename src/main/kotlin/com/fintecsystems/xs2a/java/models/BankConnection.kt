@@ -26,45 +26,59 @@ import java.time.LocalDateTime
 data class BankConnection(
     /* Bank Connection ID */
     @Json(name = "id")
+    @JvmField
     val id: String,
     /* Internally used XS2A transaction id. */
     @Json(name = "transaction")
+    @JvmField
     val transaction: String,
     /* BIC of the bank of the bank connection */
     @Json(name = "bic")
+    @JvmField
     val bic: String? = null,
     /* The name of the bank of the bank connection */
     @Json(name = "bank_name")
+    @JvmField
     val bankName: String,
     /* 2 letter country ID */
     @Json(name = "country_id")
+    @JvmField
     val countryId: CountryId? = null,
     /* The mode how the bank connection is synced. full, shared or none. */
     @Json(name = "sync_mode")
+    @JvmField
     val syncMode: SyncMode? = null,
     /* Indicates whether the sync is active */
     @Json(name = "sync_active")
+    @JvmField
     val syncActive: Boolean,
     /* ??? */
     @Json(name = "sync_message")
+    @JvmField
     val syncMessage: String,
     /* A counter of failed syncs for this connection */
     @Json(name = "sync_fail_counter")
+    @JvmField
     val syncFailCounter: Int,
     /* The date when the connection was last synced */
     @Json(name = "last_synced")
+    @JvmField
     val lastSynced: LocalDateTime,
     /* The consent is valid until the given date (Format: YYYY-MM-DD). */
     @Json(name = "consent_valid_until")
+    @JvmField
     val consentValidUntil: LocalDate? = null,
     /* Indicates whether this bank connection is in test mode */
     @Json(name = "testmode")
+    @JvmField
     val testmode: Boolean,
     /* Date of creation */
     @Json(name = "created_at")
+    @JvmField
     val createdAt: LocalDateTime,
     /* The value bank_connection */
     @Json(name = "object")
+    @JvmField
     val `object`: String
 ) {
 
@@ -72,7 +86,8 @@ data class BankConnection(
      * The mode, how to sync the bank connection. full, shared or none.
      * Values: full,shared,none
      */
-    enum class SyncMode(val value: String) {
+    enum class SyncMode(@JvmField
+    val value: String) {
         @Json(name = "full")
         FULL("full"),
 
@@ -87,7 +102,8 @@ data class BankConnection(
      * Mode of account selection. If \"all\" is given, all available accounts from this bankconnection will be used. If \"single\"/\"multi\" is given, the customer can pick single/multiple accounts from this connection which will be used.
      * Values: all,multi,single
      */
-    enum class AccountSelection(val value: String) {
+    enum class AccountSelection(@JvmField
+    val value: String) {
         @Json(name = "all")
         ALL("all"),
 
@@ -102,7 +118,8 @@ data class BankConnection(
      * Desired language in which the customer interface will be rendered with.
      * Values: de,en,fr,es,it
      */
-    enum class Language(val value: String) {
+    enum class Language(@JvmField
+    val value: String) {
         @Json(name = "de")
         DE("de"),
 

@@ -13,11 +13,14 @@ import com.squareup.moshi.Json
 data class MatchesObject (
     /* name of the expected holder */
     @Json(name = "expected_holder")
+    @JvmField
     val expectedHolder: String,
     @Json(name = "match")
+    @JvmField
     val match: MatchType
 ) {
-    enum class MatchType(val value: String) {
+    enum class MatchType(@JvmField
+    val value: String) {
         @Json(name = "NONE")
         NONE("NONE"),
 

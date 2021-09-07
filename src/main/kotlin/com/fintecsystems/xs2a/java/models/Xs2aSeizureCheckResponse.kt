@@ -15,15 +15,19 @@ import java.time.LocalDateTime
 data class Xs2aSeizureCheckResponse(
     /* 1 if the customers account is a seizure account, 0 if otherwise */
     @Json(name = "is_seizure")
+    @JvmField
     val isSeizure: Int,
     /* The limit of turnover days for this check */
     @Json(name = "days")
+    @JvmField
     val days: Int? = null,
     /* Object type, in this case a  xs2a_seizure_check */
     @Json(name = "object")
+    @JvmField
     val `object`: String,
     /* Creation date of the object */
     @Json(name = "created_at")
+    @JvmField
     val createdAt: LocalDateTime
 )
 

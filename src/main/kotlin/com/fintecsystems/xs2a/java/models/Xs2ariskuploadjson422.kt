@@ -12,8 +12,10 @@ import com.squareup.moshi.Json
 
 data class Xs2ariskuploadjson422 (
     @Json(name = "code")
+    @JvmField
     val code: Int,
     @Json(name = "message")
+    @JvmField
     val message: String
 )
 

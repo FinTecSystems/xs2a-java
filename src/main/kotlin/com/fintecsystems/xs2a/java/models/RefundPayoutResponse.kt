@@ -12,6 +12,7 @@ import com.squareup.moshi.Json
 data class RefundPayoutResponse (
     /* The message id to get the pain file. */
     @Json(name = "message_id")
+    @JvmField
     val messageId: String
 )
 

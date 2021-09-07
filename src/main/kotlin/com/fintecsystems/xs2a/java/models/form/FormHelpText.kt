@@ -13,9 +13,11 @@ import com.squareup.moshi.Json
 data class FormHelpText (
     /* The title of the form element */
     @Json(name = "title")
+    @JvmField
     val title: String,
     /* The text of the form element */
     @Json(name = "text")
+    @JvmField
     val text: String
 ) : FormBase()
 

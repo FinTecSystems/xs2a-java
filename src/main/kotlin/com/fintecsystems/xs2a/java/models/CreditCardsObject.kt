@@ -17,19 +17,25 @@ import com.squareup.moshi.Json
 data class CreditCardsObject (
     /* name of the account holder */
     @Json(name = "holder")
+    @JvmField
     val holder: String,
     /* credit card number, shaded */
     @Json(name = "iban")
+    @JvmField
     val iban: String,
     @Json(name = "bic")
+    @JvmField
     val bic: String? = null,
     @Json(name = "country_id")
+    @JvmField
     val countryId: CountryId? = null,
     /* name of the bank */
     @Json(name = "bank_name")
+    @JvmField
     val bankName: String,
     /* type of the credit card */
     @Json(name = "description")
+    @JvmField
     val description: String
 )
 

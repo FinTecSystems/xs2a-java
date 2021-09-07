@@ -13,9 +13,11 @@ import com.squareup.moshi.Json
 data class ExpectedHolderObject (
     /* The first name */
     @Json(name = "firstname")
+    @JvmField
     val firstname: String,
     /* The last name */
     @Json(name = "name")
+    @JvmField
     val name: String
 )
 

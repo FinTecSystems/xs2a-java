@@ -12,6 +12,7 @@ import com.squareup.moshi.Json
 data class Xs2aSeizureCheck (
     /* The limit of turnover days for this check */
     @Json(name = "days")
+    @JvmField
     val days: Int?
 )
 

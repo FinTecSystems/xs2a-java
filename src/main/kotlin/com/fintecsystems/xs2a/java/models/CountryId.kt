@@ -2,7 +2,8 @@ package com.fintecsystems.xs2a.java.models
 
 import com.squareup.moshi.Json
 
-enum class CountryId(val value: String) {
+enum class CountryId(@JvmField
+    val value: String) {
     @Json(name = "DE") DE("DE"),
     @Json(name = "AT") AT("AT"),
     @Json(name = "CH") CH("CH"),

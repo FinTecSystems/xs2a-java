@@ -17,17 +17,23 @@ import com.squareup.moshi.Json
 data class OtherAccountsObject (
     /* name of the account holder */
     @Json(name = "holder")
+    @JvmField
     val holder: String,
     @Json(name = "iban")
+    @JvmField
     val iban: String,
     @Json(name = "bic")
+    @JvmField
     val bic: String? = null,
     @Json(name = "country_id")
+    @JvmField
     val countryId: CountryId? = null,
     /* name of the bank */
     @Json(name = "bank_name")
+    @JvmField
     val bankName: String,
     @Json(name = "type")
+    @JvmField
     val type: String
 )
 

@@ -17,21 +17,27 @@ import com.squareup.moshi.Json
 data class AccountStatementAccount (
     /* Name of the account holder */
     @Json(name = "holder")
+    @JvmField
     val holder: String,
     /* Name of the account */
     @Json(name = "description")
+    @JvmField
     val description: String,
     /* IBAN of the account */
     @Json(name = "iban")
+    @JvmField
     val iban: String,
     /* BIC of the account */
     @Json(name = "bic")
+    @JvmField
     val bic: String? = null,
     /* 2-letter country code of the account */
     @Json(name = "country_id")
+    @JvmField
     val countryId: CountryId? = null,
     /* Indicates whether this is a joint account */
     @Json(name = "joint_account")
+    @JvmField
     val jointAccount: Boolean
 )
 
