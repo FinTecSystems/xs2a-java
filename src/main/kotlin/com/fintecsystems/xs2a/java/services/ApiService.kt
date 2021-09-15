@@ -10,10 +10,11 @@ import java.io.IOException
 
 
 class ApiService(
-    private val apiKey: String
+    private val apiKey: String,
+    private val endpointVersion: String = "v1"
 ) {
     private val client = OkHttpClient()
-    private val basePath = "https://api.xs2a.com/v1"
+    private val basePath = "https://api.xs2a.com/$endpointVersion"
     private val mediaType: MediaType = "application/json; charset=utf-8".toMediaType()
 
 
@@ -21,6 +22,8 @@ class ApiService(
     fun post(url: String, json: String = ""): String {
         val body = json.toRequestBody(mediaType)
         val request = constructRequest(url) { it.post(body) }
+
+        println(request.url)
 
         return processResponse(request)
     }
@@ -48,7 +51,7 @@ class ApiService(
         val urlToRequest: HttpUrl = HttpUrl.Builder()
             .scheme("https")
             .host("api.xs2a.com")
-            .addPathSegment("v1")
+            .addPathSegment(endpointVersion)
             .addEncodedPathSegments(url)
             .apply {
                 queryParameters.forEach { (k, v) ->

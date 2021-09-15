@@ -8,7 +8,9 @@ class WizardService(
 ) {
 
     fun navigate(body: Map<String, Any>): WizardResponse {
-        val response = ApiService(apiKey).post("wizard", JsonSerializer.toJson(body))
+        val response = ApiService(apiKey, "v1.1").post("wizard", JsonSerializer.toJson(body))
+
+        println(response)
 
         return JsonSerializer.parseJson(response)
     }
