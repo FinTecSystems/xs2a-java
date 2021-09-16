@@ -23,8 +23,6 @@ class ApiService(
         val body = json.toRequestBody(mediaType)
         val request = constructRequest(url) { it.post(body) }
 
-        println(request.url)
-
         return processResponse(request)
     }
 
