@@ -4,6 +4,7 @@ import com.squareup.moshi.*
 import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.fintecsystems.xs2a.java.models.form.*
+import com.fintecsystems.xs2a.java.models.form.radio.FormRadio
 
 object JsonSerializer {
     val moshi: Moshi = Moshi.Builder()

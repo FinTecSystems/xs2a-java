@@ -1,6 +1,7 @@
-package com.fintecsystems.xs2a.java.models.form
+package com.fintecsystems.xs2a.java.models.form.radio
 
 
+import com.fintecsystems.xs2a.java.models.form.FormNameBase
 import com.squareup.moshi.Json
 
 /**
@@ -21,10 +22,10 @@ data class FormRadio(
     override var name: String,
     /* Index of the checked element */
     @Json(name = "checked")
-    var checked: String,
+    var checked: Int,
     /* An array of possible options */
     @Json(name = "options")
-    var options: Any,
+    var options: List<FormRadioOption>,
     /* The label of the form element */
     @Json(name = "label")
     var label: String,

@@ -1,5 +1,6 @@
 import com.fintecsystems.xs2a.java.models.*
 import com.fintecsystems.xs2a.java.models.form.*
+import com.fintecsystems.xs2a.java.models.form.radio.FormRadio
 import org.junit.jupiter.api.Test
 import com.fintecsystems.xs2a.java.services.RiskService
 import com.fintecsystems.xs2a.java.services.WizardService

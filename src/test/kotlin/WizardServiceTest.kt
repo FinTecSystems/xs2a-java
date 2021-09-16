@@ -1,5 +1,6 @@
 import com.fintecsystems.xs2a.java.models.*
 import com.fintecsystems.xs2a.java.models.form.*
+import com.fintecsystems.xs2a.java.models.form.radio.FormRadio
 import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestMethodOrder
@@ -11,14 +12,14 @@ import kotlin.reflect.full.isSubclassOf
 
 @TestMethodOrder(OrderAnnotation::class)
 internal class WizardServiceTest {
-    private fun getSelectIndex(key: String, options: List<String>) = options.indexOf(key)
+    private fun getSelectIndex(key: String, options: Map<String, String>) = options.values.indexOf(key)
 
     private fun getValueOfFormSelect(value: String, formSelect: FormSelect): Int {
-        assert(formSelect.options is List<*>)
+        assert(formSelect.options is Map<*, *>)
 
         // Cast is safe because of assertion.
         @Suppress("UNCHECKED_CAST")
-        return getSelectIndex(value, (formSelect.options as List<String>))
+        return getSelectIndex(value, (formSelect.options as Map<String, String>))
     }
 
     private fun navigateResponseWithKey(key: String, responseToNavigate: WizardResponse) =
