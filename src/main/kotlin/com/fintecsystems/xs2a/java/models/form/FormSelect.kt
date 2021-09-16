@@ -6,8 +6,8 @@ import com.squareup.moshi.Json
 /**
  *
  * @param name The name of the form element
- * @param selected Index of the checked element
- * @param options Object with key value
+ * @param selected Key of the checked element
+ * @param options Object with key as key and value as label
  * @param label The label of the form element
  * @param validation List of validation rules, concatenated with a pipe character
  * @param invalid Indicates whether the validation of the element failed
@@ -19,12 +19,12 @@ data class FormSelect(
     /* The name of the form element */
     @Json(name = "name")
     override var name: String,
-    /* Index of the checked element */
+    /* Key of the checked element */
     @Json(name = "selected")
-    var selected: Any,
-    /* Object with key value or array */
+    var selected: String,
+    /* Object with key as key and value as label */
     @Json(name = "options")
-    var options: Any,
+    var options: Map<String, String>,
     /* The label of the form element */
     @Json(name = "label")
     var label: String,

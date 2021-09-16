@@ -14,13 +14,8 @@ import kotlin.reflect.full.isSubclassOf
 internal class WizardServiceTest {
     private fun getSelectIndex(key: String, options: Map<String, String>) = options.values.indexOf(key)
 
-    private fun getValueOfFormSelect(value: String, formSelect: FormSelect): Int {
-        assert(formSelect.options is Map<*, *>)
-
-        // Cast is safe because of assertion.
-        @Suppress("UNCHECKED_CAST")
-        return getSelectIndex(value, (formSelect.options as Map<String, String>))
-    }
+    private fun getValueOfFormSelect(value: String, formSelect: FormSelect): Int =
+        getSelectIndex(value, formSelect.options)
 
     private fun navigateResponseWithKey(key: String, responseToNavigate: WizardResponse) =
         (responseToNavigate.form?.elements?.get(1) as FormSelect).let {
@@ -36,7 +31,11 @@ internal class WizardServiceTest {
         *pairs
     )
 
-    private fun testSelectRoute(key: String, typesToTest: List<Pair<KClass<out FormBase>, Any>>, customTest: ((WizardResponse) -> Unit) = {}) {
+    private fun testSelectRoute(
+        key: String,
+        typesToTest: List<Pair<KClass<out FormBase>, Any>>,
+        customTest: ((WizardResponse) -> Unit) = {}
+    ) {
         response = navigateResponseWithKey(key, response)
 
         // Test if all elements are present.
