@@ -23,6 +23,21 @@ $dokka.location:com.fintecsystems.xs2a.java.helper/NullableBoolean/NullableBoole
 $dokka.location:com.fintecsystems.xs2a.java.helper/NullableBooleanAdapter///PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.helper/-nullable-boolean-adapter/index.html
 $dokka.location:com.fintecsystems.xs2a.java.helper/NullableBooleanAdapter/fromJson/#kotlin.Any/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.helper/-nullable-boolean-adapter/from-json.html
 $dokka.location:com.fintecsystems.xs2a.java.helper/NullableBooleanAdapter/toJson/#kotlin.Boolean?/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.helper/-nullable-boolean-adapter/to-json.html
+$dokka.location:com.fintecsystems.xs2a.java.models.form.radio////PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form.radio/index.html
+$dokka.location:com.fintecsystems.xs2a.java.models.form.radio/FormRadio///PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form.radio/-form-radio/index.html
+$dokka.location:com.fintecsystems.xs2a.java.models.form.radio/FormRadio/FormRadio/#kotlin.String#kotlin.Int#kotlin.collections.List[com.fintecsystems.xs2a.java.models.form.radio.FormRadioOption]#kotlin.String#kotlin.String#kotlin.Boolean#kotlin.Any#kotlin.String/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form.radio/-form-radio/-form-radio.html
+$dokka.location:com.fintecsystems.xs2a.java.models.form.radio/FormRadio/checked/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form.radio/-form-radio/checked.html
+$dokka.location:com.fintecsystems.xs2a.java.models.form.radio/FormRadio/failedValidationRules/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form.radio/-form-radio/failed-validation-rules.html
+$dokka.location:com.fintecsystems.xs2a.java.models.form.radio/FormRadio/invalid/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form.radio/-form-radio/invalid.html
+$dokka.location:com.fintecsystems.xs2a.java.models.form.radio/FormRadio/label/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form.radio/-form-radio/label.html
+$dokka.location:com.fintecsystems.xs2a.java.models.form.radio/FormRadio/name/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form.radio/-form-radio/name.html
+$dokka.location:com.fintecsystems.xs2a.java.models.form.radio/FormRadio/options/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form.radio/-form-radio/options.html
+$dokka.location:com.fintecsystems.xs2a.java.models.form.radio/FormRadio/validation/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form.radio/-form-radio/validation.html
+$dokka.location:com.fintecsystems.xs2a.java.models.form.radio/FormRadio/validationError/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form.radio/-form-radio/validation-error.html
+$dokka.location:com.fintecsystems.xs2a.java.models.form.radio/FormRadioOption///PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form.radio/-form-radio-option/index.html
+$dokka.location:com.fintecsystems.xs2a.java.models.form.radio/FormRadioOption/FormRadioOption/#kotlin.String#kotlin.Boolean/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form.radio/-form-radio-option/-form-radio-option.html
+$dokka.location:com.fintecsystems.xs2a.java.models.form.radio/FormRadioOption/disabled/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form.radio/-form-radio-option/disabled.html
+$dokka.location:com.fintecsystems.xs2a.java.models.form.radio/FormRadioOption/label/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form.radio/-form-radio-option/label.html
 $dokka.location:com.fintecsystems.xs2a.java.models.form////PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/index.html
 $dokka.location:com.fintecsystems.xs2a.java.models.form/FormBase///PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-base/index.html
 $dokka.location:com.fintecsystems.xs2a.java.models.form/FormCaptcha///PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-captcha/index.html
@@ -89,16 +104,6 @@ $dokka.location:com.fintecsystems.xs2a.java.models.form/FormPassword/name/#/Poin
 $dokka.location:com.fintecsystems.xs2a.java.models.form/FormPassword/validation/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-password/validation.html
 $dokka.location:com.fintecsystems.xs2a.java.models.form/FormPassword/validationError/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-password/validation-error.html
 $dokka.location:com.fintecsystems.xs2a.java.models.form/FormPassword/value/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-password/value.html
-$dokka.location:com.fintecsystems.xs2a.java.models.form/FormRadio///PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-radio/index.html
-$dokka.location:com.fintecsystems.xs2a.java.models.form/FormRadio/FormRadio/#kotlin.String#kotlin.String#kotlin.Any#kotlin.String#kotlin.String#kotlin.Boolean#kotlin.Any#kotlin.String/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-radio/-form-radio.html
-$dokka.location:com.fintecsystems.xs2a.java.models.form/FormRadio/checked/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-radio/checked.html
-$dokka.location:com.fintecsystems.xs2a.java.models.form/FormRadio/failedValidationRules/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-radio/failed-validation-rules.html
-$dokka.location:com.fintecsystems.xs2a.java.models.form/FormRadio/invalid/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-radio/invalid.html
-$dokka.location:com.fintecsystems.xs2a.java.models.form/FormRadio/label/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-radio/label.html
-$dokka.location:com.fintecsystems.xs2a.java.models.form/FormRadio/name/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-radio/name.html
-$dokka.location:com.fintecsystems.xs2a.java.models.form/FormRadio/options/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-radio/options.html
-$dokka.location:com.fintecsystems.xs2a.java.models.form/FormRadio/validation/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-radio/validation.html
-$dokka.location:com.fintecsystems.xs2a.java.models.form/FormRadio/validationError/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-radio/validation-error.html
 $dokka.location:com.fintecsystems.xs2a.java.models.form/FormRedirect///PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-redirect/index.html
 $dokka.location:com.fintecsystems.xs2a.java.models.form/FormRedirect/FormRedirect/#kotlin.String#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-redirect/-form-redirect.html
 $dokka.location:com.fintecsystems.xs2a.java.models.form/FormRedirect/back/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-redirect/back.html
@@ -106,7 +111,7 @@ $dokka.location:com.fintecsystems.xs2a.java.models.form/FormRedirect/label/#/Poi
 $dokka.location:com.fintecsystems.xs2a.java.models.form/FormRedirect/name/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-redirect/name.html
 $dokka.location:com.fintecsystems.xs2a.java.models.form/FormRedirect/url/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-redirect/url.html
 $dokka.location:com.fintecsystems.xs2a.java.models.form/FormSelect///PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-select/index.html
-$dokka.location:com.fintecsystems.xs2a.java.models.form/FormSelect/FormSelect/#kotlin.String#kotlin.Any#kotlin.Any#kotlin.String#kotlin.String#kotlin.Boolean#kotlin.Any#kotlin.String/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-select/-form-select.html
+$dokka.location:com.fintecsystems.xs2a.java.models.form/FormSelect/FormSelect/#kotlin.String#kotlin.String#kotlin.collections.Map[kotlin.String,kotlin.String]#kotlin.String#kotlin.String#kotlin.Boolean#kotlin.Any#kotlin.String/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-select/-form-select.html
 $dokka.location:com.fintecsystems.xs2a.java.models.form/FormSelect/failedValidationRules/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-select/failed-validation-rules.html
 $dokka.location:com.fintecsystems.xs2a.java.models.form/FormSelect/invalid/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-select/invalid.html
 $dokka.location:com.fintecsystems.xs2a.java.models.form/FormSelect/label/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.form/-form-select/label.html
@@ -1305,7 +1310,7 @@ $dokka.location:com.fintecsystems.xs2a.java.services/ApiBankUserService/list/#ko
 $dokka.location:com.fintecsystems.xs2a.java.services/ApiBankUserService/listAccessTokens/#kotlin.String/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.services/-api-bank-user-service/list-access-tokens.html
 $dokka.location:com.fintecsystems.xs2a.java.services/ApiBankUserService/refreshAccessToken/#kotlin.String#kotlin.String#java.time.LocalDateTime/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.services/-api-bank-user-service/refresh-access-token.html
 $dokka.location:com.fintecsystems.xs2a.java.services/ApiService///PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.services/-api-service/index.html
-$dokka.location:com.fintecsystems.xs2a.java.services/ApiService/ApiService/#kotlin.String/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.services/-api-service/-api-service.html
+$dokka.location:com.fintecsystems.xs2a.java.services/ApiService/ApiService/#kotlin.String#kotlin.String/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.services/-api-service/-api-service.html
 $dokka.location:com.fintecsystems.xs2a.java.services/ApiService/delete/#kotlin.String/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.services/-api-service/delete.html
 $dokka.location:com.fintecsystems.xs2a.java.services/ApiService/get/#kotlin.String#kotlin.collections.MutableMap[kotlin.String,kotlin.Any?]/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.services/-api-service/get.html
 $dokka.location:com.fintecsystems.xs2a.java.services/ApiService/patch/#kotlin.String#kotlin.String/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.services/-api-service/patch.html
@@ -1367,5 +1372,6 @@ com.fintecsystems.xs2a.java.exceptions
 com.fintecsystems.xs2a.java.helper
 com.fintecsystems.xs2a.java.models
 com.fintecsystems.xs2a.java.models.form
+com.fintecsystems.xs2a.java.models.form.radio
 com.fintecsystems.xs2a.java.services
 
