@@ -14,7 +14,7 @@ class ApiService(
     private val endpointVersion: String = "v1"
 ) {
     private val client = OkHttpClient()
-    private val basePath = "http://localhost:8000/$endpointVersion"
+    private val basePath = "https://api.xs2a.com/$endpointVersion"
     private val mediaType: MediaType = "application/json; charset=utf-8".toMediaType()
 
 
