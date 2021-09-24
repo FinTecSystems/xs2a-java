@@ -18,5 +18,5 @@ data class FormMultiElements(
     var value: String,
     /* Array containing the nested elements */
     @Json(name = "elements")
-    var elements: List<Any>
+    var elements: List<FormBase>
 )
