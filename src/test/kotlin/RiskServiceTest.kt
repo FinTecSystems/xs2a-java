@@ -15,8 +15,8 @@ internal class RiskServiceTest {
         val riskService = RiskService(apiKey)
 
         val risk = Xs2aRisk(
-            xs2aAccountCharacteristicsCheck = emptyArray(),
-            xs2aAccountLinkedOffersCheck = emptyArray(),
+            xs2aAccountCharacteristicsCheck = emptyList(),
+            xs2aAccountLinkedOffersCheck = emptyList(),
             xs2aAccountSnapshot = Xs2aAccountSnapshot(
                 days = 10,
                 from = LocalDate.parse("2021-01-01"),
@@ -29,15 +29,15 @@ internal class RiskServiceTest {
                 limitTurnoverDays = 10,
                 allAccounts = true
             ),
-            xs2aAllAccountsCheck = emptyArray(),
+            xs2aAllAccountsCheck = emptyList(),
             xs2aBalanceCheck = Xs2aBalanceCheck(
                 checkAmount = 10f,
                 checkCurrencyId = CurrencyId.EUR
             ),
-            xs2aBalanceOverview = emptyArray(),
-            xs2aCashflowOverview = emptyArray(),
-            xs2aChargebackCheck = emptyArray(),
-            xs2aChildrenCheck = emptyArray(),
+            xs2aBalanceOverview = emptyList(),
+            xs2aCashflowOverview = emptyList(),
+            xs2aChargebackCheck = emptyList(),
+            xs2aChildrenCheck = emptyList(),
             xs2aCreditCheck = Xs2aCreditCheck(
                 checks = listOf("income")
             ),
@@ -67,15 +67,15 @@ internal class RiskServiceTest {
                     )
                 )
             ),
-            xs2aIncomeCheck = emptyArray(),
+            xs2aIncomeCheck = emptyList(),
             xs2aNameCheck = Xs2aNameCheck(
                 name = "Mustermann",
                 firstname = "Max",
             ),
-            xs2aOverdraftLimitCheck = emptyArray(),
-            xs2aProfitLossCheck = emptyArray(),
-            xs2aRatingB2bCheck = emptyArray(),
-            xs2aRatingB2cCheck = emptyArray(),
+            xs2aOverdraftLimitCheck = emptyList(),
+            xs2aProfitLossCheck = emptyList(),
+            xs2aRatingB2bCheck = emptyList(),
+            xs2aRatingB2cCheck = emptyList(),
             xs2aRiskCalculationsCheck = Xs2aRiskCalculationsCheck(
                 calculations = listOf(
                     RiskCalculations(
@@ -93,7 +93,7 @@ internal class RiskServiceTest {
             xs2aSeizureCheck = Xs2aSeizureCheck(
                 days = 10
             ),
-            xs2aStandingOrdersCheck = emptyArray()
+            xs2aStandingOrdersCheck = emptyList()
         )
 
         val response = riskService.create(risk)
