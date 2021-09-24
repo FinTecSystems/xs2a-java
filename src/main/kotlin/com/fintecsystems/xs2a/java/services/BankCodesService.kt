@@ -1,9 +1,7 @@
 package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
-import com.fintecsystems.xs2a.java.models.BankObject
-import com.fintecsystems.xs2a.java.models.BankObjectList
-import com.fintecsystems.xs2a.java.models.CountryId
+import com.fintecsystems.xs2a.java.models.*
 
 class BankCodesService(
     private val apiKey: String
@@ -42,15 +40,15 @@ class BankCodesService(
         countryId: CountryId? = null,
         per_page: Int = 15,
         page: Int = 1,
-        product: String? = null,
+        product: Product? = null,
     ): BankObjectList {
         val response = ApiService(apiKey).get(
             "bankcodes/autocomplete",
             mutableMapOf(
                 "q" to query,
-                "country_id" to (countryId?.value ?: ""),
-                "per_page" to per_page.toString(),
-                "page" to page.toString(),
+                "country_id" to countryId,
+                "per_page" to per_page,
+                "page" to page,
                 "product" to product,
             )
         )

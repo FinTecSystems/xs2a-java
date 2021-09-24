@@ -53,17 +53,4 @@ data class WizardSessionObject(
     /* String with content 'wizard_session' */
     @Json(name = "object")
     var `object`: String
-) {
-
-    /**
-     * Name of the used product.
-     * Values: risk,pay
-     */
-    enum class Product(var value: String) {
-        @Json(name = "xs2a_risk")
-        RISK("xs2a_risk"),
-        @Json(name = "xs2a_pay")
-        PAY("xs2a_pay");
-    }
-}
-
+)

@@ -1,4 +1,5 @@
 import com.fintecsystems.xs2a.java.models.CountryId
+import com.fintecsystems.xs2a.java.models.Product
 import org.junit.jupiter.api.Test
 import com.fintecsystems.xs2a.java.services.BankCodesService
 
@@ -23,6 +24,14 @@ internal class BankCodesServiceTest {
     fun testAutocompleteSearch() {
         BankCodesService(apiKey).apply {
             val response = autocompleteSearch("postbank")
+            assert(response.data[0].name.contains("Postbank"))
+        }
+    }
+
+    @Test
+    fun testAutocompleteSearchWithProduct() {
+        BankCodesService(apiKey).apply {
+            val response = autocompleteSearch("postbank", product = Product.RISK)
             assert(response.data[0].name.contains("Postbank"))
         }
     }
