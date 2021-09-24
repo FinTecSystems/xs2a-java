@@ -26,6 +26,8 @@ data class RefundPayoutRequest (
      */
     enum class PainType(var value: String) {
         @Json(name = "pain.001.001.03") PAIN001001003("pain.001.001.03");
+
+        override fun toString() = value
     }
 }
 

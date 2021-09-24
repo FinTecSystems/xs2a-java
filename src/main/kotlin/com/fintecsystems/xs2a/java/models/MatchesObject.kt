@@ -29,6 +29,8 @@ data class MatchesObject (
 
         @Json(name = "COMPANY")
         COMPANY("COMPANY");
+
+        override fun toString() = value
     }
 }
 

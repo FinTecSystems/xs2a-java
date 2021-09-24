@@ -81,6 +81,8 @@ data class BankConnection(
 
         @Json(name = "none")
         NONE("none");
+
+        override fun toString() = value
     }
 
     /**
@@ -96,6 +98,8 @@ data class BankConnection(
 
         @Json(name = "single")
         SINGLE("single");
+
+        override fun toString() = value
     }
 
     /**
@@ -117,6 +121,8 @@ data class BankConnection(
 
         @Json(name = "it")
         IT("it");
+
+        override fun toString() = value
     }
 }
 

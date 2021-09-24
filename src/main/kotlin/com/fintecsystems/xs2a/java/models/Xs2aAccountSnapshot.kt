@@ -44,5 +44,7 @@ enum class AccountSnapshotFormat(var value: String) {
     JSON("json"),
 
     @Json(name = "json2")
-    JSON2("json2"),
+    JSON2("json2");
+
+    override fun toString() = value
 }

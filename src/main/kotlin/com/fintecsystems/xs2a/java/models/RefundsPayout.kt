@@ -40,6 +40,8 @@ data class RefundsPayout(
 
         @Json(name = "payout")
         PAYOUT("payout");
+
+        override fun toString() = value
     }
 }
 

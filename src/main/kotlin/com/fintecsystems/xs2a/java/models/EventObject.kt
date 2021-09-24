@@ -51,6 +51,8 @@ enum class ReportFormat(var value: String) {
 
     @Json(name = "json")
     JSON("json");
+
+    override fun toString() = value
 }
 
 enum class ReportLocale(var value: String) {
@@ -59,5 +61,7 @@ enum class ReportLocale(var value: String) {
 
     @Json(name = "de")
     DE("de");
+
+    override fun toString() = value
 }
 

@@ -9,5 +9,7 @@ enum class CountryId(var value: String) {
     @Json(name = "FR") FR("FR"),
     @Json(name = "ES") ES("ES"),
     @Json(name = "IT") IT("IT"),
-    @Json(name = "GB") GB("GB"),
+    @Json(name = "GB") GB("GB");
+
+    override fun toString() = value
 }

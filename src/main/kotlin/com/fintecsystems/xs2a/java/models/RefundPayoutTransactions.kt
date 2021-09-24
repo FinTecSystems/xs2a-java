@@ -30,6 +30,8 @@ data class RefundPayoutTransactions (
     enum class Type(var value: String) {
         @Json(name = "refund") REFUND("refund"),
         @Json(name = "payout") PAYOUT("payout");
+
+        override fun toString() = value
     }
 }
 

@@ -91,6 +91,8 @@ data class BankAccount(
 
         @Json(name = "other")
         OTHER("other");
+
+        override fun toString() = value
     }
 }
 
