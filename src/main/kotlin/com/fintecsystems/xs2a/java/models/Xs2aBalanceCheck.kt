@@ -16,6 +16,6 @@ data class Xs2aBalanceCheck (
     var checkAmount: Float,
     /* Currency id of check_amount, e.g. EUR */
     @Json(name = "check_currency_id")
-    var checkCurrencyId: CurrencyId? = null
+    var checkCurrencyId: CurrencyId
 )
 

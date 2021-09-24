@@ -18,7 +18,7 @@ data class Xs2aDirectDebitCheck(
     var checkAmount: Float,
     /* Currency id of check_amount, e.g. EUR */
     @Json(name = "check_currency_id")
-    var checkCurrencyId: CurrencyId? = null,
+    var checkCurrencyId: CurrencyId,
     /* Date format is \"YYYY-mm-dd\". An optional field. If a start_date is given, the field \"end_date\" has to be set as well. The start date can be no earlier than the day after the transaction. In case the start date is invalid or not set, the earliest bank work day will be used. */
     @Json(name = "start_date")
     var startDate: LocalDate? = null,

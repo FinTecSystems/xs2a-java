@@ -22,7 +22,7 @@ data class Xs2aBalanceCheckResponse(
     var checkAmount: Float,
     /* Currency id of check_amount, e.g. EUR */
     @Json(name = "check_currency_id")
-    var checkCurrencyId: CurrencyId? = null,
+    var checkCurrencyId: CurrencyId,
     /* Indicates whether or not the check was successful */
     @Json(name = "check_passed")
     var checkPassed: String,
