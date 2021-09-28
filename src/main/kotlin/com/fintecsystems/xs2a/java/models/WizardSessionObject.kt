@@ -37,7 +37,7 @@ data class WizardSessionObject(
     var parameters: Any,
     /* The last occurred error. This is overwritten, if another error occurs. */
     @Json(name = "last_error")
-    var lastError: String,
+    var lastError: WizardSessionLastError,
     /* true if this session runs in testmode. false otherwise. */
     @Json(name = "testmode")
     var testmode: Boolean,
@@ -46,7 +46,7 @@ data class WizardSessionObject(
     var finished: Boolean,
     /* The current wizard step of this session. */
     @Json(name = "current_step")
-    var currentStep: String,
+    var currentStep: WizardSessionCurrentStep,
     /* Type of creation */
     @Json(name = "created_at")
     var createdAt: LocalDateTime,
