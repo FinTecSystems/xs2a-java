@@ -44,4 +44,13 @@ enum class WizardSessionCurrentStep {
 
     @Json(name = "WizardPreLoginStep")
     WIZARD_PRE_LOGIN_STEP,
+
+    @Json(name = "WizardOauthRedirect")
+    WIZARD_OAUTH_REDIRECT,
+
+    @Json(name = "WizardOauthRedirectNok")
+    WIZARD_OAUTH_REDIRECT_NOT_OK,
+
+    @Json(name = "RiskUpload")
+    RISK_UPLOAD,
 }
