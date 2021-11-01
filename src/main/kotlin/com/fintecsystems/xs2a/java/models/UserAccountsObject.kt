@@ -60,12 +60,12 @@ data class UserAccountsObject (
     var countryId: CountryId? = null,
     /* Joint Account */
     @Json(name = "joint_account")
-    var jointAccount: String,
+    var jointAccount: Boolean,
     @Json(name = "transaction_possible")
-    var transactionPossible: String,
+    var transactionPossible: Boolean,
     /* Account type */
     @Json(name = "account_type")
-    var accountType: String,
+    var accountType: AccountType,
     /* Balance */
     @Json(name = "balance")
     var balance: Float,

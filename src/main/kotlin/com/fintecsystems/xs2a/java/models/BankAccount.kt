@@ -56,7 +56,7 @@ data class BankAccount(
     var countryId: CountryId? = null,
     /* The type of the bank of the bank connection */
     @Json(name = "type")
-    var type: BankAccountType,
+    var type: AccountType,
     /* Indicates whether this account has more than one owner. */
     @Json(name = "joint_account")
     var jointAccount: Boolean,
@@ -69,30 +69,4 @@ data class BankAccount(
     /* The value bank_account */
     @Json(name = "object")
     var `object`: String
-) {
-    enum class BankAccountType(var value: String) {
-        @Json(name = "giro")
-        GIRO("giro"),
-
-        @Json(name = "creditcard")
-        CREDITCARD("creditcard"),
-
-        @Json(name = "savings")
-        SAVINGS("savings"),
-
-        @Json(name = "loan")
-        LOAN("loan"),
-
-        @Json(name = "securities")
-        SECURITIES("securities"),
-
-        @Json(name = "wallet")
-        WALLET("wallet"),
-
-        @Json(name = "other")
-        OTHER("other");
-
-        override fun toString() = value
-    }
-}
-
+)
