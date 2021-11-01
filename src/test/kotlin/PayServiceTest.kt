@@ -91,7 +91,7 @@ internal class PayServiceTest {
                     RefundPayoutTransactions(
                         transaction = response.transaction,
                         amount = 0.5.toFloat(),
-                        type = RefundPayoutTransactions.Type.REFUND
+                        type = RefundPayoutType.REFUND
                     )
                 ),
                 painType = RefundPayoutRequest.PainType.PAIN001001003
