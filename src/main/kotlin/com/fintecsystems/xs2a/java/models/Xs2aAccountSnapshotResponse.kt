@@ -34,7 +34,7 @@ data class Xs2aAccountSnapshotResponse(
     var filters: List<String>? = null,
     /* 1, if the turnovers were fully categorized, 0 otherwise */
     @Json(name = "all_tags")
-    var allTags: String,
+    var allTags: Boolean,
     /* Creation date of the object */
     @Json(name = "created_at")
     var createdAt: LocalDateTime

@@ -25,7 +25,7 @@ data class Xs2aBalanceCheckResponse(
     var checkCurrencyId: CurrencyId,
     /* Indicates whether or not the check was successful */
     @Json(name = "check_passed")
-    var checkPassed: String,
+    var checkPassed: Boolean,
     /* Creation date of the object */
     @Json(name = "created_at")
     var createdAt: LocalDateTime

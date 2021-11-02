@@ -29,7 +29,7 @@ data class Xs2aIncomeCheckResponseDataCategoryShortName(
     @Json(name = "max_date")
     var maxDate: LocalDateTime,
     @Json(name = "current_payment")
-    var currentPayment: Float,
+    var currentPayment: Boolean,
     @Json(name = "forecast")
     var forecast: Float,
     @Json(name = "forecast_month_count")

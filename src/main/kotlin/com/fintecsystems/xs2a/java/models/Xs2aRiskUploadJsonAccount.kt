@@ -21,9 +21,9 @@ data class Xs2aRiskUploadJsonAccount (
     @Json(name = "description")
     var description: String,
     @Json(name = "iban")
-    var iban: String? = null,
+    var iban: String,
     @Json(name = "country_id")
-    var countryId: CountryId? = null,
+    var countryId: CountryId,
     @Json(name = "bic")
     var bic: String? = null,
     @Json(name = "bank_name")

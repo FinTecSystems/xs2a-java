@@ -26,7 +26,7 @@ data class Xs2aAccountStatusCheckResponse(
     var days: Int? = null,
     /* Shows the chosen option, with all accounts or not */
     @Json(name = "all_accounts")
-    var allAccounts: String,
+    var allAccounts: Boolean,
     /* Creation date of the object */
     @Json(name = "created_at")
     var createdAt: LocalDateTime,

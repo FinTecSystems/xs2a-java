@@ -21,14 +21,14 @@ data class Xs2aRiskUploadJsonTurnoversTurnover(
     @Json(name = "amount")
     var amount: Float,
     @Json(name = "currency")
-    var currency: CurrencyId? = null,
+    var currency: CurrencyId,
     @Json(name = "purpose")
     var purpose: List<String>,
     @Json(name = "counter_iban")
-    var counterIban: String? = null,
+    var counterIban: String,
     @Json(name = "counter_bic")
-    var counterBic: String? = null,
+    var counterBic: String,
     @Json(name = "counter_holder")
-    var counterHolder: String? = null,
+    var counterHolder: String,
 )
 
