@@ -13,7 +13,7 @@ import java.time.LocalDateTime
 
 data class Xs2aHolderIdentificationCheckResponse(
     @Json(name = "expect_holders")
-    var expectHolders: List<ExpectedHolderObject>,
+    var expectHolders: List<String>,
     @Json(name = "accounts")
     var accounts: List<AccountHoldersObject>,
     /* Object type, in this case a  xs2a_holder_identification_check */
