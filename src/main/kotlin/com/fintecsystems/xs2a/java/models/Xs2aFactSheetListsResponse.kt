@@ -18,7 +18,7 @@ data class Xs2aFactSheetListsResponse(
     @Json(name = "days")
     var days: Int? = null,
     @Json(name = "result")
-    var result: List<Any>,
+    var result: List<Xs2aFactSheetListsResponseResult>,
     /* Creation date of the object */
     @Json(name = "created_at")
     var createdAt: LocalDateTime,
