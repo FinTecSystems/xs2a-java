@@ -39,6 +39,6 @@ data class RiskCalculationsResponse(
     @Json(name = "full_months")
     var fullMonths: String? = null,
     @Json(name = "results")
-    var results: RiskCalculationsResponseResults
+    var results: Map<String, Int>
 )
 
