@@ -1,9 +1,11 @@
 import com.fintecsystems.xs2a.java.models.*
-import com.fintecsystems.xs2a.java.models.form.*
-import com.fintecsystems.xs2a.java.models.form.radio.FormRadio
-import org.junit.jupiter.api.Test
+import com.fintecsystems.xs2a.java.models.form.FormCheckbox
+import com.fintecsystems.xs2a.java.models.form.FormPassword
+import com.fintecsystems.xs2a.java.models.form.FormSelect
+import com.fintecsystems.xs2a.java.models.form.FormText
 import com.fintecsystems.xs2a.java.services.RiskService
 import com.fintecsystems.xs2a.java.services.WizardService
+import org.junit.jupiter.api.Test
 import java.time.LocalDate
 import java.time.LocalDateTime
 
@@ -19,8 +21,8 @@ internal class RiskServiceTest {
             xs2aAccountLinkedOffersCheck = emptyList(),
             xs2aAccountSnapshot = Xs2aAccountSnapshot(
                 days = 10,
-                from = LocalDate.parse("2021-01-01"),
-                to = LocalDate.parse("2021-01-10"),
+                from = LocalDate.now().withMonth(1),
+                to = LocalDate.now().withMonth(1).plusDays(10),
                 filters = listOf("income"),
                 allAccounts = true,
                 allTags = true
@@ -131,6 +133,7 @@ internal class RiskServiceTest {
             )
         )
 
+        /*
         assert(wizRes3.form?.elements?.get(0) is FormRadio)
 
         val wizRes4 = wizardService.navigate(
@@ -140,7 +143,9 @@ internal class RiskServiceTest {
             )
         )
 
-        assert(wizRes4.form?.name == "finish")
+         */
+
+        assert(wizRes3.form?.name == "finish")
 
         val riskResult = riskService.get(response.transaction)
         assert(riskResult.xs2aAccountCharacteristicsCheck !== null)
