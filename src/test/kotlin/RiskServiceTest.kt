@@ -72,7 +72,7 @@ internal class RiskServiceTest {
                     )
                 )
             ),
-            xs2aIncomeCheck = emptyList(),
+            xs2aIncomeCheck = Xs2aIncomeCheck(365),
             xs2aNameCheck = Xs2aNameCheck(
                 name = "Mustermann",
                 firstname = "Max",
