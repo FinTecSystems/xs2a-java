@@ -117,7 +117,7 @@ data class Xs2aRisk (
     var xs2aHolderIdentificationCheck: Xs2aHolderIdentificationCheck? = null,
     /* The Income Check provides an overview of the account holder's various types of income. Each type of income is listed separately and the corresponding key figures are calculated so that the customer can only take into account the types of income that are relevant for him/her. */
     @Json(name = "xs2a_income_check")
-    var xs2aIncomeCheck: List<String>? = null,
+    var xs2aIncomeCheck: Xs2aIncomeCheck? = null,
     @Json(name = "xs2a_name_check")
     var xs2aNameCheck: Xs2aNameCheck? = null,
     /* XS2A.overdraft_limit_check returns the number of booking days of the given risk range. The number of days the account used the overdraft limit, the maximum amount of overdraft used, the average and the median used overdraft. An XS2A.overdraft_limit_check has no additional parameters. Just append an empty object to the XS2A.risk object to indicate you would like this check to be performed. */
