@@ -1,4 +1,4 @@
-import com.fintecsystems.xs2a.java.models.EventObject
+import com.fintecsystems.xs2a.java.models.events.EventObject
 import com.fintecsystems.xs2a.java.models.risk.Xs2aRisk
 import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test

@@ -1,7 +1,7 @@
 package com.fintecsystems.xs2a.java.helper
 
-import com.fintecsystems.xs2a.java.models.Category
-import com.fintecsystems.xs2a.java.models.Tag
+import com.fintecsystems.xs2a.java.models.risk.Category
+import com.fintecsystems.xs2a.java.models.common.Tag
 import com.squareup.moshi.*
 import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory

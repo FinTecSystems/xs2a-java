@@ -1,9 +1,9 @@
 
 package com.fintecsystems.xs2a.java.models.risk
 
-import com.fintecsystems.xs2a.java.models.AccountType
-import com.fintecsystems.xs2a.java.models.CountryId
-import com.fintecsystems.xs2a.java.models.CurrencyId
+import com.fintecsystems.xs2a.java.models.common.AccountType
+import com.fintecsystems.xs2a.java.models.common.CountryId
+import com.fintecsystems.xs2a.java.models.common.CurrencyId
 import com.squareup.moshi.Json
 
 /**

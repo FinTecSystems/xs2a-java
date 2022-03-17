@@ -1,15 +1,15 @@
-import com.fintecsystems.xs2a.java.models.*
+import com.fintecsystems.xs2a.java.models.common.CountryId
 import com.fintecsystems.xs2a.java.models.form.*
 import com.fintecsystems.xs2a.java.models.form.radio.FormRadio
 import com.fintecsystems.xs2a.java.models.risk.Xs2aRisk
 import com.fintecsystems.xs2a.java.models.wizard.WizardResponse
 import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
+import com.fintecsystems.xs2a.java.services.RiskService
+import com.fintecsystems.xs2a.java.services.WizardService
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation
 import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestMethodOrder
-import org.junit.jupiter.api.MethodOrderer.OrderAnnotation
-import com.fintecsystems.xs2a.java.services.RiskService
-import com.fintecsystems.xs2a.java.services.WizardService
 import kotlin.reflect.KClass
 import kotlin.reflect.full.isSubclassOf
 

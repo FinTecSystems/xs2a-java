@@ -1,9 +1,11 @@
-import com.fintecsystems.xs2a.java.models.*
+import com.fintecsystems.xs2a.java.models.api.users.AccessToken
+import com.fintecsystems.xs2a.java.models.api.users.BankUser
+import com.fintecsystems.xs2a.java.models.api.users.BankUserCreationRequest
+import com.fintecsystems.xs2a.java.services.ApiBankUserService
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation
 import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestMethodOrder
-import org.junit.jupiter.api.MethodOrderer.OrderAnnotation
-import com.fintecsystems.xs2a.java.services.ApiBankUserService
 import java.time.LocalDateTime
 
 @TestMethodOrder(OrderAnnotation::class)

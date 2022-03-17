@@ -1,6 +1,6 @@
 package com.fintecsystems.xs2a.java.models.risk
 
-import com.fintecsystems.xs2a.java.models.Turnover
+import com.fintecsystems.xs2a.java.models.common.Turnover
 import com.squareup.moshi.Json
 import java.time.LocalDateTime
 

@@ -1,4 +1,4 @@
-package com.fintecsystems.xs2a.java.models
+package com.fintecsystems.xs2a.java.models.common
 
 import com.squareup.moshi.FromJson
 import com.squareup.moshi.ToJson

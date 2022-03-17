@@ -1,8 +1,8 @@
 package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
-import com.fintecsystems.xs2a.java.models.EventObject
-import com.fintecsystems.xs2a.java.models.EventsList
+import com.fintecsystems.xs2a.java.models.events.EventObject
+import com.fintecsystems.xs2a.java.models.events.EventsList
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 

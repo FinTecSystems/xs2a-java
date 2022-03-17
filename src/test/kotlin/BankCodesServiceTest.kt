@@ -1,5 +1,5 @@
-import com.fintecsystems.xs2a.java.models.CountryId
-import com.fintecsystems.xs2a.java.models.Product
+import com.fintecsystems.xs2a.java.models.common.CountryId
+import com.fintecsystems.xs2a.java.models.common.Product
 import org.junit.jupiter.api.Test
 import com.fintecsystems.xs2a.java.services.BankCodesService
 

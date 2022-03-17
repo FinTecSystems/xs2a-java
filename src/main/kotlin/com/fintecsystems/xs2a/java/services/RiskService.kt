@@ -2,7 +2,10 @@ package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer.parseJson
 import com.fintecsystems.xs2a.java.helper.JsonSerializer.toJson
-import com.fintecsystems.xs2a.java.models.*
+import com.fintecsystems.xs2a.java.models.common.CountryId
+import com.fintecsystems.xs2a.java.models.events.EventsList
+import com.fintecsystems.xs2a.java.models.events.ReportFormat
+import com.fintecsystems.xs2a.java.models.events.ReportLocale
 import com.fintecsystems.xs2a.java.models.risk.*
 import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
 import java.time.LocalDateTime

@@ -1,6 +1,6 @@
-import com.fintecsystems.xs2a.java.models.BankConnection
-import com.fintecsystems.xs2a.java.models.BankConnectionRequest
-import com.fintecsystems.xs2a.java.models.BankUserCreationRequest
+import com.fintecsystems.xs2a.java.models.api.connections.BankConnection
+import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionRequest
+import com.fintecsystems.xs2a.java.models.api.users.BankUserCreationRequest
 import com.fintecsystems.xs2a.java.models.form.FormCheckbox
 import com.fintecsystems.xs2a.java.models.form.FormPassword
 import com.fintecsystems.xs2a.java.models.form.FormSelect

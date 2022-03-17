@@ -2,6 +2,8 @@ package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
 import com.fintecsystems.xs2a.java.models.*
+import com.fintecsystems.xs2a.java.models.blacklist.BlacklistAdd
+import com.fintecsystems.xs2a.java.models.blacklist.BlacklistObject
 
 class BlacklistService(
     private val apiKey: String

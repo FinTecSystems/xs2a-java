@@ -1,7 +1,12 @@
 package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
-import com.fintecsystems.xs2a.java.models.*
+import com.fintecsystems.xs2a.java.models.api.accounts.BankAccount
+import com.fintecsystems.xs2a.java.models.api.accounts.BankAccountBalance
+import com.fintecsystems.xs2a.java.models.api.accounts.BankAccountTurnovers
+import com.fintecsystems.xs2a.java.models.api.accounts.BankAccountsList
+import com.fintecsystems.xs2a.java.models.events.ReportFormat
+import com.fintecsystems.xs2a.java.models.events.ReportLocale
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 

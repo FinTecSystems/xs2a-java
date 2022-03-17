@@ -1,6 +1,6 @@
 package com.fintecsystems.xs2a.java.models.wizard
 
-import com.fintecsystems.xs2a.java.models.Product
+import com.fintecsystems.xs2a.java.models.common.Product
 import com.squareup.moshi.Json
 import java.time.LocalDateTime
 

@@ -1,15 +1,17 @@
-import com.fintecsystems.xs2a.java.models.*
+import com.fintecsystems.xs2a.java.models.api.connections.BankConnection
+import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionRequest
+import com.fintecsystems.xs2a.java.models.api.users.BankUserCreationRequest
 import com.fintecsystems.xs2a.java.models.form.FormCheckbox
 import com.fintecsystems.xs2a.java.models.form.FormPassword
 import com.fintecsystems.xs2a.java.models.form.FormSelect
 import com.fintecsystems.xs2a.java.models.form.FormText
+import com.fintecsystems.xs2a.java.services.ApiBankConnectionService
+import com.fintecsystems.xs2a.java.services.ApiBankUserService
+import com.fintecsystems.xs2a.java.services.ApiWizardService
 import org.junit.jupiter.api.MethodOrderer
 import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestMethodOrder
-import com.fintecsystems.xs2a.java.services.ApiBankConnectionService
-import com.fintecsystems.xs2a.java.services.ApiBankUserService
-import com.fintecsystems.xs2a.java.services.ApiWizardService
 import java.time.LocalDateTime
 import kotlin.test.assertNotNull
 

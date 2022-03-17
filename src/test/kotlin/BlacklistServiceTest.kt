@@ -1,4 +1,6 @@
 import com.fintecsystems.xs2a.java.models.*
+import com.fintecsystems.xs2a.java.models.blacklist.BlacklistAdd
+import com.fintecsystems.xs2a.java.models.blacklist.BlacklistObject
 import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestMethodOrder

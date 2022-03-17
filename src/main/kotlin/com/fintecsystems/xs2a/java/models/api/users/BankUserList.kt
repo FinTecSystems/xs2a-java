@@ -1,5 +1,5 @@
 
-package com.fintecsystems.xs2a.java.models
+package com.fintecsystems.xs2a.java.models.api.users
 
 import com.squareup.moshi.Json
 
@@ -9,12 +9,14 @@ import com.squareup.moshi.Json
  * @param perPage Number of objects per page
  * @param currentPage Current page.
  * @param lastPage Last page, usually the total of available pages.
+ * @param nextPageUrl URI to next page.
+ * @param prevPageUrl URI to previous page.
  * @param from Showing results from index element.
  * @param to Showing results to index element.
  * @param data 
  */
 
-data class BankObjectList (
+data class BankUserList (
     /* Total number of results. */
     @Json(name = "total")
     var total: Int,
@@ -27,13 +29,19 @@ data class BankObjectList (
     /* Last page, usually the total of available pages. */
     @Json(name = "last_page")
     var lastPage: Int,
+    /* URI to next page. */
+    @Json(name = "next_page_url")
+    var nextPageUrl: String? = null,
+    /* URI to previous page. */
+    @Json(name = "prev_page_url")
+    var prevPageUrl: String? = null,
     /* Showing results from index element. */
     @Json(name = "from")
-    var from: Int,
+    var from: Int? = null,
     /* Showing results to index element. */
     @Json(name = "to")
-    var to: Int,
+    var to: Int? = null,
     @Json(name = "data")
-    var data: List<BankObject>
+    var data: List<BankUser>
 )
 

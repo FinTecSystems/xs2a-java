@@ -1,8 +1,8 @@
 package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
-import com.fintecsystems.xs2a.java.models.WhitelistObject
-import com.fintecsystems.xs2a.java.models.WhitelistAdd
+import com.fintecsystems.xs2a.java.models.whitelist.WhitelistObject
+import com.fintecsystems.xs2a.java.models.whitelist.WhitelistAdd
 
 class WhitelistService(
     private val apiKey: String

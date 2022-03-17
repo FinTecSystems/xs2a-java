@@ -1,5 +1,5 @@
 
-package com.fintecsystems.xs2a.java.models
+package com.fintecsystems.xs2a.java.models.events
 
 import com.squareup.moshi.Json
 
@@ -16,7 +16,7 @@ import com.squareup.moshi.Json
  * @param data 
  */
 
-data class BankAccountsList (
+data class EventsList (
     /* Total number of results. */
     @Json(name = "total")
     var total: Int,
@@ -42,6 +42,6 @@ data class BankAccountsList (
     @Json(name = "to")
     var to: Int? = null,
     @Json(name = "data")
-    var data: List<BankAccount>
+    var data: List<EventObject>
 )
 

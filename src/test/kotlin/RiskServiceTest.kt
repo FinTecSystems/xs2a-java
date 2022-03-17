@@ -1,4 +1,6 @@
-import com.fintecsystems.xs2a.java.models.*
+import com.fintecsystems.xs2a.java.models.common.CountryId
+import com.fintecsystems.xs2a.java.models.common.CurrencyId
+import com.fintecsystems.xs2a.java.models.common.Tag
 import com.fintecsystems.xs2a.java.models.form.FormCheckbox
 import com.fintecsystems.xs2a.java.models.form.FormPassword
 import com.fintecsystems.xs2a.java.models.form.FormSelect

@@ -1,6 +1,5 @@
 package com.fintecsystems.xs2a.java.models.wizard
 
-import com.fintecsystems.xs2a.java.models.Polling
 import com.fintecsystems.xs2a.java.models.form.FormObject
 import com.squareup.moshi.Json
 

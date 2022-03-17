@@ -1,4 +1,4 @@
-package com.fintecsystems.xs2a.java.models
+package com.fintecsystems.xs2a.java.models.events
 
 import com.squareup.moshi.Json
 import java.time.LocalDateTime

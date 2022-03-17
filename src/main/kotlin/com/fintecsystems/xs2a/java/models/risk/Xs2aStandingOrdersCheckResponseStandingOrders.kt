@@ -1,6 +1,6 @@
 package com.fintecsystems.xs2a.java.models.risk
 
-import com.fintecsystems.xs2a.java.models.CurrencyId
+import com.fintecsystems.xs2a.java.models.common.CurrencyId
 import com.squareup.moshi.Json
 import java.time.LocalDate
 

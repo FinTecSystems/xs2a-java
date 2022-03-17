@@ -1,9 +1,11 @@
-import com.fintecsystems.xs2a.java.models.*
+import com.fintecsystems.xs2a.java.models.common.CountryId
+import com.fintecsystems.xs2a.java.models.common.CurrencyId
+import com.fintecsystems.xs2a.java.models.common.Language
 import com.fintecsystems.xs2a.java.models.form.*
 import com.fintecsystems.xs2a.java.models.pay.*
-import org.junit.jupiter.api.Test
 import com.fintecsystems.xs2a.java.services.PayService
 import com.fintecsystems.xs2a.java.services.WizardService
+import org.junit.jupiter.api.Test
 
 internal class PayServiceTest {
     private val apiKey = System.getenv("API_KEY")

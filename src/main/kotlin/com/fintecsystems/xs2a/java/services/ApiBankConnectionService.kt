@@ -2,6 +2,10 @@ package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
 import com.fintecsystems.xs2a.java.models.*
+import com.fintecsystems.xs2a.java.models.api.connections.BankConnection
+import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionList
+import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionRequest
+import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionSyncRequest
 import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
 
 class ApiBankConnectionService (

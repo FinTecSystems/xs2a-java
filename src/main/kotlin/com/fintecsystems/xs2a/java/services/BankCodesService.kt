@@ -1,7 +1,10 @@
 package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
-import com.fintecsystems.xs2a.java.models.*
+import com.fintecsystems.xs2a.java.models.api.bankcodes.BankObject
+import com.fintecsystems.xs2a.java.models.api.bankcodes.BankObjectList
+import com.fintecsystems.xs2a.java.models.common.CountryId
+import com.fintecsystems.xs2a.java.models.common.Product
 
 class BankCodesService(
     private val apiKey: String
