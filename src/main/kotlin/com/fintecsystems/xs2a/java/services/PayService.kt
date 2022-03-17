@@ -6,6 +6,7 @@ import com.fintecsystems.xs2a.java.models.RefundsPayout
 import com.fintecsystems.xs2a.java.models.pay.PayObject
 import com.fintecsystems.xs2a.java.models.pay.PayTransactionList
 import com.fintecsystems.xs2a.java.models.pay.PaymentStatus
+import com.fintecsystems.xs2a.java.models.pay.Xs2aPay
 import java.time.LocalDateTime
 
 class PayService(

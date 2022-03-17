@@ -3,10 +3,7 @@ package com.fintecsystems.xs2a.java.services
 import com.fintecsystems.xs2a.java.helper.JsonSerializer.parseJson
 import com.fintecsystems.xs2a.java.helper.JsonSerializer.toJson
 import com.fintecsystems.xs2a.java.models.*
-import com.fintecsystems.xs2a.java.models.risk.AccountSnapshotFormat
-import com.fintecsystems.xs2a.java.models.risk.RiskObject
-import com.fintecsystems.xs2a.java.models.risk.RisksTransactionList
-import com.fintecsystems.xs2a.java.models.risk.Xs2aRisk
+import com.fintecsystems.xs2a.java.models.risk.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 

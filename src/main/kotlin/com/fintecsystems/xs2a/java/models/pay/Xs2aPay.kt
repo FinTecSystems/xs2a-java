@@ -1,6 +1,10 @@
 
-package com.fintecsystems.xs2a.java.models
+package com.fintecsystems.xs2a.java.models.pay
 
+import com.fintecsystems.xs2a.java.models.CountryId
+import com.fintecsystems.xs2a.java.models.CurrencyId
+import com.fintecsystems.xs2a.java.models.EasyOnboarding
+import com.fintecsystems.xs2a.java.models.Language
 import com.squareup.moshi.Json
 
 /**
