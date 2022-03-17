@@ -24,7 +24,7 @@ internal class RiskServiceTest {
                 days = 10,
                 from = LocalDate.now().withMonth(1),
                 to = LocalDate.now().withMonth(1).plusDays(10),
-                filters = listOf("income"),
+                filters = listOf(Tag.INCOME),
                 allAccounts = true,
                 allTags = true
             ),
@@ -42,7 +42,7 @@ internal class RiskServiceTest {
             xs2aChargebackCheck = emptyList(),
             xs2aChildrenCheck = emptyList(),
             xs2aCreditCheck = Xs2aCreditCheck(
-                checks = listOf("income")
+                checks = listOf(Tag.INCOME)
             ),
             xs2aDirectDebitCheck = Xs2aDirectDebitCheck(
                 checkAmount = 10f,
@@ -54,10 +54,10 @@ internal class RiskServiceTest {
                 limitTurnoverDays = 10,
                 fields = listOf(
                     Xs2aFactSheetListsFields(
-                        categories = listOf("K.8.2.1"),
+                        categories = listOf(Category.K_8_2_1),
                         maxAmount = 100.toFloat(),
                         minAmount = 1.toFloat(),
-                        tags = listOf("expenditure"),
+                        tags = listOf(Tag.EXPENDITURE),
                         name = "test"
                     )
                 ),
@@ -83,26 +83,26 @@ internal class RiskServiceTest {
                 calculations = listOf(
                     RiskCalculations(
                         tags = listOf(),
-                        categories = listOf("K.1.1"),
+                        categories = listOf(Category.K_1_1),
                         functions = listOf(
-                            "sum",
-                            "count",
-                            "median",
-                            "average",
-                            "last",
-                            "min",
-                            "max",
-                            "min_date",
-                            "max_date",
-                            "clean_sum",
-                            "exists",
-                            "sums_of_every_month",
-                            "counts_of_every_month",
-                            "median_of_all_month_sums",
-                            "average_of_all_month_sums",
-                            "min_of_all_month_sums",
-                            "max_of_all_month_sums",
-                            "distinct_counter_holders",
+                            Xs2aRiskCalculationsCheckFunction.SUM,
+                            Xs2aRiskCalculationsCheckFunction.COUNT,
+                            Xs2aRiskCalculationsCheckFunction.MEDIAN,
+                            Xs2aRiskCalculationsCheckFunction.AVERAGE,
+                            Xs2aRiskCalculationsCheckFunction.LAST,
+                            Xs2aRiskCalculationsCheckFunction.MIN,
+                            Xs2aRiskCalculationsCheckFunction.MAX,
+                            Xs2aRiskCalculationsCheckFunction.MIN_DATE,
+                            Xs2aRiskCalculationsCheckFunction.MAX_DATE,
+                            Xs2aRiskCalculationsCheckFunction.CLEAN_SUM,
+                            Xs2aRiskCalculationsCheckFunction.EXISTS,
+                            Xs2aRiskCalculationsCheckFunction.SUMS_OF_EVERY_MONTH,
+                            Xs2aRiskCalculationsCheckFunction.COUNTS_OF_EVERY_MONTH,
+                            Xs2aRiskCalculationsCheckFunction.MEDIAN_OF_ALL_MONTH_SUMS,
+                            Xs2aRiskCalculationsCheckFunction.AVERAGE_OF_ALL_MONTH_SUMS,
+                            Xs2aRiskCalculationsCheckFunction.MIN_OF_ALL_MONTH_SUMS,
+                            Xs2aRiskCalculationsCheckFunction.MAX_OF_ALL_MONTH_SUMS,
+                            Xs2aRiskCalculationsCheckFunction.DISTINCT_COUNTER_HOLDERS,
                         ),
                         name = "test",
                         days = 30,

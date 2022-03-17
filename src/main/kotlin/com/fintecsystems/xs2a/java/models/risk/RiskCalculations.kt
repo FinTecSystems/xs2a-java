@@ -1,6 +1,8 @@
 package com.fintecsystems.xs2a.java.models.risk
 
 
+import com.fintecsystems.xs2a.java.models.Category
+import com.fintecsystems.xs2a.java.models.Tag
 import com.squareup.moshi.Json
 import java.time.LocalDate
 
@@ -20,11 +22,11 @@ import java.time.LocalDate
 
 data class RiskCalculations(
     @Json(name = "tags")
-    var tags: List<String>,
+    var tags: List<Tag>,
     @Json(name = "categories")
-    var categories: List<String>,
+    var categories: List<Category>,
     @Json(name = "functions")
-    var functions: List<String>,
+    var functions: List<Xs2aRiskCalculationsCheckFunction>,
     /* A name for this calculation */
     @Json(name = "name")
     var name: String,

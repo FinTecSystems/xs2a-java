@@ -1,6 +1,7 @@
 package com.fintecsystems.xs2a.java.models.risk
 
 
+import com.fintecsystems.xs2a.java.models.Tag
 import com.squareup.moshi.Json
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -31,7 +32,7 @@ data class Xs2aAccountSnapshotResponse(
     var to: LocalDate? = null,
     /* Filter account statements */
     @Json(name = "filters")
-    var filters: List<String>? = null,
+    var filters: List<Tag>? = null,
     /* 1, if the turnovers were fully categorized, 0 otherwise */
     @Json(name = "all_tags")
     var allTags: Boolean,

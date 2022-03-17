@@ -1,6 +1,7 @@
 package com.fintecsystems.xs2a.java.models.risk
 
 
+import com.fintecsystems.xs2a.java.models.Tag
 import com.squareup.moshi.Json
 import java.time.LocalDate
 
@@ -24,7 +25,7 @@ data class Xs2aAccountSnapshot(
     @Json(name = "to")
     var to: LocalDate? = null,
     @Json(name = "filters")
-    var filters: List<String>? = null,
+    var filters: List<Tag>? = null,
     /* True, if you want to receive all accounts including their turnovers */
     @Json(name = "all_accounts")
     var allAccounts: Boolean,

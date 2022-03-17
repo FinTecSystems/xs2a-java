@@ -2,6 +2,7 @@
 package com.fintecsystems.xs2a.java.models.risk
 
 
+import com.fintecsystems.xs2a.java.models.Tag
 import com.squareup.moshi.Json
 
 /**
@@ -11,6 +12,6 @@ import com.squareup.moshi.Json
 
 data class Xs2aCreditCheck (
     @Json(name = "checks")
-    var checks: List<String>
+    var checks: List<Tag>
 )
 

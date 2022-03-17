@@ -2,6 +2,8 @@
 package com.fintecsystems.xs2a.java.models.risk
 
 
+import com.fintecsystems.xs2a.java.models.Category
+import com.fintecsystems.xs2a.java.models.Tag
 import com.squareup.moshi.Json
 
 /**
@@ -17,9 +19,9 @@ data class Xs2aFactSheetListsResponseFields (
     @Json(name = "name")
     var name: String,
     @Json(name = "tags")
-    var tags: List<String>,
+    var tags: List<Tag>,
     @Json(name = "categories")
-    var categories: List<String>,
+    var categories: List<Category>,
     @Json(name = "min_amount")
     var minAmount: Float? = null,
     @Json(name = "max_amount")

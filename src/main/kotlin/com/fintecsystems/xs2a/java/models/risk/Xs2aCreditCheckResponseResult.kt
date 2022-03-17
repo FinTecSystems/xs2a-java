@@ -11,7 +11,7 @@ import com.squareup.moshi.Json
  * @param currency 
  */
 
-data class ChecksResult (
+data class Xs2aCreditCheckResponseResult (
     @Json(name = "amount")
     var amount: Float,
     @Json(name = "currency")

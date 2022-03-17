@@ -1,5 +1,6 @@
 package com.fintecsystems.xs2a.java.models.risk
 
+import com.fintecsystems.xs2a.java.models.Tag
 import com.squareup.moshi.Json
 import java.time.LocalDateTime
 
@@ -15,12 +16,12 @@ import java.time.LocalDateTime
 data class Xs2aCreditCheckResponse(
     /* Indicates which checks were performed */
     @Json(name = "checks")
-    var checks: List<String>,
+    var checks: List<Tag>,
     /* Range in days that were used to calculated and gather the desired information */
     @Json(name = "check_days")
     var checkDays: Int,
     @Json(name = "results")
-    var results: Xs2aCreditCheckResponseResults,
+    var results: Map<Tag, Xs2aCreditCheckResponseResult>,
     /* Object type, in this case a  xs2a_credit_check */
     @Json(name = "object")
     var `object`: String,

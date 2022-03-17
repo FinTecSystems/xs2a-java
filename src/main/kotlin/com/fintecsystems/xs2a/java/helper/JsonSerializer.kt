@@ -1,10 +1,13 @@
 package com.fintecsystems.xs2a.java.helper
 
+import com.fintecsystems.xs2a.java.models.Category
+import com.fintecsystems.xs2a.java.models.Tag
 import com.squareup.moshi.*
 import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.fintecsystems.xs2a.java.models.form.*
 import com.fintecsystems.xs2a.java.models.form.radio.FormRadio
+import com.fintecsystems.xs2a.java.models.risk.Xs2aRiskCalculationsCheckFunction
 
 object JsonSerializer {
     val moshi: Moshi = Moshi.Builder()
@@ -28,6 +31,9 @@ object JsonSerializer {
         .add(LocalDateAdapter)
         .add(LocalDateTimeAdapter)
         .addLast(KotlinJsonAdapterFactory())
+        .add(Tag.Companion)
+        .add(Xs2aRiskCalculationsCheckFunction.Companion)
+        .add(Category.Companion)
         .build()
 
     inline fun <reified T> parseJson(json: String) = moshi
