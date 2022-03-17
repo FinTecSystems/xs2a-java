@@ -1,6 +1,7 @@
 import com.fintecsystems.xs2a.java.models.*
 import com.fintecsystems.xs2a.java.models.form.*
 import com.fintecsystems.xs2a.java.models.form.radio.FormRadio
+import com.fintecsystems.xs2a.java.models.risk.Xs2aRisk
 import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestMethodOrder

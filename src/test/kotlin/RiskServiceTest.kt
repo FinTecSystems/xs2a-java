@@ -3,6 +3,7 @@ import com.fintecsystems.xs2a.java.models.form.FormCheckbox
 import com.fintecsystems.xs2a.java.models.form.FormPassword
 import com.fintecsystems.xs2a.java.models.form.FormSelect
 import com.fintecsystems.xs2a.java.models.form.FormText
+import com.fintecsystems.xs2a.java.models.risk.*
 import com.fintecsystems.xs2a.java.services.RiskService
 import com.fintecsystems.xs2a.java.services.WizardService
 import org.junit.jupiter.api.Test

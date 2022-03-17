@@ -2,6 +2,7 @@ package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
 import com.fintecsystems.xs2a.java.models.*
+import com.fintecsystems.xs2a.java.models.RefundsPayout
 import java.time.LocalDateTime
 
 class PayService(

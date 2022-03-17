@@ -1,5 +1,5 @@
 import com.fintecsystems.xs2a.java.models.EventObject
-import com.fintecsystems.xs2a.java.models.Xs2aRisk
+import com.fintecsystems.xs2a.java.models.risk.Xs2aRisk
 import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestMethodOrder

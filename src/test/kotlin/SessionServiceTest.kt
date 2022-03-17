@@ -1,5 +1,5 @@
 import com.fintecsystems.xs2a.java.models.WizardSessionResponse
-import com.fintecsystems.xs2a.java.models.Xs2aRisk
+import com.fintecsystems.xs2a.java.models.risk.Xs2aRisk
 import com.fintecsystems.xs2a.java.services.RiskService
 import com.fintecsystems.xs2a.java.services.SessionService
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation
