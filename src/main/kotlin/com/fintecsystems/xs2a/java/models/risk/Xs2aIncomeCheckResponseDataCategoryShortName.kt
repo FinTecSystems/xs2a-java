@@ -1,6 +1,5 @@
 package com.fintecsystems.xs2a.java.models.risk
 
-import com.fintecsystems.xs2a.java.models.Employer
 import com.squareup.moshi.Json
 import java.time.LocalDateTime
 

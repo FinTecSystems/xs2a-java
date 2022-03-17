@@ -1,7 +1,6 @@
 
 package com.fintecsystems.xs2a.java.models.risk
 
-import com.fintecsystems.xs2a.java.models.ExpectedHolderObject
 import com.squareup.moshi.Json
 
 /**

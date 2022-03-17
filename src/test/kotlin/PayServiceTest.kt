@@ -1,7 +1,6 @@
 import com.fintecsystems.xs2a.java.models.*
 import com.fintecsystems.xs2a.java.models.form.*
-import com.fintecsystems.xs2a.java.models.pay.PaymentStatus
-import com.fintecsystems.xs2a.java.models.pay.Xs2aPay
+import com.fintecsystems.xs2a.java.models.pay.*
 import org.junit.jupiter.api.Test
 import com.fintecsystems.xs2a.java.services.PayService
 import com.fintecsystems.xs2a.java.services.WizardService

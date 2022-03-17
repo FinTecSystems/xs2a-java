@@ -4,6 +4,7 @@ import com.fintecsystems.xs2a.java.helper.JsonSerializer.parseJson
 import com.fintecsystems.xs2a.java.helper.JsonSerializer.toJson
 import com.fintecsystems.xs2a.java.models.*
 import com.fintecsystems.xs2a.java.models.risk.*
+import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 

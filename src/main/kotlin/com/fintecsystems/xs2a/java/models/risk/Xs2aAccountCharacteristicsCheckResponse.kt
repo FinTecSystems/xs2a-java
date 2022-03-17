@@ -1,9 +1,6 @@
 package com.fintecsystems.xs2a.java.models.risk
 
-import com.fintecsystems.xs2a.java.models.AccountProfileObject
-import com.fintecsystems.xs2a.java.models.ChargebacksObject
 import com.fintecsystems.xs2a.java.models.EncashmentObject
-import com.fintecsystems.xs2a.java.models.LoansObject
 import com.squareup.moshi.Json
 import java.time.LocalDateTime
 

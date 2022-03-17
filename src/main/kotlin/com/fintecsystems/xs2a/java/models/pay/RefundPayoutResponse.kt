@@ -1,5 +1,5 @@
 
-package com.fintecsystems.xs2a.java.models
+package com.fintecsystems.xs2a.java.models.pay
 
 
 import com.squareup.moshi.Json

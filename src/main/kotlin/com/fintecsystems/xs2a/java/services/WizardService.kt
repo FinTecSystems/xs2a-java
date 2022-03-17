@@ -1,7 +1,7 @@
 package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
-import com.fintecsystems.xs2a.java.models.WizardResponse
+import com.fintecsystems.xs2a.java.models.wizard.WizardResponse
 
 class WizardService(
     private val apiKey: String

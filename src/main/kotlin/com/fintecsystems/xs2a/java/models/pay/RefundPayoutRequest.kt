@@ -1,5 +1,5 @@
 
-package com.fintecsystems.xs2a.java.models
+package com.fintecsystems.xs2a.java.models.pay
 
 import com.squareup.moshi.Json
 
@@ -13,7 +13,7 @@ import com.squareup.moshi.Json
 data class RefundPayoutRequest (
     /* The format of pain file. */
     @Json(name = "pain_type")
-    var painType: RefundPayoutRequest.PainType,
+    var painType: PainType,
     @Json(name = "transactions")
     var transactions: List<RefundPayoutTransactions>,
     @Json(name = "batch_booking")

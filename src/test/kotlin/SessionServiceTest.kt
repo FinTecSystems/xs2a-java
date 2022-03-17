@@ -1,4 +1,4 @@
-import com.fintecsystems.xs2a.java.models.WizardSessionResponse
+import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
 import com.fintecsystems.xs2a.java.models.risk.Xs2aRisk
 import com.fintecsystems.xs2a.java.services.RiskService
 import com.fintecsystems.xs2a.java.services.SessionService
