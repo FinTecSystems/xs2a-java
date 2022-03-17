@@ -3,6 +3,9 @@ package com.fintecsystems.xs2a.java.models
 import com.squareup.moshi.FromJson
 import com.squareup.moshi.ToJson
 
+/**
+ * For full explanation refer to https://manage.xs2a.com/documentation/categories.
+ */
 enum class Category(val tag: String) {
     K("K"),
     K_1("K.1"),

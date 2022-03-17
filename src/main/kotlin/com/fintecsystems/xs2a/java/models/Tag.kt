@@ -3,6 +3,9 @@ package com.fintecsystems.xs2a.java.models
 import com.squareup.moshi.FromJson
 import com.squareup.moshi.ToJson
 
+/**
+ * For full explanation refer to https://manage.xs2a.com/documentation/tags.
+ */
 enum class Tag(val tag: String) {
     ALIMONY("alimony"),
     BANKING_FEES("banking-fees"),
@@ -95,7 +98,7 @@ enum class Tag(val tag: String) {
     companion object {
         private val valueMap = values().associateBy(Tag::tag)
 
-        @ToJson fun toJson(tag: Tag) = tag.tag;
+        @ToJson fun toJson(tag: Tag) = tag.tag
         @FromJson fun fromJson(tag: String) = valueMap[tag]
     }
 }
