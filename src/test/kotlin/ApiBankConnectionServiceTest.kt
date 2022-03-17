@@ -1,5 +1,5 @@
-import com.fintecsystems.xs2a.java.models.api.connections.BankConnection
 import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionRequest
+import com.fintecsystems.xs2a.java.models.api.connections.SyncMode
 import com.fintecsystems.xs2a.java.models.api.users.BankUserCreationRequest
 import com.fintecsystems.xs2a.java.models.form.FormCheckbox
 import com.fintecsystems.xs2a.java.models.form.FormPassword
@@ -46,7 +46,7 @@ class ApiBankConnectionServiceTest {
         ApiBankConnectionService(accessToken).apply {
             val response = create(
                 BankConnectionRequest(
-                    syncMode = BankConnection.SyncMode.FULL
+                    syncMode = SyncMode.FULL
                 )
             )
 

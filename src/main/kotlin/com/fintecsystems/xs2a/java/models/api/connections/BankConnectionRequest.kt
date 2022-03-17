@@ -1,6 +1,7 @@
 package com.fintecsystems.xs2a.java.models.api.connections
 
 import com.fintecsystems.xs2a.java.models.common.CountryId
+import com.fintecsystems.xs2a.java.models.common.Language
 import com.squareup.moshi.Json
 
 /**
@@ -18,7 +19,7 @@ import com.squareup.moshi.Json
 data class BankConnectionRequest (
     /* The mode, how to sync the bank connection. full, shared or none. */
     @Json(name = "sync_mode")
-    var syncMode: BankConnection.SyncMode? = null,
+    var syncMode: SyncMode? = null,
     /* The BIC of the bank, if known already. */
     @Json(name = "bic")
     var bic: String? = null,
@@ -33,10 +34,10 @@ data class BankConnectionRequest (
     var limitDays: Int? = null,
     /* Mode of account selection. If \"all\" is given, all available accounts from this bankconnection will be used. If \"single\"/\"multi\" is given, the customer can pick single/multiple accounts from this connection which will be used. */
     @Json(name = "account_selection")
-    var accountSelection: BankConnection.AccountSelection? = null,
+    var accountSelection: AccountSelection? = null,
     /* Desired language in which the customer interface will be rendered with. */
     @Json(name = "language")
-    var language: BankConnection.Language? = null,
+    var language: Language? = null,
     /* The fints product ID can be enclosed in the initial request. If you have an eIDAS certificate, then you have to send it with every request. */
     @Json(name = "fints_product_id")
     var fintsProductId: String? = null,

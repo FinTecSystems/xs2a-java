@@ -97,7 +97,7 @@ internal class PayServiceTest {
                         type = RefundPayoutType.REFUND
                     )
                 ),
-                painType = RefundPayoutRequest.PainType.PAIN001001003
+                painType = PainType.PAIN001001003
             )
 
             // val refundPayoutResponse = generatePainFile(requestData)

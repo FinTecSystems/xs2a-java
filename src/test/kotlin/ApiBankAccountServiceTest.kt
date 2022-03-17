@@ -1,18 +1,18 @@
-import com.fintecsystems.xs2a.java.models.api.connections.BankConnection
 import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionRequest
+import com.fintecsystems.xs2a.java.models.api.connections.SyncMode
 import com.fintecsystems.xs2a.java.models.api.users.BankUserCreationRequest
 import com.fintecsystems.xs2a.java.models.form.FormCheckbox
 import com.fintecsystems.xs2a.java.models.form.FormPassword
 import com.fintecsystems.xs2a.java.models.form.FormSelect
 import com.fintecsystems.xs2a.java.models.form.FormText
-import org.junit.jupiter.api.MethodOrderer
-import org.junit.jupiter.api.Order
-import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.TestMethodOrder
 import com.fintecsystems.xs2a.java.services.ApiBankAccountService
 import com.fintecsystems.xs2a.java.services.ApiBankConnectionService
 import com.fintecsystems.xs2a.java.services.ApiBankUserService
 import com.fintecsystems.xs2a.java.services.ApiWizardService
+import org.junit.jupiter.api.MethodOrderer
+import org.junit.jupiter.api.Order
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.TestMethodOrder
 import java.time.LocalDateTime
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
@@ -46,7 +46,7 @@ class ApiBankAccountServiceTest {
         ApiBankConnectionService(accessToken).apply {
             val response = create(
                 BankConnectionRequest(
-                    syncMode = BankConnection.SyncMode.FULL
+                    syncMode = SyncMode.FULL
                 )
             )
 

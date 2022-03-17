@@ -41,27 +41,3 @@ data class EventObject(
     @Json(name = "object")
     var `object`: String
 )
-
-enum class ReportFormat(var value: String) {
-    @Json(name = "html")
-    HTML("html"),
-
-    @Json(name = "pdf")
-    PDF("pdf"),
-
-    @Json(name = "json")
-    JSON("json");
-
-    override fun toString() = value
-}
-
-enum class ReportLocale(var value: String) {
-    @Json(name = "en")
-    EN("en"),
-
-    @Json(name = "de")
-    DE("de");
-
-    override fun toString() = value
-}
-

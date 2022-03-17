@@ -5,8 +5,8 @@ import com.fintecsystems.xs2a.java.models.api.accounts.BankAccount
 import com.fintecsystems.xs2a.java.models.api.accounts.BankAccountBalance
 import com.fintecsystems.xs2a.java.models.api.accounts.BankAccountTurnovers
 import com.fintecsystems.xs2a.java.models.api.accounts.BankAccountsList
-import com.fintecsystems.xs2a.java.models.events.ReportFormat
-import com.fintecsystems.xs2a.java.models.events.ReportLocale
+import com.fintecsystems.xs2a.java.models.common.ReportFormat
+import com.fintecsystems.xs2a.java.models.common.ReportLocale
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
