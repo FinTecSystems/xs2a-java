@@ -6,6 +6,7 @@ import com.fintecsystems.xs2a.java.models.form.FormPassword
 import com.fintecsystems.xs2a.java.models.form.FormSelect
 import com.fintecsystems.xs2a.java.models.form.FormText
 import com.fintecsystems.xs2a.java.models.risk.*
+import com.fintecsystems.xs2a.java.models.risk.checks.*
 import com.fintecsystems.xs2a.java.services.RiskService
 import com.fintecsystems.xs2a.java.services.WizardService
 import org.junit.jupiter.api.Test
@@ -20,7 +21,7 @@ internal class RiskServiceTest {
         val riskService = RiskService(apiKey)
 
         val risk = Xs2aRisk(
-            xs2aAccountCharacteristicsCheck = emptyList(),
+            xs2aAccountCharacteristicsCheck = Xs2aAccountCharacteristicsCheck(),
             xs2aAccountLinkedOffersCheck = emptyList(),
             xs2aAccountSnapshot = Xs2aAccountSnapshot(
                 days = 10,

@@ -7,10 +7,14 @@ import com.fintecsystems.xs2a.java.models.events.EventsList
 import com.fintecsystems.xs2a.java.models.common.ReportFormat
 import com.fintecsystems.xs2a.java.models.common.ReportLocale
 import com.fintecsystems.xs2a.java.models.risk.*
+import com.fintecsystems.xs2a.java.models.risk.checks.AccountSnapshotFormat
+import com.fintecsystems.xs2a.java.models.risk.uploadJson.Xs2aRiskUploadJsonSuccess
+import com.fintecsystems.xs2a.java.models.risk.uploadJson.Xs2aRiskUploadJsonWrapper
 import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
+@Suppress("unused")
 class RiskService(
     private val apiKey: String
 ) {

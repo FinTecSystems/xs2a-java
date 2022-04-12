@@ -5,6 +5,7 @@ import com.fintecsystems.xs2a.java.models.common.CountryId
 import com.fintecsystems.xs2a.java.models.common.CurrencyId
 import com.fintecsystems.xs2a.java.models.common.EasyOnboarding
 import com.fintecsystems.xs2a.java.models.common.Language
+import com.fintecsystems.xs2a.java.models.risk.checks.*
 import com.squareup.moshi.Json
 
 /**
@@ -82,7 +83,7 @@ data class Xs2aRisk (
     var language: Language? = null,
     /* XS2A.account_characteristics_check allows you to retrieve many possible information about the account, like chargebacks, encashment, loans and other. Simply append an empty object to the XS2A.risk object to indicate you would like this check to be performed. */
     @Json(name = "xs2a_account_characteristics_check")
-    var xs2aAccountCharacteristicsCheck: List<String>? = null,
+    var xs2aAccountCharacteristicsCheck: Xs2aAccountCharacteristicsCheck? = null,
     /* The Account Linked Offers Check validates with the consent of the user, based on an account view, whether third party offers might be of interest to the user and hands over an advertising link for one-time use to a FinTecSystems business partner. */
     @Json(name = "xs2a_account_linked_offers_check")
     var xs2aAccountLinkedOffersCheck: List<String>? = null,
