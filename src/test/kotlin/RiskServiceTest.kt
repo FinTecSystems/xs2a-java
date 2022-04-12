@@ -5,7 +5,9 @@ import com.fintecsystems.xs2a.java.models.form.FormCheckbox
 import com.fintecsystems.xs2a.java.models.form.FormPassword
 import com.fintecsystems.xs2a.java.models.form.FormSelect
 import com.fintecsystems.xs2a.java.models.form.FormText
-import com.fintecsystems.xs2a.java.models.risk.*
+import com.fintecsystems.xs2a.java.models.risk.Category
+import com.fintecsystems.xs2a.java.models.risk.ExpectedHolderObject
+import com.fintecsystems.xs2a.java.models.risk.Xs2aRisk
 import com.fintecsystems.xs2a.java.models.risk.checks.*
 import com.fintecsystems.xs2a.java.services.RiskService
 import com.fintecsystems.xs2a.java.services.WizardService
@@ -22,7 +24,7 @@ internal class RiskServiceTest {
 
         val risk = Xs2aRisk(
             xs2aAccountCharacteristicsCheck = Xs2aAccountCharacteristicsCheck(),
-            xs2aAccountLinkedOffersCheck = emptyList(),
+            xs2aAccountLinkedOffersCheck = Xs2aAccountLinkedOffersCheck(),
             xs2aAccountSnapshot = Xs2aAccountSnapshot(
                 days = 10,
                 from = LocalDate.now().withMonth(1),
@@ -35,15 +37,15 @@ internal class RiskServiceTest {
                 limitTurnoverDays = 10,
                 allAccounts = true
             ),
-            xs2aAllAccountsCheck = emptyList(),
+            xs2aAllAccountsCheck = Xs2aAllAccountsCheck(),
             xs2aBalanceCheck = Xs2aBalanceCheck(
                 checkAmount = 10f,
                 checkCurrencyId = CurrencyId.EUR
             ),
-            xs2aBalanceOverview = emptyList(),
-            xs2aCashflowOverview = emptyList(),
-            xs2aChargebackCheck = emptyList(),
-            xs2aChildrenCheck = emptyList(),
+            xs2aBalanceOverview = Xs2aBalanceOverview(),
+            xs2aCashflowOverview = Xs2aCashflowOverview(),
+            xs2aChargebackCheck = Xs2aChargebackCheck(),
+            xs2aChildrenCheck = Xs2aChildrenCheck(),
             xs2aCreditCheck = Xs2aCreditCheck(
                 checks = listOf(Tag.INCOME)
             ),
@@ -78,10 +80,10 @@ internal class RiskServiceTest {
                 name = "Mustermann",
                 firstname = "Max",
             ),
-            xs2aOverdraftLimitCheck = emptyList(),
-            xs2aProfitLossCheck = emptyList(),
-            xs2aRatingB2bCheck = emptyList(),
-            xs2aRatingB2cCheck = emptyList(),
+            xs2aOverdraftLimitCheck = Xs2aOverdraftLimitCheck(),
+            xs2aProfitLossCheck = Xs2aProfitLossCheck(),
+            xs2aRatingB2bCheck = Xs2aRatingB2bCheck(),
+            xs2aRatingB2cCheck = Xs2aRatingB2cCheck(),
             xs2aRiskCalculationsCheck = Xs2aRiskCalculationsCheck(
                 calculations = listOf(
                     RiskCalculations(
@@ -118,7 +120,7 @@ internal class RiskServiceTest {
             xs2aSeizureCheck = Xs2aSeizureCheck(
                 days = 10
             ),
-            xs2aStandingOrdersCheck = emptyList()
+            xs2aStandingOrdersCheck = Xs2aStandingOrdersCheck()
         )
 
         val response = riskService.create(risk)

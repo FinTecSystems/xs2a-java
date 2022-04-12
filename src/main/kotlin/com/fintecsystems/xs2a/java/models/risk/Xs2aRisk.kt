@@ -86,28 +86,28 @@ data class Xs2aRisk (
     var xs2aAccountCharacteristicsCheck: Xs2aAccountCharacteristicsCheck? = null,
     /* The Account Linked Offers Check validates with the consent of the user, based on an account view, whether third party offers might be of interest to the user and hands over an advertising link for one-time use to a FinTecSystems business partner. */
     @Json(name = "xs2a_account_linked_offers_check")
-    var xs2aAccountLinkedOffersCheck: List<String>? = null,
+    var xs2aAccountLinkedOffersCheck: Xs2aAccountLinkedOffersCheck? = null,
     @Json(name = "xs2a_account_snapshot")
     var xs2aAccountSnapshot: Xs2aAccountSnapshot? = null,
     @Json(name = "xs2a_account_status_check")
     var xs2aAccountStatusCheck: Xs2aAccountStatusCheck? = null,
     /* XS2A.standing_orders_check allows you to retrieve all standing orders from an account. An XS2A.standing_orders_check has no additional parameters. Simply append an empty object to the XS2A.risk object to indicate you would like this check to be performed. */
     @Json(name = "xs2a_all_accounts_check")
-    var xs2aAllAccountsCheck: List<String>? = null,
+    var xs2aAllAccountsCheck: Xs2aAllAccountsCheck? = null,
     @Json(name = "xs2a_balance_check")
     var xs2aBalanceCheck: Xs2aBalanceCheck? = null,
     /* XS2A.balance_overview returns the current running total of the chosen account. An XS2A.balance_overview has no additional parameters. Just append an empty object to the XS2A.risk object to indicate you would like this check to be performed. */
     @Json(name = "xs2a_balance_overview")
-    var xs2aBalanceOverview: List<String>? = null,
+    var xs2aBalanceOverview: Xs2aBalanceOverview? = null,
     /* XS2A.cashflow_overview provides an cashflow overview for the requested risk date range. An XS2A.cashflow_overview has no additional parameters. Just append an empty object to the XS2A.risk object to indicate you would like this check to be performed. */
     @Json(name = "xs2a_cashflow_overview")
-    var xs2aCashflowOverview: List<String>? = null,
+    var xs2aCashflowOverview: Xs2aCashflowOverview? = null,
     /* XS2A.chargeback_check returns the number of detected chargeback transactions for the account. An XS2A.chargeback_check has no additional parameters. Just append an empty object to the XS2A.risk object to indicate you would like this check to be performed. */
     @Json(name = "xs2a_chargeback_check")
-    var xs2aChargebackCheck: List<String>? = null,
+    var xs2aChargebackCheck: Xs2aChargebackCheck? = null,
     /* The XS2A.children_check gathers payments from governmental facilities, which indicate how many children the account has. This risk-check has no configuration. */
     @Json(name = "xs2a_children_check")
-    var xs2aChildrenCheck: List<String>? = null,
+    var xs2aChildrenCheck: Xs2aChildrenCheck? = null,
     @Json(name = "xs2a_credit_check")
     var xs2aCreditCheck: Xs2aCreditCheck? = null,
     @Json(name = "xs2a_direct_debit_check")
@@ -123,22 +123,22 @@ data class Xs2aRisk (
     var xs2aNameCheck: Xs2aNameCheck? = null,
     /* XS2A.overdraft_limit_check returns the number of booking days of the given risk range. The number of days the account used the overdraft limit, the maximum amount of overdraft used, the average and the median used overdraft. An XS2A.overdraft_limit_check has no additional parameters. Just append an empty object to the XS2A.risk object to indicate you would like this check to be performed. */
     @Json(name = "xs2a_overdraft_limit_check")
-    var xs2aOverdraftLimitCheck: List<String>? = null,
+    var xs2aOverdraftLimitCheck: Xs2aOverdraftLimitCheck? = null,
     /* The P&L check (profit and loss check) provides a simplified P&L statement for B2B customers as well as an overview of other relevant operational KPIs. These can be, for example, other relevant income, expenses and cash flows from the account. In addition, the tax number is also shown (initially, only in Germany). */
     @Json(name = "xs2a_profit_loss_check")
-    var xs2aProfitLossCheck: List<String>? = null,
+    var xs2aProfitLossCheck: Xs2aProfitLossCheck? = null,
     /* Produces a qualitative evaluation of a bank statement (business accounts) according to various criteria and summarizes these in a school grade system (A-F). */
     @Json(name = "xs2a_rating_b2b_check")
-    var xs2aRatingB2bCheck: List<String>? = null,
+    var xs2aRatingB2bCheck: Xs2aRatingB2bCheck? = null,
     /* Produces a qualitative evaluation of a bank statement (private accounts) according to various criteria and summarizes these in a school grade system (A-F). */
     @Json(name = "xs2a_rating_b2c_check")
-    var xs2aRatingB2cCheck: List<String>? = null,
+    var xs2aRatingB2cCheck: Xs2aRatingB2cCheck? = null,
     @Json(name = "xs2a_risk_calculations_check")
     var xs2aRiskCalculationsCheck: Xs2aRiskCalculationsCheck? = null,
     @Json(name = "xs2a_seizure_check")
     var xs2aSeizureCheck: Xs2aSeizureCheck? = null,
     /* XS2A.standing_orders_check allows you to retrieve all standing orders from an account. An XS2A.standing_orders_check has no additional parameters. Simply append an empty object to the XS2A.risk object to indicate you would like this check to be performed. */
     @Json(name = "xs2a_standing_orders_check")
-    var xs2aStandingOrdersCheck: List<String>? = null,
+    var xs2aStandingOrdersCheck: Xs2aStandingOrdersCheck? = null,
 )
 
