@@ -33,20 +33,3 @@ data class Xs2aAccountSnapshot(
     @Json(name = "all_tags")
     var allTags: Boolean
 )
-
-@Suppress("unused")
-enum class AccountSnapshotFormat(var value: String) {
-    @Json(name = "pdf")
-    PDF("pdf"),
-
-    @Json(name = "csv")
-    CSV("csv"),
-
-    @Json(name = "json")
-    JSON("json"),
-
-    @Json(name = "json2")
-    JSON2("json2");
-
-    override fun toString() = value
-}
