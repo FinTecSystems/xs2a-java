@@ -24,13 +24,13 @@ data class Xs2aBalanceOverviewResponse(
     var balance: Float,
     /* Current available */
     @Json(name = "available")
-    var available: Float,
+    var available: Float? = null,
     /* Current limit (overdraft) */
     @Json(name = "limit")
-    var limit: Float,
+    var limit: Float? = null,
     /* Currency id of above values, e.g. EUR */
     @Json(name = "currency_id")
-    var currencyId: CurrencyId? = null,
+    var currencyId: CurrencyId,
     /* Creation date of the object */
     @Json(name = "created_at")
     var createdAt: LocalDateTime
