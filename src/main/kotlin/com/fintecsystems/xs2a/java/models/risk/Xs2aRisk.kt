@@ -26,6 +26,7 @@ import com.squareup.moshi.Json
  * @param xs2aAccountLinkedOffersCheck The Account Linked Offers Check validates with the consent of the user, based on an account view, whether third party offers might be of interest to the user and hands over an advertising link for one-time use to a FinTecSystems business partner.
  * @param xs2aAccountSnapshot 
  * @param xs2aAccountStatusCheck 
+ * @param xs2aAgeVerificationCheck 
  * @param xs2aAllAccountsCheck XS2A.standing_orders_check allows you to retrieve all standing orders from an account. An XS2A.standing_orders_check has no additional parameters.
  * @param xs2aBalanceCheck 
  * @param xs2aBalanceOverview XS2A.balance_overview returns the current running total of the chosen account. An XS2A.balance_overview has no additional parameters.
@@ -91,6 +92,8 @@ data class Xs2aRisk (
     var xs2aAccountSnapshot: Xs2aAccountSnapshot? = null,
     @Json(name = "xs2a_account_status_check")
     var xs2aAccountStatusCheck: Xs2aAccountStatusCheck? = null,
+    @Json(name = "xs2a_age_verification_check")
+    var xs2aAgeVerificationCheck: Xs2aAgeVerificationCheck? = null,
     /* XS2A.standing_orders_check allows you to retrieve all standing orders from an account. An XS2A.standing_orders_check has no additional parameters. */
     @Json(name = "xs2a_all_accounts_check")
     var xs2aAllAccountsCheck: Xs2aAllAccountsCheck? = null,

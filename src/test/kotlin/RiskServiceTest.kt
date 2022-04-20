@@ -37,6 +37,7 @@ internal class RiskServiceTest {
                 limitTurnoverDays = 10,
                 allAccounts = true
             ),
+            xs2aAgeVerificationCheck = Xs2aAgeVerificationCheck(),
             xs2aAllAccountsCheck = Xs2aAllAccountsCheck(),
             xs2aBalanceCheck = Xs2aBalanceCheck(
                 checkAmount = 10f,
@@ -176,6 +177,7 @@ internal class RiskServiceTest {
         assert(riskResult.xs2aAccountCharacteristicsCheck !== null)
         assert(riskResult.xs2aAccountSnapshot !== null)
         assert(riskResult.xs2aAccountStatusCheck !== null)
+        assert(riskResult.xs2aAgeVerificationCheck !== null)
         assert(riskResult.xs2aAllAccountsCheck !== null)
         assert(riskResult.xs2aBalanceCheck !== null)
         assert(riskResult.xs2aBalanceOverview !== null)

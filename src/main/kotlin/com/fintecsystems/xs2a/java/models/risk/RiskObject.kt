@@ -38,6 +38,7 @@ import java.time.LocalDateTime
  * @param xs2aStandingOrdersCheck
  * @param xs2aAllAccountsCheck
  * @param xs2aAccountStatusCheck
+ * @param xs2aAgeVerificationCheck
  * @param xs2aHolderIdentificationCheck
  * @param xs2aRiskCalculationsCheck
  * @param xs2aAccountCharacteristicsCheck
@@ -120,6 +121,8 @@ data class RiskObject(
     var xs2aAllAccountsCheck: Xs2aAllAccountsCheckResponse? = null,
     @Json(name = "xs2a_account_status_check")
     var xs2aAccountStatusCheck: Xs2aAccountStatusCheckResponse? = null,
+    @Json(name = "xs2a_age_verification_check")
+    var xs2aAgeVerificationCheck: Xs2aAgeVerificationCheckResponse? = null,
     @Json(name = "xs2a_holder_identification_check")
     var xs2aHolderIdentificationCheck: Xs2aHolderIdentificationCheckResponse? = null,
     @Json(name = "xs2a_risk_calculations_check")
