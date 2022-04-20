@@ -33,7 +33,7 @@ data class Xs2aDirectDebitCheckResponse(
     var endDate: LocalDate? = null,
     /* This field represents the response from our system. The values will either be ANY,  DATE or REJECT. If ANY is returned, it should be save to execute the direct debit at  any time. If DATE is returned, we suggest a date for executing the direct debit  in the field recommendation_date. In case of a REJECT it is not recommended to  execute a direct debit, because the amount is likely not be covered. For a REJECT  the returned recommendation_date will always be \"0000-00-00\". */
     @Json(name = "recommendation")
-    var recommendation: String,
+    var recommendation: Xs2aDirectDebitCheckRecommendation,
     /* If the recommendation is DATE, this will be the recommended time to execute  a direct debit. In some cases, this date might be out of the start-/end-date  range supplied (reasons might be holidays etc.). In case of REJECT this field  will always be set as \"0000-00-00\". */
     @Json(name = "recommendation_date")
     var recommendationDate: LocalDate? = null,
