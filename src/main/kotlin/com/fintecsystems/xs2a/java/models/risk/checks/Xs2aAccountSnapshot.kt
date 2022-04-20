@@ -2,6 +2,7 @@ package com.fintecsystems.xs2a.java.models.risk.checks
 
 
 import com.fintecsystems.xs2a.java.models.common.Tag
+import com.fintecsystems.xs2a.java.models.risk.Category
 import com.squareup.moshi.Json
 import java.time.LocalDate
 
@@ -31,5 +32,9 @@ data class Xs2aAccountSnapshot(
     var allAccounts: Boolean,
     /* True, if you want full categorization of the turnovers */
     @Json(name = "all_tags")
-    var allTags: Boolean
+    var allTags: Boolean,
+    @Json(name = "categories")
+    var categories: List<Category>? = null,
+    @Json(name = "with_subcategory")
+    var withSubcategory: Boolean? = null,
 )
