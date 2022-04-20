@@ -5,17 +5,15 @@ import com.squareup.moshi.Json
 
 /**
  * 
- * @param type Giro
- * @param holder holder
+ * @param type
+ * @param holder
  * @param iban 
  * @param matches 
  */
 
 data class AccountHoldersObject (
-    /* Giro */
     @Json(name = "type")
     var type: String,
-    /* holder */
     @Json(name = "holder")
     var holder: String,
     @Json(name = "iban")
