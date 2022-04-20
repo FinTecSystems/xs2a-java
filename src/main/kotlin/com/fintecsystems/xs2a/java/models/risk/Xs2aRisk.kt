@@ -38,7 +38,8 @@ import com.squareup.moshi.Json
  * @param xs2aFactSheetLists 
  * @param xs2aHolderIdentificationCheck 
  * @param xs2aIncomeCheck The Income Check provides an overview of the account holder's various types of income. Each type of income is listed separately and the corresponding key figures are calculated so that the customer can only take into account the types of income that are relevant for him/her.
- * @param xs2aNameCheck 
+ * @param xs2aInsuranceContractCheck
+ * @param xs2aNameCheck
  * @param xs2aOverdraftLimitCheck XS2A.overdraft_limit_check returns the number of booking days of the given risk range. The number of days the account used the overdraft limit, the maximum amount of overdraft used, the average and the median used overdraft. An XS2A.overdraft_limit_check has no additional parameters.
  * @param xs2aProfitLossCheck The P&L check (profit and loss check) provides a simplified P&L statement for B2B customers as well as an overview of other relevant operational KPIs. These can be, for example, other relevant income, expenses and cash flows from the account. In addition, the tax number is also shown (initially, only in Germany).
  * @param xs2aRatingB2bCheck Produces a qualitative evaluation of a bank statement (business accounts) according to various criteria and summarizes these in a school grade system (A-F).
@@ -122,6 +123,8 @@ data class Xs2aRisk (
     /* The Income Check provides an overview of the account holder's various types of income. Each type of income is listed separately and the corresponding key figures are calculated so that the customer can only take into account the types of income that are relevant for him/her. */
     @Json(name = "xs2a_income_check")
     var xs2aIncomeCheck: Xs2aIncomeCheck? = null,
+    @Json(name = "xs2a_insurance_contract_check")
+    var xs2aInsuranceContractCheck: Xs2aInsuranceContractCheck? = null,
     @Json(name = "xs2a_name_check")
     var xs2aNameCheck: Xs2aNameCheck? = null,
     /* XS2A.overdraft_limit_check returns the number of booking days of the given risk range. The number of days the account used the overdraft limit, the maximum amount of overdraft used, the average and the median used overdraft. An XS2A.overdraft_limit_check has no additional parameters. */

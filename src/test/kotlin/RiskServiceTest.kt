@@ -77,6 +77,7 @@ internal class RiskServiceTest {
                 )
             ),
             xs2aIncomeCheck = Xs2aIncomeCheck(365),
+            xs2aInsuranceContractCheck = Xs2aInsuranceContractCheck(90),
             xs2aNameCheck = Xs2aNameCheck(
                 name = "Mustermann",
                 firstname = "Max",
