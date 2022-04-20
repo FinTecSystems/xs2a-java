@@ -35,7 +35,7 @@ data class Xs2aStandingOrdersCheckResponseStandingOrders(
     var purpose: String,
     /* Frequency of standing order, d = daily, w = weekly, m = monthly, y = yearly */
     @Json(name = "frequency")
-    var frequency: String,
+    var frequency: Xs2aStandingOrdersCheckResponseStandingOrdersFrequency,
     /* Frequency interval, in case of frequency daily or weekly  the range is 1-7 (1 = Monday, 7 = Sunday). In case of monthly  or yearly it is 1-31. 0 in case for a non standardized format. */
     @Json(name = "frequency_interval")
     var frequencyInterval: Int,
