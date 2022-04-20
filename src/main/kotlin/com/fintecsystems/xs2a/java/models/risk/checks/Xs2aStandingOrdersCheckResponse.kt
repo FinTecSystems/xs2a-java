@@ -6,6 +6,7 @@ import java.time.LocalDateTime
 /**
  *
  * @param standingOrders
+ * @param supported
  * @param `object` Object type, in this case a  xs2a_standing_orders
  * @param createdAt Creation date of the object
  */
@@ -13,6 +14,8 @@ import java.time.LocalDateTime
 data class Xs2aStandingOrdersCheckResponse(
     @Json(name = "standing_orders")
     var standingOrders: List<Xs2aStandingOrdersCheckResponseStandingOrders>,
+    @Json(name = "supported")
+    var supported: Boolean,
     /* Object type, in this case a  xs2a_standing_orders */
     @Json(name = "object")
     var `object`: String,
