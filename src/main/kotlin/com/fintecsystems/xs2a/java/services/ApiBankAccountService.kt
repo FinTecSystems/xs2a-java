@@ -7,7 +7,7 @@ import com.fintecsystems.xs2a.java.models.api.accounts.BankAccountTurnovers
 import com.fintecsystems.xs2a.java.models.api.accounts.BankAccountsList
 import com.fintecsystems.xs2a.java.models.common.ReportFormat
 import com.fintecsystems.xs2a.java.models.common.ReportLocale
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 
 class ApiBankAccountService(
@@ -98,8 +98,8 @@ class ApiBankAccountService(
      */
     fun getTurnovers(
         bankAccountId: String,
-        from: LocalDateTime? = null,
-        to: LocalDateTime? = null,
+        from: OffsetDateTime? = null,
+        to: OffsetDateTime? = null,
         onlyNew: Boolean? = null
     ): BankAccountTurnovers {
         var onlyNewToUse = 0
@@ -134,7 +134,7 @@ class ApiBankAccountService(
      * @param bankAccountId The bankAccountId for the account for which the turnovers are to be marked as seen.
      * @param upTo Once you set a date, attribute new of all turnovers is set to false until the given date.
      */
-    fun markAsSeen(bankAccountId: String, upTo: LocalDateTime? = null): Any {
+    fun markAsSeen(bankAccountId: String, upTo: OffsetDateTime? = null): Any {
         var uri = "api/accounts/$bankAccountId/markAsSeen"
 
         if (upTo !== null) {

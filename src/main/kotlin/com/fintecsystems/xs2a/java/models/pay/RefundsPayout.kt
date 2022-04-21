@@ -2,7 +2,7 @@ package com.fintecsystems.xs2a.java.models.pay
 
 
 import com.squareup.moshi.Json
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 /**
  *
@@ -27,5 +27,5 @@ data class RefundsPayout(
     @Json(name = "testmode")
     var testmode: Boolean,
     @Json(name = "created_at")
-    var createdAt: LocalDateTime
+    var createdAt: OffsetDateTime
 )

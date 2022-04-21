@@ -2,7 +2,7 @@ package com.fintecsystems.xs2a.java.models.risk
 
 import com.fintecsystems.xs2a.java.models.common.Turnover
 import com.squareup.moshi.Json
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 /**
  * array of turnovers
@@ -17,7 +17,7 @@ data class AccountStatementTurnovers(
     var turnovers: List<Turnover>,
     /* Date of the account snapshot */
     @Json(name = "date")
-    var date: LocalDateTime,
+    var date: OffsetDateTime,
     /* Indicates how many days the account snapshot includes */
     @Json(name = "days")
     var days: Int? = null,

@@ -1,7 +1,7 @@
 package com.fintecsystems.xs2a.java.models.events
 
 import com.squareup.moshi.Json
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 /**
  *
@@ -36,7 +36,7 @@ data class EventObject(
     var message: String,
     /* The date the event was fired. */
     @Json(name = "created_at")
-    var createdAt: LocalDateTime,
+    var createdAt: OffsetDateTime,
     /* xs2a_event for event objects. */
     @Json(name = "object")
     var `object`: String

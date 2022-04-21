@@ -3,7 +3,7 @@ package com.fintecsystems.xs2a.java.models.risk
 
 import com.fintecsystems.xs2a.java.models.common.CurrencyId
 import com.squareup.moshi.Json
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 /**
  *
@@ -29,6 +29,6 @@ data class AccountStatementBalance(
     var currency: CurrencyId? = null,
     /* The date the balance was seen on. */
     @Json(name = "date")
-    var date: LocalDateTime
+    var date: OffsetDateTime
 )
 

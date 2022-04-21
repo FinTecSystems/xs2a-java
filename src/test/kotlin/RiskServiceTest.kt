@@ -13,7 +13,7 @@ import com.fintecsystems.xs2a.java.services.RiskService
 import com.fintecsystems.xs2a.java.services.WizardService
 import org.junit.jupiter.api.Test
 import java.time.LocalDate
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 internal class RiskServiceTest {
     private val apiKey = System.getenv("API_KEY")
@@ -209,7 +209,7 @@ internal class RiskServiceTest {
 
         riskService.getEvents(response.transaction)
 
-        riskService.list(to = LocalDateTime.now().minusDays(30))
+        riskService.list(to = OffsetDateTime.now().minusDays(30))
 
         val delete = riskService.delete(response.transaction)
         assert(delete["code"] !== null)

@@ -3,7 +3,7 @@ package com.fintecsystems.xs2a.java.models.api.accounts
 import com.fintecsystems.xs2a.java.models.common.AccountType
 import com.fintecsystems.xs2a.java.models.common.CountryId
 import com.squareup.moshi.Json
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 /**
  *
@@ -66,7 +66,7 @@ data class BankAccount(
     var transactionPossible: Boolean,
     /* Date of creation */
     @Json(name = "created_at")
-    var createdAt: LocalDateTime,
+    var createdAt: OffsetDateTime,
     /* The value bank_account */
     @Json(name = "object")
     var `object`: String

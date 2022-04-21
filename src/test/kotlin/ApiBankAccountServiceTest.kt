@@ -13,7 +13,7 @@ import org.junit.jupiter.api.MethodOrderer
 import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestMethodOrder
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
 class ApiBankAccountServiceTest {
@@ -33,7 +33,7 @@ class ApiBankAccountServiceTest {
 
             val accessTokenResponse = createAccessToken(
                 userId = bankUserId,
-                validUntil = LocalDateTime.now().plusDays(7)
+                validUntil = OffsetDateTime.now().plusDays(7)
             )
 
             accessTokenId = accessTokenResponse.id

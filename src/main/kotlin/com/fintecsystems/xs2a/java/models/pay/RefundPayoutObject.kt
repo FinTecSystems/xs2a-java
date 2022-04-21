@@ -2,7 +2,7 @@ package com.fintecsystems.xs2a.java.models.pay
 
 
 import com.squareup.moshi.Json
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 /**
  *
@@ -15,6 +15,6 @@ data class RefundPayoutObject(
     @Json(name = "message_id")
     var messageId: String,
     @Json(name = "created_at")
-    var createdAt: LocalDateTime
+    var createdAt: OffsetDateTime
 )
 

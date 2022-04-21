@@ -11,7 +11,7 @@ import com.fintecsystems.xs2a.java.models.risk.checks.AccountSnapshotFormat
 import com.fintecsystems.xs2a.java.models.risk.uploadJson.Xs2aRiskUploadJsonSuccess
 import com.fintecsystems.xs2a.java.models.risk.uploadJson.Xs2aRiskUploadJsonWrapper
 import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 
 @Suppress("unused")
@@ -178,8 +178,8 @@ class RiskService(
         merchant_id: String? = null,
         per_page: Int = 15,
         page: Int = 1,
-        from: LocalDateTime? = null,
-        to: LocalDateTime? = null,
+        from: OffsetDateTime? = null,
+        to: OffsetDateTime? = null,
     ): RisksTransactionList {
         var fromToUse: String? = null
         var toToUse: String? = null

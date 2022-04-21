@@ -3,7 +3,7 @@ package com.fintecsystems.xs2a.java.models.common
 
 import com.fintecsystems.xs2a.java.models.risk.Category
 import com.squareup.moshi.Json
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 /**
  *
@@ -25,7 +25,7 @@ import java.time.LocalDateTime
 data class Turnover(
     /* The booking date. */
     @Json(name = "booking_date")
-    var bookingDate: LocalDateTime,
+    var bookingDate: OffsetDateTime,
     /* The turnover amount. Negative for expenditures. */
     @Json(name = "amount")
     var amount: Float,

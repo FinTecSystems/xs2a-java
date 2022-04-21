@@ -6,7 +6,7 @@ import com.fintecsystems.xs2a.java.models.common.ReportFormat
 import com.fintecsystems.xs2a.java.models.common.ReportLocale
 import com.fintecsystems.xs2a.java.models.pay.*
 import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 class PayService(
     private val apiKey: String
@@ -196,8 +196,8 @@ class PayService(
         purpose: String? = null,
         perPage: Int? = null,
         page: Int? = null,
-        from: LocalDateTime? = null,
-        to: LocalDateTime? = null
+        from: OffsetDateTime? = null,
+        to: OffsetDateTime? = null
     ): PayTransactionList {
         val amountToUse = if (amount !== null) amount.toString() else null
         val perPageToUse = if (perPage !== null) perPage.toString() else null

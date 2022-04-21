@@ -2,7 +2,7 @@ package com.fintecsystems.xs2a.java.models.risk.uploadJson
 
 import com.fintecsystems.xs2a.java.models.common.CurrencyId
 import com.squareup.moshi.Json
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 /**
  *
@@ -17,7 +17,7 @@ import java.time.LocalDateTime
 
 data class Xs2aRiskUploadJsonTurnoversTurnover(
     @Json(name = "booking_date")
-    var bookingDate: LocalDateTime,
+    var bookingDate: OffsetDateTime,
     @Json(name = "amount")
     var amount: Float,
     @Json(name = "currency")

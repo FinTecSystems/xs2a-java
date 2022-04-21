@@ -2,7 +2,7 @@ package com.fintecsystems.xs2a.java.models.api.users
 
 
 import com.squareup.moshi.Json
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 /**
  *
@@ -29,7 +29,7 @@ data class BankUser(
     var testmode: Boolean,
     /* Date of creation */
     @Json(name = "created_at")
-    var createdAt: LocalDateTime,
+    var createdAt: OffsetDateTime,
     /* The value bank_user */
     @Json(name = "object")
     var `object`: String

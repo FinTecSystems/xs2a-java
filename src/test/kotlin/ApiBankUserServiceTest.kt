@@ -6,7 +6,7 @@ import org.junit.jupiter.api.MethodOrderer.OrderAnnotation
 import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestMethodOrder
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 @TestMethodOrder(OrderAnnotation::class)
 internal class ApiBankUserServiceTest {
@@ -51,7 +51,7 @@ internal class ApiBankUserServiceTest {
     @Order(3)
     fun testCreateAccessToken() {
         ApiBankUserService(apiKey).apply {
-            val validUntil = LocalDateTime.now()
+            val validUntil = OffsetDateTime.now()
                 .withNano(0)
                 .plusDays(1)
 
@@ -91,7 +91,7 @@ internal class ApiBankUserServiceTest {
     @Order(6)
     fun testRefreshAccessToken() {
         ApiBankUserService(apiKey).apply {
-            val validUntil = LocalDateTime.now()
+            val validUntil = OffsetDateTime.now()
                 .withNano(0)
                 .plusDays(2)
 

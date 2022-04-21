@@ -2,7 +2,7 @@ package com.fintecsystems.xs2a.java.models.risk.uploadJson
 
 import com.fintecsystems.xs2a.java.models.common.CountryId
 import com.squareup.moshi.Json
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 /**
  *
@@ -38,7 +38,7 @@ data class Xs2aRiskUploadJsonSuccess(
     @Json(name = "testmode")
     var testmode: Boolean,
     @Json(name = "created_at")
-    var createdAt: LocalDateTime,
+    var createdAt: OffsetDateTime,
     @Json(name = "metadata")
     var metadata: String? = null,
     @Json(name = "merchant_id")

@@ -1,7 +1,7 @@
 package com.fintecsystems.xs2a.java.models.risk.checks
 
 import com.squareup.moshi.Json
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 /**
  *
@@ -15,7 +15,7 @@ data class Xs2aRiskCalculationsCheckResponse(
     var calculations: List<RiskCalculationsResponse>,
     /* Creation date of the object */
     @Json(name = "created_at")
-    var createdAt: LocalDateTime,
+    var createdAt: OffsetDateTime,
     /* Object type, in this case a  xs2a_risk_calculations_check */
     @Json(name = "object")
     var `object`: String

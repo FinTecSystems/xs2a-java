@@ -4,7 +4,7 @@ import com.fintecsystems.xs2a.java.models.risk.CreditCardsObject
 import com.fintecsystems.xs2a.java.models.risk.OtherAccountsObject
 import com.fintecsystems.xs2a.java.models.risk.UserAccountsObject
 import com.squareup.moshi.Json
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 /**
  *
@@ -32,7 +32,7 @@ data class Xs2aAccountStatusCheckResponse(
     var allAccounts: Boolean,
     /* Creation date of the object */
     @Json(name = "created_at")
-    var createdAt: LocalDateTime,
+    var createdAt: OffsetDateTime,
     /* Object type, in this case a xs2a_account_status_check */
     @Json(name = "object")
     var `object`: String

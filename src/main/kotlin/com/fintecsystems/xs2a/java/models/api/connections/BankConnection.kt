@@ -3,7 +3,7 @@ package com.fintecsystems.xs2a.java.models.api.connections
 import com.fintecsystems.xs2a.java.models.common.CountryId
 import com.squareup.moshi.Json
 import java.time.LocalDate
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 /**
  *
@@ -53,7 +53,7 @@ data class BankConnection(
     var syncFailCounter: Int,
     /* The date when the connection was last synced */
     @Json(name = "last_synced")
-    var lastSynced: LocalDateTime,
+    var lastSynced: OffsetDateTime,
     /* The consent is valid until the given date (Format: YYYY-MM-DD). */
     @Json(name = "consent_valid_until")
     var consentValidUntil: LocalDate? = null,
@@ -62,7 +62,7 @@ data class BankConnection(
     var testmode: Boolean,
     /* Date of creation */
     @Json(name = "created_at")
-    var createdAt: LocalDateTime,
+    var createdAt: OffsetDateTime,
     /* The value bank_connection */
     @Json(name = "object")
     var `object`: String

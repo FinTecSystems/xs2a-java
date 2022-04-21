@@ -2,7 +2,7 @@ package com.fintecsystems.xs2a.java.models.risk.checks
 
 import com.fintecsystems.xs2a.java.models.risk.Employer
 import com.squareup.moshi.Json
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 /**
  *
@@ -26,9 +26,9 @@ data class Xs2aIncomeCheckResponseDataCategoryShortName(
     @Json(name = "months_sums_minimum")
     var monthsSumsMinimum: Float,
     @Json(name = "min_date")
-    var minDate: LocalDateTime,
+    var minDate: OffsetDateTime,
     @Json(name = "max_date")
-    var maxDate: LocalDateTime,
+    var maxDate: OffsetDateTime,
     @Json(name = "current_payment")
     var currentPayment: Boolean,
     @Json(name = "forecast")

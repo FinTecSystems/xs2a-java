@@ -8,15 +8,6 @@ import com.squareup.moshi.ToJson
 @JsonQualifier
 annotation class NullableBoolean
 
-object NullableBooleanAdapter {
-    @FromJson
-    @NullableBoolean
-    fun fromJson(fieldToParse: Any): Boolean? = BooleanAdapter.fromJson(fieldToParse)
-
-    @ToJson
-    fun toJson(@NullableBoolean booleanToSerialize: Boolean?) = booleanToSerialize.toString()
-}
-
 object BooleanAdapter {
     @FromJson
     fun fromJson(fieldToParse: Any): Boolean = when (fieldToParse) {

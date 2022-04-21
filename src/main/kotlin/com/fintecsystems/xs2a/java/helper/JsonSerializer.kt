@@ -29,7 +29,7 @@ object JsonSerializer {
         .add(NullableBooleanAdapter)
         .add(BooleanAdapter)
         .add(LocalDateAdapter)
-        .add(LocalDateTimeAdapter)
+        .add(OffsetDateTimeAdapter)
         .addLast(KotlinJsonAdapterFactory())
         .add(Tag.Companion)
         .add(Xs2aRiskCalculationsCheckFunction.Companion)

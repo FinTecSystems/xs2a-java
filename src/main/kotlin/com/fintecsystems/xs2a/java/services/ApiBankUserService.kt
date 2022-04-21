@@ -2,7 +2,7 @@ package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
 import com.fintecsystems.xs2a.java.models.api.users.*
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 
 class ApiBankUserService(
@@ -47,7 +47,7 @@ class ApiBankUserService(
      * @param validUntil The accesstoken will be valid until the given date (Format: YYYY-MM-DD hh:mm:ss).
      * @return AccessToken
      */
-    fun createAccessToken(userId: String, validUntil: LocalDateTime): AccessToken {
+    fun createAccessToken(userId: String, validUntil: OffsetDateTime): AccessToken {
         val dateString =
             validUntil.format(DateTimeFormatter.ISO_LOCAL_DATE) + " " + validUntil.format(DateTimeFormatter.ISO_LOCAL_TIME)
 
@@ -92,7 +92,7 @@ class ApiBankUserService(
      * @param validUntil The accesstoken is valid until the given date (Format: YYYY-MM-DD hh:mm:ss).
      * @return AccessToken
      */
-    fun refreshAccessToken(userId: String, tokenId: String, validUntil: LocalDateTime): AccessToken {
+    fun refreshAccessToken(userId: String, tokenId: String, validUntil: OffsetDateTime): AccessToken {
         val response = ApiService(apiKey).patch(
             "api/users/$userId/accesstokens/$tokenId", JsonSerializer.toJson(
                 mapOf(

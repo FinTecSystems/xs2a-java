@@ -2,7 +2,7 @@ package com.fintecsystems.xs2a.java.models.wizard
 
 import com.fintecsystems.xs2a.java.models.common.Product
 import com.squareup.moshi.Json
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 /**
  *
@@ -49,7 +49,7 @@ data class WizardSessionObject(
     var currentStep: WizardSessionCurrentStep,
     /* Type of creation */
     @Json(name = "created_at")
-    var createdAt: LocalDateTime,
+    var createdAt: OffsetDateTime,
     /* String with content 'wizard_session' */
     @Json(name = "object")
     var `object`: String

@@ -2,7 +2,7 @@ package com.fintecsystems.xs2a.java.models.api.accounts
 
 import com.fintecsystems.xs2a.java.models.common.Turnover
 import com.squareup.moshi.Json
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 /**
  *
@@ -26,10 +26,10 @@ data class BankAccountTurnovers(
     var days: Int? = null,
     /* The date the turnovers were seen on. */
     @Json(name = "date")
-    var date: LocalDateTime,
+    var date: OffsetDateTime,
     /* Date of creation of the turnovers object. */
     @Json(name = "created_at")
-    var createdAt: LocalDateTime,
+    var createdAt: OffsetDateTime,
     /* The value bank_account_turnovers */
     @Json(name = "object")
     var `object`: String

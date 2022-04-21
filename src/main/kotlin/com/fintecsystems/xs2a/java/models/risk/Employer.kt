@@ -2,7 +2,7 @@ package com.fintecsystems.xs2a.java.models.risk
 
 
 import com.squareup.moshi.Json
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 /**
  *
@@ -22,9 +22,9 @@ data class Employer(
     @Json(name = "months_with_salaries_count")
     var monthsWithSalariesCount: Int,
     @Json(name = "booking_date_first_salary")
-    var bookingDateFirstSalary: LocalDateTime,
+    var bookingDateFirstSalary: OffsetDateTime,
     @Json(name = "booking_date_last_salary")
-    var bookingDateLastSalary: LocalDateTime,
+    var bookingDateLastSalary: OffsetDateTime,
     @Json(name = "months_sums_median")
     var monthsSumsMedian: Float,
     @Json(name = "months_sums_minimum")

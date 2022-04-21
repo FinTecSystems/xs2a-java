@@ -3,7 +3,7 @@ package com.fintecsystems.xs2a.java.models.risk
 import com.fintecsystems.xs2a.java.models.common.CountryId
 import com.fintecsystems.xs2a.java.models.risk.checks.*
 import com.squareup.moshi.Json
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 /**
  *
@@ -71,7 +71,7 @@ data class RiskObject(
     var testmode: Boolean,
     /* Date of creation */
     @Json(name = "created_at")
-    var createdAt: LocalDateTime,
+    var createdAt: OffsetDateTime,
     /* Custom data will be returned unchanged. If no data was submitted, this field will be null */
     @Json(name = "metadata")
     var metadata: Map<String, Any>? = null,
