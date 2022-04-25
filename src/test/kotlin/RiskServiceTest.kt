@@ -77,7 +77,7 @@ internal class RiskServiceTest {
                 )
             ),
             xs2aIncomeCheck = Xs2aIncomeCheck(365),
-            // xs2aInsuranceContractCheck = Xs2aInsuranceContractCheck(90),
+            // xs2aInsuranceContractCheck = Xs2aInsuranceContractCheck(90), // TODO: Add again, when backend is fixed
             xs2aNameCheck = Xs2aNameCheck(
                 name = "Mustermann",
                 firstname = "Max",
@@ -190,6 +190,7 @@ internal class RiskServiceTest {
         assert(riskResult.xs2aFactSheetLists !== null)
         assert(riskResult.xs2aHolderIdentificationCheck !== null)
         assert(riskResult.xs2aIncomeCheck !== null)
+        // assert(riskResult.xs2aInsuranceContractCheck !== null) // TODO: Add when exists.
         assert(riskResult.xs2aNameCheck !== null)
         assert(riskResult.xs2aOverdraftLimitCheck !== null)
         assert(riskResult.xs2aRatingB2bCheck !== null)
