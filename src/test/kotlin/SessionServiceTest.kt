@@ -6,6 +6,7 @@ import org.junit.jupiter.api.MethodOrderer.OrderAnnotation
 import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestMethodOrder
+import kotlin.test.assertNotNull
 
 @TestMethodOrder(OrderAnnotation::class)
 internal class SessionServiceTest {
@@ -22,7 +23,7 @@ internal class SessionServiceTest {
     fun testGet() {
         val res = sessionService.get(riskResponse.transaction)
 
-        println(res)
+        assertNotNull(res)
     }
 
     companion object {
