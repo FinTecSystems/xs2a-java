@@ -7,6 +7,7 @@ import java.time.OffsetDateTime
 
 /**
  *
+ * @param id ID if feature is enabled always null otherwise.
  * @param bookingDate The booking date.
  * @param amount The turnover amount. Negative for expenditures.
  * @param currency The two-letter currency ID, e.g. 'EUR'
@@ -23,6 +24,8 @@ import java.time.OffsetDateTime
  */
 
 open class Turnover(
+    @Json(name = "id")
+    var id: String? = null,
     /* The booking date. */
     @Json(name = "booking_date")
     var bookingDate: OffsetDateTime,
