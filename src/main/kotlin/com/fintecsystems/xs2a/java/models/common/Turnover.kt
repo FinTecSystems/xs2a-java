@@ -23,7 +23,7 @@ import java.time.OffsetDateTime
  * @param new True, if this turnover is new since the last sync.
  */
 
-open class Turnover(
+data class Turnover(
     @Json(name = "id")
     var id: String? = null,
     /* The booking date. */
