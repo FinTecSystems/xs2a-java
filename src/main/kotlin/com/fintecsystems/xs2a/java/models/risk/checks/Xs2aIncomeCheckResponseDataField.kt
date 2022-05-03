@@ -18,7 +18,7 @@ import java.time.OffsetDateTime
  * @param employer
  */
 
-data class Xs2aIncomeCheckResponseDataCategoryShortName(
+data class Xs2aIncomeCheckResponseDataField(
     @Json(name = "monthly_sums")
     var monthlySums: Map<String, Float>,
     @Json(name = "months_sums_median")
