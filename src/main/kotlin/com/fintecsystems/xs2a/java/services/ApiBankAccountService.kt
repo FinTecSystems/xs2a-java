@@ -10,9 +10,10 @@ import com.fintecsystems.xs2a.java.models.common.ReportLocale
 import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 
+@Suppress("unused")
 class ApiBankAccountService(
-    private val apiKey: String
-) {
+    apiKey: String
+) : ServiceBase(apiKey) {
 
     /**
      * Get a list of all accounts for a xs2a.bank user
@@ -24,7 +25,7 @@ class ApiBankAccountService(
         per_page: Int = 15,
         page: Int = 1,
     ): BankAccountsList {
-        val response = ApiService(apiKey).get(
+        val response = apiService.get(
             "api/accounts",
             mutableMapOf(
                 "per_page" to per_page.toString(),
@@ -46,7 +47,7 @@ class ApiBankAccountService(
         per_page: Int = 15,
         page: Int = 1,
     ): BankAccountsList {
-        val response = ApiService(apiKey).get(
+        val response = apiService.get(
             "api/connections/$connectionId/accounts",
             mutableMapOf(
                 "per_page" to per_page.toString(),
@@ -63,7 +64,7 @@ class ApiBankAccountService(
      * @return BankAccount
      */
     fun get(bankAccountId: String): BankAccount {
-        val response = ApiService(apiKey).get("api/accounts/$bankAccountId")
+        val response = apiService.get("api/accounts/$bankAccountId")
 
         return JsonSerializer.parseJson(response)
     }
@@ -74,7 +75,7 @@ class ApiBankAccountService(
      * @return String
      */
     fun delete(bankAccountId: String): String {
-        return ApiService(apiKey).delete("api/accounts/$bankAccountId")
+        return apiService.delete("api/accounts/$bankAccountId")
     }
 
     /**
@@ -83,7 +84,7 @@ class ApiBankAccountService(
      * @return BankAccountBalance
      */
     fun getBalance(bankAccountId: String): BankAccountBalance {
-        val response = ApiService(apiKey).get("api/accounts/$bankAccountId/balance")
+        val response = apiService.get("api/accounts/$bankAccountId/balance")
 
         return JsonSerializer.parseJson(response)
     }
@@ -118,7 +119,7 @@ class ApiBankAccountService(
             toToUse = to.format(DateTimeFormatter.ISO_LOCAL_DATE)
         }
 
-        val response = ApiService(apiKey).get(
+        val response = apiService.get(
             "api/accounts/$bankAccountId/turnovers", mutableMapOf(
                 "from" to fromToUse,
                 "to" to toToUse,
@@ -141,7 +142,7 @@ class ApiBankAccountService(
             uri = "$uri/$upTo"
         }
 
-        val response = ApiService(apiKey).post(uri)
+        val response = apiService.post(uri)
 
         return JsonSerializer.parseJson(response)
     }
@@ -160,7 +161,7 @@ class ApiBankAccountService(
         format: ReportFormat = ReportFormat.JSON,
         locale: ReportLocale = ReportLocale.EN
     ): String {
-        return ApiService(apiKey).get(
+        return apiService.get(
             "api/accounts/$bankAccountId/report/$reportId", mutableMapOf(
                 "format" to format.value,
                 "locale" to locale.value,

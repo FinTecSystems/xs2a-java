@@ -6,8 +6,8 @@ import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 
 class ApiBankUserService(
-    private val apiKey: String
-) {
+    apiKey: String
+) : ServiceBase(apiKey) {
 
     /**
      * Create a xs2a.api bank user
@@ -15,7 +15,7 @@ class ApiBankUserService(
      * @return BankUser
      */
     fun create(body: BankUserCreationRequest): BankUser {
-        val response = ApiService(apiKey).put("api/users", JsonSerializer.toJson(body))
+        val response = apiService.put("api/users", JsonSerializer.toJson(body))
 
         return JsonSerializer.parseJson(response)
     }
@@ -26,7 +26,7 @@ class ApiBankUserService(
      * @return BankUser
      */
     fun get(userId: String): BankUser {
-        val response = ApiService(apiKey).get("api/users/$userId")
+        val response = apiService.get("api/users/$userId")
 
         return JsonSerializer.parseJson(response)
     }
@@ -37,7 +37,7 @@ class ApiBankUserService(
      * @return String
      */
     fun delete(userId: String): String {
-        return ApiService(apiKey).delete("api/users/$userId")
+        return apiService.delete("api/users/$userId")
     }
 
 
@@ -51,7 +51,7 @@ class ApiBankUserService(
         val dateString =
             validUntil.format(DateTimeFormatter.ISO_LOCAL_DATE) + " " + validUntil.format(DateTimeFormatter.ISO_LOCAL_TIME)
 
-        val response = ApiService(apiKey).put(
+        val response = apiService.put(
             "api/users/$userId/accesstokens", JsonSerializer.toJson(
                 mapOf(
                     "valid_until" to dateString,
@@ -68,7 +68,7 @@ class ApiBankUserService(
      * @param userId id of user
      */
     fun listAccessTokens(userId: String): AccessTokenList {
-        val response = ApiService(apiKey).get("api/users/$userId/accesstokens")
+        val response = apiService.get("api/users/$userId/accesstokens")
 
         return JsonSerializer.parseJson(response)
     }
@@ -80,7 +80,7 @@ class ApiBankUserService(
      * @return AccessToken
      */
     fun getAccessToken(userId: String, tokenId: String): AccessToken {
-        val response = ApiService(apiKey).get("api/users/$userId/accesstokens/$tokenId")
+        val response = apiService.get("api/users/$userId/accesstokens/$tokenId")
 
         return JsonSerializer.parseJson(response)
     }
@@ -93,7 +93,7 @@ class ApiBankUserService(
      * @return AccessToken
      */
     fun refreshAccessToken(userId: String, tokenId: String, validUntil: OffsetDateTime): AccessToken {
-        val response = ApiService(apiKey).patch(
+        val response = apiService.patch(
             "api/users/$userId/accesstokens/$tokenId", JsonSerializer.toJson(
                 mapOf(
                     "valid_until" to validUntil,
@@ -111,7 +111,7 @@ class ApiBankUserService(
      * @return String
      */
     fun deleteAccessToken(userId: String, tokenId: String): String {
-        return ApiService(apiKey).delete("api/users/$userId/accesstokens/$tokenId")
+        return apiService.delete("api/users/$userId/accesstokens/$tokenId")
     }
 
     /**
@@ -124,9 +124,8 @@ class ApiBankUserService(
         per_page: Int = 15,
         page: Int = 1,
     ): BankUserList {
-        val response = ApiService(apiKey).get(
-            "api/users",
-            mutableMapOf(
+        val response = apiService.get(
+            "api/users", mutableMapOf(
                 "per_page" to per_page.toString(),
                 "page" to page.toString(),
             )

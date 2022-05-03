@@ -7,8 +7,8 @@ import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 
 class EventService (
-    private val apiKey: String
-) {
+    apiKey: String
+) : ServiceBase(apiKey) {
     /**
      * Get all events for a xs2a transaction object
      *
@@ -28,7 +28,7 @@ class EventService (
         from: OffsetDateTime? = null,
         to: OffsetDateTime? = null,
     ): EventsList {
-        val response = ApiService(apiKey).get(
+        val response = apiService.get(
             "events",
             mutableMapOf(
                 "transaction_id" to transaction_id,
@@ -49,7 +49,7 @@ class EventService (
      * @return EventObject
      */
     fun get(eventId: String): EventObject {
-        val response = ApiService(apiKey).get("events/$eventId")
+        val response = apiService.get("events/$eventId")
 
         return JsonSerializer.parseJson(response)
     }

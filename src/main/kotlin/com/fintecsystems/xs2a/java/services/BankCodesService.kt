@@ -7,13 +7,12 @@ import com.fintecsystems.xs2a.java.models.common.CountryId
 import com.fintecsystems.xs2a.java.models.common.Product
 
 class BankCodesService(
-    private val apiKey: String
-) {
+    apiKey: String
+) : ServiceBase(apiKey) {
 
     fun getBankByCode(bankCode: String): BankObject {
-        val response = ApiService(apiKey).get(
-            "bankcodes",
-            mutableMapOf(
+        val response = apiService.get(
+            "bankcodes", mutableMapOf(
                 "bank_code" to bankCode,
             )
         )
@@ -22,13 +21,10 @@ class BankCodesService(
     }
 
     fun filterAllBanks(
-        countryId: CountryId? = null,
-        per_page: Int = 15,
-        page: Int = 1
+        countryId: CountryId? = null, per_page: Int = 15, page: Int = 1
     ): BankObjectList {
-        val response = ApiService(apiKey).get(
-            "bankcodes/all",
-            mutableMapOf(
+        val response = apiService.get(
+            "bankcodes/all", mutableMapOf(
                 "country_id" to (countryId?.value ?: ""),
                 "per_page" to per_page.toString(),
                 "page" to page.toString(),
@@ -45,9 +41,8 @@ class BankCodesService(
         page: Int = 1,
         product: Product? = null,
     ): BankObjectList {
-        val response = ApiService(apiKey).get(
-            "bankcodes/autocomplete",
-            mutableMapOf(
+        val response = apiService.get(
+            "bankcodes/autocomplete", mutableMapOf(
                 "q" to query,
                 "country_id" to countryId,
                 "per_page" to per_page,

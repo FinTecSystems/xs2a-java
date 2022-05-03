@@ -8,9 +8,10 @@ import com.fintecsystems.xs2a.java.models.pay.*
 import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
 import java.time.OffsetDateTime
 
+@Suppress("unused")
 class PayService(
-    private val apiKey: String
-) {
+    apiKey: String
+) : ServiceBase(apiKey) {
 
     /**
      * Create xs2a.pay object
@@ -19,7 +20,7 @@ class PayService(
      * @return WizardSessionResponse
      */
     fun create(body: Xs2aPay): WizardSessionResponse {
-        val response = ApiService(apiKey).post("payments", JsonSerializer.toJson(body))
+        val response = apiService.post("payments", JsonSerializer.toJson(body))
 
         return JsonSerializer.parseJson(response)
     }
@@ -31,7 +32,7 @@ class PayService(
      * @return PayObject
      */
     fun get(transactionId: String): PayObject {
-        val response = ApiService(apiKey).get("payments/$transactionId")
+        val response = apiService.get("payments/$transactionId")
 
         return JsonSerializer.parseJson(response)
     }
@@ -45,7 +46,7 @@ class PayService(
      */
     fun updatePaymentStatus(transactionId: String, statusToSet: PaymentStatus): PayObject {
         val statusValue = statusToSet.value.lowercase()
-        val response = ApiService(apiKey).post("payments/$transactionId/$statusValue")
+        val response = apiService.post("payments/$transactionId/$statusValue")
 
         return JsonSerializer.parseJson(response)
     }
@@ -76,7 +77,7 @@ class PayService(
             "locale" to locale.value,
         )
 
-        val response = ApiService(apiKey).get(uri, queryParameters)
+        val response = apiService.get(uri, queryParameters)
 
         return JsonSerializer.parseJson(response)
     }
@@ -95,7 +96,7 @@ class PayService(
             "page" to page.toString(),
         )
 
-        val response = ApiService(apiKey).get("payments/$transactionId/events", queryParameters)
+        val response = apiService.get("payments/$transactionId/events", queryParameters)
 
         return JsonSerializer.parseJson(response)
     }
@@ -108,7 +109,7 @@ class PayService(
      * @return RefundPayoutResponse
      */
     fun generatePainFile(body: RefundPayoutRequest): RefundPayoutResponse {
-        val response = ApiService(apiKey).post("payments/refundPayout", JsonSerializer.toJson(body))
+        val response = apiService.post("payments/refundPayout", JsonSerializer.toJson(body))
 
         return JsonSerializer.parseJson(response)
     }
@@ -123,7 +124,7 @@ class PayService(
             "page" to page.toString(),
         )
 
-        val response = ApiService(apiKey).get("payments/refundPayout", queryParameters)
+        val response = apiService.get("payments/refundPayout", queryParameters)
 
         return JsonSerializer.parseJson(response)
     }
@@ -135,7 +136,7 @@ class PayService(
      * @return RefundsPayout
      */
     fun getRefundPayout(transactionId: String): RefundsPayout {
-        val response = ApiService(apiKey).get("payments/$transactionId/refundPayout")
+        val response = apiService.get("payments/$transactionId/refundPayout")
 
         return JsonSerializer.parseJson(response)
     }
@@ -147,7 +148,7 @@ class PayService(
      * @return String
      */
     fun getPainFile(messageId: String): String {
-        return ApiService(apiKey).get("payments/refundPayout/$messageId")
+        return apiService.get("payments/refundPayout/$messageId")
     }
 
     /**
@@ -157,7 +158,7 @@ class PayService(
      * @return void
      */
     fun delete(transactionId: String): String {
-        return ApiService(apiKey).delete("payments/$transactionId")
+        return apiService.delete("payments/$transactionId")
     }
 
     /**
@@ -203,7 +204,7 @@ class PayService(
         val perPageToUse = if (perPage !== null) perPage.toString() else null
         val pageToUse = if (page !== null) page.toString() else null
 
-        val response = ApiService(apiKey).get(
+        val response = apiService.get(
             "payments",
             mutableMapOf(
                 "senderHolder" to senderHolder,

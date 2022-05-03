@@ -15,8 +15,8 @@ import java.time.format.DateTimeFormatter
 
 @Suppress("unused")
 class RiskService(
-    private val apiKey: String
-) {
+    apiKey: String
+) : ServiceBase(apiKey) {
 
     /**
      * Create xs2a.risk object
@@ -27,7 +27,7 @@ class RiskService(
      * @return WizardSessionResponse
      */
     fun create(body: Xs2aRisk): WizardSessionResponse {
-        val response = ApiService(apiKey).post("risks", toJson(body))
+        val response = apiService.post("risks", toJson(body))
 
         return parseJson(response)
     }
@@ -38,7 +38,7 @@ class RiskService(
      * @return RiskObject
      */
     fun get(transactionId: String): RiskObject {
-        val response = ApiService(apiKey).get("risks/$transactionId")
+        val response = apiService.get("risks/$transactionId")
 
         return parseJson(response)
     }
@@ -56,7 +56,7 @@ class RiskService(
         transactionId: String
     ): Array<AccountStatement> {
         val response =
-            ApiService(apiKey).get("risks/$transactionId/accountSnapshot", mutableMapOf("format" to "json2"))
+            apiService.get("risks/$transactionId/accountSnapshot", mutableMapOf("format" to "json2"))
 
         return parseJson(response)
     }
@@ -69,7 +69,7 @@ class RiskService(
      * @param transactionId id of the transaction to get the full PDF for
      */
     fun getFullPDF(transactionId: String): String {
-        return ApiService(apiKey).get("risks/$transactionId/fullpdf")
+        return apiService.get("risks/$transactionId/fullpdf")
     }
 
     /**
@@ -98,7 +98,7 @@ class RiskService(
             "locale" to locale.value,
         )
 
-        return ApiService(apiKey).get(uri, queryParameters)
+        return apiService.get(uri, queryParameters)
     }
 
     /**
@@ -119,7 +119,7 @@ class RiskService(
             "page" to page.toString(),
         )
 
-        val response = ApiService(apiKey).get("risks/$transactionId/events", queryParameters)
+        val response = apiService.get("risks/$transactionId/events", queryParameters)
 
         return parseJson(response)
     }
@@ -135,7 +135,7 @@ class RiskService(
         wizardSessionId: String,
         body: Xs2aRiskUploadJsonWrapper
     ): Xs2aRiskUploadJsonSuccess {
-        val response = ApiService(apiKey).post("risks/upload/$wizardSessionId", toJson(body))
+        val response = apiService.post("risks/upload/$wizardSessionId", toJson(body))
 
         return parseJson(response)
     }
@@ -147,7 +147,7 @@ class RiskService(
      * transaction.
      */
     fun delete(transactionId: String): Map<String, Any?> {
-        val response = ApiService(apiKey).delete("risks/$transactionId")
+        val response = apiService.delete("risks/$transactionId")
 
         return parseJson(response)
     }
@@ -187,7 +187,7 @@ class RiskService(
             toToUse = to.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
         }
 
-        val response = ApiService(apiKey).get(
+        val response = apiService.get(
             "risks",
             mutableMapOf(
                 "account_holder" to account_holder,

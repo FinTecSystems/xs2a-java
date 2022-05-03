@@ -4,11 +4,11 @@ import com.fintecsystems.xs2a.java.helper.JsonSerializer
 import com.fintecsystems.xs2a.java.models.wizard.WizardSessionObject
 
 class SessionService(
-    private val apiKey: String
-) {
+    apiKey: String
+) : ServiceBase(apiKey) {
 
     fun get(transactionId: String): WizardSessionObject {
-        val response = ApiService(apiKey).get("sessions/$transactionId")
+        val response = apiService.get("sessions/$transactionId")
 
         return JsonSerializer.parseJson(response)
     }

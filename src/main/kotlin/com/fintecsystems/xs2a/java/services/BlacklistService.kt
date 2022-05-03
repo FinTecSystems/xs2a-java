@@ -1,28 +1,27 @@
 package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
-import com.fintecsystems.xs2a.java.models.*
 import com.fintecsystems.xs2a.java.models.blacklist.BlacklistAdd
 import com.fintecsystems.xs2a.java.models.blacklist.BlacklistObject
 
 class BlacklistService(
-    private val apiKey: String
-) {
+    apiKey: String
+) : ServiceBase(apiKey) {
 
     fun add(body: BlacklistAdd): BlacklistObject {
-        val response = ApiService(apiKey).post("blacklist", JsonSerializer.toJson(body))
+        val response = apiService.post("blacklist", JsonSerializer.toJson(body))
 
         return JsonSerializer.parseJson(response)
     }
 
     fun get(id: String): BlacklistObject {
-        val response = ApiService(apiKey).get("blacklist/$id")
+        val response = apiService.get("blacklist/$id")
 
         return JsonSerializer.parseJson(response)
     }
 
     fun delete(id: String): BlacklistObject {
-        val response = ApiService(apiKey).delete("blacklist/$id")
+        val response = apiService.delete("blacklist/$id")
 
         return JsonSerializer.parseJson(response)
     }

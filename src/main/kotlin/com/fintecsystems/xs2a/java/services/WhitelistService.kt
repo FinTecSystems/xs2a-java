@@ -5,23 +5,23 @@ import com.fintecsystems.xs2a.java.models.whitelist.WhitelistObject
 import com.fintecsystems.xs2a.java.models.whitelist.WhitelistAdd
 
 class WhitelistService(
-    private val apiKey: String
-) {
+    apiKey: String
+) : ServiceBase(apiKey) {
 
     fun add(body: WhitelistAdd): WhitelistObject {
-        val response = ApiService(apiKey).post("whitelist", JsonSerializer.toJson(body))
+        val response = apiService.post("whitelist", JsonSerializer.toJson(body))
 
         return JsonSerializer.parseJson(response)
     }
 
     fun get(id: String): WhitelistObject {
-        val response = ApiService(apiKey).get("whitelist/$id")
+        val response = apiService.get("whitelist/$id")
 
         return JsonSerializer.parseJson(response)
     }
 
     fun delete(id: String): WhitelistObject {
-        val response = ApiService(apiKey).delete("whitelist/$id")
+        val response = apiService.delete("whitelist/$id")
 
         return JsonSerializer.parseJson(response)
     }

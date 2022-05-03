@@ -1,23 +1,22 @@
 package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
-import com.fintecsystems.xs2a.java.models.*
 import com.fintecsystems.xs2a.java.models.api.connections.BankConnection
 import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionList
 import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionRequest
 import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionSyncRequest
 import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
 
-class ApiBankConnectionService (
-    private val apiKey: String
-) {
+class ApiBankConnectionService(
+    apiKey: String
+) : ServiceBase(apiKey) {
     /**
      * Create a xs2a.api bank user
      * @param body $request The bank user request
      * @return BankUser
      */
     fun create(body: BankConnectionRequest): WizardSessionResponse {
-        val response = ApiService(apiKey).put("api/connections", JsonSerializer.toJson(body))
+        val response = apiService.put("api/connections", JsonSerializer.toJson(body))
 
         return JsonSerializer.parseJson(response)
     }
@@ -32,7 +31,7 @@ class ApiBankConnectionService (
         per_page: Int = 15,
         page: Int = 1,
     ): BankConnectionList {
-        val response = ApiService(apiKey).get(
+        val response = apiService.get(
             "api/connections",
             mutableMapOf(
                 "per_page" to per_page.toString(),
@@ -50,7 +49,7 @@ class ApiBankConnectionService (
      * @return BankConnection
      */
     fun get(connectionId: String): BankConnection {
-        val response = ApiService(apiKey).get("api/connections/$connectionId")
+        val response = apiService.get("api/connections/$connectionId")
 
         return JsonSerializer.parseJson(response)
     }
@@ -61,7 +60,7 @@ class ApiBankConnectionService (
      * @return String
      */
     fun delete(connectionId: String): String {
-        return ApiService(apiKey).delete("api/connections/$connectionId")
+        return apiService.delete("api/connections/$connectionId")
     }
 
     /**
@@ -70,7 +69,7 @@ class ApiBankConnectionService (
      * @param request request parameters for the sync
      */
     fun sync(connectionId: String, request: BankConnectionSyncRequest? = null): String {
-        return ApiService(apiKey).post("api/connections/$connectionId/sync", JsonSerializer.toJson(request))
+        return apiService.post("api/connections/$connectionId/sync", JsonSerializer.toJson(request))
     }
 
     /**
@@ -78,7 +77,7 @@ class ApiBankConnectionService (
      * @param connectionId The connection-id for the connection to be synced.
      */
     fun reset(connectionId: String): WizardSessionResponse {
-        val response = ApiService(apiKey).post("api/connections/$connectionId/reset")
+        val response = apiService.post("api/connections/$connectionId/reset")
 
         return JsonSerializer.parseJson(response)
     }
