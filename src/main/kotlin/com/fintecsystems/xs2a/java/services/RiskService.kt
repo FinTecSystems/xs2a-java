@@ -3,11 +3,10 @@ package com.fintecsystems.xs2a.java.services
 import com.fintecsystems.xs2a.java.helper.JsonSerializer.parseJson
 import com.fintecsystems.xs2a.java.helper.JsonSerializer.toJson
 import com.fintecsystems.xs2a.java.models.common.CountryId
-import com.fintecsystems.xs2a.java.models.events.EventsList
 import com.fintecsystems.xs2a.java.models.common.ReportFormat
 import com.fintecsystems.xs2a.java.models.common.ReportLocale
+import com.fintecsystems.xs2a.java.models.events.EventsList
 import com.fintecsystems.xs2a.java.models.risk.*
-import com.fintecsystems.xs2a.java.models.risk.checks.AccountSnapshotFormat
 import com.fintecsystems.xs2a.java.models.risk.uploadJson.Xs2aRiskUploadJsonSuccess
 import com.fintecsystems.xs2a.java.models.risk.uploadJson.Xs2aRiskUploadJsonWrapper
 import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
@@ -49,17 +48,15 @@ class RiskService(
      * An account snapshot can be downloaded in several formats. The response object  described here details the JSON2
      * response.
      * @param transactionId ID of the transaction to be retrieved.
-     * @param format The format parameter is optional. The account snapshot is available in  the following formats:
      * pdf, csv, json and json2. This call defaults to  pdf if the format parameter is omitted. Please note that you
      * have to use  json2 as format if the all_accounts parameter was set to true. (optional)
      * @return Array<AccountStatement>
      */
     fun getAccountSnapshot(
-        transactionId: String,
-        format: AccountSnapshotFormat = AccountSnapshotFormat.JSON2
+        transactionId: String
     ): Array<AccountStatement> {
         val response =
-            ApiService(apiKey).get("risks/$transactionId/accountSnapshot", mutableMapOf("format" to format.value))
+            ApiService(apiKey).get("risks/$transactionId/accountSnapshot", mutableMapOf("format" to "json2"))
 
         return parseJson(response)
     }
