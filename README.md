@@ -1,7 +1,7 @@
 # xs2a-java
 [![Maven Central](https://img.shields.io/maven-central/v/com.fintecsystems/xs2a-java.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.fintecsystems%22%20AND%20a:%22xs2a-java%22)
 
-Java SDK for FinTecSystems XS2A API. FinTecSystems is licensed by BaFin as a payment initiation and account information service and 
+Java SDK for FinTecSystems XS2A API. FinTecSystems is licensed by BaFin as a payment initiation and account information service and
 offers Access-to-Account services under the XS2A API.
 
 This SDK allows you to talk to and consume XS2A API in Java environments.
@@ -9,6 +9,10 @@ This SDK allows you to talk to and consume XS2A API in Java environments.
 - [SDK Documentation (Dokka)](https://docs.fintecsystems.com/xs2a-java/)
 - [API Reference](https://docs.fintecsystems.com)
 - [FinTecSystems Homepage](https://fintecsystems.com)
+
+## Migration to v3
+
+For the full changelog refer to the [v3 release](https://github.com/FinTecSystems/xs2a-java/releases/tag/3.0.0).
 
 ## Installation
 
@@ -26,9 +30,9 @@ implementation 'com.fintecsystems:xs2a-java:<version>'
 Add this dependency to your project's POM:
 ```xml
 <dependency>
-  <groupId>com.fintecsystems</groupId>
-  <artifactId>xs2a-java</artifactId>
-  <version>version-to-use</version>
+    <groupId>com.fintecsystems</groupId>
+    <artifactId>xs2a-java</artifactId>
+    <version>version-to-use</version>
 </dependency>
 ```
 
@@ -69,21 +73,21 @@ An example of creating a xs2a.risk call in Java:
 RiskService riskService = new RiskService(apiKey);
 
 // Build a Risk Request
-Xs2aRisk risk = new Xs2aRisk();
+        Xs2aRisk risk = new Xs2aRisk();
 
-Xs2aAccountSnapshot accountSnapShot = new Xs2aAccountSnapshot(
-    10,
-    LocalDate.parse("2021-01-01"),
-    LocalDate.parse("2021-01-10"),
-    List.of("income"),
-    true,
-    true
-);
-risk.setXs2aAccountSnapshot(accountSnapShot);
+        Xs2aAccountSnapshot accountSnapShot = new Xs2aAccountSnapshot(
+        10,
+        LocalDate.parse("2021-01-01"),
+        LocalDate.parse("2021-01-10"),
+        List.of("income"),
+        true,
+        true
+        );
+        risk.setXs2aAccountSnapshot(accountSnapShot);
 // add more risk checks as necessary ...
 
 // Fire the request and get a response
-WizardSessionResponse response = riskService.create(risk);
+        WizardSessionResponse response = riskService.create(risk);
 ```
 
 ## Testing & Development
