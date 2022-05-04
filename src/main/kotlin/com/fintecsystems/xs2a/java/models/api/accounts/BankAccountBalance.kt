@@ -13,7 +13,6 @@ import java.time.OffsetDateTime
  * @param currencyId The bank accounts currency code (three-digit, e.g. EUR)
  * @param date The date the balance was seen on.
  * @param createdAt Date of creation
- * @param `object` The value bank_account
  */
 
 data class BankAccountBalance(
@@ -38,7 +37,4 @@ data class BankAccountBalance(
     /* Date of creation */
     @Json(name = "created_at")
     var createdAt: OffsetDateTime,
-    /* The value bank_account */
-    @Json(name = "object")
-    var `object`: String
 )

@@ -17,7 +17,6 @@ import java.time.OffsetDateTime
  * @param createdAt
  * @param metadata
  * @param merchantId
- * @param `object`
  */
 
 data class Xs2aRiskUploadJsonSuccess(
@@ -43,6 +42,4 @@ data class Xs2aRiskUploadJsonSuccess(
     var metadata: String? = null,
     @Json(name = "merchant_id")
     var merchantId: String? = null,
-    @Json(name = "object")
-    var `object`: String
 )

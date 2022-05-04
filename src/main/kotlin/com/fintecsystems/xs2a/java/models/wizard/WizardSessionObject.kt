@@ -16,7 +16,6 @@ import java.time.OffsetDateTime
  * @param finished true if this session was finished successfully. false if not or still running.
  * @param currentStep The current wizard step of this session.
  * @param createdAt Type of creation
- * @param `object` String with content 'wizard_session'
  */
 
 data class WizardSessionObject(
@@ -50,7 +49,4 @@ data class WizardSessionObject(
     /* Type of creation */
     @Json(name = "created_at")
     var createdAt: OffsetDateTime,
-    /* String with content 'wizard_session' */
-    @Json(name = "object")
-    var `object`: String
 )

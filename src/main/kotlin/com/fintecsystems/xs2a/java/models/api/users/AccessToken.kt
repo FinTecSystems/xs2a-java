@@ -9,7 +9,6 @@ import java.time.OffsetDateTime
  * @param token The Access Token
  * @param validUntil The date-time this token expires. Note that the access token is valid for one hour. After one hour you have to refresh the token, to be valid another hour.
  * @param createdAt Date of creation
- * @param `object` The value bank_user_access_token
  */
 
 data class AccessToken(
@@ -25,7 +24,4 @@ data class AccessToken(
     /* Date of creation */
     @Json(name = "created_at")
     var createdAt: OffsetDateTime,
-    /* The value bank_user_access_token */
-    @Json(name = "object")
-    var `object`: String
 )

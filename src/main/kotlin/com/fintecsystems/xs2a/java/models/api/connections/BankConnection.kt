@@ -20,7 +20,6 @@ import java.time.OffsetDateTime
  * @param consentValidUntil The consent is valid until the given date (Format: YYYY-MM-DD).
  * @param testmode Indicates whether this bank connection is in test mode
  * @param createdAt Date of creation
- * @param `object` The value bank_connection
  */
 
 data class BankConnection(
@@ -63,7 +62,4 @@ data class BankConnection(
     /* Date of creation */
     @Json(name = "created_at")
     var createdAt: OffsetDateTime,
-    /* The value bank_connection */
-    @Json(name = "object")
-    var `object`: String
 )

@@ -9,7 +9,6 @@ import java.time.OffsetDateTime
  * @param days
  * @param result
  * @param createdAt Creation date of the object
- * @param `object`
  */
 
 data class Xs2aFactSheetListsResponse(
@@ -22,7 +21,5 @@ data class Xs2aFactSheetListsResponse(
     /* Creation date of the object */
     @Json(name = "created_at")
     var createdAt: OffsetDateTime,
-    @Json(name = "object")
-    var `object`: String
 )
 

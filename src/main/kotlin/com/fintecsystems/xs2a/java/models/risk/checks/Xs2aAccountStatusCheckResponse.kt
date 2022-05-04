@@ -14,7 +14,6 @@ import java.time.OffsetDateTime
  * @param days The limit of turnover days for this check
  * @param allAccounts Shows the chosen option, with all accounts or not
  * @param createdAt Creation date of the object
- * @param `object` Object type, in this case a xs2a_account_status_check
  */
 
 data class Xs2aAccountStatusCheckResponse(
@@ -33,8 +32,5 @@ data class Xs2aAccountStatusCheckResponse(
     /* Creation date of the object */
     @Json(name = "created_at")
     var createdAt: OffsetDateTime,
-    /* Object type, in this case a xs2a_account_status_check */
-    @Json(name = "object")
-    var `object`: String
 )
 

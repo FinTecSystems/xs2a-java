@@ -8,7 +8,6 @@ import java.time.OffsetDateTime
 
 /**
  *
- * @param `object` Object type, in this case a xs2a_account_snapshot
  * @param days Range in days that were used
  * @param from The start date in the format yyyy-mm-dd
  * @param to The end date in the format yyyy-mm-dd
@@ -18,9 +17,6 @@ import java.time.OffsetDateTime
  */
 
 data class Xs2aAccountSnapshotResponse(
-    /* Object type, in this case a xs2a_account_snapshot */
-    @Json(name = "object")
-    var `object`: String,
     /* Range in days that were used */
     @Json(name = "days")
     var days: Int? = null,

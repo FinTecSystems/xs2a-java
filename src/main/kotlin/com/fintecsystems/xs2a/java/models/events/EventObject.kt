@@ -12,7 +12,6 @@ import java.time.OffsetDateTime
  * @param testmode Indicates whether or not this event belongs to a test transaction
  * @param message A human readable message that describes this event.
  * @param createdAt The date the event was fired.
- * @param `object` xs2a_event for event objects.
  */
 
 data class EventObject(
@@ -37,7 +36,4 @@ data class EventObject(
     /* The date the event was fired. */
     @Json(name = "created_at")
     var createdAt: OffsetDateTime,
-    /* xs2a_event for event objects. */
-    @Json(name = "object")
-    var `object`: String
 )

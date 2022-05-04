@@ -17,7 +17,4 @@ data class Xs2aNameCheckResponse (
     var similarity: Int,
     @Json(name = "created_at")
     var created_at: String,
-    /* The name of this object */
-    @Json(name = "object")
-    var `object`: String,
 )

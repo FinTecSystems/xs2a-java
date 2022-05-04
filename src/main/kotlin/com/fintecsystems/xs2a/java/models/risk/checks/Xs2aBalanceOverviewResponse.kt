@@ -7,7 +7,6 @@ import java.time.OffsetDateTime
 
 /**
  *
- * @param `object` Object type, in this case a xs2a_balance_overview
  * @param balance Current balance
  * @param available Current available
  * @param limit Current limit (overdraft)
@@ -16,9 +15,6 @@ import java.time.OffsetDateTime
  */
 
 data class Xs2aBalanceOverviewResponse(
-    /* Object type, in this case a xs2a_balance_overview */
-    @Json(name = "object")
-    var `object`: String,
     /* Current balance */
     @Json(name = "balance")
     var balance: Float,

@@ -12,7 +12,6 @@ import java.time.OffsetDateTime
  * @param chargebacksRevoked Count of chargebacks which was triggered manually
  * @param chargebacksSumAmount Sum over the amount of all chargebacks
  * @param currencyId Currency id of above values, e.g. EUR
- * @param `object` Object type, in this case a  xs2a_chargeback_check
  * @param createdAt Creation date of the object
  */
 
@@ -32,9 +31,6 @@ data class Xs2aChargebackCheckResponse(
     /* Currency id of above values, e.g. EUR */
     @Json(name = "currency_id")
     var currencyId: CurrencyId? = null,
-    /* Object type, in this case a  xs2a_chargeback_check */
-    @Json(name = "object")
-    var `object`: String,
     /* Creation date of the object */
     @Json(name = "created_at")
     var createdAt: OffsetDateTime

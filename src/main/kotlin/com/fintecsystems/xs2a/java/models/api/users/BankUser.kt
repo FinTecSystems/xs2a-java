@@ -11,7 +11,6 @@ import java.time.OffsetDateTime
  * @param email E-Mail of the test user
  * @param testmode True, if this user has been created with a testing API key, false otherwise.
  * @param createdAt Date of creation
- * @param `object` The value bank_user
  */
 
 data class BankUser(
@@ -30,8 +29,5 @@ data class BankUser(
     /* Date of creation */
     @Json(name = "created_at")
     var createdAt: OffsetDateTime,
-    /* The value bank_user */
-    @Json(name = "object")
-    var `object`: String
 )
 

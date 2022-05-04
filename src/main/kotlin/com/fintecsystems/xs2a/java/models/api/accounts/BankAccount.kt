@@ -21,7 +21,6 @@ import java.time.OffsetDateTime
  * @param jointAccount Indicates whether this account has more than one owner.
  * @param transactionPossible Indicates whether this account places payments.
  * @param createdAt Date of creation
- * @param `object` The value bank_account
  */
 
 data class BankAccount(
@@ -67,7 +66,4 @@ data class BankAccount(
     /* Date of creation */
     @Json(name = "created_at")
     var createdAt: OffsetDateTime,
-    /* The value bank_account */
-    @Json(name = "object")
-    var `object`: String
 )

@@ -7,7 +7,6 @@ import java.time.OffsetDateTime
  *
  * @param calculations
  * @param createdAt Creation date of the object
- * @param `object` Object type, in this case a  xs2a_risk_calculations_check
  */
 
 data class Xs2aRiskCalculationsCheckResponse(
@@ -16,8 +15,5 @@ data class Xs2aRiskCalculationsCheckResponse(
     /* Creation date of the object */
     @Json(name = "created_at")
     var createdAt: OffsetDateTime,
-    /* Object type, in this case a  xs2a_risk_calculations_check */
-    @Json(name = "object")
-    var `object`: String
 )
 

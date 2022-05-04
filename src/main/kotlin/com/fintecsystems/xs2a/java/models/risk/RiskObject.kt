@@ -18,7 +18,6 @@ import java.time.OffsetDateTime
  * @param createdAt Date of creation
  * @param metadata Custom data will be returned unchanged. If no data was submitted, this field will be null
  * @param merchantId Data will be returned unchanged
- * @param `object` Object type, in this case a xs2a_risk
  * @param xs2aAccountSnapshot
  * @param xs2aBalanceCheck
  * @param xs2aBalanceOverview
@@ -78,9 +77,6 @@ data class RiskObject(
     /* Data will be returned unchanged */
     @Json(name = "merchant_id")
     var merchantId: String? = null,
-    /* Object type, in this case a xs2a_risk */
-    @Json(name = "object")
-    var `object`: String,
     @Json(name = "xs2a_account_snapshot")
     var xs2aAccountSnapshot: Xs2aAccountSnapshotResponse? = null,
     @Json(name = "xs2a_balance_check")

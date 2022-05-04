@@ -13,7 +13,6 @@ import java.time.OffsetDateTime
  * @param averageOverdraftUsed Average amount the overdraft was used in that date range
  * @param medianOverdraftUsed Median amount the overdraft was used in that date range
  * @param currencyId Currency id of above values, e.g. EUR
- * @param `object` Object type, in this case a  xs2a_overdraft_limit_check
  * @param createdAt Creation date of the object
  */
 
@@ -36,9 +35,6 @@ data class Xs2aOverdraftLimitCheckResponse(
     /* Currency id of above values, e.g. EUR */
     @Json(name = "currency_id")
     var currencyId: CurrencyId? = null,
-    /* Object type, in this case a  xs2a_overdraft_limit_check */
-    @Json(name = "object")
-    var `object`: String,
     /* Creation date of the object */
     @Json(name = "created_at")
     var createdAt: OffsetDateTime

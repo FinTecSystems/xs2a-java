@@ -11,7 +11,6 @@ import java.time.OffsetDateTime
  * @param days The number of days requested
  * @param date The date the turnovers were seen on.
  * @param createdAt Date of creation of the turnovers object.
- * @param `object` The value bank_account_turnovers
  */
 
 data class BankAccountTurnovers(
@@ -30,7 +29,4 @@ data class BankAccountTurnovers(
     /* Date of creation of the turnovers object. */
     @Json(name = "created_at")
     var createdAt: OffsetDateTime,
-    /* The value bank_account_turnovers */
-    @Json(name = "object")
-    var `object`: String
 )

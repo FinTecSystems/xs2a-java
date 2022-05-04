@@ -27,7 +27,6 @@ import com.squareup.moshi.Json
  * @param paymentStatus Payment status of the transaction, values NONE, RECEIVED, LOSS
  * @param metadata Custom data will be returned unchanged. If no data was submitted, this field will be null
  * @param merchantId Data will be returned unchanged
- * @param `object` Object type, in this case a xs2a_payment
  */
 
 data class PayObject (
@@ -88,7 +87,4 @@ data class PayObject (
     /* Data will be returned unchanged */
     @Json(name = "merchant_id")
     var merchantId: String? = null,
-    /* Object type, in this case a xs2a_payment */
-    @Json(name = "object")
-    var `object`: String
 )

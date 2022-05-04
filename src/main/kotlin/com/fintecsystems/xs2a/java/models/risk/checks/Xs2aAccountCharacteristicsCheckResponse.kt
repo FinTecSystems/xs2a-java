@@ -14,7 +14,6 @@ import java.time.OffsetDateTime
  * @param accountProfile
  * @param loans
  * @param flags
- * @param `object` Object type, in this case a  xs2a_account_characteristics_check
  * @param createdAt Creation date of the object
  */
 
@@ -29,9 +28,6 @@ data class Xs2aAccountCharacteristicsCheckResponse(
     var loans: LoansObject,
     @Json(name = "flags")
     var flags: Map<String, String>,
-    /* Object type, in this case a  xs2a_account_characteristics_check */
-    @Json(name = "object")
-    var `object`: String,
     /* Creation date of the object */
     @Json(name = "created_at")
     var createdAt: OffsetDateTime
