@@ -15,9 +15,9 @@ data class Xs2aRiskUploadJsonBalance (
     @Json(name = "balance")
     var balance: Float,
     @Json(name = "limit")
-    var limit: Float,
+    var limit: Float? = null,
     @Json(name = "available")
-    var available: Float,
+    var available: Float? = null,
     @Json(name = "currency")
     var currency: CurrencyId,
 )

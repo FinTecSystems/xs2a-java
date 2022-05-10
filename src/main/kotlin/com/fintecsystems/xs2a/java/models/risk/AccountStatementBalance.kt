@@ -15,19 +15,14 @@ import java.time.OffsetDateTime
  */
 
 data class AccountStatementBalance(
-    /* The available amount. This can be null, if the available amount is not known. */
     @Json(name = "available")
-    var available: Float,
-    /* The limit of the account. This can be null, if the limit is not known. */
+    var available: Float? = null,
     @Json(name = "limit")
-    var limit: Float,
-    /* The current account balance. */
+    var limit: Float? = null,
     @Json(name = "balance")
     var balance: Float,
-    /* The bank accounts currency code (three-digit, e.g. EUR) */
     @Json(name = "currency")
-    var currency: CurrencyId? = null,
-    /* The date the balance was seen on. */
+    var currency: CurrencyId,
     @Json(name = "date")
     var date: OffsetDateTime
 )
