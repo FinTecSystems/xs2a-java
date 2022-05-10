@@ -1,6 +1,7 @@
 package com.fintecsystems.xs2a.java.helper
 
 import com.fintecsystems.xs2a.java.models.common.Tag
+import com.fintecsystems.xs2a.java.models.common.Turnover
 import com.fintecsystems.xs2a.java.models.form.*
 import com.fintecsystems.xs2a.java.models.form.radio.FormRadio
 import com.fintecsystems.xs2a.java.models.risk.Category
@@ -33,9 +34,9 @@ object JsonSerializer {
         .add(Xs2aRiskCalculationsCheckFunction.Companion)
         .add(Category.Companion)
         .add(OffsetDateTimeAdapter)
+        .add(Turnover.Adapter)
         .add(Xs2aIncomeCheckResponseDataAdapter)
         .addLast(KotlinJsonAdapterFactory())
-
         .build()
 
     inline fun <reified T> parseJson(json: String) = moshi

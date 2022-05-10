@@ -1,7 +1,9 @@
 package com.fintecsystems.xs2a.java.models.common
 
 
+import com.fintecsystems.xs2a.java.helper.OffsetDateTimeAdapter
 import com.fintecsystems.xs2a.java.models.risk.Category
+import com.squareup.moshi.FromJson
 import com.squareup.moshi.Json
 import java.time.OffsetDateTime
 
@@ -34,7 +36,7 @@ data class Turnover(
     var amount: Float,
     /* The two-letter currency ID, e.g. 'EUR' */
     @Json(name = "currency")
-    var currency: CurrencyId? = null,
+    var currency: CurrencyId,
     /* A string array of purpose lines. The contents vary from bank to bank. */
     @Json(name = "purpose")
     var purpose: List<String>,
@@ -65,5 +67,27 @@ data class Turnover(
     /* True, if this turnover is new since the last sync. */
     @Json(name = "new")
     var new: Boolean? = null,
-)
+) {
+    companion object Adapter {
+        @FromJson
+        fun fromJson(data: Map<String, Any>): Turnover {
+            @Suppress("UNCHECKED_CAST")
+            return Turnover(
+                id = data["id"] as String?,
+                bookingDate = OffsetDateTimeAdapter.fromJson(data["booking_date"] as String)!!,
+                amount = (data["amount"] as Double).toFloat(),
+                currency = CurrencyId.valueOf((data["currency"] ?: data["currency_id"]) as String),
+                purpose = data["purpose"] as List<String>,
+                counterIban = data["counter_iban"] as String?,
+                counterBic = data["counter_bic"] as String?,
+                counterHolder = data["counter_holder"] as String?,
+                prebooked = data["prebooked"] as Boolean?,
+                tags = data["tags"] as List<Tag>?,
+                categoryId = data["category_id"] as Category?,
+                creditorId = data["creditor_id"] as String?,
+                new = data["new"] as Boolean?,
+            )
+        }
+    }
+}
 
