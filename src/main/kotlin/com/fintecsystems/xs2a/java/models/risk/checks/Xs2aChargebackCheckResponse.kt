@@ -16,22 +16,16 @@ import java.time.OffsetDateTime
  */
 
 data class Xs2aChargebackCheckResponse(
-    /* Total count of detected chargeback transactions */
     @Json(name = "chargebacks_count")
     var chargebacksCount: Int,
-    /* Count of chargebacks which was triggered due insufficient funds */
     @Json(name = "chargebacks_coverage")
     var chargebacksCoverage: Int,
-    /* Count of chargebacks which was triggered manually */
     @Json(name = "chargebacks_revoked")
     var chargebacksRevoked: Int,
-    /* Sum over the amount of all chargebacks */
     @Json(name = "chargebacks_sum_amount")
     var chargebacksSumAmount: Float,
-    /* Currency id of above values, e.g. EUR */
     @Json(name = "currency_id")
-    var currencyId: CurrencyId? = null,
-    /* Creation date of the object */
+    var currencyId: CurrencyId,
     @Json(name = "created_at")
     var createdAt: OffsetDateTime
 )

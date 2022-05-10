@@ -15,6 +15,6 @@ data class Xs2aCreditCheckResponseResult (
     @Json(name = "amount")
     var amount: Float,
     @Json(name = "currency")
-    var currency: CurrencyId? = null
+    var currency: CurrencyId
 )
 

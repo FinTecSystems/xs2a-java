@@ -30,61 +30,42 @@ import com.squareup.moshi.Json
  */
 
 data class PayObject (
-    /* Transaction id */
     @Json(name = "id")
     var id: String,
-    /* Internal XS2A transaction id. This id will be the same for the whole transaction */
     @Json(name = "transaction")
     var transaction: String,
-    /* Account holder of the sender account */
     @Json(name = "sender_holder")
     var senderHolder: String? = null,
-    /* IBAN of the sender account */
     @Json(name = "sender_iban")
     var senderIban: String? = null,
-    /* BIC of the sender account */
     @Json(name = "sender_bic")
     var senderBic: String? = null,
-    /* Name of the sender bank */
     @Json(name = "sender_bank_name")
     var senderBankName: String? = null,
-    /* Two letter country code id, e.g. AT, CH, DE or the sender account */
     @Json(name = "sender_country_id")
     var senderCountryId: CountryId? = null,
-    /* Account holder of the recipient account */
     @Json(name = "recipient_holder")
     var recipientHolder: String? = null,
-    /* IBAN of the recipient account */
     @Json(name = "recipient_iban")
     var recipientIban: String? = null,
-    /* BIC of the recipient account */
     @Json(name = "recipient_bic")
     var recipientBic: String? = null,
-    /* Name of the recipient bank */
     @Json(name = "recipient_bank_name")
     var recipientBankName: String? = null,
-    /* Two letter country code id, e.g. AT, CH, DE or the recipient account */
     @Json(name = "recipient_country_id")
     var recipientCountryId: CountryId? = null,
-    /* Purpose of transfer */
     @Json(name = "purpose")
     var purpose: String,
-    /* Amount to transfer */
     @Json(name = "amount")
     var amount: Float,
-    /* Currency id of amount, e.g. 'EUR' */
     @Json(name = "currency_id")
-    var currencyId: CurrencyId? = null,
-    /* Indicates whether or not it is a test transaction */
+    var currencyId: CurrencyId,
     @Json(name = "testmode")
     var testmode: Boolean,
-    /* Payment status of the transaction, values NONE, RECEIVED, LOSS */
     @Json(name = "payment_status")
     var paymentStatus: PaymentStatus,
-    /* Custom data will be returned unchanged. If no data was submitted, this field will be null */
     @Json(name = "metadata")
     var metadata: Map<String, Any>? = null,
-    /* Data will be returned unchanged */
     @Json(name = "merchant_id")
     var merchantId: String? = null,
 )
