@@ -10,7 +10,7 @@ import java.time.OffsetDateTime
  * @param available The available amount. This can be null, if the available amount is not known.
  * @param limit The limit of the account. This can be null, if the limit is not known.
  * @param balance The current account balance.
- * @param currencyId The bank accounts currency code (three-digit, e.g. EUR)
+ * @param currency The bank accounts currency code (three-digit, e.g. EUR)
  * @param date The date the balance was seen on.
  * @param createdAt Date of creation
  */
@@ -25,7 +25,7 @@ data class BankAccountBalance(
     @Json(name = "balance")
     var balance: Float,
     @Json(name = "currency")
-    var currencyId: CurrencyId,
+    var currency: CurrencyId,
     @Json(name = "date")
     var date: OffsetDateTime,
     @Json(name = "created_at")
