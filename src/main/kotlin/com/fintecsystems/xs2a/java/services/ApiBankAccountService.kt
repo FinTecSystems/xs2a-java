@@ -1,6 +1,7 @@
 package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
+import com.fintecsystems.xs2a.java.helper.OffsetDateTimeAdapter
 import com.fintecsystems.xs2a.java.models.api.accounts.BankAccount
 import com.fintecsystems.xs2a.java.models.api.accounts.BankAccountBalance
 import com.fintecsystems.xs2a.java.models.api.accounts.BankAccountTurnovers
@@ -8,7 +9,6 @@ import com.fintecsystems.xs2a.java.models.api.accounts.BankAccountsList
 import com.fintecsystems.xs2a.java.models.common.ReportFormat
 import com.fintecsystems.xs2a.java.models.common.ReportLocale
 import java.time.OffsetDateTime
-import java.time.format.DateTimeFormatter
 
 @Suppress("unused")
 class ApiBankAccountService(
@@ -101,29 +101,13 @@ class ApiBankAccountService(
         bankAccountId: String,
         from: OffsetDateTime? = null,
         to: OffsetDateTime? = null,
-        onlyNew: Boolean? = null
+        onlyNew: Boolean = false
     ): BankAccountTurnovers {
-        var onlyNewToUse = 0
-
-        if (onlyNew !== null) {
-            onlyNewToUse = 1
-        }
-
-        var fromToUse: String? = null
-        if (from !== null) {
-            fromToUse = from.format(DateTimeFormatter.ISO_LOCAL_DATE)
-        }
-
-        var toToUse: String? = null
-        if (to !== null) {
-            toToUse = to.format(DateTimeFormatter.ISO_LOCAL_DATE)
-        }
-
         val response = apiService.get(
             "api/accounts/$bankAccountId/turnovers", mutableMapOf(
-                "from" to fromToUse,
-                "to" to toToUse,
-                "onlyNew" to onlyNewToUse
+                "from" to from?.let {  OffsetDateTimeAdapter.offsetDateToJson(from) },
+                "to" to to?.let { OffsetDateTimeAdapter.offsetDateToJson(to) },
+                "onlyNew" to onlyNew
             )
         )
 
