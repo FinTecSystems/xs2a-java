@@ -29,7 +29,6 @@ object JsonSerializer {
         )
         .add(NullableBooleanAdapter)
         .add(BooleanAdapter)
-        .add(LocalDateAdapter)
         .add(Tag.Companion)
         .add(Xs2aRiskCalculationsCheckFunction.Companion)
         .add(Category.Companion)
