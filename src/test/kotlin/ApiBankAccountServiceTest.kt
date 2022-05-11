@@ -141,7 +141,12 @@ class ApiBankAccountServiceTest {
     @Order(5)
     fun testGetTurnovers() {
         ApiBankAccountService(accessToken).apply {
-            val response = getTurnovers(bankAccountId)
+            val response = getTurnovers(
+                bankAccountId,
+                from = OffsetDateTime.now().minusMonths(1),
+                to = OffsetDateTime.now(),
+            )
+
             assert(response.id == bankAccountId)
         }
     }
