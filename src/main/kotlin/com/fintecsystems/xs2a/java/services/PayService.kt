@@ -201,10 +201,6 @@ class PayService(
         from: OffsetDateTime? = null,
         to: OffsetDateTime? = null
     ): PayTransactionList {
-        val amountToUse = if (amount !== null) amount.toString() else null
-        val perPageToUse = if (perPage !== null) perPage.toString() else null
-        val pageToUse = if (page !== null) page.toString() else null
-
         val response = apiService.get(
             "payments",
             mutableMapOf(
@@ -218,10 +214,10 @@ class PayService(
                 "recipientIban" to recipientIban,
                 "recipientBic" to recipientBic,
                 "recipientCountryId" to recipientCountryId,
-                "amount" to amountToUse,
+                "amount" to amount,
                 "purpose" to purpose,
-                "per_page" to perPageToUse,
-                "page" to pageToUse,
+                "per_page" to perPage,
+                "page" to page,
                 "from" to from?.let { OffsetDateTimeAdapter.toJson(it) },
                 "to" to to?.let { OffsetDateTimeAdapter.toJson(it) },
             )
