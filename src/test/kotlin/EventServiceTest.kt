@@ -6,6 +6,7 @@ import org.junit.jupiter.api.TestMethodOrder
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation
 import com.fintecsystems.xs2a.java.services.EventService
 import com.fintecsystems.xs2a.java.services.RiskService
+import java.time.OffsetDateTime
 
 @TestMethodOrder(OrderAnnotation::class)
 internal class EventServiceTest {
@@ -15,7 +16,11 @@ internal class EventServiceTest {
     fun testList() {
         EventService(apiKey).apply {
             val emptyRisk = RiskService(apiKey).create(Xs2aRisk())
-            val eventsList = list(emptyRisk.transaction)
+            val eventsList = list(
+                emptyRisk.transaction,
+                from = OffsetDateTime.now().minusMonths(1),
+                to = OffsetDateTime.now(),
+            )
 
             assert(eventsList.data.isNotEmpty())
 

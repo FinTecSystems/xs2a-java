@@ -1,10 +1,10 @@
 package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
+import com.fintecsystems.xs2a.java.helper.OffsetDateTimeAdapter
 import com.fintecsystems.xs2a.java.models.events.EventObject
 import com.fintecsystems.xs2a.java.models.events.EventsList
 import java.time.OffsetDateTime
-import java.time.format.DateTimeFormatter
 
 class EventService (
     apiKey: String
@@ -35,8 +35,8 @@ class EventService (
                 "type" to type,
                 "per_page" to per_page.toString(),
                 "page" to page.toString(),
-                "from" to from?.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME),
-                "to" to to?.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME),
+                "from" to from?.let { OffsetDateTimeAdapter.toJson(it) },
+                "to" to to?.let { OffsetDateTimeAdapter.toJson(it) },
             )
         )
 
