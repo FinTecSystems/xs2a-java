@@ -1,9 +1,9 @@
 package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
+import com.fintecsystems.xs2a.java.helper.OffsetDateTimeAdapter
 import com.fintecsystems.xs2a.java.models.api.users.*
 import java.time.OffsetDateTime
-import java.time.format.DateTimeFormatter
 
 class ApiBankUserService(
     apiKey: String
@@ -48,13 +48,10 @@ class ApiBankUserService(
      * @return AccessToken
      */
     fun createAccessToken(userId: String, validUntil: OffsetDateTime): AccessToken {
-        val dateString =
-            validUntil.format(DateTimeFormatter.ISO_LOCAL_DATE) + " " + validUntil.format(DateTimeFormatter.ISO_LOCAL_TIME)
-
         val response = apiService.put(
             "api/users/$userId/accesstokens", JsonSerializer.toJson(
                 mapOf(
-                    "valid_until" to dateString,
+                    "valid_until" to OffsetDateTimeAdapter.toJson(validUntil),
                 )
             )
         )
