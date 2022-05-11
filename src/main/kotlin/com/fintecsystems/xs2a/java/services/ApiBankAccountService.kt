@@ -1,6 +1,7 @@
 package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
+import com.fintecsystems.xs2a.java.helper.OffsetDate
 import com.fintecsystems.xs2a.java.helper.OffsetDateTimeAdapter
 import com.fintecsystems.xs2a.java.models.api.accounts.BankAccount
 import com.fintecsystems.xs2a.java.models.api.accounts.BankAccountBalance
@@ -119,11 +120,11 @@ class ApiBankAccountService(
      * @param bankAccountId The bankAccountId for the account for which the turnovers are to be marked as seen.
      * @param upTo Once you set a date, attribute new of all turnovers is set to false until the given date.
      */
-    fun markAsSeen(bankAccountId: String, upTo: OffsetDateTime? = null): Any {
+    fun markAsSeen(bankAccountId: String, upTo: @OffsetDate OffsetDateTime? = null): Any {
         var uri = "api/accounts/$bankAccountId/markAsSeen"
 
         if (upTo !== null) {
-            uri = "$uri/$upTo"
+            uri = "$uri/${OffsetDateTimeAdapter.offsetDateToJson(upTo)}"
         }
 
         val response = apiService.post(uri)

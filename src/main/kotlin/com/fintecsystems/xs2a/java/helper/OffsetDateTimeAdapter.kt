@@ -13,6 +13,7 @@ import java.time.temporal.ChronoField
 /**
  * Annotation to mark that this [OffsetDateTime] only contains a Date and thus serializes in a date only format.
  */
+@Target(AnnotationTarget.PROPERTY, AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.FUNCTION, AnnotationTarget.TYPE)
 @Retention(AnnotationRetention.RUNTIME)
 @JsonQualifier
 annotation class OffsetDate

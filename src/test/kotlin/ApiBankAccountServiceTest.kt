@@ -150,7 +150,10 @@ class ApiBankAccountServiceTest {
     @Order(6)
     fun testMarkAsSeen() {
         ApiBankAccountService(accessToken).apply {
-            markAsSeen(bankAccountId)
+            markAsSeen(
+                bankAccountId,
+                OffsetDateTime.now()
+            )
         }
     }
 
