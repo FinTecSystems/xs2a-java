@@ -100,8 +100,8 @@ class ApiBankAccountService(
      */
     fun getTurnovers(
         bankAccountId: String,
-        from: OffsetDateTime? = null,
-        to: OffsetDateTime? = null,
+        from: @OffsetDate OffsetDateTime? = null,
+        to: @OffsetDate OffsetDateTime? = null,
         onlyNew: Boolean = false
     ): BankAccountTurnovers {
         val response = apiService.get(
