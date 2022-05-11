@@ -2,16 +2,19 @@ package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer.parseJson
 import com.fintecsystems.xs2a.java.helper.JsonSerializer.toJson
+import com.fintecsystems.xs2a.java.helper.OffsetDateTimeAdapter
 import com.fintecsystems.xs2a.java.models.common.CountryId
 import com.fintecsystems.xs2a.java.models.common.ReportFormat
 import com.fintecsystems.xs2a.java.models.common.ReportLocale
 import com.fintecsystems.xs2a.java.models.events.EventsList
-import com.fintecsystems.xs2a.java.models.risk.*
+import com.fintecsystems.xs2a.java.models.risk.AccountStatement
+import com.fintecsystems.xs2a.java.models.risk.RiskObject
+import com.fintecsystems.xs2a.java.models.risk.RisksTransactionList
+import com.fintecsystems.xs2a.java.models.risk.Xs2aRisk
 import com.fintecsystems.xs2a.java.models.risk.uploadJson.Xs2aRiskUploadJsonSuccess
 import com.fintecsystems.xs2a.java.models.risk.uploadJson.Xs2aRiskUploadJsonWrapper
 import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
 import java.time.OffsetDateTime
-import java.time.format.DateTimeFormatter
 
 @Suppress("unused")
 class RiskService(
@@ -178,15 +181,6 @@ class RiskService(
         from: OffsetDateTime? = null,
         to: OffsetDateTime? = null,
     ): RisksTransactionList {
-        var fromToUse: String? = null
-        var toToUse: String? = null
-        if (from !== null) {
-            fromToUse = from.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
-        }
-        if (to !== null) {
-            toToUse = to.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
-        }
-
         val response = apiService.get(
             "risks",
             mutableMapOf(
@@ -197,8 +191,8 @@ class RiskService(
                 "merchant_id" to merchant_id,
                 "per_page" to per_page.toString(),
                 "page" to page.toString(),
-                "from" to fromToUse,
-                "to" to toToUse,
+                "from" to from?.let { OffsetDateTimeAdapter.toJson(it) },
+                "to" to to?.let { OffsetDateTimeAdapter.toJson(it) },
             )
         )
 

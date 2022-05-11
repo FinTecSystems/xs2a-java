@@ -1,6 +1,7 @@
 package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
+import com.fintecsystems.xs2a.java.helper.OffsetDateTimeAdapter
 import com.fintecsystems.xs2a.java.models.events.EventsList
 import com.fintecsystems.xs2a.java.models.common.ReportFormat
 import com.fintecsystems.xs2a.java.models.common.ReportLocale
@@ -221,8 +222,8 @@ class PayService(
                 "purpose" to purpose,
                 "per_page" to perPageToUse,
                 "page" to pageToUse,
-                "from" to from,
-                "to" to to,
+                "from" to from?.let { OffsetDateTimeAdapter.toJson(it) },
+                "to" to to?.let { OffsetDateTimeAdapter.toJson(it) },
             )
         )
 
