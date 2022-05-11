@@ -12,7 +12,6 @@ import com.fintecsystems.xs2a.java.models.risk.checks.*
 import com.fintecsystems.xs2a.java.services.RiskService
 import com.fintecsystems.xs2a.java.services.WizardService
 import org.junit.jupiter.api.Test
-import java.time.LocalDate
 import java.time.OffsetDateTime
 
 internal class RiskServiceTest {
@@ -27,8 +26,8 @@ internal class RiskServiceTest {
             xs2aAccountLinkedOffersCheck = Xs2aAccountLinkedOffersCheck(),
             xs2aAccountSnapshot = Xs2aAccountSnapshot(
                 days = 10,
-                from = LocalDate.now().withMonth(1),
-                to = LocalDate.now().withMonth(1).plusDays(10),
+                from = OffsetDateTime.now().withMonth(1),
+                to = OffsetDateTime.now().withMonth(1).plusDays(10),
                 filters = listOf(Tag.INCOME),
                 allAccounts = true,
                 allTags = true
@@ -53,8 +52,8 @@ internal class RiskServiceTest {
             xs2aDirectDebitCheck = Xs2aDirectDebitCheck(
                 checkAmount = 10f,
                 checkCurrencyId = CurrencyId.EUR,
-                startDate = LocalDate.now().plusDays(7),
-                endDate = LocalDate.now().plusDays(14),
+                startDate = OffsetDateTime.now().plusDays(7),
+                endDate = OffsetDateTime.now().plusDays(14),
             ),
             xs2aFactSheetLists = Xs2aFactSheetLists(
                 limitTurnoverDays = 10,

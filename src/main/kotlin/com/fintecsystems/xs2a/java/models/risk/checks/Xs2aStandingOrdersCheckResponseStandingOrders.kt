@@ -1,9 +1,10 @@
 package com.fintecsystems.xs2a.java.models.risk.checks
 
+import com.fintecsystems.xs2a.java.helper.OffsetDate
 import com.fintecsystems.xs2a.java.models.common.CurrencyId
 import com.fintecsystems.xs2a.java.models.risk.BankAccountObject
 import com.squareup.moshi.Json
-import java.time.LocalDate
+import java.time.OffsetDateTime
 
 /**
  *
@@ -37,8 +38,10 @@ data class Xs2aStandingOrdersCheckResponseStandingOrders(
     @Json(name = "day")
     var day: Int,
     @Json(name = "start_execution")
-    var startExecution: LocalDate? = null,
+    @OffsetDate
+    var startExecution: OffsetDateTime? = null,
     @Json(name = "end_execution")
-    var endExecution: LocalDate? = null,
+    @OffsetDate
+    var endExecution: OffsetDateTime? = null,
 )
 

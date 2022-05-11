@@ -1,9 +1,10 @@
 package com.fintecsystems.xs2a.java.models.risk.checks
 
 
+import com.fintecsystems.xs2a.java.helper.OffsetDate
 import com.fintecsystems.xs2a.java.models.common.CurrencyId
 import com.squareup.moshi.Json
-import java.time.LocalDate
+import java.time.OffsetDateTime
 
 /**
  *
@@ -14,17 +15,15 @@ import java.time.LocalDate
  */
 
 data class Xs2aDirectDebitCheck(
-    /* Account balance amount to be checked against */
     @Json(name = "check_amount")
     var checkAmount: Float,
-    /* Currency id of check_amount, e.g. EUR */
     @Json(name = "check_currency_id")
     var checkCurrencyId: CurrencyId,
-    /* Date format is \"YYYY-mm-dd\". An optional field. If a start_date is given, the field \"end_date\" has to be set as well. The start date can be no earlier than the day after the transaction. In case the start date is invalid or not set, the earliest bank work day will be used. */
     @Json(name = "start_date")
-    var startDate: LocalDate? = null,
-    /* Date format is \"YYYY-mm-dd\". An optional field. The end date has to be at lest 3 days after the start date and can be a maximum of 30 days into the future. If there is no end date given, the maximum of 30 days will be used. */
+    @OffsetDate
+    var startDate: OffsetDateTime? = null,
     @Json(name = "end_date")
-    var endDate: LocalDate? = null,
+    @OffsetDate
+    var endDate: OffsetDateTime? = null,
 )
 

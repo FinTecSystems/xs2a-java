@@ -1,10 +1,11 @@
 package com.fintecsystems.xs2a.java.models.risk.checks
 
 
+import com.fintecsystems.xs2a.java.helper.OffsetDate
 import com.fintecsystems.xs2a.java.models.common.Tag
 import com.fintecsystems.xs2a.java.models.risk.Category
 import com.squareup.moshi.Json
-import java.time.LocalDate
+import java.time.OffsetDateTime
 
 /**
  *
@@ -16,21 +17,18 @@ import java.time.LocalDate
  * @param allTags True, if you want full categorization of the turnovers
  */
 data class Xs2aAccountSnapshot(
-    /* Range in days which should be used (min value: 10, max value: 365) */
     @Json(name = "days")
     var days: Int? = null,
-    /* A date in the format yyyy-mm-dd */
     @Json(name = "from")
-    var from: LocalDate? = null,
-    /* A date in the format yyyy-mm-dd */
+    @OffsetDate
+    var from: OffsetDateTime? = null,
     @Json(name = "to")
-    var to: LocalDate? = null,
+    @OffsetDate
+    var to: OffsetDateTime? = null,
     @Json(name = "filters")
     var filters: List<Tag>? = null,
-    /* True, if you want to receive all accounts including their turnovers */
     @Json(name = "all_accounts")
     var allAccounts: Boolean,
-    /* True, if you want full categorization of the turnovers */
     @Json(name = "all_tags")
     var allTags: Boolean,
     @Json(name = "categories")

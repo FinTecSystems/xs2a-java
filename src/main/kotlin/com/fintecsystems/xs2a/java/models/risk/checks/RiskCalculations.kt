@@ -1,10 +1,11 @@
 package com.fintecsystems.xs2a.java.models.risk.checks
 
 
+import com.fintecsystems.xs2a.java.helper.OffsetDate
 import com.fintecsystems.xs2a.java.models.common.Tag
 import com.fintecsystems.xs2a.java.models.risk.Category
 import com.squareup.moshi.Json
-import java.time.LocalDate
+import java.time.OffsetDateTime
 
 /**
  *
@@ -35,10 +36,12 @@ data class RiskCalculations(
     var days: Int? = null,
     /* Starting date */
     @Json(name = "from")
-    var from: LocalDate? = null,
+    @OffsetDate
+    var from: OffsetDateTime? = null,
     /* Ending date */
     @Json(name = "to")
-    var to: LocalDate? = null,
+    @OffsetDate
+    var to: OffsetDateTime? = null,
     /* Full months */
     @Json(name = "full_months")
     var fullMonths: String? = null,

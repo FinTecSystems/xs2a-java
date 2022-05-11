@@ -1,9 +1,9 @@
 package com.fintecsystems.xs2a.java.models.risk.checks
 
 
+import com.fintecsystems.xs2a.java.helper.OffsetDate
 import com.fintecsystems.xs2a.java.models.common.Tag
 import com.squareup.moshi.Json
-import java.time.LocalDate
 import java.time.OffsetDateTime
 
 /**
@@ -22,10 +22,12 @@ data class Xs2aAccountSnapshotResponse(
     var days: Int? = null,
     /* The start date in the format yyyy-mm-dd */
     @Json(name = "from")
-    var from: LocalDate? = null,
+    @OffsetDate
+    var from: OffsetDateTime? = null,
     /* The end date in the format yyyy-mm-dd */
     @Json(name = "to")
-    var to: LocalDate? = null,
+    @OffsetDate
+    var to: OffsetDateTime? = null,
     /* Filter account statements */
     @Json(name = "filters")
     var filters: List<Tag>? = null,

@@ -10,10 +10,14 @@ import java.time.format.DateTimeFormatter
 import java.time.format.DateTimeFormatterBuilder
 import java.time.temporal.ChronoField
 
+/**
+ * Annotation to mark that this [OffsetDateTime] only contains a Date and thus serializes in a date only format.
+ */
 @Retention(AnnotationRetention.RUNTIME)
 @JsonQualifier
 annotation class OffsetDate
 
+@Suppress("unused")
 object OffsetDateTimeAdapter {
     // This is needed because of Summer-/Winter-time in germany.
     private val offsetSeconds = ZoneId.of("Europe/Berlin").rules.getOffset(Instant.now()).totalSeconds.toLong()
@@ -36,6 +40,12 @@ object OffsetDateTimeAdapter {
 
     @ToJson
     fun toJson(OffsetDateTime: OffsetDateTime): String = OffsetDateTime.format(dateTimeFormatter)
+
+
+    @FromJson
+    @OffsetDate
+    fun offsetDateFromJson(string: String): OffsetDateTime? =
+        if (string.isNotEmpty() && string != "0000-00-00") fromJson(string) else null
 
     @ToJson
     fun offsetDateToJson(@OffsetDate OffsetDateTime: OffsetDateTime): String = OffsetDateTime.format(dateFormatter)
