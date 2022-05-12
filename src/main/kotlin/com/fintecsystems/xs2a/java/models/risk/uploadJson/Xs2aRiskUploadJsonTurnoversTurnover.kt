@@ -1,5 +1,6 @@
 package com.fintecsystems.xs2a.java.models.risk.uploadJson
 
+import com.fintecsystems.xs2a.java.helper.OffsetDate
 import com.fintecsystems.xs2a.java.models.common.CurrencyId
 import com.squareup.moshi.Json
 import java.time.OffsetDateTime
@@ -8,7 +9,7 @@ import java.time.OffsetDateTime
  *
  * @param bookingDate
  * @param amount
- * @param currency
+ * @param currencyId
  * @param purpose
  * @param counterIban
  * @param counterBic
@@ -17,11 +18,11 @@ import java.time.OffsetDateTime
 
 data class Xs2aRiskUploadJsonTurnoversTurnover(
     @Json(name = "booking_date")
-    var bookingDate: OffsetDateTime,
+    var bookingDate: @OffsetDate OffsetDateTime,
     @Json(name = "amount")
     var amount: Float,
-    @Json(name = "currency")
-    var currency: CurrencyId,
+    @Json(name = "currency_id")
+    var currencyId: CurrencyId,
     @Json(name = "purpose")
     var purpose: List<String>,
     @Json(name = "counter_iban")
