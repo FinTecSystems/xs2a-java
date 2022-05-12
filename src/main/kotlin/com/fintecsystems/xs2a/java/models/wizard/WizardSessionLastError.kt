@@ -17,6 +17,8 @@ enum class WizardSessionLastError {
 	CLIENT_NOT_STARTED,
     @Json(name = "client_aborted")
 	CLIENT_ABORTED,
+    @Json(name = "veto_by_merchant")
+    VETO_BY_MERCHANT,
     @Json(name = "none")
 	NONE,
 
