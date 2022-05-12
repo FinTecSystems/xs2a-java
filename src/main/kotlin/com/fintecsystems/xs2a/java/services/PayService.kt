@@ -67,20 +67,18 @@ class PayService(
         format: ReportFormat = ReportFormat.JSON,
         locale: ReportLocale = ReportLocale.EN
     ): Any {
-        var uri = "payments/$transactionId/report"
-
-        if (reportId.isNotEmpty()) {
-            uri = "$uri/$reportId"
-        }
-
-        val queryParameters: MutableMap<String, Any?> = mutableMapOf(
-            "format" to format.value,
-            "locale" to locale.value,
+        val response = apiService.get(
+            "payments/$transactionId/report/$reportId",
+            mutableMapOf(
+                "format" to format.value,
+                "locale" to locale.value,
+            )
         )
 
-        val response = apiService.get(uri, queryParameters)
-
-        return JsonSerializer.parseJson(response)
+        return if (format == ReportFormat.JSON)
+            JsonSerializer.parseJson(response)
+        else
+            response
     }
 
     /**

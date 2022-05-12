@@ -86,22 +86,22 @@ class RiskService(
      */
     fun getReport(
         transactionId: String,
-        reportId: String = "",
+        reportId: String,
         format: ReportFormat = ReportFormat.JSON,
         locale: ReportLocale = ReportLocale.EN
     ): Any {
-        var uri = "risks/$transactionId/report"
-
-        if (reportId.isNotEmpty()) {
-            uri = "$uri/$reportId"
-        }
-
-        val queryParameters: MutableMap<String, Any?> = mutableMapOf(
-            "format" to format.value,
-            "locale" to locale.value,
+        val response = apiService.get(
+            "risks/$transactionId/report/$reportId",
+            mutableMapOf(
+                "format" to format.value,
+                "locale" to locale.value,
+            )
         )
 
-        return apiService.get(uri, queryParameters)
+        return if (format == ReportFormat.JSON)
+            parseJson(response)
+        else
+            response
     }
 
     /**

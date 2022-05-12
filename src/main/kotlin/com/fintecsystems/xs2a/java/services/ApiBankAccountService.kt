@@ -106,7 +106,7 @@ class ApiBankAccountService(
     ): BankAccountTurnovers {
         val response = apiService.get(
             "api/accounts/$bankAccountId/turnovers", mutableMapOf(
-                "from" to from?.let {  OffsetDateTimeAdapter.offsetDateToJson(from) },
+                "from" to from?.let { OffsetDateTimeAdapter.offsetDateToJson(from) },
                 "to" to to?.let { OffsetDateTimeAdapter.offsetDateToJson(to) },
                 "onlyNew" to onlyNew
             )
@@ -146,11 +146,17 @@ class ApiBankAccountService(
         format: ReportFormat = ReportFormat.JSON,
         locale: ReportLocale = ReportLocale.EN
     ): String {
-        return apiService.get(
-            "api/accounts/$bankAccountId/report/$reportId", mutableMapOf(
+        val response = apiService.get(
+            "api/accounts/$bankAccountId/report/$reportId",
+            mutableMapOf(
                 "format" to format.value,
                 "locale" to locale.value,
             )
         )
+
+        return if (format == ReportFormat.JSON)
+            JsonSerializer.parseJson(response)
+        else
+            response
     }
 }
