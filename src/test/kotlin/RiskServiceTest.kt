@@ -9,18 +9,25 @@ import com.fintecsystems.xs2a.java.models.risk.Category
 import com.fintecsystems.xs2a.java.models.risk.ExpectedHolderObject
 import com.fintecsystems.xs2a.java.models.risk.Xs2aRisk
 import com.fintecsystems.xs2a.java.models.risk.checks.*
+import com.fintecsystems.xs2a.java.models.risk.uploadJson.Xs2aRiskUploadJsonAccount
+import com.fintecsystems.xs2a.java.models.risk.uploadJson.Xs2aRiskUploadJsonBalance
+import com.fintecsystems.xs2a.java.models.risk.uploadJson.Xs2aRiskUploadJsonTurnoversTurnover
+import com.fintecsystems.xs2a.java.models.risk.uploadJson.Xs2aRiskUploadJsonWrapper
+import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
 import com.fintecsystems.xs2a.java.services.RiskService
 import com.fintecsystems.xs2a.java.services.WizardService
+import org.junit.jupiter.api.MethodOrderer
+import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.TestMethodOrder
 import java.time.OffsetDateTime
+import kotlin.test.assertNotNull
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation::class)
 internal class RiskServiceTest {
-    private val apiKey = System.getenv("API_KEY")
-
     @Test
-    fun test() {
-        val riskService = RiskService(apiKey)
-
+    @Order(0)
+    fun testCreate() {
         val risk = Xs2aRisk(
             xs2aAccountCharacteristicsCheck = Xs2aAccountCharacteristicsCheck(),
             xs2aAccountLinkedOffersCheck = Xs2aAccountLinkedOffersCheck(),
@@ -124,14 +131,12 @@ internal class RiskServiceTest {
             xs2aStandingOrdersCheck = Xs2aStandingOrdersCheck()
         )
 
-        val response = riskService.create(risk)
+        riskResponse = riskService.create(risk)
 
         /* Navigate so we can get the results of the risk checks */
-        val wizardService = WizardService(apiKey)
-
         val wizRes1 = wizardService.navigate(
             mapOf(
-                "key" to response.wizardSessionKey,
+                "key" to riskResponse.wizardSessionKey,
             )
         )
 
@@ -140,7 +145,7 @@ internal class RiskServiceTest {
 
         val wizRes2 = wizardService.navigate(
             mapOf(
-                "key" to response.wizardSessionKey,
+                "key" to riskResponse.wizardSessionKey,
                 "country_id" to CountryId.DE,
                 "bank_code" to 88888888
             )
@@ -152,7 +157,7 @@ internal class RiskServiceTest {
 
         val wizRes3 = wizardService.navigate(
             mapOf(
-                "key" to response.wizardSessionKey,
+                "key" to riskResponse.wizardSessionKey,
                 "USER_NAME" to "abcdef",
                 "USER_PIN" to 123456,
                 "privacy_policy" to true,
@@ -172,46 +177,139 @@ internal class RiskServiceTest {
          */
 
         assert(wizRes3.form?.name == "finish")
+    }
 
-        val riskResult = riskService.get(response.transaction)
-        assert(riskResult.xs2aAccountCharacteristicsCheck !== null)
-        assert(riskResult.xs2aAccountSnapshot !== null)
-        assert(riskResult.xs2aAccountStatusCheck !== null)
-        assert(riskResult.xs2aAgeVerificationCheck !== null)
-        assert(riskResult.xs2aAllAccountsCheck !== null)
-        assert(riskResult.xs2aBalanceCheck !== null)
-        assert(riskResult.xs2aBalanceOverview !== null)
-        assert(riskResult.xs2aCashflowOverview !== null)
-        assert(riskResult.xs2aChargebackCheck !== null)
-        assert(riskResult.xs2aChildrenCheck !== null)
-        assert(riskResult.xs2aCreditCheck !== null)
-        assert(riskResult.xs2aDirectDebitCheck !== null)
-        assert(riskResult.xs2aFactSheetLists !== null)
-        assert(riskResult.xs2aHolderIdentificationCheck !== null)
-        assert(riskResult.xs2aIncomeCheck !== null)
-        // assert(riskResult.xs2aInsuranceContractCheck !== null) // TODO: Add when exists.
-        assert(riskResult.xs2aNameCheck !== null)
-        assert(riskResult.xs2aOverdraftLimitCheck !== null)
-        assert(riskResult.xs2aRatingB2bCheck !== null)
-        assert(riskResult.xs2aRatingB2bCheck !== null)
-        assert(riskResult.xs2aProfitLossCheck !== null)
-        assert(riskResult.xs2aRiskCalculationsCheck !== null)
-        assert(riskResult.xs2aSeizureCheck !== null)
-        assert(riskResult.xs2aStandingOrdersCheck !== null)
-        assert(riskResult.xs2aAccountLinkedOffersCheck !== null)
+    @Test
+    @Order(1)
+    fun testGet() {
+        val riskResult = riskService.get(riskResponse.transaction)
 
-        riskService.getAccountSnapshot(response.transaction)
+        assertNotNull(riskResult.xs2aAccountCharacteristicsCheck)
+        assertNotNull(riskResult.xs2aAccountSnapshot)
+        assertNotNull(riskResult.xs2aAccountStatusCheck)
+        assertNotNull(riskResult.xs2aAgeVerificationCheck)
+        assertNotNull(riskResult.xs2aAllAccountsCheck)
+        assertNotNull(riskResult.xs2aBalanceCheck)
+        assertNotNull(riskResult.xs2aBalanceOverview)
+        assertNotNull(riskResult.xs2aCashflowOverview)
+        assertNotNull(riskResult.xs2aChargebackCheck)
+        assertNotNull(riskResult.xs2aChildrenCheck)
+        assertNotNull(riskResult.xs2aCreditCheck)
+        assertNotNull(riskResult.xs2aDirectDebitCheck)
+        assertNotNull(riskResult.xs2aFactSheetLists)
+        assertNotNull(riskResult.xs2aHolderIdentificationCheck)
+        assertNotNull(riskResult.xs2aIncomeCheck)
+        // assertNotNull(riskResult.xs2aInsuranceContractCheck)
+        assertNotNull(riskResult.xs2aNameCheck)
+        assertNotNull(riskResult.xs2aOverdraftLimitCheck)
+        assertNotNull(riskResult.xs2aRatingB2bCheck)
+        assertNotNull(riskResult.xs2aRatingB2bCheck)
+        assertNotNull(riskResult.xs2aProfitLossCheck)
+        assertNotNull(riskResult.xs2aRiskCalculationsCheck)
+        assertNotNull(riskResult.xs2aSeizureCheck)
+        assertNotNull(riskResult.xs2aStandingOrdersCheck)
+        assertNotNull(riskResult.xs2aAccountLinkedOffersCheck)
+    }
 
-        val fullPdf = riskService.getFullPDF(response.transaction)
+    @Test
+    @Order(2)
+    fun testGetAccountSnapshot() {
+        val response = riskService.getAccountSnapshot(riskResponse.transaction)
+
+        assert(response.isNotEmpty())
+    }
+
+    @Test
+    @Order(3)
+    fun testGetFullPDF() {
+        val fullPdf = riskService.getFullPDF(riskResponse.transaction)
         assert(fullPdf.isNotEmpty())
+    }
 
-        // riskService.getReport(response.transaction)
+    @Test
+    @Order(4)
+    fun testGetReport() {
+        val response = riskService.getReport(
+            riskResponse.transaction,
+            reportId
+        )
 
-        riskService.getEvents(response.transaction)
+        assertNotNull(response)
+    }
 
-        riskService.list(to = OffsetDateTime.now().minusDays(30))
+    @Test
+    @Order(5)
+    fun testGetEvents() {
+        val events = riskService.getEvents(riskResponse.transaction)
+        assert(events.total == 0)
+    }
 
-        val delete = riskService.delete(response.transaction)
-        assert(delete["code"] !== null)
+    @Test
+    @Order(6)
+    fun testList() {
+        val list = riskService.list()
+        assert(list.data.isNotEmpty())
+    }
+
+    @Test
+    @Order(7)
+    fun testDelete() {
+        val delete = riskService.delete(riskResponse.transaction)
+        assertNotNull(delete["code"])
+    }
+
+    @Test
+    @Order(8)
+    fun testCompleteManually() {
+        val sessionResponse = riskService.create(Xs2aRisk())
+
+        val body = listOf(
+            Xs2aRiskUploadJsonWrapper(
+                account = Xs2aRiskUploadJsonAccount(
+                    holder = "Max Mustermann",
+                    description = "Test",
+                    iban = "DE62888888880012345678",
+                    countryId = CountryId.DE,
+                    bic = "TESTDE88XXX",
+                    bankName = "German Testbank",
+                    jointAccount = false
+                ),
+                balance = Xs2aRiskUploadJsonBalance(
+                    balance = 10f,
+                    limit = 0f,
+                    available = 10f,
+                    currency = CurrencyId.EUR
+                ),
+                turnovers = listOf(
+                    Xs2aRiskUploadJsonTurnoversTurnover(
+                        bookingDate = OffsetDateTime.now().minusDays(1),
+                        amount = 10f,
+                        currencyId = CurrencyId.EUR,
+                        purpose = listOf("Test"),
+                        counterIban = "DE04888888880087654321",
+                        counterBic = "TESTDE88XXX",
+                        counterHolder = "Max Mustermann"
+                    )
+                )
+            )
+        )
+
+        val response = riskService.completeManually(
+            sessionResponse.wizardSessionKey,
+            body
+        )
+
+        assertNotNull(response)
+
+        riskService.delete(sessionResponse.transaction)
+    }
+
+    companion object {
+        private val apiKey = System.getenv("API_KEY")
+        private val riskService = RiskService(apiKey)
+        private val wizardService = WizardService(apiKey)
+        private const val reportId = "urp_CBiJpiCwR7c6Gjm7"
+
+        private lateinit var riskResponse: WizardSessionResponse
     }
 }
