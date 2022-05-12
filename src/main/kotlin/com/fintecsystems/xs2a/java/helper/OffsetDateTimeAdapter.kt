@@ -24,7 +24,7 @@ object OffsetDateTimeAdapter {
     private val offsetSeconds = ZoneId.of("Europe/Berlin").rules.getOffset(Instant.now()).totalSeconds.toLong()
 
     private val dateTimeFormatter: DateTimeFormatter =
-        DateTimeFormatterBuilder().appendPattern("yyyy-MM-dd[[ ]['T'][HH][:mm][:ss][.SSSSSS]['Z']]")
+        DateTimeFormatterBuilder().appendPattern("yyyy-MM-dd[[ ]['T'][HH][:mm][:ss][.SSSSSS][XXXXX]]")
             .parseDefaulting(ChronoField.HOUR_OF_DAY, 0)
             .parseDefaulting(ChronoField.MINUTE_OF_HOUR, 0)
             .parseDefaulting(ChronoField.SECOND_OF_MINUTE, 0)
