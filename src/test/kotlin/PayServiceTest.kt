@@ -3,114 +3,175 @@ import com.fintecsystems.xs2a.java.models.common.CurrencyId
 import com.fintecsystems.xs2a.java.models.common.Language
 import com.fintecsystems.xs2a.java.models.form.*
 import com.fintecsystems.xs2a.java.models.pay.*
+import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
 import com.fintecsystems.xs2a.java.services.PayService
 import com.fintecsystems.xs2a.java.services.WizardService
+import org.junit.jupiter.api.MethodOrderer
+import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.TestMethodOrder
+import kotlin.test.assertNotNull
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation::class)
 internal class PayServiceTest {
-    private val apiKey = System.getenv("API_KEY")
+    @Test
+    @Order(0)
+    fun testCreate() {
+        val pay = Xs2aPay(
+            language = Language.DE,
+            amount = 1.toFloat(),
+            currencyId = CurrencyId.EUR,
+            purpose = "Flowers",
+            recipientHolder = "Max Mustermann",
+            recipientIban = "DE04888888880087654321",
+            metadata = mapOf("test" to "test")
+        )
+
+        payResponse = payService.create(pay)
+
+        /* Navigate so we can get the results of the risk checks */
+        val wizRes1 = wizardService.navigate(
+            mapOf(
+                "key" to payResponse.wizardSessionKey,
+            )
+        )
+
+        assert(wizRes1.form?.elements?.get(0) is FormSelect)
+        assert(wizRes1.form?.elements?.get(1) is FormText)
+
+        val wizRes2 = wizardService.navigate(
+            mapOf(
+                "key" to payResponse.wizardSessionKey,
+                "country_id" to CountryId.DE,
+                "bank_code" to 88888888
+            )
+        )
+
+        assert(wizRes2.form?.elements?.get(0) is FormText)
+        assert(wizRes2.form?.elements?.get(1) is FormPassword)
+        assert(wizRes2.form?.elements?.get(2) is FormCheckbox)
+
+        val wizRes3 = wizardService.navigate(
+            mapOf(
+                "key" to payResponse.wizardSessionKey,
+                "USER_NAME" to "abcdef",
+                "USER_PIN" to 123456,
+                "privacy_policy" to true,
+            )
+        )
+
+        assert(wizRes3.form?.elements?.get(0) is FormHelpText)
+        assert(wizRes3.form?.elements?.get(1) is FormImage)
+        assert(wizRes3.form?.elements?.get(2) is FormText)
+
+        val wizRes4 = wizardService.navigate(
+            mapOf(
+                "key" to payResponse.wizardSessionKey,
+                (wizRes3.form?.elements?.get(2) as FormText).name to "123",
+            )
+        )
+
+        assert(wizRes4.form?.name == "finish")
+    }
 
     @Test
-    fun test() {
-        PayService(apiKey).apply {
-            val pay = Xs2aPay(
-                language = Language.DE,
-                amount = 1.toFloat(),
-                currencyId = CurrencyId.EUR,
-                purpose = "Flowers",
-                recipientHolder = "Max Mustermann",
-                recipientIban = "DE04888888880087654321",
-                metadata = mapOf("test" to "test")
-            )
+    @Order(1)
+    fun testGet() {
+        val paymentObject = payService.get(payResponse.transaction)
+        assert(paymentObject.amount == 1f)
+        assert(paymentObject.recipientHolder == "Max Mustermann")
+    }
 
-            val response = create(pay)
+    @Test
+    @Order(2)
+    fun testUpdatePaymentStatus() {
+        var updatedStatus = payService.updatePaymentStatus(payResponse.transaction, PaymentStatus.LOSS)
+        assert(updatedStatus.paymentStatus === PaymentStatus.LOSS)
 
-            /* Navigate so we can get the results of the risk checks */
-            val wizardService = WizardService(apiKey)
+        // Set to received again to continue the tests
+        updatedStatus = payService.updatePaymentStatus(payResponse.transaction, PaymentStatus.RECEIVED)
+        assert(updatedStatus.paymentStatus === PaymentStatus.RECEIVED)
+    }
 
-            val wizRes1 = wizardService.navigate(
-                mapOf(
-                    "key" to response.wizardSessionKey,
+    @Test
+    @Order(3)
+    fun testGetReport() {
+        val response = payService.getReport(
+            payResponse.transaction,
+            reportId
+        )
+
+        assertNotNull(response)
+    }
+
+    @Test
+    @Order(4)
+    fun testGetEvents() {
+        val events = payService.getEvents(payResponse.transaction)
+        assert(events.total == 0)
+    }
+
+    @Test
+    @Order(5)
+    fun testGeneratePainFile() {
+        val requestData = RefundPayoutRequest(
+            transactions = listOf(
+                RefundPayoutTransactions(
+                    transaction = payResponse.transaction,
+                    amount = 0.5.toFloat(),
+                    type = RefundPayoutType.REFUND
                 )
-            )
+            ),
+            painType = PainType.PAIN001001003
+        )
 
-            assert(wizRes1.form?.elements?.get(0) is FormSelect)
-            assert(wizRes1.form?.elements?.get(1) is FormText)
+        val refundPayoutResponse = payService.generatePainFile(requestData)
+        assert(refundPayoutResponse.messageId.isNotEmpty())
 
-            val wizRes2 = wizardService.navigate(
-                mapOf(
-                    "key" to response.wizardSessionKey,
-                    "country_id" to CountryId.DE,
-                    "bank_code" to 88888888
-                )
-            )
+        painMessageId = refundPayoutResponse.messageId
+    }
 
-            assert(wizRes2.form?.elements?.get(0) is FormText)
-            assert(wizRes2.form?.elements?.get(1) is FormPassword)
-            assert(wizRes2.form?.elements?.get(2) is FormCheckbox)
+    @Test
+    @Order(6)
+    fun testGetPainFile() {
+        val painFile = payService.getPainFile(painMessageId)
+        assert(painFile.isNotEmpty())
+    }
 
-            val wizRes3 = wizardService.navigate(
-                mapOf(
-                    "key" to response.wizardSessionKey,
-                    "USER_NAME" to "abcdef",
-                    "USER_PIN" to 123456,
-                    "privacy_policy" to true,
-                )
-            )
+    @Test
+    @Order(7)
+    fun testListRefundPayouts() {
+        val list = payService.listRefundPayouts()
+        assert(list.data.isNotEmpty())
+    }
 
-            assert(wizRes3.form?.elements?.get(0) is FormHelpText)
-            assert(wizRes3.form?.elements?.get(1) is FormImage)
-            assert(wizRes3.form?.elements?.get(2) is FormText)
+    @Test
+    @Order(8)
+    fun testGetRefundPayout() {
+        val response = payService.getRefundPayout(payResponse.transaction)
+        assert(response.transaction == payResponse.transaction)
+    }
 
-            val wizRes4 = wizardService.navigate(
-                mapOf(
-                    "key" to response.wizardSessionKey,
-                    (wizRes3.form?.elements?.get(2) as FormText).name to "123",
-                )
-            )
+    @Test
+    @Order(9)
+    fun testList() {
+        val list = payService.list()
+        assert(list.data.isNotEmpty())
+    }
 
-            assert(wizRes4.form?.name == "finish")
+    @Test
+    @Order(10)
+    fun testDelete() {
+        payService.delete(payResponse.transaction)
+    }
 
-            val paymentObject = get(response.transaction)
-            assert(paymentObject.amount == 1.toFloat())
-            assert(paymentObject.recipientHolder == "Max Mustermann")
+    companion object {
+        private val apiKey = System.getenv("API_KEY")
+        private val payService = PayService(apiKey)
+        private val wizardService = WizardService(apiKey)
+        private const val reportId = "urp_CBiJpiCwR7c6Gjm7"
 
-            val updatedStatus = updatePaymentStatus(response.transaction, PaymentStatus.LOSS)
-            assert(updatedStatus.paymentStatus === PaymentStatus.LOSS)
-
-            // Set to received again to continue the tests
-            updatePaymentStatus(response.transaction, PaymentStatus.RECEIVED)
-
-            // getReport(response.transaction)
-
-            val events = getEvents(response.transaction)
-            assert(events.total == 0)
-
-            /**
-             * Test Refund Payouts
-             */
-            val requestData = RefundPayoutRequest(
-                transactions = listOf(
-                    RefundPayoutTransactions(
-                        transaction = response.transaction,
-                        amount = 0.5.toFloat(),
-                        type = RefundPayoutType.REFUND
-                    )
-                ),
-                painType = PainType.PAIN001001003
-            )
-
-            // val refundPayoutResponse = generatePainFile(requestData)
-            // assert(refundPayoutResponse.messageId.isNotEmpty())
-
-            // val refPayout = getRefundPayout(response.transaction)
-            // assert(refPayout.transaction == response.transaction)
-
-            /**
-             * List
-             */
-            val list = list()
-            assert(list.data.isNotEmpty())
-        }
+        private lateinit var payResponse: WizardSessionResponse
+        private lateinit var painMessageId: String
     }
 }
