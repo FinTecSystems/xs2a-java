@@ -2,7 +2,6 @@ package com.fintecsystems.xs2a.java.helper
 
 import com.squareup.moshi.FromJson
 import com.squareup.moshi.JsonQualifier
-import com.squareup.moshi.ToJson
 
 @Retention(AnnotationRetention.RUNTIME)
 @JsonQualifier
@@ -16,7 +15,4 @@ object BooleanAdapter {
         is Int -> fieldToParse == 1
         else -> false
     }
-
-    @ToJson
-    fun toJson(booleanToSerialize: Boolean) = booleanToSerialize.toString()
 }
