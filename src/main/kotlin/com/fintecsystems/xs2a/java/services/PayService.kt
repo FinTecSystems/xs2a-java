@@ -63,7 +63,7 @@ class PayService(
      */
     fun getReport(
         transactionId: String,
-        reportId: String = "",
+        reportId: String,
         format: ReportFormat = ReportFormat.JSON,
         locale: ReportLocale = ReportLocale.EN
     ): Any {
