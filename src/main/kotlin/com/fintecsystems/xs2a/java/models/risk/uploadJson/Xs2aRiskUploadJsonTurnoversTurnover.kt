@@ -18,7 +18,8 @@ import java.time.OffsetDateTime
 
 data class Xs2aRiskUploadJsonTurnoversTurnover(
     @Json(name = "booking_date")
-    var bookingDate: @OffsetDate OffsetDateTime,
+    @OffsetDate
+    var bookingDate: OffsetDateTime,
     @Json(name = "amount")
     var amount: Float,
     @Json(name = "currency_id")
