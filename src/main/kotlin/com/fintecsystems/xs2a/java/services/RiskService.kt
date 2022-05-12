@@ -136,7 +136,7 @@ class RiskService(
      */
     fun completeManually(
         wizardSessionId: String,
-        body: Xs2aRiskUploadJsonWrapper
+        body: List<Xs2aRiskUploadJsonWrapper>
     ): Xs2aRiskUploadJsonSuccess {
         val response = apiService.post("risks/upload/$wizardSessionId", toJson(body))
 
