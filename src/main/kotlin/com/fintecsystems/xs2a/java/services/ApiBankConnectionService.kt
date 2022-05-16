@@ -4,7 +4,7 @@ import com.fintecsystems.xs2a.java.helper.JsonSerializer
 import com.fintecsystems.xs2a.java.models.api.connections.BankConnection
 import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionList
 import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionRequest
-import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionSyncRequest
+import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionSyncParameters
 import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
 
 class ApiBankConnectionService(
@@ -65,13 +65,13 @@ class ApiBankConnectionService(
     /**
      * Sync a bank connection.
      * @param connectionId The connection-id for the connection to be synced.
-     * @param request request parameters for the sync
+     * @param syncParameters request parameters for the sync
      *
      * @return null if the sync process will be executed without any user interaction.
      *         Otherwise, it will return the [WizardSessionResponse].
      */
-    fun sync(connectionId: String, request: BankConnectionSyncRequest? = null): WizardSessionResponse? {
-        val response = apiService.post("api/connections/$connectionId/sync", JsonSerializer.toJson(request))
+    fun sync(connectionId: String, syncParameters: BankConnectionSyncParameters? = null): WizardSessionResponse? {
+        val response = apiService.post("api/connections/$connectionId/sync", JsonSerializer.toJson(syncParameters))
 
         return if (response.isEmpty()) null else JsonSerializer.parseJson(response)
     }
