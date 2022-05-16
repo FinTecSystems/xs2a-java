@@ -135,6 +135,15 @@ class ApiBankConnectionServiceTest {
         }
     }
 
+    @Test
+    @Order(6)
+    fun testDelete() {
+        ApiBankConnectionService(accessToken).apply {
+            assertDoesNotThrow {
+                delete(bankConnectionId)
+            }
+        }
+    }
 
     companion object {
         private val apiKey = System.getenv("API_KEY")
