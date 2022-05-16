@@ -57,10 +57,9 @@ class ApiBankConnectionService(
     /**
      * Delete a specific Bank Connection
      * @param connectionId id of connection to delete
-     * @return String
      */
-    fun delete(connectionId: String): String {
-        return apiService.delete("api/connections/$connectionId")
+    fun delete(connectionId: String) {
+        apiService.delete("api/connections/$connectionId")
     }
 
     /**
