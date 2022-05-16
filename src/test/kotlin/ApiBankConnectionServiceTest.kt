@@ -8,10 +8,7 @@ import com.fintecsystems.xs2a.java.models.form.FormText
 import com.fintecsystems.xs2a.java.services.ApiBankConnectionService
 import com.fintecsystems.xs2a.java.services.ApiBankUserService
 import com.fintecsystems.xs2a.java.services.ApiWizardService
-import org.junit.jupiter.api.MethodOrderer
-import org.junit.jupiter.api.Order
-import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.TestMethodOrder
+import org.junit.jupiter.api.*
 import java.time.OffsetDateTime
 import kotlin.test.assertNotNull
 
@@ -112,8 +109,9 @@ class ApiBankConnectionServiceTest {
     @Order(3)
     fun testSync() {
         ApiBankConnectionService(accessToken).apply {
-            val response = sync(bankConnectionId)
-            assertNotNull(response)
+            assertDoesNotThrow {
+                sync(bankConnectionId)
+            }
         }
     }
 

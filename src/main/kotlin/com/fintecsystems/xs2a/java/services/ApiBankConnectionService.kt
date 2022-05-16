@@ -67,9 +67,14 @@ class ApiBankConnectionService(
      * Sync a bank connection.
      * @param connectionId The connection-id for the connection to be synced.
      * @param request request parameters for the sync
+     *
+     * @return null if the sync process will be executed without any user interaction.
+     *         Otherwise, it will return the [WizardSessionResponse].
      */
-    fun sync(connectionId: String, request: BankConnectionSyncRequest? = null): String {
-        return apiService.post("api/connections/$connectionId/sync", JsonSerializer.toJson(request))
+    fun sync(connectionId: String, request: BankConnectionSyncRequest? = null): WizardSessionResponse? {
+        val response = apiService.post("api/connections/$connectionId/sync", JsonSerializer.toJson(request))
+
+        return if (response.isEmpty()) null else JsonSerializer.parseJson(response)
     }
 
     /**
