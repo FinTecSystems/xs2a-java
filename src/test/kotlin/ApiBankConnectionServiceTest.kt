@@ -1,4 +1,5 @@
 import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionRequest
+import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionSyncParameters
 import com.fintecsystems.xs2a.java.models.api.connections.SyncMode
 import com.fintecsystems.xs2a.java.models.api.users.BankUserCreationRequest
 import com.fintecsystems.xs2a.java.models.form.FormCheckbox
@@ -110,7 +111,13 @@ class ApiBankConnectionServiceTest {
     fun testSync() {
         ApiBankConnectionService(accessToken).apply {
             assertDoesNotThrow {
-                sync(bankConnectionId)
+                sync(
+                    bankConnectionId,
+                    BankConnectionSyncParameters(
+                        null,
+                        false
+                    )
+                )
             }
         }
     }
