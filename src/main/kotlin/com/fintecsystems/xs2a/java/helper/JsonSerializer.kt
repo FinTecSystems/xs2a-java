@@ -6,6 +6,7 @@ import com.fintecsystems.xs2a.java.models.form.*
 import com.fintecsystems.xs2a.java.models.form.radio.FormRadio
 import com.fintecsystems.xs2a.java.models.risk.Category
 import com.fintecsystems.xs2a.java.models.risk.checks.Xs2aRiskCalculationsCheckFunction
+import com.fintecsystems.xs2a.java.models.wizard.WizardSessionLastError
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -34,6 +35,7 @@ object JsonSerializer {
         .add(Category.Companion)
         .add(OffsetDateTimeAdapter)
         .add(Turnover.Adapter)
+        .add(WizardSessionLastError.Adapter)
         .add(Xs2aIncomeCheckResponseDataAdapter)
         .addLast(KotlinJsonAdapterFactory())
         .build()

@@ -1,148 +1,104 @@
 package com.fintecsystems.xs2a.java.models.wizard
 
-import com.squareup.moshi.Json
+import com.squareup.moshi.FromJson
+import com.squareup.moshi.ToJson
 
 @Suppress("unused")
-enum class WizardSessionLastError {
+enum class WizardSessionLastError(val lastError: String) {
     /*
      * Common errors
      */
-    @Json(name = "session_expired")
-	SESSION_EXPIRED,
-    @Json(name = "token_mismatch")
-	TOKEN_MISMATCH,
-    @Json(name = "tech_error")
-	TECH_ERROR,
-    @Json(name = "client_not_started")
-	CLIENT_NOT_STARTED,
-    @Json(name = "client_aborted")
-	CLIENT_ABORTED,
-    @Json(name = "veto_by_merchant")
-    VETO_BY_MERCHANT,
-    @Json(name = "none")
-	NONE,
+    SESSION_EXPIRED("session_expired"),
+    TOKEN_MISMATCH("token_mismatch"),
+    TECH_ERROR("tech_error"),
+    CLIENT_NOT_STARTED("client_not_started"),
+    CLIENT_ABORTED("client_aborted"),
+    VETO_BY_MERCHANT("veto_by_merchant"),
+    NONE("none"),
 
     /*
      * Backend failures
      */
-    @Json(name = "consent_invalid")
-	CONSENT_INVALID,
-    @Json(name = "init_failed")
-	INIT_FAILED,
-    @Json(name = "login_failed")
-	LOGIN_FAILED,
-    @Json(name = "login_next_failed")
-	LOGIN_NEXT_FAILED,
-    @Json(name = "accounts_failed")
-	ACCOUNTS_FAILED,
-    @Json(name = "balance_failed")
-	BALANCE_FAILED,
-    @Json(name = "turnovers_failed")
-	TURNOVERS_FAILED,
-    @Json(name = "standing_orders_failed")
-	STANDING_ORDERS_FAILED,
-    @Json(name = "transaction_failed")
-	TRANSACTION_FAILED,
-    @Json(name = "tan_failed")
-	TAN_FAILED,
-    @Json(name = "tan_method_not_allowed")
-	TAN_METHOD_NOT_ALLOWED,
+    CONSENT_INVALID("consent_invalid"),
+    INIT_FAILED("init_failed"),
+    LOGIN_FAILED("login_failed"),
+    LOGIN_NEXT_FAILED("login_next_failed"),
+    ACCOUNTS_FAILED("accounts_failed"),
+    BALANCE_FAILED("balance_failed"),
+    TURNOVERS_FAILED("turnovers_failed"),
+    STANDING_ORDERS_FAILED("standing_orders_failed"),
+    TRANSACTION_FAILED("transaction_failed"),
+    TAN_FAILED("tan_failed"),
+    TAN_METHOD_NOT_ALLOWED("tan_method_not_allowed"),
 
     /*
      * Blacklist errors
      */
-    @Json(name = "login_blacklisted")
-	LOGIN_BLACKLISTED,
-    @Json(name = "account_blacklisted")
-	ACCOUNT_BLACKLISTED,
+    LOGIN_BLACKLISTED("login_blacklisted"),
+    ACCOUNT_BLACKLISTED("account_blacklisted"),
 
     /*
      * Validation errors
      */
-    @Json(name = "validation_failed")
-	VALIDATION_FAILED,
-    @Json(name = "pp_not_checked")
-	PP_NOT_CHECKED,
-    @Json(name = "max_login_tries")
-	MAX_LOGIN_TRIES,
-    @Json(name = "max_tan_tries")
-	MAX_TAN_TRIES,
-    @Json(name = "wrong_tan")
-	WRONG_TAN,
+    VALIDATION_FAILED("validation_failed"),
+    PP_NOT_CHECKED("pp_not_checked"),
+    MAX_LOGIN_TRIES("max_login_tries"),
+    MAX_TAN_TRIES("max_tan_tries"),
+    WRONG_TAN("wrong_tan"),
 
     /*
      * Configuration errors
      */
-    @Json(name = "testmode_error")
-	TESTMODE_ERROR,
-    @Json(name = "tx_rx_iban_equal")
-	TX_RX_IBAN_EQUAL,
-    @Json(name = "forced_transport_disabled")
-	FORCED_TRANSPORT_DISABLED,
+    TESTMODE_ERROR("testmode_error"),
+    TX_RX_IBAN_EQUAL("tx_rx_iban_equal"),
+    FORCED_TRANSPORT_DISABLED("forced_transport_disabled"),
 
     /*
      * Incompatible accounts
      */
-    @Json(name = "country_id_invalid")
-	COUNTRY_ID_INVALID,
-    @Json(name = "bank_code_unknown")
-	BANK_CODE_UNKNOWN,
-    @Json(name = "no_transports_found")
-	NO_TRANSPORTS_FOUND,
-    @Json(name = "no_compatible_accounts")
-	NO_COMPATIBLE_ACCOUNTS,
-    @Json(name = "pinned_iban_not_found")
-	PINNED_IBAN_NOT_FOUND,
-    @Json(name = "pinned_holder_not_found")
-	PINNED_HOLDER_NOT_FOUND,
-    @Json(name = "pinned_iban_transaction_not_possible")
-	PINNED_IBAN_TRANSACTIONS_NOT_POSSIBLE,
-    @Json(name = "authorized_person")
-	AUTHORIZED_PERSON,
-    @Json(name = "authorized_person_poa")
-	AUTHORIZED_PERSON_POWER_OF_ATTORNEY,
-    @Json(name = "age_verification_not_confirmed")
-	AGE_VERIFICATION_NOT_CONFIRMED,
-    @Json(name = "account_data_incomplete")
-	ACCOUNT_DATA_INCOMPLETE,
+    COUNTRY_ID_INVALID("country_id_invalid"),
+    BANK_CODE_UNKNOWN("bank_code_unknown"),
+    NO_TRANSPORTS_FOUND("no_transports_found"),
+    NO_COMPATIBLE_ACCOUNTS("no_compatible_accounts"),
+    PINNED_IBAN_NOT_FOUND("pinned_iban_not_found"),
+    PINNED_HOLDER_NOT_FOUND("pinned_holder_not_found"),
+    PINNED_IBAN_TRANSACTIONS_NOT_POSSIBLE("pinned_iban_transaction_not_possible"),
+    AUTHORIZED_PERSON("authorized_person"),
+    AUTHORIZED_PERSON_POWER_OF_ATTORNEY("authorized_person_poa"),
+    AGE_VERIFICATION_NOT_CONFIRMED("age_verification_not_confirmed"),
+    ACCOUNT_DATA_INCOMPLETE("account_data_incomplete"),
 
     /*
      * Security errors
      */
-    @Json(name = "security_is_seizure")
-	SECURITY_IS_SEIZURE,
-    @Json(name = "security_chargebacks_exceeded")
-	SECURITY_CHARGEBACKS_EXCEEDED,
-    @Json(name = "security_max_ta_count_reached")
-	SECURITY_MAX_TA_COUNT_REACHED,
-    @Json(name = "security_max_volume_reached")
-	SECURITY_MAX_VOLUME_REACHED,
-    @Json(name = "security_balance_failed")
-	SECURITY_BALANCE_FAILED,
-    @Json(name = "security_prev_payments_check_failed")
-	SECURITY_PREV_PAYMENTS_CHECK_FAILED,
-    @Json(name = "security_pending_pmts_check_failed")
-	SECURITY_PENDING_PMTS_CHECK_FAILED,
-    @Json(name = "security_tags_check_failed")
-	SECURITY_TAGS_CHECK_FAILED,
-    @Json(name = "security_old_transaction_missing")
-	SECURITY_OLD_TRANSACTION_MISSING,
-    @Json(name = "security_same_balance_failed")
-	SECURITY_SAME_BALANCE_FAILED,
-    @Json(name = "security_loss_pmts_check_failed")
-	SECURITY_LOSS_PMTS_CHECK_FAILED,
-    @Json(name = "security_max_amount_exceeded")
-	SECURITY_MAX_AMOUNT_EXCEEDED,
-    @Json(name = "security_prebooked_orders_exceeded")
-	SECURITY_PREBOOKED_ORDERS_EXCEEDED,
-    @Json(name = "security_low_turnover_count")
-	SECURITY_LOW_TURNOVER_COUNT,
-    @Json(name = "security_high_roller_volume_reached")
-	SECURITY_HIGH_ROLLER_VOLUME_REACHED,
+    SECURITY_IS_SEIZURE("security_is_seizure"),
+    SECURITY_CHARGEBACKS_EXCEEDED("security_chargebacks_exceeded"),
+    SECURITY_MAX_TA_COUNT_REACHED("security_max_ta_count_reached"),
+    SECURITY_MAX_VOLUME_REACHED("security_max_volume_reached"),
+    SECURITY_BALANCE_FAILED("security_balance_failed"),
+    SECURITY_PREV_PAYMENTS_CHECK_FAILED("security_prev_payments_check_failed"),
+    SECURITY_PENDING_PMTS_CHECK_FAILED("security_pending_pmts_check_failed"),
+    SECURITY_TAGS_CHECK_FAILED("security_tags_check_failed"),
+    SECURITY_OLD_TRANSACTION_MISSING("security_old_transaction_missing"),
+    SECURITY_SAME_BALANCE_FAILED("security_same_balance_failed"),
+    SECURITY_LOSS_PMTS_CHECK_FAILED("security_loss_pmts_check_failed"),
+    SECURITY_MAX_AMOUNT_EXCEEDED("security_max_amount_exceeded"),
+    SECURITY_PREBOOKED_ORDERS_EXCEEDED("security_prebooked_orders_exceeded"),
+    SECURITY_LOW_TURNOVER_COUNT("security_low_turnover_count"),
+    SECURITY_HIGH_ROLLER_VOLUME_REACHED("security_high_roller_volume_reached"),
 
     /*
      * Mapped error
      */
-    @Json(name = "security_setting_rejection")
-	SECURITY_SETTING_REJECTION,
+    SECURITY_SETTING_REJECTION("security_setting_rejection");
+
+    companion object Adapter {
+        private val valueMap = WizardSessionLastError.values().associateBy(WizardSessionLastError::lastError)
+
+        @ToJson
+        fun toJson(lastError: WizardSessionLastError) = lastError.lastError
+
+        @FromJson
+        fun fromJson(lastError: String) = if (lastError.isEmpty()) NONE else WizardSessionLastError.valueMap[lastError]
+    }
 }
