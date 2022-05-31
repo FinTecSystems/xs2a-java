@@ -10,6 +10,7 @@ import java.time.OffsetDateTime
 /**
  *
  * @param id ID if feature is enabled always null otherwise.
+ * @param transactionId Transaction ID of this turnover if the bank supports it.
  * @param bookingDate The booking date.
  * @param amount The turnover amount. Negative for expenditures.
  * @param currency The two-letter currency ID, e.g. 'EUR'
@@ -28,6 +29,8 @@ import java.time.OffsetDateTime
 data class Turnover(
     @Json(name = "id")
     var id: String? = null,
+    @Json(name = "transaction_id")
+    var transactionId: String? = null,
     @Json(name = "booking_date")
     var bookingDate: OffsetDateTime,
     @Json(name = "amount")
@@ -61,6 +64,7 @@ data class Turnover(
             @Suppress("UNCHECKED_CAST")
             return Turnover(
                 id = data["id"] as String?,
+                transactionId = data["transaction_id"] as String?,
                 bookingDate = OffsetDateTimeAdapter.fromJson(data["booking_date"] as String)!!,
                 amount = (data["amount"] as Double).toFloat(),
                 currency = CurrencyId.valueOf((data["currency"] ?: data["currency_id"]) as String),
