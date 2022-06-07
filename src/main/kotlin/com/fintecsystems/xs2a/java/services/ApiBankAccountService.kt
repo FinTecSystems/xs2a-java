@@ -5,7 +5,7 @@ import com.fintecsystems.xs2a.java.helper.OffsetDateTimeAdapter
 import com.fintecsystems.xs2a.java.models.api.accounts.BankAccount
 import com.fintecsystems.xs2a.java.models.api.accounts.BankAccountBalance
 import com.fintecsystems.xs2a.java.models.api.accounts.BankAccountTurnovers
-import com.fintecsystems.xs2a.java.models.api.accounts.BankAccountsList
+import com.fintecsystems.xs2a.java.models.common.PaginatedList
 import com.fintecsystems.xs2a.java.models.common.ReportFormat
 import com.fintecsystems.xs2a.java.models.common.ReportLocale
 import java.time.OffsetDateTime
@@ -24,7 +24,7 @@ class ApiBankAccountService(
     fun list(
         per_page: Int = 15,
         page: Int = 1,
-    ): BankAccountsList {
+    ): PaginatedList<BankAccount> {
         val response = apiService.get(
             "api/accounts",
             mutableMapOf(
@@ -46,7 +46,7 @@ class ApiBankAccountService(
         connectionId: String,
         per_page: Int = 15,
         page: Int = 1,
-    ): BankAccountsList {
+    ): PaginatedList<BankAccount> {
         val response = apiService.get(
             "api/connections/$connectionId/accounts",
             mutableMapOf(

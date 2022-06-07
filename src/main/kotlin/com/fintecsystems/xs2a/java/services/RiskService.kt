@@ -4,12 +4,12 @@ import com.fintecsystems.xs2a.java.helper.JsonSerializer.parseJson
 import com.fintecsystems.xs2a.java.helper.JsonSerializer.toJson
 import com.fintecsystems.xs2a.java.helper.OffsetDateTimeAdapter
 import com.fintecsystems.xs2a.java.models.common.CountryId
+import com.fintecsystems.xs2a.java.models.common.PaginatedList
 import com.fintecsystems.xs2a.java.models.common.ReportFormat
 import com.fintecsystems.xs2a.java.models.common.ReportLocale
-import com.fintecsystems.xs2a.java.models.events.EventsList
+import com.fintecsystems.xs2a.java.models.events.EventObject
 import com.fintecsystems.xs2a.java.models.risk.AccountStatement
 import com.fintecsystems.xs2a.java.models.risk.RiskObject
-import com.fintecsystems.xs2a.java.models.risk.RisksTransactionList
 import com.fintecsystems.xs2a.java.models.risk.Xs2aRisk
 import com.fintecsystems.xs2a.java.models.risk.uploadJson.Xs2aRiskUploadJsonSuccess
 import com.fintecsystems.xs2a.java.models.risk.uploadJson.Xs2aRiskUploadJsonWrapper
@@ -116,7 +116,7 @@ class RiskService(
         transactionId: String,
         perPage: Int = 15,
         page: Int = 1
-    ): EventsList {
+    ): PaginatedList<EventObject> {
         val queryParameters: MutableMap<String, Any?> = mutableMapOf(
             "per_page" to perPage.toString(),
             "page" to page.toString(),
@@ -180,7 +180,7 @@ class RiskService(
         page: Int = 1,
         from: OffsetDateTime? = null,
         to: OffsetDateTime? = null,
-    ): RisksTransactionList {
+    ): PaginatedList<RiskObject> {
         val response = apiService.get(
             "risks",
             mutableMapOf(
