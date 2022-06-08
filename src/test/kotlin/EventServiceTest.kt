@@ -1,3 +1,5 @@
+import com.fintecsystems.xs2a.java.helper.JsonSerializer
+import com.fintecsystems.xs2a.java.models.common.PaginatedList
 import com.fintecsystems.xs2a.java.models.events.EventObject
 import com.fintecsystems.xs2a.java.models.risk.Xs2aRisk
 import org.junit.jupiter.api.Order
@@ -38,8 +40,40 @@ internal class EventServiceTest {
         }
     }
 
+    @Test
+    fun testBruh() {
+        val testString = """
+            {
+                "total": 0,
+                "perPage": 0,
+                "currentPage": 0,
+                "lastPage": 0,
+                "from": 0,
+                "to": 0,
+                "data": [
+                    {
+                        "id": "111111",
+                        "transaction": "100000",
+                        "type": "transaction.created",
+                        "data": null,
+                        "testmode": false,
+                        "message": "Nothing",
+                        "created_at": "2020-10-20"
+                    }
+                ]
+            }
+        """.trimIndent()
+
+        val intermediate = JsonSerializer.parseJson<Map<String, String>>(testString)
+        val test = intermediate[data]
+        println(test)
+        val value = PaginatedList.fromJson<EventObject>(intermediate)
+
+        println(value)
+    }
+
     companion object {
-        private val apiKey = System.getenv("API_KEY")
+        private val apiKey = System.getenv("API_KEY") ?: ""
 
         private lateinit var event: EventObject
     }
