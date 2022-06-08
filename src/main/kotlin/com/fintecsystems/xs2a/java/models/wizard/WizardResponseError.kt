@@ -17,10 +17,16 @@ data class WizardResponseError(
 ) {
     companion object Adapter {
         @FromJson
-        fun fromJson(data: Map<String, Any>): WizardResponseError? = if (data.isEmpty()) null
-        else WizardResponseError(
-            data["message"] as String,
-            data["recoverable"] as Boolean
-        )
+        fun fromJson(data: Any): WizardResponseError? {
+            if (data is Map<*, *>) {
+                return if (data.isEmpty()) null
+                else WizardResponseError(
+                    data["message"] as String,
+                    data["recoverable"] as Boolean
+                )
+            }
+
+            return null
+        }
     }
 }
