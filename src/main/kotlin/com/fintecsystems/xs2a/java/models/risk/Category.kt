@@ -278,7 +278,7 @@ enum class Category(val tag: String) {
     N_6("N.6"),
     N_7("N.7");
 
-    companion object {
+    companion object Adapter {
         private val valueMap = values().associateBy(Category::tag)
 
         @ToJson

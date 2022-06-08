@@ -5,6 +5,7 @@ import com.fintecsystems.xs2a.java.models.common.Turnover
 import com.fintecsystems.xs2a.java.models.form.*
 import com.fintecsystems.xs2a.java.models.form.radio.FormRadio
 import com.fintecsystems.xs2a.java.models.risk.Category
+import com.fintecsystems.xs2a.java.models.risk.checks.Xs2aIncomeCheckResponseData
 import com.fintecsystems.xs2a.java.models.risk.checks.Xs2aRiskCalculationsCheckFunction
 import com.fintecsystems.xs2a.java.models.wizard.WizardResponseError
 import com.fintecsystems.xs2a.java.models.wizard.WizardSessionLastError
@@ -31,13 +32,13 @@ object JsonSerializer {
         )
         .add(NullableBooleanAdapter)
         .add(BooleanAdapter)
-        .add(Tag.Companion)
-        .add(Xs2aRiskCalculationsCheckFunction.Companion)
-        .add(Category.Companion)
         .add(OffsetDateTimeAdapter)
+        .add(Tag.Adapter)
+        .add(Xs2aRiskCalculationsCheckFunction.Adapter)
+        .add(Category.Adapter)
         .add(Turnover.Adapter)
         .add(WizardSessionLastError.Adapter)
-        .add(Xs2aIncomeCheckResponseDataAdapter)
+        .add(Xs2aIncomeCheckResponseData.Adapter)
         .add(WizardResponseError.Adapter)
         .addLast(KotlinJsonAdapterFactory())
         .build()
