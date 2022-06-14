@@ -3,7 +3,6 @@ package com.fintecsystems.xs2a.java.services
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
 import com.fintecsystems.xs2a.java.helper.OffsetDateTimeAdapter
 import com.fintecsystems.xs2a.java.models.api.users.*
-import com.fintecsystems.xs2a.java.models.common.PaginatedList
 import java.time.OffsetDateTime
 
 class ApiBankUserService(
@@ -65,7 +64,7 @@ class ApiBankUserService(
      *
      * @param userId id of user
      */
-    fun listAccessTokens(userId: String): PaginatedList<AccessToken> {
+    fun listAccessTokens(userId: String): AccessTokenList {
         val response = apiService.get("api/users/$userId/accesstokens")
 
         return JsonSerializer.parseJson(response)
@@ -121,7 +120,7 @@ class ApiBankUserService(
     fun list(
         per_page: Int = 15,
         page: Int = 1,
-    ): PaginatedList<BankUser> {
+    ): BankUserList {
         val response = apiService.get(
             "api/users", mutableMapOf(
                 "per_page" to per_page.toString(),

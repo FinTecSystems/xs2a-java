@@ -2,8 +2,8 @@ package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
 import com.fintecsystems.xs2a.java.models.api.bankcodes.BankObject
+import com.fintecsystems.xs2a.java.models.api.bankcodes.BankObjectList
 import com.fintecsystems.xs2a.java.models.common.CountryId
-import com.fintecsystems.xs2a.java.models.common.PaginatedList
 import com.fintecsystems.xs2a.java.models.common.Product
 
 class BankCodesService(
@@ -22,7 +22,7 @@ class BankCodesService(
 
     fun filterAllBanks(
         countryId: CountryId? = null, per_page: Int = 15, page: Int = 1
-    ): PaginatedList<BankObject> {
+    ): BankObjectList {
         val response = apiService.get(
             "bankcodes/all", mutableMapOf(
                 "country_id" to (countryId?.value ?: ""),
@@ -40,7 +40,7 @@ class BankCodesService(
         per_page: Int = 15,
         page: Int = 1,
         product: Product? = null,
-    ): PaginatedList<BankObject> {
+    ): BankObjectList {
         val response = apiService.get(
             "bankcodes/autocomplete", mutableMapOf(
                 "q" to query,

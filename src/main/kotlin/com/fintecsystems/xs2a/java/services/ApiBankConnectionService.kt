@@ -2,9 +2,9 @@ package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
 import com.fintecsystems.xs2a.java.models.api.connections.BankConnection
+import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionList
 import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionRequest
 import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionSyncParameters
-import com.fintecsystems.xs2a.java.models.common.PaginatedList
 import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
 
 class ApiBankConnectionService(
@@ -30,7 +30,7 @@ class ApiBankConnectionService(
     fun list(
         per_page: Int = 15,
         page: Int = 1,
-    ): PaginatedList<BankConnection> {
+    ): BankConnectionList {
         val response = apiService.get(
             "api/connections",
             mutableMapOf(

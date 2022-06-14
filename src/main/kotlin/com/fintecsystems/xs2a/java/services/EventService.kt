@@ -2,8 +2,8 @@ package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
 import com.fintecsystems.xs2a.java.helper.OffsetDateTimeAdapter
-import com.fintecsystems.xs2a.java.models.common.PaginatedList
 import com.fintecsystems.xs2a.java.models.events.EventObject
+import com.fintecsystems.xs2a.java.models.events.EventObjectList
 import java.time.OffsetDateTime
 
 class EventService (
@@ -27,7 +27,7 @@ class EventService (
         page: Int = 1,
         from: OffsetDateTime? = null,
         to: OffsetDateTime? = null,
-    ): PaginatedList<EventObject> {
+    ): EventObjectList {
         val response = apiService.get(
             "events",
             mutableMapOf(

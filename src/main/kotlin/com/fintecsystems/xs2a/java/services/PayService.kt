@@ -2,10 +2,9 @@ package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
 import com.fintecsystems.xs2a.java.helper.OffsetDateTimeAdapter
-import com.fintecsystems.xs2a.java.models.common.PaginatedList
 import com.fintecsystems.xs2a.java.models.common.ReportFormat
 import com.fintecsystems.xs2a.java.models.common.ReportLocale
-import com.fintecsystems.xs2a.java.models.events.EventObject
+import com.fintecsystems.xs2a.java.models.events.EventObjectList
 import com.fintecsystems.xs2a.java.models.pay.*
 import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
 import java.time.OffsetDateTime
@@ -90,7 +89,7 @@ class PayService(
      * @param page Which page to display (optional)
      * @return EventsList
      */
-    fun getEvents(transactionId: String, perPage: Int = 15, page: Int = 1): PaginatedList<EventObject> {
+    fun getEvents(transactionId: String, perPage: Int = 15, page: Int = 1): EventObjectList {
         val queryParameters: MutableMap<String, Any?> = mutableMapOf(
             "per_page" to perPage.toString(),
             "page" to page.toString(),
@@ -118,7 +117,7 @@ class PayService(
      * Get a list of all refund and payout with their message_id.
      * @return RefundPayoutList
      */
-    fun listRefundPayouts(perPage: Int = 15, page: Int = 1): PaginatedList<RefundPayoutObject> {
+    fun listRefundPayouts(perPage: Int = 15, page: Int = 1): RefundPayoutObjectList {
         val queryParameters: MutableMap<String, Any?> = mutableMapOf(
             "per_page" to perPage.toString(),
             "page" to page.toString(),
@@ -199,7 +198,7 @@ class PayService(
         page: Int? = null,
         from: OffsetDateTime? = null,
         to: OffsetDateTime? = null
-    ): PaginatedList<PayObject> {
+    ): PayObjectList {
         val response = apiService.get(
             "payments",
             mutableMapOf(
