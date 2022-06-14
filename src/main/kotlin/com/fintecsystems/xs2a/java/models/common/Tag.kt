@@ -95,7 +95,7 @@ enum class Tag(val tag: String) {
     VEHICLE("vehicle"),
     WATER("water");
 
-    companion object {
+    companion object Adapter {
         private val valueMap = values().associateBy(Tag::tag)
 
         @ToJson fun toJson(tag: Tag) = tag.tag

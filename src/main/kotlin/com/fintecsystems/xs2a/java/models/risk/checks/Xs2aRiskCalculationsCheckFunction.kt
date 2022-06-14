@@ -23,7 +23,7 @@ enum class Xs2aRiskCalculationsCheckFunction(val tag: String) {
     MAX_OF_ALL_MONTH_SUMS("max_of_all_month_sums"),
     DISTINCT_COUNTER_HOLDERS("distinct_counter_holders");
 
-    companion object {
+    companion object Adapter {
         private val valueMap = values().associateBy(Xs2aRiskCalculationsCheckFunction::tag)
 
         @ToJson
