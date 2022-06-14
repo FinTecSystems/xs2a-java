@@ -13,9 +13,9 @@ class BankAccountList(
     @Json(name = "last_page")
     lastPage: Int,
     @Json(name = "from")
-    from: Int,
+    from: Int? = null,
     @Json(name = "to")
-    to: Int,
+    to: Int? = null,
     @Json(name = "data")
     data: List<BankAccount>
 ): PaginatedList<BankAccount>(total, perPage, currentPage, lastPage, from, to, data)

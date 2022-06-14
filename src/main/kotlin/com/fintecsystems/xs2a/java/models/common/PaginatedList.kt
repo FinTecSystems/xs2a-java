@@ -23,9 +23,9 @@ abstract class PaginatedList<T>(
     @Json(name = "last_page")
     var lastPage: Int,
     @Json(name = "from")
-    var from: Int,
+    var from: Int? = null,
     @Json(name = "to")
-    var to: Int,
+    var to: Int? = null,
     @Json(name = "data")
     var data: List<T>
 )
