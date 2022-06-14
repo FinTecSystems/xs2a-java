@@ -1,12 +1,6 @@
 package com.fintecsystems.xs2a.java.models.common
 
-import com.fintecsystems.xs2a.java.helper.JsonSerializer
-import com.fintecsystems.xs2a.java.models.events.EventObject
-import com.squareup.moshi.FromJson
 import com.squareup.moshi.Json
-import com.squareup.moshi.ToJson
-import jdk.jfr.Event
-import kotlin.reflect.typeOf
 
 /**
  *
@@ -19,7 +13,7 @@ import kotlin.reflect.typeOf
  * @param data
  */
 
-data class PaginatedList<T>(
+abstract class PaginatedList<T>(
     @Json(name = "total")
     var total: Int,
     @Json(name = "per_page")
@@ -34,24 +28,4 @@ data class PaginatedList<T>(
     var to: Int,
     @Json(name = "data")
     var data: List<T>
-) {
-    companion object Adapter {
-        @FromJson
-        inline fun <reified T> fromJson(data: Map<String, Any>): PaginatedList<T> {
-            println("Was? ${data["data"]} ${data["data"]!!::class}")
-
-            return PaginatedList(
-                (data["total"] as Double).toInt(),
-                (data["perPage"] as Double).toInt(),
-                (data["currentPage"] as Double).toInt(),
-                (data["lastPage"] as Double).toInt(),
-                (data["from"] as Double).toInt(),
-                (data["to"] as Double).toInt(),
-                emptyList()
-            )
-        }
-
-        @ToJson
-        inline fun <reified T> toJson(value: PaginatedList<T>) = value.toString()
-    }
-}
+)
