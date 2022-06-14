@@ -1,7 +1,21 @@
 package com.fintecsystems.xs2a.java.models.api.connections
 
 import com.fintecsystems.xs2a.java.models.common.PaginatedList
+import com.squareup.moshi.Json
 
 class BankConnectionList(
-    total: Int, perPage: Int, currentPage: Int, lastPage: Int, from: Int, to: Int, data: List<BankConnection>
+    @Json(name = "total")
+    total: Int,
+    @Json(name = "per_page")
+    perPage: Int,
+    @Json(name = "current_page")
+    currentPage: Int,
+    @Json(name = "last_page")
+    lastPage: Int,
+    @Json(name = "from")
+    from: Int,
+    @Json(name = "to")
+    to: Int,
+    @Json(name = "data")
+    data: List<BankConnection>
 ): PaginatedList<BankConnection>(total, perPage, currentPage, lastPage, from, to, data)
