@@ -3,11 +3,15 @@ package com.fintecsystems.xs2a.java.services
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
 import com.fintecsystems.xs2a.java.helper.OffsetDateTimeAdapter
 import com.fintecsystems.xs2a.java.models.api.users.*
+import okhttp3.OkHttpClient
 import java.time.OffsetDateTime
 
 class ApiBankUserService(
-    apiKey: String
-) : ServiceBase(apiKey) {
+    apiKey: String,
+    client: OkHttpClient,
+) : ServiceBase(apiKey, client = client) {
+
+    constructor(apiKey: String) : this(apiKey, OkHttpClient());
 
     /**
      * Create a xs2a.api bank user

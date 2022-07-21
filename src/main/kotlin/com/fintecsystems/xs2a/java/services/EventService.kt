@@ -4,11 +4,16 @@ import com.fintecsystems.xs2a.java.helper.JsonSerializer
 import com.fintecsystems.xs2a.java.helper.OffsetDateTimeAdapter
 import com.fintecsystems.xs2a.java.models.events.EventObject
 import com.fintecsystems.xs2a.java.models.events.EventObjectList
+import okhttp3.OkHttpClient
 import java.time.OffsetDateTime
 
 class EventService (
-    apiKey: String
-) : ServiceBase(apiKey) {
+    apiKey: String,
+    client: OkHttpClient,
+) : ServiceBase(apiKey, client = client) {
+
+    constructor(apiKey: String) : this(apiKey, OkHttpClient());
+
     /**
      * Get all events for a xs2a transaction object
      *

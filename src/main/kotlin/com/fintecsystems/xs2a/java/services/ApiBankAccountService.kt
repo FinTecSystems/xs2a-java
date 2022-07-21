@@ -8,12 +8,16 @@ import com.fintecsystems.xs2a.java.models.api.accounts.BankAccountList
 import com.fintecsystems.xs2a.java.models.api.accounts.BankAccountTurnovers
 import com.fintecsystems.xs2a.java.models.common.ReportFormat
 import com.fintecsystems.xs2a.java.models.common.ReportLocale
+import okhttp3.OkHttpClient
 import java.time.OffsetDateTime
 
 @Suppress("unused")
 class ApiBankAccountService(
-    apiKey: String
-) : ServiceBase(apiKey) {
+    apiKey: String,
+    client: OkHttpClient,
+) : ServiceBase(apiKey, client = client) {
+
+    constructor(apiKey: String) : this(apiKey, OkHttpClient());
 
     /**
      * Get a list of all accounts for a xs2a.bank user

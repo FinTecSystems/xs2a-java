@@ -14,12 +14,16 @@ import com.fintecsystems.xs2a.java.models.risk.Xs2aRisk
 import com.fintecsystems.xs2a.java.models.risk.uploadJson.Xs2aRiskUploadJsonSuccess
 import com.fintecsystems.xs2a.java.models.risk.uploadJson.Xs2aRiskUploadJsonWrapper
 import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
+import okhttp3.OkHttpClient
 import java.time.OffsetDateTime
 
 @Suppress("unused")
 class RiskService(
-    apiKey: String
-) : ServiceBase(apiKey) {
+    apiKey: String,
+    client: OkHttpClient,
+) : ServiceBase(apiKey, client = client) {
+
+    constructor(apiKey: String) : this(apiKey, OkHttpClient());
 
     /**
      * Create xs2a.risk object

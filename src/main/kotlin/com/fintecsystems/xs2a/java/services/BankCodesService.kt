@@ -5,10 +5,14 @@ import com.fintecsystems.xs2a.java.models.api.bankcodes.BankObject
 import com.fintecsystems.xs2a.java.models.api.bankcodes.BankObjectList
 import com.fintecsystems.xs2a.java.models.common.CountryId
 import com.fintecsystems.xs2a.java.models.common.Product
+import okhttp3.OkHttpClient
 
 class BankCodesService(
-    apiKey: String
-) : ServiceBase(apiKey) {
+    apiKey: String,
+    client: OkHttpClient,
+) : ServiceBase(apiKey, client = client) {
+
+    constructor(apiKey: String) : this(apiKey, OkHttpClient());
 
     fun getBankByCode(bankCode: String): BankObject {
         val response = apiService.get(
