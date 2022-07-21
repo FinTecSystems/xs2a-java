@@ -7,12 +7,16 @@ import com.fintecsystems.xs2a.java.models.common.ReportLocale
 import com.fintecsystems.xs2a.java.models.events.EventObjectList
 import com.fintecsystems.xs2a.java.models.pay.*
 import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
+import okhttp3.OkHttpClient
 import java.time.OffsetDateTime
 
 @Suppress("unused")
 class PayService(
-    apiKey: String
-) : ServiceBase(apiKey) {
+    apiKey: String,
+    client: OkHttpClient,
+) : ServiceBase(apiKey, client = client) {
+
+    constructor(apiKey: String) : this(apiKey, OkHttpClient());
 
     /**
      * Create xs2a.pay object

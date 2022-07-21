@@ -6,10 +6,15 @@ import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionList
 import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionRequest
 import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionSyncParameters
 import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
+import okhttp3.OkHttpClient
 
 class ApiBankConnectionService(
-    apiKey: String
-) : ServiceBase(apiKey) {
+    apiKey: String,
+    client: OkHttpClient,
+) : ServiceBase(apiKey, client = client) {
+
+    constructor(apiKey: String) : this(apiKey, OkHttpClient());
+
     /**
      * Create a xs2a.api bank user
      * @param body $request The bank user request

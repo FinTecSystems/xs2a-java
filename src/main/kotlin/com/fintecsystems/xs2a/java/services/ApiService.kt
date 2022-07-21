@@ -11,12 +11,11 @@ import java.io.IOException
 
 class ApiService(
     private val apiKey: String,
-    private val endpointVersion: String = "v1"
+    private val endpointVersion: String = "v1",
+    private val client: OkHttpClient = OkHttpClient()
 ) {
-    private val client = OkHttpClient()
     private val basePath = "https://api.xs2a.com/$endpointVersion"
     private val mediaType: MediaType = "application/json; charset=utf-8".toMediaType()
-
 
     @Throws(IOException::class)
     fun post(url: String, json: String = ""): String {
