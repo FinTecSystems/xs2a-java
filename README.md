@@ -1,14 +1,14 @@
 # xs2a-java
-[![Maven Central](https://img.shields.io/maven-central/v/com.fintecsystems/xs2a-java.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.fintecsystems%22%20AND%20a:%22xs2a-java%22)
+[![Maven Central](https://img.shields.io/maven-central/v/com.fintecsystems/xs2a-java.svg?label=Maven%20Central&color=427783)](https://search.maven.org/search?q=g:%22com.fintecsystems%22%20AND%20a:%22xs2a-java%22)
 
-Java SDK for FinTecSystems XS2A API. FinTecSystems is licensed by BaFin as a payment initiation and account information service and
+Java SDK for Tink Germany XS2A API. Tink Germany is licensed by BaFin as a payment initiation and account information service and
 offers Access-to-Account services under the XS2A API.
 
 This SDK allows you to talk to and consume XS2A API in Java environments.
 
-- [SDK Documentation (Dokka)](https://docs.fintecsystems.com/xs2a-java/)
-- [API Reference](https://docs.fintecsystems.com)
-- [FinTecSystems Homepage](https://fintecsystems.com)
+- [SDK Documentation (Dokka)](https://docs.xs2a.com/xs2a-java)
+- [API Reference](https://docs.xs2a.com/swagger)
+- [Tink Germany Homepage](https://tink.com/de/fts)
 
 ## Migration to v3
 

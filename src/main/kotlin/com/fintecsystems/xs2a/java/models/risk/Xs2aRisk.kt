@@ -23,7 +23,7 @@ import com.squareup.moshi.Json
  * @param easyOnboarding 
  * @param language 
  * @param xs2aAccountCharacteristicsCheck XS2A.account_characteristics_check allows you to retrieve many possible information about the account, like chargebacks, encashment, loans and other.
- * @param xs2aAccountLinkedOffersCheck The Account Linked Offers Check validates with the consent of the user, based on an account view, whether third party offers might be of interest to the user and hands over an advertising link for one-time use to a FinTecSystems business partner.
+ * @param xs2aAccountLinkedOffersCheck The Account Linked Offers Check validates with the consent of the user, based on an account view, whether third party offers might be of interest to the user and hands over an advertising link for one-time use to a XS2A business partner.
  * @param xs2aAccountSnapshot 
  * @param xs2aAccountStatusCheck 
  * @param xs2aAgeVerificationCheck 
@@ -86,7 +86,7 @@ data class Xs2aRisk (
     /* XS2A.account_characteristics_check allows you to retrieve many possible information about the account, like chargebacks, encashment, loans and other. */
     @Json(name = "xs2a_account_characteristics_check")
     var xs2aAccountCharacteristicsCheck: Xs2aAccountCharacteristicsCheck? = null,
-    /* The Account Linked Offers Check validates with the consent of the user, based on an account view, whether third party offers might be of interest to the user and hands over an advertising link for one-time use to a FinTecSystems business partner. */
+    /* The Account Linked Offers Check validates with the consent of the user, based on an account view, whether third party offers might be of interest to the user and hands over an advertising link for one-time use to a XS2A business partner. */
     @Json(name = "xs2a_account_linked_offers_check")
     var xs2aAccountLinkedOffersCheck: Xs2aAccountLinkedOffersCheck? = null,
     @Json(name = "xs2a_account_snapshot")
