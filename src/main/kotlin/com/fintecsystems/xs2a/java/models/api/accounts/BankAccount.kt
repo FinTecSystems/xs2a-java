@@ -29,7 +29,7 @@ data class BankAccount(
     var id: String,
     /* Id of the originating BankConnection. */
     @Json(name = "bank_connection_id")
-    var bankConnectionId: String,
+    var bankConnectionId: String?,
     /* Name of the account holder as reported by the bank */
     @Json(name = "holder")
     var holder: String,
