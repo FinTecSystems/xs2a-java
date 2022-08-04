@@ -11,10 +11,15 @@ import java.io.IOException
 
 class ApiService(
     private val apiKey: String,
-    private val endpointVersion: String = "v1",
-    private val client: OkHttpClient = OkHttpClient()
+    endpointVersion: String = "v1",
+    private val client: OkHttpClient = OkHttpClient(),
+    backendUrl: String = "https://api.xs2a.com"
 ) {
-    private val basePath = "https://api.xs2a.com/$endpointVersion"
+    private val baseUrl = backendUrl.toHttpUrl()
+        .newBuilder()
+        .addPathSegment(endpointVersion)
+        .build()
+
     private val mediaType: MediaType = "application/json; charset=utf-8".toMediaType()
 
     @Throws(IOException::class)
@@ -42,22 +47,10 @@ class ApiService(
     }
 
     @Throws(IOException::class)
-    fun get(path: String, queryParameters: MutableMap<String, Any?> = mutableMapOf()): String {
-        /* Remove all key-value pairs where the value is null */
-        queryParameters.values.removeAll(sequenceOf(null))
-        val urlToRequest: HttpUrl = HttpUrl.Builder()
-            .scheme("https")
-            .host("api.xs2a.com")
-            .addPathSegment(endpointVersion)
-            .addEncodedPathSegments(path)
-            .apply {
-                queryParameters.forEach { (k, v) ->
-                    addQueryParameter(k, v.toString())
-                }
-            }
-            .build()
-
-        val request = constructRequest(urlToRequest) { it.get() }
+    fun get(path: String, queryParameters: Map<String, Any?> = mutableMapOf()): String {
+        val request = constructRequest(path, queryParameters) {
+            it.get()
+        }
 
         return processResponse(request)
     }
@@ -73,8 +66,21 @@ class ApiService(
 
     private fun constructRequest(
         path: String,
+        queryParameters: Map<String, Any?> = emptyMap(),
         middleware: (Builder) -> Builder = { it }
-    ) = constructRequest("$basePath/$path".toHttpUrl(), middleware)
+    ) = constructRequest(
+        baseUrl.newBuilder()
+            .addPathSegment(path)
+            .apply {
+                queryParameters.forEach { (k, v) ->
+                    if (v != null) {
+                        addQueryParameter(k, v.toString())
+                    }
+                }
+            }
+            .build(),
+        middleware
+    )
 
     private fun constructRequest(
         url: HttpUrl,
