@@ -12,8 +12,8 @@ import java.io.IOException
 class ApiService(
     private val apiKey: String,
     endpointVersion: String = "v1",
-    private val client: OkHttpClient = OkHttpClient(),
-    backendUrl: String = "https://api.xs2a.com"
+    private val client: OkHttpClient,
+    backendUrl: String
 ) {
     private val baseUrl = backendUrl.toHttpUrl()
         .newBuilder()

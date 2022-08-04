@@ -5,8 +5,15 @@ import okhttp3.OkHttpClient
 abstract class ServiceBase(
     apiKey: String,
     endpointVersion: String = "v1",
-    client: OkHttpClient = OkHttpClient(),
-    backendUrl: String = "https://api.xs2a.com"
+    client: OkHttpClient = defaultClient,
+    backendUrl: String = defaultBackendUrl
 ) {
     protected val apiService = ApiService(apiKey, endpointVersion, client, backendUrl)
+
+    protected companion object {
+        const val defaultBackendUrl = "https://api.xs2a.com"
+        val defaultClient: OkHttpClient by lazy {
+            OkHttpClient()
+        }
+    }
 }
