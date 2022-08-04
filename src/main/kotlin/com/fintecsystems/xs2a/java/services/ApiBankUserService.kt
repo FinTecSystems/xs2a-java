@@ -6,12 +6,20 @@ import com.fintecsystems.xs2a.java.models.api.users.*
 import okhttp3.OkHttpClient
 import java.time.OffsetDateTime
 
+@Suppress("unused")
 class ApiBankUserService(
     apiKey: String,
     client: OkHttpClient,
-) : ServiceBase(apiKey, client = client) {
+    backendUrl: String = "https://api.xs2a.com"
+) : ServiceBase(
+    apiKey,
+    client = client,
+    backendUrl = backendUrl
+) {
 
-    constructor(apiKey: String) : this(apiKey, OkHttpClient());
+    constructor(apiKey: String) : this(apiKey, OkHttpClient())
+
+    constructor(apiKey: String, backendUrl: String) : this(apiKey, OkHttpClient(), backendUrl)
 
     /**
      * Create a xs2a.api bank user

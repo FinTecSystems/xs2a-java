@@ -8,12 +8,20 @@ import com.fintecsystems.xs2a.java.models.api.connections.BankConnectionSyncPara
 import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
 import okhttp3.OkHttpClient
 
+@Suppress("unused")
 class ApiBankConnectionService(
     apiKey: String,
     client: OkHttpClient,
-) : ServiceBase(apiKey, client = client) {
+    backendUrl: String = "https://api.xs2a.com"
+) : ServiceBase(
+    apiKey,
+    client = client,
+    backendUrl = backendUrl
+) {
 
-    constructor(apiKey: String) : this(apiKey, OkHttpClient());
+    constructor(apiKey: String) : this(apiKey, OkHttpClient())
+
+    constructor(apiKey: String, backendUrl: String) : this(apiKey, OkHttpClient(), backendUrl)
 
     /**
      * Create a xs2a.api bank user

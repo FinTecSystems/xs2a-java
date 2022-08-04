@@ -6,6 +6,7 @@ abstract class ServiceBase(
     apiKey: String,
     endpointVersion: String = "v1",
     client: OkHttpClient = OkHttpClient(),
+    backendUrl: String = "https://api.xs2a.com"
 ) {
-    protected val apiService = ApiService(apiKey, endpointVersion, client)
+    protected val apiService = ApiService(apiKey, endpointVersion, client, backendUrl)
 }

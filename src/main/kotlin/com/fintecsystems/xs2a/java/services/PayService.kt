@@ -14,9 +14,16 @@ import java.time.OffsetDateTime
 class PayService(
     apiKey: String,
     client: OkHttpClient,
-) : ServiceBase(apiKey, client = client) {
+    backendUrl: String = "https://api.xs2a.com"
+) : ServiceBase(
+    apiKey,
+    client = client,
+    backendUrl = backendUrl
+) {
 
-    constructor(apiKey: String) : this(apiKey, OkHttpClient());
+    constructor(apiKey: String) : this(apiKey, OkHttpClient())
+
+    constructor(apiKey: String, backendUrl: String) : this(apiKey, OkHttpClient(), backendUrl)
 
     /**
      * Create xs2a.pay object

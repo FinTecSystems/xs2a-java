@@ -5,12 +5,20 @@ import com.fintecsystems.xs2a.java.models.whitelist.WhitelistObject
 import com.fintecsystems.xs2a.java.models.whitelist.WhitelistAdd
 import okhttp3.OkHttpClient
 
+@Suppress("unused")
 class WhitelistService(
     apiKey: String,
     client: OkHttpClient,
-) : ServiceBase(apiKey, client = client) {
+    backendUrl: String = "https://api.xs2a.com"
+) : ServiceBase(
+    apiKey,
+    client = client,
+    backendUrl = backendUrl
+) {
 
-    constructor(apiKey: String) : this(apiKey, OkHttpClient());
+    constructor(apiKey: String) : this(apiKey, OkHttpClient())
+
+    constructor(apiKey: String, backendUrl: String) : this(apiKey, OkHttpClient(), backendUrl)
 
     fun add(body: WhitelistAdd): WhitelistObject {
         val response = apiService.post("whitelist", JsonSerializer.toJson(body))

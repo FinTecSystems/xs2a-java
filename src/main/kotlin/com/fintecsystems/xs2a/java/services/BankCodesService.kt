@@ -7,12 +7,20 @@ import com.fintecsystems.xs2a.java.models.common.CountryId
 import com.fintecsystems.xs2a.java.models.common.Product
 import okhttp3.OkHttpClient
 
+@Suppress("unused")
 class BankCodesService(
     apiKey: String,
     client: OkHttpClient,
-) : ServiceBase(apiKey, client = client) {
+    backendUrl: String = "https://api.xs2a.com"
+) : ServiceBase(
+    apiKey,
+    client = client,
+    backendUrl = backendUrl
+) {
 
-    constructor(apiKey: String) : this(apiKey, OkHttpClient());
+    constructor(apiKey: String) : this(apiKey, OkHttpClient())
+
+    constructor(apiKey: String, backendUrl: String) : this(apiKey, OkHttpClient(), backendUrl)
 
     fun getBankByCode(bankCode: String): BankObject {
         val response = apiService.get(
