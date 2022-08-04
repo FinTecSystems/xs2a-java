@@ -14,7 +14,7 @@ import java.time.OffsetDateTime
 @Suppress("unused")
 class ApiBankAccountService(
     apiKey: String,
-    client: OkHttpClient,
+    client: OkHttpClient = OkHttpClient(),
     backendUrl: String = "https://api.xs2a.com"
 ) : ServiceBase(
     apiKey,
@@ -25,6 +25,8 @@ class ApiBankAccountService(
     constructor(apiKey: String) : this(apiKey, OkHttpClient())
 
     constructor(apiKey: String, backendUrl: String) : this(apiKey, OkHttpClient(), backendUrl)
+
+    constructor(apiKey: String, client: OkHttpClient) : this(apiKey, client, "https://api.xs2a.com")
 
     /**
      * Get a list of all accounts for a xs2a.bank user

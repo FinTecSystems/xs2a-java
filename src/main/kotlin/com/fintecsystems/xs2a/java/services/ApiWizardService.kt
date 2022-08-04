@@ -7,7 +7,7 @@ import okhttp3.OkHttpClient
 @Suppress("unused")
 class ApiWizardService(
     apiKey: String,
-    client: OkHttpClient,
+    client: OkHttpClient = OkHttpClient(),
     backendUrl: String = "https://api.xs2a.com"
 ) : ServiceBase(
     apiKey,
@@ -18,6 +18,8 @@ class ApiWizardService(
     constructor(apiKey: String) : this(apiKey, OkHttpClient())
 
     constructor(apiKey: String, backendUrl: String) : this(apiKey, OkHttpClient(), backendUrl)
+
+    constructor(apiKey: String, client: OkHttpClient) : this(apiKey, client, "https://api.xs2a.com")
 
     fun navigate(body: Map<String, Any>): WizardResponse {
         val response = apiService.post("api/wizard", JsonSerializer.toJson(body))

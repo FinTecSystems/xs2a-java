@@ -13,7 +13,7 @@ import java.time.OffsetDateTime
 @Suppress("unused")
 class PayService(
     apiKey: String,
-    client: OkHttpClient,
+    client: OkHttpClient = OkHttpClient(),
     backendUrl: String = "https://api.xs2a.com"
 ) : ServiceBase(
     apiKey,
@@ -24,6 +24,8 @@ class PayService(
     constructor(apiKey: String) : this(apiKey, OkHttpClient())
 
     constructor(apiKey: String, backendUrl: String) : this(apiKey, OkHttpClient(), backendUrl)
+
+    constructor(apiKey: String, client: OkHttpClient) : this(apiKey, client, "https://api.xs2a.com")
 
     /**
      * Create xs2a.pay object

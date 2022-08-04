@@ -9,7 +9,7 @@ import java.time.OffsetDateTime
 @Suppress("unused")
 class ApiBankUserService(
     apiKey: String,
-    client: OkHttpClient,
+    client: OkHttpClient = OkHttpClient(),
     backendUrl: String = "https://api.xs2a.com"
 ) : ServiceBase(
     apiKey,
@@ -20,6 +20,8 @@ class ApiBankUserService(
     constructor(apiKey: String) : this(apiKey, OkHttpClient())
 
     constructor(apiKey: String, backendUrl: String) : this(apiKey, OkHttpClient(), backendUrl)
+
+    constructor(apiKey: String, client: OkHttpClient) : this(apiKey, client, "https://api.xs2a.com")
 
     /**
      * Create a xs2a.api bank user

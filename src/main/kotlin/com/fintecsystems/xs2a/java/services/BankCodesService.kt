@@ -10,7 +10,7 @@ import okhttp3.OkHttpClient
 @Suppress("unused")
 class BankCodesService(
     apiKey: String,
-    client: OkHttpClient,
+    client: OkHttpClient = OkHttpClient(),
     backendUrl: String = "https://api.xs2a.com"
 ) : ServiceBase(
     apiKey,
@@ -21,6 +21,8 @@ class BankCodesService(
     constructor(apiKey: String) : this(apiKey, OkHttpClient())
 
     constructor(apiKey: String, backendUrl: String) : this(apiKey, OkHttpClient(), backendUrl)
+
+    constructor(apiKey: String, client: OkHttpClient) : this(apiKey, client, "https://api.xs2a.com")
 
     fun getBankByCode(bankCode: String): BankObject {
         val response = apiService.get(

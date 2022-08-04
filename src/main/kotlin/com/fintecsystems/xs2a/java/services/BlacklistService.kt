@@ -8,7 +8,7 @@ import okhttp3.OkHttpClient
 @Suppress("unused")
 class BlacklistService(
     apiKey: String,
-    client: OkHttpClient,
+    client: OkHttpClient = OkHttpClient(),
     backendUrl: String = "https://api.xs2a.com"
 ) : ServiceBase(
     apiKey,
@@ -19,6 +19,8 @@ class BlacklistService(
     constructor(apiKey: String) : this(apiKey, OkHttpClient())
 
     constructor(apiKey: String, backendUrl: String) : this(apiKey, OkHttpClient(), backendUrl)
+
+    constructor(apiKey: String, client: OkHttpClient) : this(apiKey, client, "https://api.xs2a.com")
 
     fun add(body: BlacklistAdd): BlacklistObject {
         val response = apiService.post("blacklist", JsonSerializer.toJson(body))
