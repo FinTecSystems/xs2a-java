@@ -70,7 +70,7 @@ class ApiService(
         middleware: (Builder) -> Builder = { it }
     ) = constructRequest(
         baseUrl.newBuilder()
-            .addPathSegment(path)
+            .addPathSegments(path)
             .apply {
                 queryParameters.forEach { (k, v) ->
                     if (v != null) {
