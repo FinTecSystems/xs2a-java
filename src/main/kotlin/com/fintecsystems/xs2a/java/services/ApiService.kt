@@ -18,38 +18,38 @@ class ApiService(
     private val mediaType: MediaType = "application/json; charset=utf-8".toMediaType()
 
     @Throws(IOException::class)
-    fun post(url: String, json: String = ""): String {
-        val body = json.toRequestBody(mediaType)
-        val request = constructRequest(url) { it.post(body) }
+    fun post(path: String, jsonString: String = ""): String {
+        val body = jsonString.toRequestBody(mediaType)
+        val request = constructRequest(path) { it.post(body) }
 
         return processResponse(request)
     }
 
     @Throws(IOException::class)
-    fun put(url: String, json: String = ""): String {
-        val body = json.toRequestBody(mediaType)
-        val request = constructRequest(url) { it.put(body) }
+    fun put(path: String, jsonString: String = ""): String {
+        val body = jsonString.toRequestBody(mediaType)
+        val request = constructRequest(path) { it.put(body) }
 
         return processResponse(request)
     }
 
     @Throws(IOException::class)
-    fun patch(url: String, json: String = ""): String {
-        val body = json.toRequestBody(mediaType)
-        val request = constructRequest(url) { it.patch(body) }
+    fun patch(path: String, jsonString: String = ""): String {
+        val body = jsonString.toRequestBody(mediaType)
+        val request = constructRequest(path) { it.patch(body) }
 
         return processResponse(request)
     }
 
     @Throws(IOException::class)
-    fun get(url: String, queryParameters: MutableMap<String, Any?> = mutableMapOf()): String {
+    fun get(path: String, queryParameters: MutableMap<String, Any?> = mutableMapOf()): String {
         /* Remove all key-value pairs where the value is null */
         queryParameters.values.removeAll(sequenceOf(null))
         val urlToRequest: HttpUrl = HttpUrl.Builder()
             .scheme("https")
             .host("api.xs2a.com")
             .addPathSegment(endpointVersion)
-            .addEncodedPathSegments(url)
+            .addEncodedPathSegments(path)
             .apply {
                 queryParameters.forEach { (k, v) ->
                     addQueryParameter(k, v.toString())
@@ -63,8 +63,8 @@ class ApiService(
     }
 
     @Throws(IOException::class)
-    fun delete(url: String): String {
-        val request = constructRequest(url) { it.delete() }
+    fun delete(path: String): String {
+        val request = constructRequest(path) { it.delete() }
 
         return processResponse(request)
     }
@@ -72,9 +72,9 @@ class ApiService(
     private fun executeRequest(request: Request) = client.newCall(request).execute()
 
     private fun constructRequest(
-        url: String,
+        path: String,
         middleware: (Builder) -> Builder = { it }
-    ) = constructRequest("$basePath/$url".toHttpUrl(), middleware)
+    ) = constructRequest("$basePath/$path".toHttpUrl(), middleware)
 
     private fun constructRequest(
         url: HttpUrl,
