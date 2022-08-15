@@ -22,7 +22,7 @@ import com.squareup.moshi.Json
  * @param recipientCountryId Two letter country code id, e.g. AT, CH, DE or the recipient account
  * @param purpose Purpose of transfer
  * @param amount Amount to transfer
- * @param currencyId Currency id of amount, e.g. 'EUR'
+ * @param currencyId Currency id of amount
  * @param testmode Indicates whether or not it is a test transaction
  * @param paymentStatus Payment status of the transaction, values NONE, RECEIVED, LOSS
  * @param metadata Custom data will be returned unchanged. If no data was submitted, this field will be null

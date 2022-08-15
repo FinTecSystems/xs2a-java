@@ -8,22 +8,18 @@ import java.time.OffsetDateTime
 /**
  *
  * @param checkAmount Account balance amount to be checked against
- * @param checkCurrencyId Currency id of check_amount, e.g. EUR
+ * @param checkCurrencyId Currency id of check_amount
  * @param checkPassed Indicates whether or not the check was successful
  * @param createdAt Creation date of the object
  */
 
 data class Xs2aBalanceCheckResponse(
-    /* Account balance amount to be checked against */
     @Json(name = "check_amount")
     var checkAmount: Float,
-    /* Currency id of check_amount, e.g. EUR */
     @Json(name = "check_currency_id")
     var checkCurrencyId: CurrencyId,
-    /* Indicates whether or not the check was successful */
     @Json(name = "check_passed")
     var checkPassed: Boolean,
-    /* Creation date of the object */
     @Json(name = "created_at")
     var createdAt: OffsetDateTime
 )

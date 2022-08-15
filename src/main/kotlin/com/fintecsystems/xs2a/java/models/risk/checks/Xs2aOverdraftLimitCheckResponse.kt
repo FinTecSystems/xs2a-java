@@ -12,7 +12,7 @@ import java.time.OffsetDateTime
  * @param maximumOverdraftUsed Maximum amount the overdraft was used in that date range
  * @param averageOverdraftUsed Average amount the overdraft was used in that date range
  * @param medianOverdraftUsed Median amount the overdraft was used in that date range
- * @param currencyId Currency id of above values, e.g. EUR
+ * @param currencyId Currency id of above values
  * @param createdAt Creation date of the object
  */
 

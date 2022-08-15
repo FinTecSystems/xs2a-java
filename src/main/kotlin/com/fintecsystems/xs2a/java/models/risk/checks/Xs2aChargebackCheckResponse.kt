@@ -11,7 +11,7 @@ import java.time.OffsetDateTime
  * @param chargebacksCoverage Count of chargebacks which was triggered due insufficient funds
  * @param chargebacksRevoked Count of chargebacks which was triggered manually
  * @param chargebacksSumAmount Sum over the amount of all chargebacks
- * @param currencyId Currency id of above values, e.g. EUR
+ * @param currencyId Currency id of above values
  * @param createdAt Creation date of the object
  */
 

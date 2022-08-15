@@ -11,7 +11,7 @@ import java.time.OffsetDateTime
  * @param senderAccount
  * @param recipientAccount
  * @param amount Amount to transfer
- * @param currency Currency id of amount, e.g. EUR
+ * @param currency Currency id of amount
  * @param purpose Purpose of the transfer
  * @param frequency Frequency of standing order, d = daily, w = weekly, m = monthly, y = yearly
  * @param frequencyInterval Frequency interval, in case of frequency daily or weekly  the range is 1-7 (1 = Monday, 7 = Sunday). In case of monthly  or yearly it is 1-31. 0 in case for a non standardized format.

@@ -13,7 +13,7 @@ import com.squareup.moshi.Json
  * @param minimumBalance The minimum (lowest) balance of the account in that month
  * @param incomingTransactions A count of this month incoming transactions
  * @param outgoingTransactions A count of this month outgoing transactions
- * @param currencyId Currency id of above values, e.g. EUR
+ * @param currencyId Currency id of above values
  */
 
 data class Xs2aCashflowObject (

@@ -9,7 +9,7 @@ import com.squareup.moshi.Json
 
 /**
  * 
- * @param amount The amount to be transferred, either in EUR or CHF (depending on `currency_id`). This is a float, meaning for i.e. 1,50 Euro, you would send `1.5`, and for 15 Euro, you would send `15.0`.
+ * @param amount The amount to be transferred (depending on `currency_id`). This is a float, meaning for i.e. 1,50 Euro, you would send `1.5`, and for 15 Euro, you would send `15.0`.
  * @param currencyId 
  * @param purpose We suggest to keep the purpose as short as possible (between 5 and 140 characters) and to place critical information at the beginning of the purpose. The reason for this suggestion is that we might have to limit the length of your given purpose. A SEPA purpose can be up to 140 characters. However some banks only offer a reference field which is limited to 35 characters. If your purpose is longer than bank supported purpose field, we will shorten it to the maximum length supported by that bank. Not all characters are supported for the purpose field. Sender banks impose different rules for the purpose field, therefore we suggest to limit the character set to a-z, A-Z, 0-9. If you use other characters please be advised that we might have to remove or replace characters considered invalid by the sender bank. We usually will replace the invalid characters with a whitespace or normalize the characters.
  * @param recipientHolder Sender banks impose different rules for the recipient_holder field, we suggest to limit the character set to a-z, A-Z, 0-9. If you use other characters please be advised that we might have to remove or replace characters considered invalid by the sender bank. We usually will replace the invalid characters with a whitespace or normalize the characters.

@@ -13,7 +13,7 @@ import java.time.OffsetDateTime
  * @param transactionId Transaction ID of this turnover if the bank supports it.
  * @param bookingDate The booking date.
  * @param amount The turnover amount. Negative for expenditures.
- * @param currency The two-letter currency ID, e.g. 'EUR'
+ * @param currency The two-letter currency ID
  * @param purpose A string array of purpose lines. The contents vary from bank to bank.
  * @param counterIban The counter IBAN of the booking. This is not always present.
  * @param counterBic The counter BIC of the booking. This is not always present.
