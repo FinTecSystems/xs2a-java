@@ -5,7 +5,7 @@ import com.squareup.moshi.Json
 
 /**
  * The id of the currency to be used.
- * Values: EUR,CHF
+ * Values: EUR,CHF,USD
  */
 
 
@@ -15,7 +15,10 @@ enum class CurrencyId(var value: String) {
     EUR("EUR"),
 
     @Json(name = "CHF")
-    CHF("CHF");
+    CHF("CHF"),
+
+    @Json(name = "USD")
+    USD("USD");
 
     override fun toString() = value
 }
