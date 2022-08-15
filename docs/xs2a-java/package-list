@@ -237,6 +237,10 @@ $dokka.location:com.fintecsystems.xs2a.java.models.common/CurrencyId.EUR///Point
 $dokka.location:com.fintecsystems.xs2a.java.models.common/CurrencyId.EUR/name/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.common/-currency-id/-e-u-r/name.html
 $dokka.location:com.fintecsystems.xs2a.java.models.common/CurrencyId.EUR/ordinal/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.common/-currency-id/-e-u-r/ordinal.html
 $dokka.location:com.fintecsystems.xs2a.java.models.common/CurrencyId.EUR/value/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.common/-currency-id/-e-u-r/value.html
+$dokka.location:com.fintecsystems.xs2a.java.models.common/CurrencyId.USD///PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.common/-currency-id/-u-s-d/index.html
+$dokka.location:com.fintecsystems.xs2a.java.models.common/CurrencyId.USD/name/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.common/-currency-id/-u-s-d/name.html
+$dokka.location:com.fintecsystems.xs2a.java.models.common/CurrencyId.USD/ordinal/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.common/-currency-id/-u-s-d/ordinal.html
+$dokka.location:com.fintecsystems.xs2a.java.models.common/CurrencyId.USD/value/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.common/-currency-id/-u-s-d/value.html
 $dokka.location:com.fintecsystems.xs2a.java.models.common/CurrencyId///PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.common/-currency-id/index.html
 $dokka.location:com.fintecsystems.xs2a.java.models.common/CurrencyId/toString/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.common/-currency-id/to-string.html
 $dokka.location:com.fintecsystems.xs2a.java.models.common/CurrencyId/value/#/PointingToDeclaration/xs2a-java/com.fintecsystems.xs2a.java.models.common/-currency-id/value.html
