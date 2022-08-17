@@ -53,4 +53,7 @@ enum class WizardSessionCurrentStep {
 
     @Json(name = "RiskUpload")
     RISK_UPLOAD,
+
+    @Json(name = "WizardLoadingAccountsStep")
+    WIZARD_LOADING_ACCOUNTS_STEP,
 }
