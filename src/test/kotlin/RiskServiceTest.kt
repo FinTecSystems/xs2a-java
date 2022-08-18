@@ -223,7 +223,10 @@ internal class RiskServiceTest {
     @Order(3)
     fun testGetFullPDF() {
         val fullPdf = riskService.getFullPDF(riskResponse.transaction)
-        assert(fullPdf.isNotEmpty())
+
+        fullPdf.use {
+            assert(!fullPdf.exhausted())
+        }
     }
 
     @Test

@@ -88,7 +88,12 @@ class ApiBankConnectionService(
     fun sync(connectionId: String, syncParameters: BankConnectionSyncParameters? = null): WizardSessionResponse? {
         val response = apiService.post("api/connections/$connectionId/sync", JsonSerializer.toJson(syncParameters))
 
-        return if (response.isEmpty()) null else JsonSerializer.parseJson(response)
+        return if (response.exhausted()) {
+            response.close()
+            null
+        } else {
+            JsonSerializer.parseJson(response)
+        }
     }
 
     /**

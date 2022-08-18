@@ -12,6 +12,7 @@ import com.fintecsystems.xs2a.java.models.wizard.WizardSessionLastError
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.adapters.PolymorphicJsonAdapterFactory
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import okio.BufferedSource
 
 object JsonSerializer {
     val moshi: Moshi = Moshi.Builder()
@@ -47,7 +48,10 @@ object JsonSerializer {
         .adapter(T::class.java)
         .fromJson(json)!!
 
-    inline fun <reified T> parseJson(source: ByteArray) = parseJson<T>(source.toUTF8String())
+    inline fun <reified T> parseJson(source: BufferedSource) = source.use {
+        moshi.adapter(T::class.java)
+            .fromJson(it)!!
+    }
 
     inline fun <reified T> toJson(body: T): String = moshi
         .adapter(T::class.java)

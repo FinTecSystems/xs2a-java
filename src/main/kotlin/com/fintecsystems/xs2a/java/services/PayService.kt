@@ -2,13 +2,13 @@ package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
 import com.fintecsystems.xs2a.java.helper.OffsetDateTimeAdapter
-import com.fintecsystems.xs2a.java.helper.toUTF8String
 import com.fintecsystems.xs2a.java.models.common.ReportFormat
 import com.fintecsystems.xs2a.java.models.common.ReportLocale
 import com.fintecsystems.xs2a.java.models.events.EventObjectList
 import com.fintecsystems.xs2a.java.models.pay.*
 import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
 import okhttp3.OkHttpClient
+import okio.BufferedSource
 import java.time.OffsetDateTime
 
 @Suppress("unused")
@@ -158,9 +158,9 @@ class PayService(
      * Get a pain file.
      * Here you can retrieve a specific pain file by its &#x60;message_id&#x60;.
      * @param messageId The message_id is used to get the generated pain file.
-     * @return String
+     * @return BufferedSource
      */
-    fun getPainFile(messageId: String): ByteArray {
+    fun getPainFile(messageId: String): BufferedSource {
         return apiService.get("payments/refundPayout/$messageId")
     }
 
@@ -171,7 +171,7 @@ class PayService(
      * @return void
      */
     fun delete(transactionId: String): String {
-        return apiService.delete("payments/$transactionId").toUTF8String()
+        return apiService.delete("payments/$transactionId").use { it.readUtf8() }
     }
 
     /**

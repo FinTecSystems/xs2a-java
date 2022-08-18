@@ -15,6 +15,7 @@ import com.fintecsystems.xs2a.java.models.risk.uploadJson.Xs2aRiskUploadJsonSucc
 import com.fintecsystems.xs2a.java.models.risk.uploadJson.Xs2aRiskUploadJsonWrapper
 import com.fintecsystems.xs2a.java.models.wizard.WizardSessionResponse
 import okhttp3.OkHttpClient
+import okio.BufferedSource
 import java.time.OffsetDateTime
 
 @Suppress("unused")
@@ -84,7 +85,7 @@ class RiskService(
      * can be found in the fullpdf.
      * @param transactionId id of the transaction to get the full PDF for
      */
-    fun getFullPDF(transactionId: String): ByteArray {
+    fun getFullPDF(transactionId: String): BufferedSource {
         return apiService.get("risks/$transactionId/fullpdf")
     }
 

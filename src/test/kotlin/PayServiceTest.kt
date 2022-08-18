@@ -135,7 +135,10 @@ internal class PayServiceTest {
     @Order(6)
     fun testGetPainFile() {
         val painFile = payService.getPainFile(painMessageId)
-        assert(painFile.isNotEmpty())
+
+        painFile.use {
+            assert(!painFile.exhausted())
+        }
     }
 
     @Test

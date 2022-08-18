@@ -6,6 +6,7 @@ import okhttp3.HttpUrl.Companion.toHttpUrl
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.Request.Builder
 import okhttp3.RequestBody.Companion.toRequestBody
+import okio.BufferedSource
 import java.io.IOException
 
 
@@ -23,7 +24,7 @@ class ApiService(
     private val mediaType: MediaType = "application/json; charset=utf-8".toMediaType()
 
     @Throws(IOException::class)
-    fun post(path: String, jsonString: String = ""): ByteArray {
+    fun post(path: String, jsonString: String = ""): BufferedSource {
         val body = jsonString.toRequestBody(mediaType)
         val request = constructRequest(path) { it.post(body) }
 
@@ -31,7 +32,7 @@ class ApiService(
     }
 
     @Throws(IOException::class)
-    fun put(path: String, jsonString: String = ""): ByteArray {
+    fun put(path: String, jsonString: String = ""): BufferedSource {
         val body = jsonString.toRequestBody(mediaType)
         val request = constructRequest(path) { it.put(body) }
 
@@ -39,7 +40,7 @@ class ApiService(
     }
 
     @Throws(IOException::class)
-    fun patch(path: String, jsonString: String = ""): ByteArray {
+    fun patch(path: String, jsonString: String = ""): BufferedSource {
         val body = jsonString.toRequestBody(mediaType)
         val request = constructRequest(path) { it.patch(body) }
 
@@ -47,7 +48,7 @@ class ApiService(
     }
 
     @Throws(IOException::class)
-    fun get(path: String, queryParameters: Map<String, Any?> = mutableMapOf()): ByteArray {
+    fun get(path: String, queryParameters: Map<String, Any?> = mutableMapOf()): BufferedSource {
         val request = constructRequest(path, queryParameters) {
             it.get()
         }
@@ -56,7 +57,7 @@ class ApiService(
     }
 
     @Throws(IOException::class)
-    fun delete(path: String): ByteArray {
+    fun delete(path: String): BufferedSource {
         val request = constructRequest(path) { it.delete() }
 
         return processResponse(request)
@@ -94,13 +95,15 @@ class ApiService(
     private fun processResponse(request: Request) = processResponse(executeRequest(request))
 
     @Throws(IOException::class)
-    private fun processResponse(response: Response) = response.use {
+    private fun processResponse(response: Response) = with(response) {
         when {
-            it.isSuccessful -> it.body!!.bytes()
-            else -> throw XS2AException(
-                it.body?.string(),
-                it.code
-            )
+            isSuccessful -> body!!.source()
+            else -> use {
+                throw XS2AException(
+                    it.body?.string(),
+                    it.code
+                )
+            }
         }
     }
 }
