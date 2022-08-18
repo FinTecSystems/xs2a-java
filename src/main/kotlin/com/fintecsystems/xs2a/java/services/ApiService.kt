@@ -4,7 +4,7 @@ import com.fintecsystems.xs2a.java.exceptions.XS2AException
 import okhttp3.*
 import okhttp3.HttpUrl.Companion.toHttpUrl
 import okhttp3.MediaType.Companion.toMediaType
-import okhttp3.Request.*
+import okhttp3.Request.Builder
 import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.IOException
 
@@ -23,7 +23,7 @@ class ApiService(
     private val mediaType: MediaType = "application/json; charset=utf-8".toMediaType()
 
     @Throws(IOException::class)
-    fun post(path: String, jsonString: String = ""): String {
+    fun post(path: String, jsonString: String = ""): ByteArray {
         val body = jsonString.toRequestBody(mediaType)
         val request = constructRequest(path) { it.post(body) }
 
@@ -31,7 +31,7 @@ class ApiService(
     }
 
     @Throws(IOException::class)
-    fun put(path: String, jsonString: String = ""): String {
+    fun put(path: String, jsonString: String = ""): ByteArray {
         val body = jsonString.toRequestBody(mediaType)
         val request = constructRequest(path) { it.put(body) }
 
@@ -39,7 +39,7 @@ class ApiService(
     }
 
     @Throws(IOException::class)
-    fun patch(path: String, jsonString: String = ""): String {
+    fun patch(path: String, jsonString: String = ""): ByteArray {
         val body = jsonString.toRequestBody(mediaType)
         val request = constructRequest(path) { it.patch(body) }
 
@@ -47,7 +47,7 @@ class ApiService(
     }
 
     @Throws(IOException::class)
-    fun get(path: String, queryParameters: Map<String, Any?> = mutableMapOf()): String {
+    fun get(path: String, queryParameters: Map<String, Any?> = mutableMapOf()): ByteArray {
         val request = constructRequest(path, queryParameters) {
             it.get()
         }
@@ -56,7 +56,7 @@ class ApiService(
     }
 
     @Throws(IOException::class)
-    fun delete(path: String): String {
+    fun delete(path: String): ByteArray {
         val request = constructRequest(path) { it.delete() }
 
         return processResponse(request)
@@ -96,7 +96,7 @@ class ApiService(
     @Throws(IOException::class)
     private fun processResponse(response: Response) = response.use {
         when {
-            it.isSuccessful -> it.body!!.string()
+            it.isSuccessful -> it.body!!.bytes()
             else -> throw XS2AException(
                 it.body?.string(),
                 it.code

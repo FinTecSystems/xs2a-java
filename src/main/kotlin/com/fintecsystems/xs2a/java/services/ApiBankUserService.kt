@@ -2,6 +2,7 @@ package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
 import com.fintecsystems.xs2a.java.helper.OffsetDateTimeAdapter
+import com.fintecsystems.xs2a.java.helper.toUTF8String
 import com.fintecsystems.xs2a.java.models.api.users.*
 import okhttp3.OkHttpClient
 import java.time.OffsetDateTime
@@ -51,7 +52,7 @@ class ApiBankUserService(
      * @return String
      */
     fun delete(userId: String): String {
-        return apiService.delete("api/users/$userId")
+        return apiService.delete("api/users/$userId").toUTF8String()
     }
 
 
@@ -122,7 +123,7 @@ class ApiBankUserService(
      * @return String
      */
     fun deleteAccessToken(userId: String, tokenId: String): String {
-        return apiService.delete("api/users/$userId/accesstokens/$tokenId")
+        return apiService.delete("api/users/$userId/accesstokens/$tokenId").toUTF8String()
     }
 
     /**

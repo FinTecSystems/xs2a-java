@@ -2,6 +2,7 @@ package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
 import com.fintecsystems.xs2a.java.helper.OffsetDateTimeAdapter
+import com.fintecsystems.xs2a.java.helper.toUTF8String
 import com.fintecsystems.xs2a.java.models.api.accounts.BankAccount
 import com.fintecsystems.xs2a.java.models.api.accounts.BankAccountBalance
 import com.fintecsystems.xs2a.java.models.api.accounts.BankAccountList
@@ -88,7 +89,7 @@ class ApiBankAccountService(
      * @return String
      */
     fun delete(bankAccountId: String): String {
-        return apiService.delete("api/accounts/$bankAccountId")
+        return apiService.delete("api/accounts/$bankAccountId").toUTF8String()
     }
 
     /**
@@ -157,7 +158,7 @@ class ApiBankAccountService(
         reportId: String,
         format: ReportFormat = ReportFormat.JSON,
         locale: ReportLocale = ReportLocale.EN
-    ): String {
+    ): Any {
         val response = apiService.get(
             "api/accounts/$bankAccountId/report/$reportId",
             mutableMapOf(

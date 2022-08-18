@@ -2,6 +2,7 @@ package com.fintecsystems.xs2a.java.services
 
 import com.fintecsystems.xs2a.java.helper.JsonSerializer
 import com.fintecsystems.xs2a.java.helper.OffsetDateTimeAdapter
+import com.fintecsystems.xs2a.java.helper.toUTF8String
 import com.fintecsystems.xs2a.java.models.common.ReportFormat
 import com.fintecsystems.xs2a.java.models.common.ReportLocale
 import com.fintecsystems.xs2a.java.models.events.EventObjectList
@@ -159,7 +160,7 @@ class PayService(
      * @param messageId The message_id is used to get the generated pain file.
      * @return String
      */
-    fun getPainFile(messageId: String): String {
+    fun getPainFile(messageId: String): ByteArray {
         return apiService.get("payments/refundPayout/$messageId")
     }
 
@@ -170,7 +171,7 @@ class PayService(
      * @return void
      */
     fun delete(transactionId: String): String {
-        return apiService.delete("payments/$transactionId")
+        return apiService.delete("payments/$transactionId").toUTF8String()
     }
 
     /**

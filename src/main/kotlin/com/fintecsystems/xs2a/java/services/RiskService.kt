@@ -84,7 +84,7 @@ class RiskService(
      * can be found in the fullpdf.
      * @param transactionId id of the transaction to get the full PDF for
      */
-    fun getFullPDF(transactionId: String): String {
+    fun getFullPDF(transactionId: String): ByteArray {
         return apiService.get("risks/$transactionId/fullpdf")
     }
 
