@@ -47,7 +47,7 @@ object JsonSerializer {
         .adapter(T::class.java)
         .fromJson(json)!!
 
-    inline fun <reified T> parseJson(source: ByteArray) = parseJson<T>(String(source, Charsets.UTF_8))
+    inline fun <reified T> parseJson(source: ByteArray) = parseJson<T>(source.toUTF8String())
 
     inline fun <reified T> toJson(body: T): String = moshi
         .adapter(T::class.java)
