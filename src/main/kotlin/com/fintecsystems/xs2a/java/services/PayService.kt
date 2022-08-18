@@ -73,7 +73,7 @@ class PayService(
      * @param reportId ID of the report to be retrieved.
      * @param format The format parameter is optional. The report is available in the following formats: html, pdf and json. This call defaults to html if the format parameter is omitted. (optional)
      * @param locale Locale in which the report will be rendered. This has no effect when using json format. (optional)
-     * @return Map<String, Any?>
+     * @return When [format] is [ReportFormat.JSON] the parsed JSON is returned. Otherwise the generated file as [BufferedSource]. Close the Buffer when finished.
      */
     fun getReport(
         transactionId: String,
@@ -158,7 +158,7 @@ class PayService(
      * Get a pain file.
      * Here you can retrieve a specific pain file by its &#x60;message_id&#x60;.
      * @param messageId The message_id is used to get the generated pain file.
-     * @return BufferedSource
+     * @return Generated pain file as [BufferedSource]. Close the Buffer when finished.
      */
     fun getPainFile(messageId: String): BufferedSource {
         return apiService.get("payments/refundPayout/$messageId")

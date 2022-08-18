@@ -84,6 +84,7 @@ class RiskService(
      * So if xs2a_account_snapshot and xs2a_name_check has been selected, only this information of these checks,
      * can be found in the fullpdf.
      * @param transactionId id of the transaction to get the full PDF for
+     * @return Generated pdf file as [BufferedSource]. Close the Buffer when finished.
      */
     fun getFullPDF(transactionId: String): BufferedSource {
         return apiService.get("risks/$transactionId/fullpdf")
@@ -97,6 +98,7 @@ class RiskService(
      * @param format The format parameter is optional. The report is available in the following formats: html, pdf and
      * json. This call defaults to JSON if the format parameter is omitted. (optional)
      * @param locale Locale in which the report will be rendered. This has no effect when using json format. (optional)
+     * @return When [format] is [ReportFormat.JSON] the parsed JSON is returned. Otherwise the generated file as [BufferedSource]. Close the Buffer when finished.
      */
     fun getReport(
         transactionId: String,
