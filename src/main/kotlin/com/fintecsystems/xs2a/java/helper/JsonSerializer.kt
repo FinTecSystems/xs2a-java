@@ -1,5 +1,6 @@
 package com.fintecsystems.xs2a.java.helper
 
+import com.fintecsystems.xs2a.java.models.common.CountryId
 import com.fintecsystems.xs2a.java.models.common.Tag
 import com.fintecsystems.xs2a.java.models.common.Turnover
 import com.fintecsystems.xs2a.java.models.form.*
@@ -41,6 +42,7 @@ object JsonSerializer {
         .add(WizardSessionLastError.Adapter)
         .add(Xs2aIncomeCheckResponseData.Adapter)
         .add(WizardResponseError.Adapter)
+        .add(CountryId.Adapter)
         .addLast(KotlinJsonAdapterFactory())
         .build()
 
