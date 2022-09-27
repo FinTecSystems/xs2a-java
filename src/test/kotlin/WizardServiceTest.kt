@@ -165,16 +165,6 @@ internal class WizardServiceTest {
 
     @Test
     @Order(7)
-    fun testMultiForm() {
-        testSelectRoute(
-            "multiform", listOf(
-                FormMulti::class to "SECOND",
-            )
-        )
-    }
-
-    @Test
-    @Order(8)
     fun testRadioSelect() {
         testSelectRoute(
             "radio_select", listOf(
@@ -185,7 +175,7 @@ internal class WizardServiceTest {
     }
 
     @Test
-    @Order(9)
+    @Order(8)
     fun testSelect() {
         testSelectRoute(
             "select", listOf(
@@ -196,7 +186,7 @@ internal class WizardServiceTest {
     }
 
     @Test
-    @Order(10)
+    @Order(9)
     fun testTanSelect() {
         testSelectRoute(
             "tan_select", listOf(
@@ -207,7 +197,7 @@ internal class WizardServiceTest {
     }
 
     @Test
-    @Order(11)
+    @Order(10)
     fun testITan() {
         testSelectRoute(
             "tan_iTAN", listOf(
@@ -219,7 +209,7 @@ internal class WizardServiceTest {
     }
 
     @Test
-    @Order(12)
+    @Order(11)
     fun testMTan() {
         testSelectRoute(
             "tan_mTAN", listOf(
@@ -230,7 +220,7 @@ internal class WizardServiceTest {
     }
 
     @Test
-    @Order(13)
+    @Order(12)
     fun testFlickerTan() {
         testSelectRoute(
             "tan_flickerTAN", listOf(
@@ -241,7 +231,7 @@ internal class WizardServiceTest {
     }
 
     @Test
-    @Order(14)
+    @Order(13)
     fun testQrTan() {
         testSelectRoute(
             "tan_QR-TAN", listOf(
@@ -253,7 +243,7 @@ internal class WizardServiceTest {
     }
 
     @Test
-    @Order(15)
+    @Order(14)
     fun testRedirect() {
         response = navigateResponseWithKey("login_redirect", response)
 
@@ -274,7 +264,7 @@ internal class WizardServiceTest {
 
 
     @Test
-    @Order(16)
+    @Order(15)
     fun testFinishTransaction() {
         response = wizardService.navigate(
             constructBody(

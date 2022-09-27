@@ -24,7 +24,6 @@ object JsonSerializer {
                 .withSubtype(FormFlicker::class.java, "flicker")
                 .withSubtype(FormHelpText::class.java, "help_text")
                 .withSubtype(FormImage::class.java, "image")
-                .withSubtype(FormMulti::class.java, "multi")
                 .withSubtype(FormPassword::class.java, "password")
                 .withSubtype(FormRadio::class.java, "radio")
                 .withSubtype(FormSelect::class.java, "select")
