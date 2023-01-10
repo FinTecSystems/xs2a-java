@@ -33,8 +33,8 @@ internal class RiskServiceTest {
             xs2aAccountLinkedOffersCheck = Xs2aAccountLinkedOffersCheck(),
             xs2aAccountSnapshot = Xs2aAccountSnapshot(
                 days = 10,
-                from = OffsetDateTime.now().withMonth(1),
-                to = OffsetDateTime.now().withMonth(1).plusDays(10),
+                from = OffsetDateTime.now().minusDays(10),
+                to = OffsetDateTime.now(),
                 filters = listOf(Tag.INCOME),
                 allAccounts = true,
                 allTags = true
