@@ -60,7 +60,7 @@ data class UserAccountsObject (
     @Json(name = "account_type")
     var accountType: AccountType,
     @Json(name = "balance")
-    var balance: Float,
+    var balance: Float? = null,
     @Json(name = "available")
     var available: Float? = null,
     @Json(name = "limit")

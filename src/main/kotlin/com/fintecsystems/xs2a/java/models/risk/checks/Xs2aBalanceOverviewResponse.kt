@@ -16,7 +16,7 @@ import java.time.OffsetDateTime
 
 data class Xs2aBalanceOverviewResponse(
     @Json(name = "balance")
-    var balance: Float,
+    var balance: Float? = null,
     @Json(name = "available")
     var available: Float? = null,
     @Json(name = "limit")
