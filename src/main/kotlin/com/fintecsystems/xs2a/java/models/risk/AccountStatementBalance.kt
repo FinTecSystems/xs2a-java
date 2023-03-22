@@ -20,7 +20,7 @@ data class AccountStatementBalance(
     @Json(name = "limit")
     var limit: Float? = null,
     @Json(name = "balance")
-    var balance: Float,
+    var balance: Float? = null,
     @Json(name = "currency")
     var currency: CurrencyId,
     @Json(name = "date")
