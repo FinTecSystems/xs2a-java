@@ -18,7 +18,10 @@ enum class CurrencyId(var value: String) {
     CHF("CHF"),
 
     @Json(name = "USD")
-    USD("USD");
+    USD("USD"),
+
+    @Json(name = "")
+    UNKNOWN("");
 
     override fun toString() = value
 }
